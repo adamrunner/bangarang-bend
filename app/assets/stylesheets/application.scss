@@ -1,0 +1,5 @@
+//NOTE: use Rails asset pipeline for development to prevent bootstrap from being recompiled each time.
+//= require bootstrap-loader
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'variables';
