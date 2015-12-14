@@ -1,6 +1,8 @@
 #Bangarang Bend
 A Rails Website for the Bangarang Bend catering company
-
+#Colors
+Red - `#C34C3B`
+Blue - `#445768`
 
 Rails 4, Backbone, VelocityJS, Bootstrap 3, Devise, CarrierWave
 ## Todo List/Backlog
