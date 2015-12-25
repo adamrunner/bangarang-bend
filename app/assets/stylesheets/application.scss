@@ -3,3 +3,159 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'variables';
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic|Abel);
+
+$top-spacing: 100px;
+
+$font-family-secondary: 'Abel', sans-serif !default;
+$font-family-primary:   'Roboto', sans-serif !default;
+
+$navigation-link-color: #fff;
+$navigation-secondary-font-size: 20px;
+
+$contact-text-color: #333;
+
+// Global Styling
+body {
+  background-image: image-url("background_a.jpg");
+  background-size: cover;
+}
+ul {
+  list-style: none;
+  text-transform: uppercase;
+}
+a {
+  font-family: $font-family-secondary;
+}
+em {
+  font-weight: 300;
+}
+.btn {
+  text-transform: uppercase;
+  padding: 0px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+}
+.no-gutter {
+  padding: 0;
+}
+//
+// Side-Bar Styling
+.navigation {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  background-color: transparentize(#445768, 0.25%);
+  ul {
+    padding-left: 0px;
+    width: 86px;
+    a {
+      color: $navigation-link-color;
+      font-size: $navigation-secondary-font-size;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+    @media (min-width: 62em) {
+      margin: $top-spacing auto 0px auto;
+    }
+  }
+  @media (min-width: 62em) {
+    height: calc(100vh - 200px);
+    align-items: flex-start;
+  }
+}
+.contact {
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-content: space-around;
+  justify-content: center;
+  width: 100%;
+  height: 30vh;
+  font-family: $font-family-secondary;
+  background-color: transparentize(#fff, 0.25%);
+  color: $contact-text-color;
+  text-align: center;
+  p {
+    width: 70%;
+    margin: 0 auto 20px auto;
+    font-size: $navigation-secondary-font-size + 2px;
+    text-transform: uppercase;
+    border-top: 2px dashed $contact-text-color;
+    border-bottom: 2px dashed $contact-text-color;
+  }
+  span {
+    display: inline-block;
+    font-size: $navigation-secondary-font-size - 2px;
+    letter-spacing: 1px;
+  }
+  a {
+    color: $contact-text-color;
+    letter-spacing: 1px;
+    &:hover {
+      color: #C34C3B;
+    }
+  }
+  @media (min-width: 62em) {
+    height: 200px;
+  }
+}
+//
+// Content
+#content {
+  height: 30vh;
+  @media (min-width: 62em) {
+    height: calc(100vh - 400px);
+    margin-top: $top-spacing;
+    margin-bottom: $top-spacing;
+  }
+}
+.inner-content {
+  display: block;
+  background-color: transparentize(#445768, 0.25%);
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 62em) {
+    height: calc(100vh - 400px);
+    border: 2px dashed #fff;
+  }
+}
+#main-logo {
+  width: 80%;
+  height: 80%;
+}
+//
+//Bottom-Grid
+.grid-item {
+  display: inline-flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: transparentize(#fff, 0.25%);
+  height: 200px;
+  border-bottom: 1px solid transparentize(#000, 0.50%);
+  &:nth-child(4) {
+    border-bottom: none;
+  }
+  p {
+    text-align: center;
+    color: $contact-text-color;
+  }
+  a {
+    width: 60px;
+  }
+  @media (min-width: 62em) {
+    border-right: 1px solid transparentize(#000, 0.50%);
+    &:nth-child(4) {
+      border-right: none;
+    }
+  }
+}
+//

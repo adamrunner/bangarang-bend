@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require velocity.min
 //= require velocity.ui.min
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/bangarang_bend
