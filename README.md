@@ -10,7 +10,7 @@ SSL - sslmate.com
 Hosting - TBD digitalocean or amazon web services
 
 ##Libraries Used
-Rails 4, Backbone, VelocityJS, Bootstrap 3, Devise, CarrierWave
+Rails 4, Backbone, VelocityJS, Bootstrap 4 w/Flexbox, Devise, CarrierWave
 ## Todo List/Backlog
 The application backlog is maintained in Trello
 https://trello.com/b/6LseRF5z/bangarang-bend-website
