@@ -1,0 +1,62 @@
+// Side-Bar Styling
+.navigation {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  background-color: $transparent-brand-primary;
+  ul {
+    padding-left: 0px;
+    width: 86px;
+    a {
+      color: $navigation-link-color;
+      font-size: $navigation-secondary-font-size;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+    @media (min-width: 62em) {
+      margin: $top-spacing auto 0px auto;
+    }
+  }
+  @media (min-width: 62em) {
+    height: calc(100vh - 200px);
+    align-items: flex-start;
+  }
+}
+.contact {
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-content: space-around;
+  justify-content: center;
+  width: 100%;
+  height: 30vh;
+  font-family: $font-family-secondary;
+  background-color: transparentize(#fff, 0.25%);
+  color: $contact-text-color;
+  text-align: center;
+  p {
+    width: 70%;
+    margin: 0 auto 20px auto;
+    font-size: $navigation-secondary-font-size + 2px;
+    text-transform: uppercase;
+    border-top: 2px dashed $contact-text-color;
+    border-bottom: 2px dashed $contact-text-color;
+  }
+  span {
+    display: inline-block;
+    font-size: $navigation-secondary-font-size - 2px;
+    letter-spacing: 1px;
+  }
+  a {
+    color: $contact-text-color;
+    letter-spacing: 1px;
+    &:hover {
+      color: $brand-secondary;
+    }
+  }
+  @media (min-width: 62em) {
+    height: 200px;
+  }
+}

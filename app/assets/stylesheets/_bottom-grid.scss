@@ -1,0 +1,27 @@
+//Bottom-Grid
+.grid-item {
+  display: inline-flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: transparentize(#fff, 0.25%);
+  height: 200px;
+  border-bottom: 1px solid transparentize(#000, 0.50%);
+  &:nth-child(4) {
+    border-bottom: none;
+  }
+  p {
+    text-align: center;
+    color: $contact-text-color;
+  }
+  a {
+    // width: 60px;
+  }
+  @media (min-width: 62em) {
+    border-right: 1px solid transparentize(#000, 0.50%);
+    &:nth-child(4) {
+      border-right: none;
+    }
+  }
+}

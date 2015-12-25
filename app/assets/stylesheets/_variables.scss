@@ -1,3 +1,15 @@
+$top-spacing: 100px;
+
+$font-family-secondary: 'Abel', sans-serif !default;
+$font-family-primary:   'Roboto', sans-serif !default;
+
+$navigation-link-color         : #fff;
+$navigation-secondary-font-size: 20px;
+$contact-text-color            : #333;
+$brand-primary                 : #445768;
+$transparent-brand-primary     : transparentize($brand-primary, 0.25%);
+$brand-secondary               : #C34C3B;
+//NOTE: Bootstrap Variables Below
 // Variables
 //
 
