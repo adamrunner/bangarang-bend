@@ -11,8 +11,8 @@ window.BangarangBend =
   Views: {}
   initialize: () ->
     @router     = new BangarangBend.Routers.ApplicationRouter()
-    @sideBar    = new BangarangBend.Views.SideBar(el: '#side-bar')
-    @bottomGrid = new BangarangBend.Views.BottomGrid(el: '#bottom-grid')
+    @navigation = new BangarangBend.Views.Navigation(el: '#navigation')
+    @mobileMenu = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
 
 $(document).ready ->
   BangarangBend.initialize()

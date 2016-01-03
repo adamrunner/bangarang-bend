@@ -6,12 +6,25 @@
 @import 'bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic|Abel);
 @import 'navigation';
-@import 'bottom-grid';
+@import 'featured';
 @import 'content';
+@import 'home';
+
 // Global Styling
+html {
+  @include media-breakpoint-up(xs) {
+    font-size: $font-size-xs;
+  }
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-lg;
+  }
+}
+
 body {
-  background-image: image-url("background_a.jpg");
-  background-size: cover;
+  font-size: inherit !important;
 }
 ul {
   list-style: none;
@@ -20,21 +33,64 @@ ul {
 a {
   font-family: $font-family-secondary;
 }
-em {
+em,p {
   font-weight: 300;
 }
 .btn {
   text-transform: uppercase;
-  // padding: 0px;
-  // text-align: center;
-  // height: 35px;
-  // line-height: 35px;
 }
-.no-gutter {
+.container-fluid {
+  overflow:hidden;
+  padding: 0px;
+}
+
+#main-wrap {
+  width: 100%;
+  position: fixed;
+}
+
+#img-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#secondary-wrap {
+  @include media-breakpoint-up(xs) {
+    margin: 0px;
+    width: 200%;
+    transform: translateX(-50%);
+  }
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    position: relative;
+    right: -50%;
+  }
+  &.toggled {
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+      position: relative;
+      right: 0%;
+    }
+  }
+}
+
+// Extends
+%no-gutter {
   padding: 0;
 }
-.col-lg-offset-half {
+%no-margin {
+  margin: 0px;
+}
+%col-lg-offset-half {
   @include media-breakpoint-up(lg) {
     margin-left: calc(8.33333% / 2);
+  }
+  @include media-breakpoint-up(xl) {
+    margin-left: 8.33333%;
   }
 }

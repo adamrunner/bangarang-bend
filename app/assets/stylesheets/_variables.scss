@@ -1,14 +1,11 @@
-$top-spacing: 100px;
+$top-spacing: 50px;
 
 $font-family-secondary: 'Abel', sans-serif !default;
 $font-family-primary:   'Roboto', sans-serif !default;
 
-$navigation-link-color         : #fff;
-$navigation-secondary-font-size: 20px;
-$contact-text-color            : #333;
-$brand-primary                 : #445768;
-$transparent-brand-primary     : transparentize($brand-primary, 0.25%);
-$brand-secondary               : #C34C3B;
+$light-font-color : #fff;
+$dark-font-color  : #333;
+
 //NOTE: Bootstrap Variables Below
 // Variables
 //
@@ -41,11 +38,15 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary:             #445768 !default;
-$brand-success:             #5cb85c !default;
-$brand-info:                #5bc0de !default;
-$brand-warning:             #f0ad4e !default;
-$brand-danger:              #d9534f !default;
+$brand-primary             : #445768 !default;
+$transparent-brand-primary : transparentize($brand-primary, 0.25%) !default;
+$brand-secondary           : #C34C3B !default;
+$light-transparent         : transparentize(#fff, 0.10%) !default;
+$dark-transparent          : transparentize(#333, 0.10%) !default;
+$brand-success             : #5cb85c !default;
+$brand-info                : #5bc0de !default;
+$brand-warning             : #f0ad4e !default;
+$brand-danger              : #d9534f !default;
 
 
 // Options
@@ -144,7 +145,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12 !default;
-$grid-gutter-width:          1.875rem !default; // 30px
+$grid-gutter-width:          1.25rem !default; // 30px
 
 
 // Typography
@@ -160,7 +161,7 @@ $font-family-base:           $font-family-sans-serif !default;
 $font-size-root:             16px !default;
 
 $font-size-base:             1rem !default;
-$font-size-lg:               1.25rem !default;
+$font-size-lg:               1rem !default;
 $font-size-sm:               .875rem !default;
 $font-size-xs:               .75rem !default;
 
@@ -184,7 +185,7 @@ $display4-weight:             300 !default;
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       inherit !default;
+$headings-font-family:       $font-family-secondary;
 $headings-font-weight:       500 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
@@ -486,9 +487,9 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 // Cards
 $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
-$card-border-width:        1px !default;
+$card-border-width:        2px !default;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        #e5e5e5 !default;
+$card-border-color:        #fff !default;
 $card-border-radius-inner: $card-border-radius !default;
 $card-cap-bg:              #f5f5f5 !default;
 $card-bg:                  #fff !default;

@@ -1,0 +1,32 @@
+#home-container {
+  box-sizing: border-box;
+  width: 100%;
+  @include media-breakpoint-up(xl) {
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .outer-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: $transparent-brand-primary;
+    .inner-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include media-breakpoint-up(lg) {
+        padding: 50px;
+        border: 2px dashed #fff;
+      }
+    }
+  }
+}
+#main-logo {
+  width: 50%;
+}

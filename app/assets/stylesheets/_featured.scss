@@ -1,0 +1,84 @@
+//Bottom-Grid
+
+.featured-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+#featured-container {
+  width: 100%;
+  height: 100%;
+  .featured-items {
+    display: flex;
+    flex-flow: row wrap;
+    color: #333;
+    height: 100%;
+    @include media-breakpoint-up(lg) {
+      flex-flow: column wrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+    }
+    .featured-item {
+      height: 100%;
+      width: 100%;
+      background-color: $light-transparent;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      @include media-breakpoint-up(md) {
+        font-size: 1.25em;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 20px;
+        font-size: 1em;
+        border: none;
+      }
+      @include media-breakpoint-up(xl) {
+        max-width: 590px;
+        font-size: 0.9em;
+      }
+      .featured-title {
+        @include media-breakpoint-up(sm) {
+          margin-bottom: ($headings-margin-bottom / 4);
+          border-bottom: 1px solid #ddd;
+        }
+      }
+      p {
+        margin: 0px;
+      }
+    }
+    .featured-img {
+      box-sizing: border-box;
+      border: 2px solid #222;
+      width: 100%;
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+.definition-box {
+  box-sizing: border-box;
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+  padding: 20px;
+  margin-bottom: 60px;
+  background-color: $dark-transparent;
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-up(xl) {
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% - 610px);
+  }
+  .logo-plain {
+    margin-top: 1em;
+  }
+}
