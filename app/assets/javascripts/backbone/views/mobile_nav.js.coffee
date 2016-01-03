@@ -4,7 +4,7 @@ class BangarangBend.Views.MobileNav extends Backbone.View
   template: JST["backbone/templates/mobile_nav"]
 
   events:
-    'click .nav-button'  : 'showNavigation'
+    'click .nav-button' : 'showNavigation'
 
   initialize: ->
     @render()
@@ -15,10 +15,10 @@ class BangarangBend.Views.MobileNav extends Backbone.View
 
   showNavigation: ->
     if @menuToggled == true
-      $('#main').velocity {translateX: "-50%"}, {duration: 250}, "easeOutCirc"
-      $('#main').removeClass('toggled')
+      $('#secondary-wrap').velocity {translateX: "-50%"}, {duration: 250}, "easeOutCirc"
+      $('#secondary-wrap').removeClass('toggled')
       @menuToggled = false
     else
-      $('#main').velocity {translateX: ["0%", "-50%"]}, {duration: 250}, "easeInCirc"
-      $('#main').addClass('toggled')
+      $('#secondary-wrap').velocity {translateX: ["0%", "-50%"]}, {duration: 250}, "easeInCirc"
+      $('#secondary-wrap').addClass('toggled')
       @menuToggled = true

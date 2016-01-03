@@ -25,7 +25,6 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
       @fadeInOut()
 
   fadeInOut: ->
-    console.log(@slideNum)
-    $('#img-fade').velocity {opacity: 0}, duration: 1000, complete: =>
-      $('#img-fade').attr('src', "/images/background_0#{@slideNum}.jpg")
-      $('#img-fade').velocity({opacity: 1}, {duration: 1000})
+    $('#img-fade').velocity {opacity: 0}, duration: 750, complete: =>
+      $('#img-fade').css('background-image', "url(/images/background_0#{@slideNum}.jpg)")
+      $('#img-fade').velocity({opacity: 1}, {duration: 750})
