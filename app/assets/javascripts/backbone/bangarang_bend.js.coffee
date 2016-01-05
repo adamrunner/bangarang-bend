@@ -17,4 +17,4 @@ window.BangarangBend =
 
 $(document).ready ->
   BangarangBend.initialize()
-  Backbone.history.start()
+  Backbone.history.start(pushState: true)
