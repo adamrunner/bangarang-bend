@@ -49,19 +49,29 @@ em,p {
   position: fixed;
 }
 
-#img-fade {
+#background-carousel {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  background-image: image-url("background_01.jpg");
-  background-size: cover;
+  .bg-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-size: cover;
+    display: none;
+    opacity: 0;
+    &.active {
+      display: block;
+      opacity: 1;
+    }
+  }
 }
 
-#secondary-wrap {
+#nav-collapse {
   @include media-breakpoint-up(xs) {
     margin: 0px;
     width: 200%;
