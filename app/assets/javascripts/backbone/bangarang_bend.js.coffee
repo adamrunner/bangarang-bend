@@ -11,7 +11,7 @@ window.BangarangBend =
   Views: {}
   initialize: () ->
     @content    = $('#inner-content-wrap')
-    @bgImages   = new BangarangBend.Collections.BgImages(@initial.data.bg_images)
+    @bgImages   = new BangarangBend.Collections.BgImages(window.initial.data.bg_images)
     @router     = new BangarangBend.Routers.ApplicationRouter()
     @navigation = new BangarangBend.Views.Navigation(el: '#navigation')
     @mobileNav  = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
