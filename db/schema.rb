@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106192919) do
+ActiveRecord::Schema.define(version: 20160108041516) do
 
   create_table "featured_items", force: :cascade do |t|
     t.string   "name",        limit: 255
