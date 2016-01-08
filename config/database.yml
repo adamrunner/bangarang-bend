@@ -51,4 +51,4 @@ production:
   <<: *default
   database: bangarang-bend_production
   username: bangarang-bend
-  password: <%= ENV['BANGARANG-BEND_DATABASE_PASSWORD'] %>
+  password: <%= ENV['BANGARANG_BEND_DATABASE_PASSWORD'] %>
