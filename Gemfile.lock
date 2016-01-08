@@ -93,6 +93,16 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-rails (0.2.1)
+      actionpack (~> 4.0)
+      activesupport (~> 4.0)
+      eco (~> 1.0)
+      eco-source (= 1.1.0.rc.1)
+    eco-source (1.1.0.rc.1)
     ejs (1.1.1)
     erubis (2.7.0)
     excon (0.45.4)
@@ -407,6 +417,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  eco-rails
   factory_girl_rails
   faker
   fog

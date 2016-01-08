@@ -1,0 +1,30 @@
+<div class="navigation-menu">
+  <ul>
+    <li><a href="#">home</a></li>
+    <li><a href="#/philosophy">philosophy</a></li>
+    <li><a href="#/services">services</a></li>
+    <li><a href="#">menu</a></li>
+  </ul>
+</div>
+<div class="contact">
+
+  <div class="contact-body">
+    <div class="contact-item">
+      <span class="name">Chef Dave Bodi</span>
+      <a class="phone" href="tel:+15039302722">503-930-2722</a>
+      <a class="email" href="mailto:dave@bangarangbend.com">dave@bangarangbend.com</a>
+    </div>
+    <hr>
+    <div class="contact-item">
+      <span class="name">Amy Bodi</span>
+      <span class="title">Event Services</span>
+      <a class="phone" href="tel:+15419688003">541-968-8003</a>
+      <a class="email" href="mailto:amy@bangarangbend.com">amy@bangarangbend.com</a>
+    </div>
+  </div>
+  <hr>
+    <div class="social-links">
+      <a href="#"><i class="fa fa-facebook-official"></i></a>
+      <a href="https://www.instagram.com/chefdavebodi/" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+</div>

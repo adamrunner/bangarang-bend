@@ -2,7 +2,6 @@
   box-sizing: border-box;
   width: 100%;
   @include media-breakpoint-up(xl) {
-    height: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }

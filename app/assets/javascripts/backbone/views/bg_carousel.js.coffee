@@ -13,7 +13,7 @@ class BangarangBend.Views.BgCarousel extends Backbone.View
     ), 20000
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(images: @collection))
     @
 
   switchBackground: () ->

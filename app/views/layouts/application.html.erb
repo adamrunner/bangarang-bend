@@ -12,5 +12,9 @@
 
 <%= yield %>
 
+<script>
+window.BangarangBend.initial = <%= (render partial: "application/index.json").html_safe %>
+</script>
+
 </body>
 </html>

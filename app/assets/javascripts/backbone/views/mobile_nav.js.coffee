@@ -8,6 +8,7 @@ class BangarangBend.Views.MobileNav extends Backbone.View
 
   initialize: ->
     @navCollapse = $('#nav-collapse')
+    @listenTo Backbone, 'navClose', @showNavigation
     @render()
 
   render: ->
@@ -15,11 +16,11 @@ class BangarangBend.Views.MobileNav extends Backbone.View
     @
 
   showNavigation: ->
-    if @menuToggled == true
+    if BangarangBend.menuToggled == true
       @navCollapse.velocity {translateX: "-50%"}, {duration: 250}, "easeOutCirc"
       @navCollapse.removeClass('toggled')
-      @menuToggled = false
+      window.BangarangBend.menuToggled = false
     else
       @navCollapse.velocity {translateX: ["0%", "-50%"]}, {duration: 250}, "easeInCirc"
       @navCollapse.addClass('toggled')
-      @menuToggled = true
+      window.BangarangBend.menuToggled = true
