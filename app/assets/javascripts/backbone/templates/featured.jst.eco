@@ -5,51 +5,52 @@
 
         <div class="col-xs-12 featured-item">
           <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <img src="/images/menu/menu_a.jpg" class="featured-img img-responsive" alt="" />
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-0">
+              <img src="/images/featured/featured_01.jpg" class="featured-img img-responsive" alt="" />
             </div>
-            <div class="col-xs-12 col-sm-8">
-              <h4 class="featured-title">Featured Item</h4>
-              <p>Ea vel odio vitae dissentias, erant aeque quaestio vix et, mei eligendi abhorreant te. Usu case movet ut, his at mazim disputando. Lobortis laboramus ad vim, mei feugiat apeirian ea.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 featured-item">
-          <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <img src="/images/menu/menu_b.jpg" class="featured-img img-responsive" alt="" />
-            </div>
-            <div class="col-xs-12 col-sm-8">
-              <h4 class="featured-title">Featured Item</h4>
-              <p>Ea vel odio vitae dissentias, erant aeque quaestio vix et, mei eligendi abhorreant te. Usu case movet ut, his at mazim disputando. Lobortis laboramus ad vim, mei feugiat apeirian ea.</p>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0">
+              <h5 class="featured-title">Brides and Grooms­-to-Be</h5>
+              <p>
+                Book your catering with us by March 15th
+                and we will waive ALL gratuities!
+                Call to set up your tasting.
+              </p>
             </div>
           </div>
         </div>
 
         <div class="col-xs-12 featured-item">
           <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <img src="/images/menu/menu_c.jpg" class="featured-img img-responsive" alt="" />
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-0">
+              <img src="/images/featured/featured_02.jpg" class="featured-img img-responsive" alt="" />
             </div>
-            <div class="col-xs-12 col-sm-8">
-              <h4 class="featured-title">Featured Item</h4>
-              <p>Ea vel odio vitae dissentias, erant aeque quaestio vix et, mei eligendi abhorreant te. Usu case movet ut, his at mazim disputando. Lobortis laboramus ad vim, mei feugiat apeirian ea.</p>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0">
+              <h5 class="featured-title">Oregon Black Truffles in season...OMG</h5>
+              <p>
+                We are working with a few purveyors in the valley
+                who take on the laborious task of collecting these beauties.
+                We will be rocking Gougeres and Truffle butter for the next two months!
+              </p>
             </div>
           </div>
         </div>
 
         <div class="col-xs-12 featured-item">
           <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <img src="/images/menu/menu_d.jpg" class="featured-img img-responsive" alt="" />
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-0">
+              <img src="/images/featured/featured_03.jpg" class="featured-img img-responsive" alt="" />
             </div>
-            <div class="col-xs-12 col-sm-8">
-              <h4 class="featured-title">Featured Item</h4>
-              <p>Ea vel odio vitae dissentias, erant aeque quaestio vix et, mei eligendi abhorreant te. Usu case movet ut, his at mazim disputando. Lobortis laboramus ad vim, mei feugiat apeirian ea.</p>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0">
+              <h5 class="featured-title">Stay tuned for the winning couple from the CO Bridal Show</h5>
+              <p>
+                Their bridal party will be sipping on bold Napa Valley reds and
+                tasting French cheese while cooking with Chef Dave.
+                What do the groomsmen get out of the deal? Beer and butchery! Need we say more?
+              </p>
             </div>
           </div>
         </div>
+
 
 
 

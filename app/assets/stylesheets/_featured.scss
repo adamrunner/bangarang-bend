@@ -26,6 +26,7 @@
       background-color: $light-transparent;
       padding: 20px;
       border-bottom: 1px solid #ddd;
+      font-size: 1.25em;
       @include media-breakpoint-up(md) {
         font-size: 1.25em;
       }
@@ -35,24 +36,35 @@
         border: none;
       }
       @include media-breakpoint-up(xl) {
-        max-width: 590px;
+        max-width: 700px;
         font-size: 0.9em;
       }
       .featured-title {
+        font-size: 1.25em;
         @include media-breakpoint-up(sm) {
-          margin-bottom: ($headings-margin-bottom / 4);
+          margin-bottom: 5px;
+          padding: 0px 0px 5px 0px;
           border-bottom: 1px solid #ddd;
+          text-transform: capitalize;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.25em;
         }
       }
       p {
         margin: 0px;
+        padding: 0px 0px 5px 0px;
       }
     }
     .featured-img {
+      display: block;
+      margin: 0 auto;
       box-sizing: border-box;
-      border: 2px solid #222;
+      border: 1px solid #222;
       width: 100%;
-      @include media-breakpoint-down(xs) {
+      max-width: 600px;
+      max-height: 400px;
+      @include media-breakpoint-down(sm) {
         margin-bottom: 1rem;
       }
     }
@@ -70,13 +82,15 @@
   margin-bottom: 60px;
   background-color: $dark-transparent;
   @include media-breakpoint-up(lg) {
+    // min-width: 265px;
     margin-bottom: 20px;
   }
   @include media-breakpoint-up(xl) {
     flex-flow: column nowrap;
     justify-content: center;
     text-align: center;
-    width: calc(100% - 610px);
+    font-size: .9em;
+    width: calc(100% - 720px);
   }
   .logo-plain {
     margin-top: 1em;
