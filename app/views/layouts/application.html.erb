@@ -13,7 +13,10 @@
 <%= yield %>
 
 <script>
-window.initial = <%= (render partial: "application/index.json").html_safe %>
+$(document).ready(function(){
+  BangarangBend.initialize(<%= (render partial: "application/index.json").html_safe %>);
+  Backbone.history.start()
+})
 </script>
 
 </body>
