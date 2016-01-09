@@ -82,7 +82,6 @@
   margin-bottom: 60px;
   background-color: $dark-transparent;
   @include media-breakpoint-up(lg) {
-    // min-width: 265px;
     margin-bottom: 20px;
   }
   @include media-breakpoint-up(xl) {
