@@ -1,0 +1,49 @@
+#menu-container {
+  margin-bottom: 60px;
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    margin-top: 20px;
+    width: 80%;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  .menu-title {
+    text-transform: capitalize;
+    box-sizing: border-box;
+    background-color: $dark-transparent;
+    padding: 20px;
+    text-align: center;
+  }
+  .menu-header {
+    box-sizing: border-box;
+    text-transform: capitalize;
+    background-color: $light-transparent;
+    color: $dark-font-color;
+    border-bottom: solid 1px #ddd;
+    padding: 20px;
+  }
+  .menu-section {
+    box-sizing: border-box;
+    background-color: $light-transparent;
+    color: $dark-font-color;
+    padding: 20px;
+    .menu-section-body {
+      padding: 20px;
+      border-bottom: solid 1px #ddd;
+    }
+  }
+  .menu-footer {
+    box-sizing: border-box;
+    background-color: $dark-transparent;
+    padding: 20px;
+    text-align: center;
+    p {
+      width: 80%;
+      margin: 0px auto 0px auto;
+      @include media-breakpoint-up(lg) {
+        width: 60%;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     ''           : 'homeView'
     'philosophy' : 'philosophyView'
     'services'   : 'servicesView'
+    'menu'       : 'menuView'
 
   homeView: ->
     home     = new BangarangBend.Views.Home()
@@ -19,3 +20,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
   servicesView: ->
     services = new BangarangBend.Views.Services()
     BangarangBend.content.html(services.render().$el)
+
+  menuView: ->
+    menu = new BangarangBend.Views.Menu()
+    BangarangBend.content.html(menu.render().$el)
