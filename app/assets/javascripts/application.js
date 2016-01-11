@@ -28,6 +28,7 @@
 //= require velocity.ui.min
 //= require underscore
 //= require backbone
+//= require backbone.analytics
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/bangarang_bend
