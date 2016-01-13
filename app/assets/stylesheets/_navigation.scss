@@ -1,105 +1,52 @@
-// Navigation Styling
-
-%nav-section {
-  display: flex;
-  width: 50%;
-  height: inherit;
-}
-
-%nav-menu-button {
+#mobile-nav-bar {
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  width: 3.75rem;
-  i {
-    text-align: center;
-    line-height: 3.75rem;
-    height:100%;
-    width:100%;
-  }
-}
-
-#mobile-nav {
-  display: flex;
+  flex-flow: row nowrap;
   justify-content: flex-start;
-  width:100%;
-  height:3.75rem;
-  background-color: #333;
-  position: absolute;
-  top: 0px;
-  z-index: 100;
-  font-size: 2rem;
-  border-bottom: 1px solid #222;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3.75em;
+  padding: 0em 1.25em;
+  background-color: $dark-font-color;
+  color: $light-font-color;
+  z-index: 20;
   @include media-breakpoint-up(lg) {
     display: none;
   }
-  .nav-section-left {
-    @extend %nav-section;
-    justify-content: flex-end;
-    .nav-button {
-      @extend %nav-menu-button;
-      border-left: 1px solid #222;
-    }
-  }
-  .nav-section-right {
-    @extend %nav-section;
-    justify-content: flex-start;
-    .nav-button {
-      @extend %nav-menu-button;
-      border-right: 1px solid #222;
-    }
-  }
-}
-#navigation {
-  margin-top: 3.75rem;
-  width: 50%;
-  @include media-breakpoint-up(lg) {
-    margin-top: 0px;
-    width: 25%;
-  }
-  @include media-breakpoint-up(xl) {
-    width: 20%;
-  }
-  @media (min-width: 100rem) {
-    width: 17%;
+  i {
+    width: 1em;
+    height: 1em;
+    font-size: 3em;
   }
 }
 
-.navigation-menu {
-  @extend %no-gutter;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.nav-wrap {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 40vh;
-  font-size: (1em * 1.1);
-  background-color: $transparent-brand-primary;
-  @include media-breakpoint-down(md) {
-    font-size: (1em * 1.40);
-  }
+  height: calc(100vh - 3.75em);
+  transform: translateX(-100%);
+  z-index: 10;
   @include media-breakpoint-up(lg) {
-    height: calc(100vh - 400px);
-    align-items: flex-start;
+    transform: translateX(0%) !important;
+    height: 100vh;
+    width: 18.75em;
   }
-  ul {
-    width: auto;
-    margin-left: 0px;
-    @extend %no-gutter;
-    @include media-breakpoint-up(sm) {
-      width: 70%;
-      display: flex;
-      justify-content: space-between;
-      flex-flow: row nowrap;
-    }
-    @include media-breakpoint-up(md) {
-      width: auto;
-      display: block;
-    }
-    @include media-breakpoint-up(lg) {
-      margin: ($top-spacing * 2) auto 0px auto;
+  .nav-links {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    box-sizing: inherit;
+    width: 100%;
+    height: calc(100vh - 25em);
+    padding: 3.75em 0em;
+    background-color: $transparent-brand-primary;
+    ul {
+      text-transform: uppercase;
     }
     a {
       color: $light-font-color;
@@ -108,138 +55,46 @@
       }
     }
   }
-}
-.contact {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: calc(60vh - 3.75rem);
-  background-color: $light-transparent;
-  font-family: $font-family-secondary;
-  color: $dark-font-color;
-  text-align: center;
-  letter-spacing: 1px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  @media (min-width: 375px) {
-    align-content: center;
-  }
-  @include media-breakpoint-up(sm) {
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-  }
-  @include media-breakpoint-up(lg) {
-    justify-content: center;
-    flex-flow: column nowrap;
-    height: 400px;
-  }
-  .contact-body {
-    margin-top: 20px;
-    width: 100%;
+  .contact-links {
     display: flex;
     flex-flow: column nowrap;
-    height: auto;
-    min-height: 148px;
-    @media (min-width: 375px) {
-      margin-top: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 25em;
+    background-color: $light-transparent;
+    a {
+      color: $dark-font-color;
+      &:hover {
+        color: $brand-secondary;
+      }
     }
-    @include media-breakpoint-up(sm) {
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-content: center;
-      align-items: center;
-      width: 80%;
-      height: 100%;
-      min-height: inherit;
-    }
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      flex-flow: column nowrap;
-      height: auto;
-      padding-top: 20px;
+    span {
+      font-family: $font-family-secondary;
+      font-weight: bold;
     }
   }
   .contact-item {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-content: space-around;
-    font-size: (1em * 1.1);
-    width: 100%;
-    height: auto;
-    @include media-breakpoint-up(sm) {
-      width: 50%;
-      height: 100px;
-      border-right: solid 1px #ddd;
-    }
-    @include media-breakpoint-up(lg) {
-      font-size: .9em;
-      width: 100%;
-      height: 40%;
-      flex-flow: column nowrap;
-      border: none;
-    }
-    .name {
-      text-transform: capitalize;
-      font-weight: bold;
-      font-size: (1em * 1.1);
-      font-family: $font-family-secondary;
-    }
-    .title {
-      text-transform: capitalize;
-      font-family: $font-family-secondary;
-      font-weight: bold;
-    }
+    margin-bottom: 0em;
   }
   hr {
-    width: 60%;
-    margin: 4px auto;
-    @include media-breakpoint-up(sm) {
-      display: none;
-    }
-    @include media-breakpoint-up(lg) {
-      display: block;
-      margin: 12px auto;
-      width: 75%;
-    }
+    width: 90%;
   }
   .social-links {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    font-size: (1rem * 3);
-    line-height: (1rem * 3);
-    width: 100%;
-    height: auto;
-    margin-bottom: 60px;
-    @include media-breakpoint-up(sm) {
-      display: flex;
-      flex-flow: column nowrap;
-      align-content: center;
-      align-items: center;
-      margin-bottom: 0px;
-      width: 20%;
+    font-size: 2.5em;
+    a {
+      height: 2.5rem;
+      line-height: 2.5rem;
     }
-    @include media-breakpoint-up(lg) {
-      width: 25%;
-      flex-flow: row nowrap;
-      justify-content: space-around;
-      font-size: (1rem * 2.5);
-      line-height: (1rem * 2.5);
-      height: auto;
-    }
-  }
-  a {
-    color: $dark-font-color;
-    margin: 0px 5px;
-    &:hover {
-      color: $brand-secondary;
+    i {
+      margin: 0em .25rem;
     }
   }
 }

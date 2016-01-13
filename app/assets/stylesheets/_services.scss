@@ -1,5 +1,4 @@
 #services {
-  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -11,8 +10,7 @@
   text-align: center;
   @include media-breakpoint-up(lg) {
     margin-top: 20px;
-    width: 80%;
-    padding: 20px;
+    padding: 0em 1.25em 1.25em 1.25em;
   }
   .header {
     box-sizing: inherit;

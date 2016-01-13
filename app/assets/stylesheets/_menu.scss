@@ -1,15 +1,16 @@
 #menu-container {
+  box-sizing: border-box;
   margin-bottom: 60px;
-  width: 100%;
   @include media-breakpoint-up(lg) {
     margin-top: 20px;
-    width: 80%;
+    padding: 0em 1.25em 1.25em 1.25em;
   }
   h4 {
     font-weight: bold;
   }
   .menu-title {
     text-transform: capitalize;
+    color: $light-font-color;
     box-sizing: border-box;
     background-color: $dark-transparent;
     padding: 20px;
@@ -35,6 +36,7 @@
   }
   .menu-footer {
     box-sizing: border-box;
+    color: $light-font-color;
     background-color: $dark-transparent;
     padding: 20px;
     text-align: center;

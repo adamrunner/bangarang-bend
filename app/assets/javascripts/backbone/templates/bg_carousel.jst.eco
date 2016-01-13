@@ -1,4 +1,0 @@
-<% @images.forEach (image, index) ->: %>
-  <div id="bg_<%= index + 1 %>" class="bg-img <% if index == 0: %>active<% end %>" style="background-image: url(<%= image.get('url') %>);">
-  </div>
-<% end %>

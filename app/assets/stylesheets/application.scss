@@ -27,11 +27,21 @@ html {
 }
 
 body {
+  display: flex;
+  flex-flow: column nowrap;
   font-size: inherit !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include media-breakpoint-up(lg) {
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    background-attachment: fixed;
+    background-image: url("/images/background/background_02.jpg");
+  }
 }
 ul {
   list-style: none;
-  text-transform: uppercase;
 }
 a {
   font-family: $font-family-secondary;
@@ -39,73 +49,27 @@ a {
 em,p {
   font-weight: 300;
 }
+strong {
+  font-family: $font-family-secondary;
+}
 .btn {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
-.container-fluid {
-  overflow:hidden;
-  padding: 0px;
-}
-
-#main-wrap {
+.main-wrap {
+  box-sizing: border-box;
+  padding-top: 3.75em;
+  background-color: transparent;
   width: 100%;
-  position: fixed;
-}
-
-#background-carousel {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  .bg-img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
-    background-size: cover;
-    display: none;
-    opacity: 0;
-    &.active {
-      display: block;
-      opacity: 1;
-    }
-  }
-}
-
-#nav-collapse {
-  @include media-breakpoint-up(xs) {
-    margin: 0px;
-    width: 200%;
-    transform: translateX(-50%);
-  }
+  min-height: 100vh;
   @include media-breakpoint-up(lg) {
-    width: 100%;
-    position: relative;
-    right: -50%;
-  }
-  &.toggled {
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      position: relative;
-      right: 0%;
-    }
+    padding-top: 0em;
+    width: calc(100% - 18.75em);
   }
 }
-
-// Extends
-%no-gutter {
-  padding: 0;
-}
-%no-margin {
-  margin: 0px;
-}
-%col-lg-offset-half {
-  @include media-breakpoint-up(lg) {
-    margin-left: calc(8.33333% / 2);
-  }
-  @include media-breakpoint-up(xl) {
-    margin-left: 8.33333%;
-  }
+.section-title {
+  box-sizing: border-box;
+  padding: 1.25rem;
+  color: #fff;
+  background-color: $dark-transparent;
+  text-align: center;
 }
