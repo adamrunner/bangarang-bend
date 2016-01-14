@@ -15,6 +15,9 @@
 }
 .main-logo {
   width: 75%;
+  @include media-breakpoint-up(md) {
+    width: 60%;
+  }
   @include media-breakpoint-up(lg) {
     width: 50%;
   }

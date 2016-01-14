@@ -50,7 +50,7 @@ strong {
 .btn {
   text-transform: capitalize;
 }
-.main-wrap {
+.content-wrap {
   box-sizing: border-box;
   padding-top: 3.75em;
   background-color: transparent;
@@ -93,5 +93,10 @@ strong {
     &.active {
       display: block;
     }
+  }
+}
+#content-container {
+  @include media-breakpoint-down(md) {
+    max-width: none;
   }
 }
