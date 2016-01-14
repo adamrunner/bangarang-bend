@@ -2,21 +2,9 @@
   <div class="card-columns">
 
     <div class="card">
-      <img class="card-img-top" src="/images/featured/featured_02.jpg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Oregon Black Truffles in season...OMG</h4>
-        <p class="card-text">
-          We are working with a few purveyors in the valley
-          who take on the laborious task of collecting these beauties.
-          We will be rocking Gougeres and Truffle butter for the next two months!
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
       <img class="card-img-top" src="/images/featured/featured_04.jpg" alt="Card image cap">
       <div class="card-block">
-        <h4 class="card-title">Brides and Grooms­-to-­be</h4>
+        <h5 class="card-title">Brides and Grooms­-to-­be</h5>
         <p class="card-text">
           Book your catering with us by March 15th
           and we will waive ALL gratuities!
@@ -26,29 +14,21 @@
     </div>
 
     <div class="card">
+      <img class="card-img-top" src="/images/featured/featured_02.jpg" alt="Card image cap">
       <div class="card-block">
-        <h4 class="card-title">Check Out Our Menu</h4>
+        <h5 class="card-title">Oregon Black Truffles in season...OMG</h5>
         <p class="card-text">
-          Want to see our current menu? Then head on over to our menu page and check it out!
+          We are working with a few purveyors in the valley
+          who take on the laborious task of collecting these beauties.
+          We will be rocking Gougeres and Truffle butter for the next two months!
         </p>
-        <a href="#/menu" class="btn btn-primary">Catering Menu</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-block">
-        <h4 class="card-title">Our Services</h4>
-        <p class="card-text">
-          Wondering what types of services you can choose from? Take a look over at our Services page!
-        </p>
-        <a href="#/services" class="btn btn-primary">Services</a>
       </div>
     </div>
 
     <div class="card">
       <img class="card-img-top" src="/images/featured/featured_05.jpg" alt="Card image cap">
       <div class="card-block">
-        <h4 class="card-title">Stay tuned for the winning couple from the CO Bridal Show</h4>
+        <h5 class="card-title">Stay tuned for the winning couple from the CO Bridal Show</h5>
         <p class="card-text">
           Their bridal party will be sipping on bold Napa Valley reds and
           tasting French cheese while cooking with Chef Dave.
@@ -59,18 +39,38 @@
 
     <div class="card">
       <div class="card-block">
-        <h4 class="card-title">What We Do</h4>
+        <h5 class="card-title">Check Out Our Menu</h5>
         <p class="card-text">
-          Read about our way thinking, and what we do to give you the best service possible.
+          Want to see our current menu? Then head on over to our menu page and check it out!
         </p>
-        <a href="#/philosophy" class="btn btn-primary">Philosophy</a>
+        <a href="#/menu" class="btn btn-primary">view</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-title">Our Services</h5>
+        <p class="card-text">
+          Wondering what types of services you can choose from? Take a look over at our Services page!
+        </p>
+        <a href="#/services" class="btn btn-primary">view</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-title">What We Do</h5>
+        <p class="card-text">
+          Read about our way of thinking, and all that we do to give you the best service possible.
+        </p>
+        <a href="#/philosophy" class="btn btn-primary">view</a>
       </div>
     </div>
 
     <div class="card definition">
       <img class="card-img-top" src="/images/logo/bangarang_plain.svg" alt="Card image cap">
       <div class="card-block">
-        <h4 class="card-title"><em>Bang-a-rang</em></h4>
+        <h5 class="card-title"><em>Bang-a-rang</em></h5>
         <p class="card-text">
         <span><strong>Origin: West Indian</strong></span> <br>
         <span>
@@ -84,7 +84,7 @@
     <div class="card definition">
       <img class="card-img-top" src="/images/logo/bangarang_arrows.svg" alt="Card image cap">
       <div class="card-block">
-        <h4 class="card-title"><em>Crossed Arrows</em></h4>
+        <h5 class="card-title"><em>Crossed Arrows</em></h5>
         <p class="card-text">
           <span><strong>Origin: Native American</strong></span> <br>
           <span>Symbol of friendship</span>

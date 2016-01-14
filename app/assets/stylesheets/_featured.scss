@@ -18,6 +18,9 @@
     text-align: left;
   }
 }
+.card-text {
+  padding: 0rem 0.125rem;
+}
 .card-inverse {
   background-color: $dark-transparent;
   .card-text {

@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @bg_images = Image.all.where(imageable_type: "Background")
+    @bg_images = Image.all.where(imageable_type: "background")
   end
 end

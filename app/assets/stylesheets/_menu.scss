@@ -1,9 +1,10 @@
 #menu-container {
   box-sizing: border-box;
-  margin-bottom: 60px;
+  padding: 0px;
   @include media-breakpoint-up(lg) {
     margin-top: 20px;
     padding: 0em 1.25em 1.25em 1.25em;
+    margin-bottom: 20px;
   }
   h4 {
     font-weight: bold;

@@ -1,1 +1,1 @@
-<i class="fa fa-bars nav-button"></i>
+<i id="menu-btn" class="fa fa-bars nav-button"></i>

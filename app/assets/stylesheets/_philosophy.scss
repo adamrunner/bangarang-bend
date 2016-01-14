@@ -6,10 +6,10 @@
   box-sizing: border-box;
   color: $dark-font-color;
   padding: 0px;
-  margin-bottom: 60px;
   @include media-breakpoint-up(lg) {
     margin-top: 20px;
     padding: 0em 1.25em 1.25em 1.25em;
+    margin-bottom: 20px;
   }
   .header {
     box-sizing: inherit;

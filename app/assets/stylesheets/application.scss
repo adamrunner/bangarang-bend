@@ -30,14 +30,9 @@ body {
   display: flex;
   flex-flow: column nowrap;
   font-size: inherit !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   @include media-breakpoint-up(lg) {
     flex-flow: row nowrap;
     justify-content: flex-end;
-    background-attachment: fixed;
-    background-image: url("/images/background/background_02.jpg");
   }
 }
 ul {
@@ -63,7 +58,10 @@ strong {
   min-height: 100vh;
   @include media-breakpoint-up(lg) {
     padding-top: 0em;
-    width: calc(100% - 18.75em);
+    width: calc(100% - 15.63rem);
+  }
+  @include media-breakpoint-up(xl) {
+    width: calc(100% - 18.75rem);
   }
 }
 .section-title {
@@ -72,4 +70,28 @@ strong {
   color: #fff;
   background-color: $dark-transparent;
   text-align: center;
+}
+#background-carousel {
+  display: none;
+  @include media-breakpoint-up(lg) {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .bg-img {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &.active {
+      display: block;
+    }
+  }
 }

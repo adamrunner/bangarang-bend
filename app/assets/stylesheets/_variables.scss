@@ -41,6 +41,7 @@ $gray-lightest:             #f7f7f9 !default;
 $brand-primary             : #445768 !default;
 $transparent-brand-primary : transparentize($brand-primary, 0.25%) !default;
 $brand-secondary           : #C34C3B !default;
+$light                     : #eee !default;
 $light-transparent         : transparentize(#eee, 0.10%) !default;
 $dark-transparent          : transparentize(#333, 0.10%) !default;
 $brand-success             : #5cb85c !default;
