@@ -1,9 +1,9 @@
 <div class="nav-links">
   <ul>
-    <li><a href="#">home</a></li>
-    <li><a href="#/philosophy">philosophy</a></li>
-    <li><a href="#/services">services</a></li>
-    <li><a href="#/menu">catering menu</a></li>
+    <li id="homeView"><a href="#">home</a></li>
+    <li id="philosophyView"><a href="#/philosophy">philosophy</a></li>
+    <li id="servicesView"><a href="#/services">services</a></li>
+    <li id="menuView"><a href="#/menu">catering menu</a></li>
   </ul>
 </div>
 

@@ -11,7 +11,7 @@ class BangarangBend.Views.BgCarousel extends Backbone.View
     setInterval (=>
       @switchBackground()
       return
-    ), 20000
+    ), 30000
 
   render: ->
     @$el.html(@template(images: @collection))

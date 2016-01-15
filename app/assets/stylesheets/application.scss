@@ -4,7 +4,7 @@
 @import 'font-awesome';
 @import 'variables';
 @import 'bootstrap';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,300,300italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300|Roboto:500,300,300italic);
 @import 'navigation';
 @import 'featured';
 @import 'content';
@@ -43,6 +43,9 @@ a {
 }
 em,p {
   font-weight: 300;
+}
+b {
+  font-weight: 500;
 }
 strong {
   font-family: $font-family-secondary;
@@ -98,5 +101,25 @@ strong {
 #content-container {
   @include media-breakpoint-down(md) {
     max-width: none;
+  }
+}
+.section {
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+.section-header {
+  box-sizing: inherit;
+  background-color: $dark-transparent;
+  color: $light-font-color;
+  width: 100%;
+  padding: 1.875rem;
+  text-align: center;
+  font-weight: normal;
+  h1 {
+    text-transform: capitalize;
+    margin: 0px;
   }
 }

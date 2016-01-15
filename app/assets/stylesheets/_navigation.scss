@@ -102,10 +102,22 @@
         padding-left: 2rem;
       }
     }
-    a {
+    li {
       color: $light-font-color;
+      transition: letter-spacing .2s ease;
+      &.active {
+        color: #222;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
       &:hover {
-        color: $dark-font-color;
+        color: #222;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      a {
+        color: inherit;
+        font-weight: inherit;
       }
     }
   }
