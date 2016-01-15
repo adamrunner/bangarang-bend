@@ -47,6 +47,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: bangarang_bend_staging
+  username: bangarang-bend
+  socket: /var/run/mysqld/mysqld.sock
+  password: <%= ENV['BANGARANG_BEND_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
   database: bangarang-bend_production
