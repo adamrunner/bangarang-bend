@@ -41,7 +41,8 @@ $gray-lightest:             #f7f7f9 !default;
 $brand-primary             : #445768 !default;
 $transparent-brand-primary : transparentize($brand-primary, 0.25%) !default;
 $brand-secondary           : #C34C3B !default;
-$light-transparent         : transparentize(#fff, 0.10%) !default;
+$light                     : #eee !default;
+$light-transparent         : transparentize(#eee, 0.10%) !default;
 $dark-transparent          : transparentize(#333, 0.10%) !default;
 $brand-success             : #5cb85c !default;
 $brand-info                : #5bc0de !default;
@@ -96,7 +97,7 @@ $border-width:               1px !default;
 // Settings for the `<body>` element.
 
 $body-bg:                    #fff !default;
-$body-color:                 #fff !default;
+$body-color:                 $dark-font-color !default;
 
 
 // Links
@@ -185,8 +186,8 @@ $display4-weight:             300 !default;
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       $font-family-secondary;
-$headings-font-weight:       500 !default;
+$headings-font-family:       $font-family-primary;
+$headings-font-weight:       300 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 
@@ -487,9 +488,9 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 // Cards
 $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
-$card-border-width:        2px !default;
+$card-border-width:        0px !default;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        #fff !default;
+$card-border-color:        #ddd !default;
 $card-border-radius-inner: $card-border-radius !default;
 $card-cap-bg:              #f5f5f5 !default;
 $card-bg:                  #fff !default;

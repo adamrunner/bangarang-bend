@@ -1,30 +1,38 @@
-<div class="navigation-menu">
+<div class="nav-links">
   <ul>
-    <li><a href="#">home</a></li>
-    <li><a href="#/philosophy">philosophy</a></li>
-    <li><a href="#/services">services</a></li>
-    <li><a href="#/menu">menu</a></li>
+    <li id="homeView"><a href="#">home</a></li>
+    <li id="philosophyView"><a href="#/philosophy">philosophy</a></li>
+    <li id="servicesView"><a href="#/services">services</a></li>
+    <li id="menuView"><a href="#/menu">catering menu</a></li>
   </ul>
 </div>
-<div class="contact">
 
-  <div class="contact-body">
-    <div class="contact-item">
-      <span class="name">Chef Dave Bodi</span>
-      <a class="phone" href="tel:+15039302722">503-930-2722</a>
-      <a class="email" href="mailto:dave@bangarangbend.com">dave@bangarangbend.com</a>
-    </div>
-    <hr>
-    <div class="contact-item">
-      <span class="name">Amy Bodi</span>
-      <span class="title">Event Services</span>
-      <a class="phone" href="tel:+15419688003">541-968-8003</a>
-      <a class="email" href="mailto:amy@bangarangbend.com">amy@bangarangbend.com</a>
-    </div>
+<div class="contact-links">
+
+  <div class="contact-item-wrap">
+    <ul class="contact-item">
+      <li><span>Chef Dave Bodi</span></li>
+      <li><a href="tel:+15039302722">503-930-2722</a></li>
+      <li><a href="mailto:dave@bangarangbend.com">dave@bangarangbend.com</a></li>
+    </ul>
   </div>
+
   <hr>
-    <div class="social-links">
-      <a href="#"><i class="fa fa-facebook-official"></i></a>
-      <a href="https://www.instagram.com/chefdavebodi/" target="_blank"><i class="fa fa-instagram"></i></a>
-    </div>
+
+  <div class="contact-item-wrap">
+    <ul class="contact-item">
+      <li><span>Amy Bodi</span></li>
+      <li><span>Event Services</span></li>
+      <li><a href="tel:+15419688003">541-968-8003</a></li>
+      <li><a href="mailto:amy@bangarangbend.com">amy@bangarangbend.com</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/bangarangbend/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://www.instagram.com/chefdavebodi/" target="_blank"><i class="fa fa-instagram"></i></a>
+  </div>
+
 </div>

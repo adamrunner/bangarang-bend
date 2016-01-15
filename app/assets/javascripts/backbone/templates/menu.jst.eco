@@ -1,24 +1,24 @@
 <div class="menu-wrap">
-  <div class="menu-title">
+  <div class="section-header">
     <h1>menu</h1>
   </div>
 
   <div class="menu-header">
-    <h4>Hand pick your fare</h4>
-    <h4>all prices are per person a la carte</h4>
+    <h3>Hand pick your fare</h3>
+    <h3>all prices are per person a la carte</h3>
   </div>
 
   <div class="menu-section">
     <div class="menu-section-header">
-      <h4>Fuel</h4>
+      <h3>Fuel</h3>
     </div>
     <div class="menu-section-body">
       <div class="menu-section-item">
-          <h5>French Tart 8</h5>
+          <h5>French Tart <span class="pricing"> ..........<em>(8)</em></span></h5>
           <p>winter mushroom, shallot, garlic confit, Parmesan Reggiano, bacon lardons</p>
       </div>
       <div class="menu-section-item">
-          <h5>Pastry 8</h5>
+          <h5>Pastry <span class="pricing"> ..........<em>(8)</em></span></h5>
           <p>pancetta leek scone, Queensland pumpkin spice muffins, black currant brioche rolls</p>
       </div>
     </div>
@@ -27,43 +27,43 @@
 
   <div class="menu-section">
     <div class="menu-section-header">
-      <h4>Primers</h4>
+      <h3>Primers</h3>
     </div>
     <div class="menu-section-body">
       <div class="menu-section-item">
-          <h5>Muhammara 3</h5>
+          <h5>Muhammara <span class="pricing"> ..........<em>(3)</em></span></h5>
           <p>roasted red beet, challah toast points, caramelized veg</p>
       </div>
       <div class="menu-section-item">
-          <h5>Chicken Pate 3</h5>
+          <h5>Chicken Pate <span class="pricing"> ..........<em>(3)</em></span></h5>
           <p>roasted, fine herbs, micros, brioche round</p>
       </div>
       <div class="menu-section-item">
-          <h5>Charcuterie 5</h5>
+          <h5>Charcuterie <span class="pricing"> ..........<em>(5)</em></span></h5>
           <p>country pate, pickle, beer mustard, duck prosciutto, sopressata</p>
       </div>
       <div class="menu-section-item">
-          <h5>Quail Egg 3</h5>
+          <h5>Quail Egg <span class="pricing"> ..........<em>(3)</em></span></h5>
           <p>brioche, pancetta, micro arugula</p>
       </div>
       <div class="menu-section-item">
-          <h5>Cheese 4</h5>
+          <h5>Cheese <span class="pricing"> ..........<em>(4)</em></span></h5>
           <p>Willamette Valley pinot crush gouda, Mt. Tam, chevre, manchego</p>
       </div>
       <div class="menu-section-item">
-          <h5>Bread Service 3</h5>
+          <h5>Bread Service <span class="pricing"> ..........<em>(3)</em></span></h5>
           <p>parmesan Reggiano gougeres, Brazilian cheese bread, challah, black truffle butter</p>
       </div>
       <div class="menu-section-item">
-          <h5>Andouille Soup 4/6</h5>
+          <h5>Andouille Soup <span class="pricing"> ..........<em>(cup 4) (bowl 6)</em></span></h5>
           <p>wheat berry, Queensland squash, sage, maple</p>
       </div>
       <div class="menu-section-item">
-          <h5>Beer Cheese Soup 4/6</h5>
+          <h5>Beer Cheese Soup <span class="pricing"> ..........<em>(cup 4) (bowl 6)</em></span></h5>
           <p>Dead Guy Ale, Tillamook vintage white cheddar, shallot</p>
       </div>
       <div class="menu-section-item">
-          <h5>Country Bread Bowl Addition 2</h5>
+          <h5>Country Bread Bowl Addition <span class="pricing"> ..........<em>(2)</em></span></h5>
       </div>
     </div>
   </div>
@@ -71,15 +71,15 @@
 
   <div class="menu-section">
     <div class="menu-section-header">
-      <h4>Harvest</h4>
+      <h3>Harvest</h3>
     </div>
     <div class="menu-section-body">
       <div class="menu-section-item">
-          <h5>Citrus 4/9</h5>
+          <h5>Citrus <span class="pricing"> ..........<em>(side 4) (entrée 9)</em></span></h5>
           <p>mache, frisee, blood orange, prosciutto, pomegranate, fennel, yuzu kaffir vinaigrette</p>
       </div>
       <div class="menu-section-item">
-          <h5>Bibb 3/8</h5>
+          <h5>Bibb <span class="pricing"> ..........<em>(side 3) (entrée 8)</em></span></h5>
           <p>wheat berry, roasted root veggies, pine nut, herbs, anchovy dressing</p>
       </div>
     </div>
@@ -88,63 +88,63 @@
 
   <div class="menu-section">
     <div class="menu-section-header">
-      <h4>Bounty</h4>
+      <h3>Bounty</h3>
     </div>
     <div class="menu-section-body">
       <div class="menu-section-item">
-          <h5>Pot Roast 13</h5>
+          <h5>Pot Roast <span class="pricing"> ..........<em>(13)</em></span></h5>
           <p>pulled chuck, carrot and turnip slaw, beer mustard, rustique roll</p>
       </div>
       <div class="menu-section-item">
-          <h5>Grilled Muhammara 11</h5>
+          <h5>Grilled Muhammara <span class="pricing"> ..........<em>(11)</em></span></h5>
           <p>rye, pomegranate molasses, sauerkraut, roasted beets, emmantaur (V)</p>
       </div>
       <div class="menu-section-item">
-          <h5>Turkey Meatball Roll 13</h5>
+          <h5>Turkey Meatball Roll <span class="pricing"> ..........<em>(13)</em></span></h5>
           <p>country roll, pork shoulder, red chermoula, mozzarella</p>
       </div>
       <div class="menu-section-item">
-          <h5>Kogi 14</h5>
+          <h5>Kogi <span class="pricing"> ..........<em>(14)</em></span></h5>
           <p>marinated flank, kaffir lime, garlic, mirin, daikon slaw, sticky rice</p>
       </div>
       <div class="menu-section-item">
-          <h5>Agnolotti 16</h5>
+          <h5>Agnolotti <span class="pricing"> ..........<em>(16)</em></span></h5>
           <p>butternut squash , brown butter, roasted fennel, herbs (V)</p>
       </div>
       <div class="menu-section-item">
-          <h5>Oxtail 13</h5>
+          <h5>Oxtail <span class="pricing"> ..........<em>(13)</em></span></h5>
           <p>braised, bolognese, pappardelle, romano</p>
       </div>
       <div class="menu-section-item">
-          <h5>Fideo 12</h5>
+          <h5>Fideo <span class="pricing"> ..........<em>(12)</em></span></h5>
           <p>(toasted cut vermicelli), preserved lemon, coconut milk, ras el hanout (V)</p>
       </div>
       <div class="menu-section-item">
-          <h5>Moussaka 11</h5>
+          <h5>Moussaka <span class="pricing"> ..........<em>(11)</em></span></h5>
           <p>grass fed beef, parsnip, fried russet, romano bechamel, red sauce, tarragon</p>
       </div>
       <div class="menu-section-item">
-          <h5>Pan Roasted Chicken 23</h5>
+          <h5>Pan Roasted Chicken <span class="pricing"> ..........<em>(23)</em></span></h5>
           <p>linguica, charred lime, garlic, thyme, poached brown butter fingerlings</p>
       </div>
       <div class="menu-section-item">
-          <h5>Braised Pork Belly 19</h5>
+          <h5>Braised Pork Belly <span class="pricing"> ..........<em>(19)</em></span></h5>
           <p>wheat-berries, tart apple, red cabbage</p>
       </div>
       <div class="menu-section-item">
-          <h5>Tri Tip Roast 25</h5>
+          <h5>Tri Tip Roast <span class="pricing"> ..........<em>(25)</em></span></h5>
           <p>grass fed , espresso rub, mocha stout demi, caramelized root veggies, mash</p>
       </div>
       <div class="menu-section-item">
-          <h5>Butter Chicken 13</h5>
+          <h5>Butter Chicken <span class="pricing"> ..........<em>(13)</em></span></h5>
           <p>garam masala, ginger, chilies, cardamom, naan, rice</p>
       </div>
       <div class="menu-section-item">
-          <h5>Turkey Meatball 14</h5>
+          <h5>Turkey Meatball <span class="pricing"> ..........<em>(14)</em></span></h5>
           <p>pork shoulder, red chermoula, black rice</p>
       </div>
       <div class="menu-section-item">
-          <h5>Spaghetti Squash 13</h5>
+          <h5>Spaghetti Squash <span class="pricing"> ..........<em>(13)</em></span></h5>
           <p>baby kale pesto, chanterelles, roasted golden beets, garlic confit (V)</p>
       </div>
     </div>
@@ -153,23 +153,23 @@
 
   <div class="menu-section">
     <div class="menu-section-header">
-      <h4>Rewards</h4>
+      <h3>Rewards</h3>
     </div>
     <div class="menu-section-body">
       <div class="menu-section-item">
-          <h5>Apple Crisp 7</h5>
+          <h5>Apple Crisp <span class="pricing"> ..........<em>(7)</em></span></h5>
           <p>hard cider, salted caramel</p>
       </div>
       <div class="menu-section-item">
-          <h5>Tiramisu 8</h5>
+          <h5>Tiramisu <span class="pricing"> ..........<em>(8)</em></span></h5>
           <p>espresso, ladyfingers, mascarpone</p>
       </div>
       <div class="menu-section-item">
-          <h5>Pudding Cake 7</h5>
+          <h5>Pudding Cake <span class="pricing"> ..........<em>(7)</em></span></h5>
           <p>Medjool date, sticky toffee</p>
       </div>
       <div class="menu-section-item">
-          <h5>Cookies 4</h5>
+          <h5>Cookies <span class="pricing"> ..........<em>(4)</em></span></h5>
           <p>chewy oatmeal, kitchen sink, gingersnap</p>
       </div>
     </div>
@@ -178,7 +178,7 @@
 
   <div class="menu-section">
     <div class="menu-section-header">
-      <h4>Nectar</h4>
+      <h3>Nectar  <span class="pricing"> ..........<em>(2)</em></span></h3>
     </div>
     <div class="menu-section-body">
       <div class="menu-section-item">
@@ -190,20 +190,19 @@
           <p>seasonal</p>
       </div>
       <div class="menu-section-item">
-          <h5>Coffee</h5>
+          <h5>Fair Trade Coffee</h5>
       </div>
     </div>
   </div>
 
 
   <div class="menu-footer">
-    <p>
-      15 persons minimum,
-      Delivery and other charges may apply.
-      Our menu is based on seasonality and we reserve the right to make subtle substitutions based on
-      quality and availability.
-      We love custom menus so let us know if you have something else in mind.
-    </p>
+    <ul>
+      <li>15 persons minimum, Delivery and other charges may apply.</li>
+      <li>Our menu is based on seasonality and we reserve the right to make subtle substitutions based on
+      quality and availability.</li>
+      <li>We love custom menus so let us know if you have something else in mind.</li>
+    </ul>
   </div>
 
 </div>
