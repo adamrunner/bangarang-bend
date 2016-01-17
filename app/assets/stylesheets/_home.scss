@@ -1,31 +1,24 @@
-#home-container {
+.main-logo-wrap {
   box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  @include media-breakpoint-up(xl) {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .outer-wrap {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 20px;
-    height: 100%;
-    width: 100%;
-    background-color: $transparent-brand-primary;
-    .inner-wrap {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @include media-breakpoint-up(lg) {
-        padding: 50px;
-        border: 2px dashed #fff;
-      }
-    }
+  height:  25em;
+  border: solid 5px #ddd;
+  background-color: $transparent-brand-primary;
+  margin-top: ($grid-gutter-width / 2);
+  @include media-breakpoint-up(lg) {
+    margin-top: 1.25em;
   }
 }
-#main-logo {
-  width: 50%;
+.main-logo {
+  width: 75%;
+  @include media-breakpoint-up(md) {
+    width: 60%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+  }
 }

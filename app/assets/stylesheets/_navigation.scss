@@ -1,245 +1,222 @@
-// Navigation Styling
-
-%nav-section {
-  display: flex;
-  width: 50%;
-  height: inherit;
-}
-
-%nav-menu-button {
+#mobile-nav-bar {
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  width: 3.75rem;
-  i {
-    text-align: center;
-    line-height: 3.75rem;
-    height:100%;
-    width:100%;
-  }
-}
-
-#mobile-nav {
-  display: flex;
+  flex-flow: row nowrap;
   justify-content: flex-start;
-  width:100%;
-  height:3.75rem;
-  background-color: #333;
-  position: absolute;
-  top: 0px;
-  z-index: 100;
-  font-size: 2rem;
-  border-bottom: 1px solid #222;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3.75rem;
+  background-color: $dark-font-color;
+  color: $light-font-color;
+  z-index: 20;
+  border-bottom: solid 1px #111;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   @include media-breakpoint-up(lg) {
     display: none;
   }
-  .nav-section-left {
-    @extend %nav-section;
-    justify-content: flex-end;
-    .nav-button {
-      @extend %nav-menu-button;
-      border-left: 1px solid #222;
-    }
+  i {
+    box-sizing: border-box;
+    text-align: center;
+    width: 4.25rem;
+    height: 3.75rem;
+    line-height: 3.75rem;
+    font-size: 2.5em;
+    border-right: solid 1px #111;
   }
-  .nav-section-right {
-    @extend %nav-section;
-    justify-content: flex-start;
-    .nav-button {
-      @extend %nav-menu-button;
-      border-right: 1px solid #222;
+  .nav-button {
+    &.active {
+      background-color: #222;
     }
   }
 }
 #navigation {
-  margin-top: 3.75rem;
-  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.nav-wrap {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(-100%);
+  z-index: 10;
+  font-size: 1.4rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 1.2rem;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
+  }
   @include media-breakpoint-up(lg) {
-    margin-top: 0px;
-    width: 25%;
+    transform: translateX(0%) !important;
+    height: 100vh;
+    width: 15.63rem;
+    font-size: 1rem;
+    border: none;
   }
   @include media-breakpoint-up(xl) {
-    width: 20%;
+    width: 18.75em;
   }
-  @media (min-width: 100rem) {
-    width: 17%;
-  }
-}
-
-.navigation-menu {
-  @extend %no-gutter;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 40vh;
-  font-size: (1em * 1.1);
-  background-color: $transparent-brand-primary;
-  @include media-breakpoint-down(md) {
-    font-size: (1em * 1.40);
-  }
-  @include media-breakpoint-up(lg) {
-    height: calc(100vh - 400px);
-    align-items: flex-start;
-  }
-  ul {
-    width: auto;
-    margin-left: 0px;
-    @extend %no-gutter;
+  .nav-links {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    box-sizing: inherit;
+    width: 100%;
+    height: calc(100vh - 27rem);
+    padding-top: 7rem;
+    background-color: $brand-primary;
     @include media-breakpoint-up(sm) {
-      width: 70%;
-      display: flex;
-      justify-content: space-between;
-      flex-flow: row nowrap;
-    }
-    @include media-breakpoint-up(md) {
-      width: auto;
-      display: block;
+      height: 50vh;
+      padding-top: 3.75rem;;
     }
     @include media-breakpoint-up(lg) {
-      margin: ($top-spacing * 2) auto 0px auto;
+      background-color: $transparent-brand-primary;
+      height: calc(100vh - 25rem);
+      padding: 0em;
     }
-    a {
+    ul {
+      text-transform: uppercase;
+      margin: 0em;
+      @include media-breakpoint-up(sm) {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-flow: row nowrap;
+        padding: 0em 1em;
+      }
+      @include media-breakpoint-up(lg) {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 1.25rem;
+        margin: 0em;
+      }
+      @include media-breakpoint-up(xl) {
+        padding-left: 2rem;
+      }
+    }
+    li {
       color: $light-font-color;
+      transition: letter-spacing .2s ease;
+      &.active {
+        color: #222;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
       &:hover {
-        color: $dark-font-color;
+        color: #222;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      a {
+        color: inherit;
+        font-weight: inherit;
       }
     }
   }
-}
-.contact {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: calc(60vh - 3.75rem);
-  background-color: $light-transparent;
-  font-family: $font-family-secondary;
-  color: $dark-font-color;
-  text-align: center;
-  letter-spacing: 1px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  @media (min-width: 375px) {
-    align-content: center;
-  }
-  @include media-breakpoint-up(sm) {
+  .contact-links {
+    box-sizing: inherit;
+    display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
     align-content: center;
-    align-items: center;
-  }
-  @include media-breakpoint-up(lg) {
-    justify-content: center;
-    flex-flow: column nowrap;
-    height: 400px;
-  }
-  .contact-body {
-    margin-top: 20px;
     width: 100%;
+    height: 27rem;
+    background-color: $light;
+    @include media-breakpoint-up(sm) {
+      height: 50vh;
+    }
+    @include media-breakpoint-up(lg) {
+      background-color: $light-transparent;
+      height: 25rem;
+      font-size: 1em;
+    }
+    a {
+      color: $dark-font-color;
+      &:hover {
+        color: $brand-secondary;
+      }
+    }
+    span {
+      font-family: $font-family-secondary;
+      font-weight: bold;
+    }
+  }
+  .contact-item-wrap {
     display: flex;
     flex-flow: column nowrap;
-    height: auto;
-    min-height: 148px;
-    @media (min-width: 375px) {
-      margin-top: 0px;
-    }
+    width: 100%;
     @include media-breakpoint-up(sm) {
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-content: center;
+      width: 45%;
+      justify-content: center;
       align-items: center;
-      width: 80%;
-      height: 100%;
-      min-height: inherit;
+      border-right: solid 1px #ddd;
     }
     @include media-breakpoint-up(lg) {
       width: 100%;
-      flex-flow: column nowrap;
-      height: auto;
-      padding-top: 20px;
+      border: none;
+      align-items: flex-start;
     }
   }
   .contact-item {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-content: space-around;
-    font-size: (1em * 1.1);
-    width: 100%;
-    height: auto;
+    margin-bottom: 0em;
     @include media-breakpoint-up(sm) {
-      width: 50%;
-      height: 100px;
-      border-right: solid 1px #ddd;
+      padding: 0rem;
+      align-content: center;
+      justify-content: center;
     }
     @include media-breakpoint-up(lg) {
-      font-size: .9em;
-      width: 100%;
-      height: 40%;
-      flex-flow: column nowrap;
-      border: none;
+      width: auto;
+      height: auto;
+      padding-left: 1.25rem;
     }
-    .name {
-      text-transform: capitalize;
-      font-weight: bold;
-      font-size: (1em * 1.1);
-      font-family: $font-family-secondary;
-    }
-    .title {
-      text-transform: capitalize;
-      font-family: $font-family-secondary;
-      font-weight: bold;
+    @include media-breakpoint-up(xl) {
+      padding-left: 2rem;
     }
   }
   hr {
-    width: 60%;
-    margin: 4px auto;
+    width: 90%;
     @include media-breakpoint-up(sm) {
       display: none;
     }
     @include media-breakpoint-up(lg) {
       display: block;
-      margin: 12px auto;
-      width: 75%;
     }
   }
   .social-links {
+    box-sizing: inherit;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    font-size: (1rem * 3);
-    line-height: (1rem * 3);
-    width: 100%;
-    height: auto;
-    margin-bottom: 60px;
+    font-size: 2.5em;
     @include media-breakpoint-up(sm) {
-      display: flex;
+      width: 10%;
       flex-flow: column nowrap;
-      align-content: center;
       align-items: center;
-      margin-bottom: 0px;
-      width: 20%;
     }
     @include media-breakpoint-up(lg) {
-      width: 25%;
+      width: 100%;
       flex-flow: row nowrap;
-      justify-content: space-around;
-      font-size: (1rem * 2.5);
-      line-height: (1rem * 2.5);
-      height: auto;
     }
-  }
-  a {
-    color: $dark-font-color;
-    margin: 0px 5px;
-    &:hover {
-      color: $brand-secondary;
+    a {
+      line-height: 2.5rem;
+      margin: 0em 0.25rem;
+      @include media-breakpoint-up(sm) {
+        margin: 0rem;
+      }
+      @include media-breakpoint-up(lg) {
+        margin: 0em 0.25rem;
+      }
     }
   }
 }

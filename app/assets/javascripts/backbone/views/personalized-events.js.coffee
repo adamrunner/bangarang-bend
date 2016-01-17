@@ -1,7 +1,7 @@
 BangarangBend.Views.Services ||= {}
 
-class BangarangBend.Views.Services extends Backbone.View
-  template: JST["backbone/templates/services"]
+class BangarangBend.Views.PersonalizedEvents extends Backbone.View
+  template: JST["backbone/templates/personalized-events"]
 
   id: 'services'
   className: 'col-xs-12 section'

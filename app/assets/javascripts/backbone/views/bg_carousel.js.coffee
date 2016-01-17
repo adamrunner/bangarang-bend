@@ -5,12 +5,13 @@ class BangarangBend.Views.BgCarousel extends Backbone.View
 
   initialize: ->
     @currentSlide = 1
-    @numOfSlides = 3
+    @numOfSlides = @collection.length
     @render()
+    #TODO figure out a way to turn off for mobile
     setInterval (=>
       @switchBackground()
       return
-    ), 20000
+    ), 30000
 
   render: ->
     @$el.html(@template(images: @collection))

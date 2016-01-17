@@ -10,11 +10,12 @@ window.BangarangBend =
   Routers: {}
   Views: {}
   initialize: (options) ->
-    @content    = $('#inner-content-wrap')
+    @content    = $('#content')
+    @featured   = $('#featured')
     @bgImages   = new BangarangBend.Collections.BgImages(options.data.bg_images)
     @router     = new BangarangBend.Routers.ApplicationRouter()
     @navigation = new BangarangBend.Views.Navigation(el: '#navigation')
-    @mobileNav  = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
+    @mobileNav  = new BangarangBend.Views.MobileNav(el: '#mobile-nav-bar')
     @bgCarousel = new BangarangBend.Views.BgCarousel(el: '#background-carousel', collection: @bgImages)
 
 # $(document).on "click", "a[href^='/']", (event) ->

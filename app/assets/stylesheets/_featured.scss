@@ -1,97 +1,47 @@
-//Bottom-Grid
-
-.featured-row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+.featured {
+  margin-top: ($grid-gutter-width / 2);
+  margin-bottom: ($grid-gutter-width / 2);
 }
 
-#featured-container {
+.card-img-top {
+  display: block;
   width: 100%;
-  height: 100%;
-  .featured-items {
-    display: flex;
-    flex-flow: row wrap;
-    color: #333;
-    height: 100%;
-    @include media-breakpoint-up(lg) {
-      flex-flow: column wrap;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-    }
-    .featured-item {
-      height: 100%;
-      width: 100%;
-      background-color: $light-transparent;
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
-      font-size: 1.25em;
-      @include media-breakpoint-up(md) {
-        font-size: 1.25em;
-      }
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 20px;
-        font-size: 1em;
-        border: none;
-      }
-      @include media-breakpoint-up(xl) {
-        max-width: 700px;
-        font-size: 0.9em;
-      }
-      .featured-title {
-        font-size: 1.25em;
-        @include media-breakpoint-up(sm) {
-          margin-bottom: 5px;
-          padding: 0px 0px 5px 0px;
-          border-bottom: 1px solid #ddd;
-          text-transform: capitalize;
-        }
-        @include media-breakpoint-up(lg) {
-          font-size: 1.25em;
-        }
-      }
-      p {
-        margin: 0px;
-        padding: 0px 0px 5px 0px;
-      }
-    }
-    .featured-img {
-      display: block;
-      margin: 0 auto;
-      box-sizing: border-box;
-      border: 1px solid #222;
-      width: 100%;
-      max-width: 600px;
-      max-height: 400px;
-      @include media-breakpoint-down(sm) {
-        margin-bottom: 1rem;
-      }
-    }
-  }
+  border: solid 5px $light-transparent;
+  border-bottom: none;
 }
-.definition-box {
-  box-sizing: border-box;
-  display:flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+.card {
+  background-color: $light-transparent;
+  border-top: none;
   text-align: center;
-  width: 100%;
-  letter-spacing: 2px;
-  padding: 20px;
-  margin-bottom: 60px;
-  background-color: $dark-transparent;
   @include media-breakpoint-up(lg) {
-    margin-bottom: 20px;
+    text-align: left;
   }
-  @include media-breakpoint-up(xl) {
-    flex-flow: column nowrap;
-    justify-content: center;
-    text-align: center;
-    font-size: .9em;
-    width: calc(100% - 720px);
+}
+.card-text {
+  padding: 0rem 0.125rem;
+}
+.card-inverse {
+  background-color: $dark-transparent;
+  .card-text {
+    color: $light-font-color;
   }
-  .logo-plain {
-    margin-top: 1em;
+  .card-img-top {
+    border: solid 5px #ddd;
+    border-bottom: none;
   }
+  .card-block {
+    border: solid 5px #ddd;
+    border-top: none;
+  }
+}
+.definition {
+  text-align: center;
+  .card-img-top {
+    padding: 1.875em 1.875em 0em 1.875em;
+    border: none;
+  }
+}
+.card-title {
+  font-weight: 500;
+  text-transform: capitalize;
 }

@@ -1,5 +1,4 @@
 #services {
-  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -7,26 +6,10 @@
   box-sizing: border-box;
   color: $dark-font-color;
   padding: 0px;
-  margin-bottom: 60px;
   text-align: center;
   @include media-breakpoint-up(lg) {
     margin-top: 20px;
-    width: 80%;
-    padding: 20px;
-  }
-  .header {
-    box-sizing: inherit;
-    background-color: $dark-transparent;
-    color: $light-font-color;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    font-weight: normal;
-    h1 {
-      text-transform: capitalize;
-      font-weight: normal;
-      margin: 0px;
-    }
+    margin-bottom: 20px;
   }
   .philosophy-body {
     box-sizing: inherit;
@@ -42,6 +25,7 @@
     padding: 0px 20px;
     h2 {
       width: 100%;
+      text-transform: capitalize;
       @include media-breakpoint-up(lg) {
         width: 80%;
       }
@@ -64,7 +48,6 @@
   }
   p {
     font-size: 1em;
-    text-indent: 2em;
     font-family: $font-family-secondary;
     margin: 0px;
   }

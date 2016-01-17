@@ -7,6 +7,7 @@ class BangarangBend.Views.Navigation extends Backbone.View
     'click a' : 'navClick'
 
   initialize: ->
+    @listenTo BangarangBend.router, 'route', @setActive
     @render()
 
   render: ->
@@ -16,3 +17,7 @@ class BangarangBend.Views.Navigation extends Backbone.View
   navClick: ->
     if BangarangBend.menuToggled
       Backbone.trigger "navClose"
+
+  setActive: (event) ->
+    @$('li.active').removeClass('active')
+    @$("##{event}").addClass('active')
