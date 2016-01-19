@@ -4,6 +4,7 @@
     <li id="philosophyView"><a href="#/philosophy">philosophy</a></li>
     <li id="servicesView"><a href="#/services">services</a></li>
     <li id="menuView"><a href="#/menu">catering menu</a></li>
+    <li id="personalizedEventsView"><a href="#/personalized-events">personalized events</a></li>
   </ul>
 </div>
 

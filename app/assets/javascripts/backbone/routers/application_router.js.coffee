@@ -2,10 +2,11 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
   initialize: () ->
 
   routes: ->
-    ''           : 'homeView'
-    'philosophy' : 'philosophyView'
-    'services'   : 'servicesView'
-    'menu'       : 'menuView'
+    ''                    : 'homeView'
+    'philosophy'          : 'philosophyView'
+    'services'            : 'servicesView'
+    'menu'                : 'menuView'
+    'personalized-events' : 'personalizedEventsView'
 
   homeView: ->
     home     = new BangarangBend.Views.Home()
@@ -16,6 +17,10 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     philosophy = new BangarangBend.Views.Philosophy()
     @swapView([philosophy])
     #TODO dry all views up, should check if featured is rendered before clearing it out
+
+  personalizedEventsView: ->
+    personalizedEvents = new BangarangBend.Views.PersonalizedEvents()
+    @swapView([personalizedEvents])
 
   servicesView: ->
     services = new BangarangBend.Views.Services()
