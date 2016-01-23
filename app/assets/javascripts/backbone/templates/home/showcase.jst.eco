@@ -1,0 +1,19 @@
+<div class="showcase-item" style="background-image: url(/images/featured/services.jpg)">
+  <h3>our <br> services</h3>
+</div>
+
+<div class="showcase-item" style="background-image: url(/images/featured/menu.jpg)">
+  <h3>catering <br> menu</h3>
+</div>
+
+<div class="showcase-item" style="background-image: url(/images/featured/events.jpg)">
+  <h3>personalized <br> events</h3>
+</div>
+
+<div class="showcase-item" style="background-image: url(/images/featured/philosophy.jpg)">
+  <h3>our <br> philosophy</h3>
+</div>
+
+<div class="showcase-item" style="background-image: url(/images/featured/contact.jpg)">
+  <h3>contact <br> us</h3>
+</div>

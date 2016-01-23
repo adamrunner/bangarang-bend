@@ -4,11 +4,8 @@
 @import 'font-awesome';
 @import 'variables';
 @import 'bootstrap';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300|Roboto:500,300,300italic);
 @import 'navigation';
-@import 'featured';
-@import 'content';
-@import 'home';
+@import 'home/home-index';
 @import 'philosophy';
 @import 'services';
 @import 'menu';
@@ -50,76 +47,45 @@ b {
 strong {
   font-family: $font-family-secondary;
 }
+section {
+  height: 100%;
+  margin: 0rem auto 3rem auto;
+}
 .btn {
   text-transform: capitalize;
 }
-.content-wrap {
+#content {
   box-sizing: border-box;
-  padding-top: 3.75em;
-  background-color: transparent;
+  padding-top: $navbar-height;
   width: 100%;
   min-height: 100vh;
-  @include media-breakpoint-up(lg) {
-    padding-top: 0em;
-    width: calc(100% - 15.63rem);
-  }
-  @include media-breakpoint-up(xl) {
-    width: calc(100% - 18.75rem);
-  }
 }
-.section-title {
-  box-sizing: border-box;
-  padding: 1.25rem;
-  color: #fff;
-  background-color: $dark-transparent;
-  text-align: center;
-}
-#background-carousel {
-  display: none;
-  @include media-breakpoint-up(lg) {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .bg-img {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    &.active {
-      display: block;
-    }
-  }
-}
-#content-container {
-  @include media-breakpoint-down(md) {
-    max-width: none;
-  }
-}
-.section {
-  width: 100%;
-  @include media-breakpoint-up(lg) {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-}
-.section-header {
-  box-sizing: inherit;
-  background-color: $dark-transparent;
-  color: $light-font-color;
-  width: 100%;
-  padding: 1.875rem;
-  text-align: center;
-  font-weight: normal;
-  h1 {
-    text-transform: capitalize;
-    margin: 0px;
-  }
-}
+// #TODO rename these
+// .section-title {
+//   box-sizing: border-box;
+//   padding: 1.25rem;
+//   color: #fff;
+//   background-color: $dark-transparent;
+//   text-align: center;
+// }
+//
+// .section {
+//   width: 100%;
+//   @include media-breakpoint-up(lg) {
+//     max-width: 80%;
+//     margin: 0 auto;
+//   }
+// }
+// .section-header {
+//   box-sizing: inherit;
+//   background-color: $dark-transparent;
+//   color: $light-font-color;
+//   width: 100%;
+//   padding: 1.875rem;
+//   text-align: center;
+//   font-weight: normal;
+//   h1 {
+//     text-transform: capitalize;
+//     margin: 0px;
+//   }
+// }

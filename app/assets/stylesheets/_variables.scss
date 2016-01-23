@@ -1,10 +1,21 @@
-$top-spacing: 50px;
-
 $font-family-secondary: 'Open Sans', sans-serif !default;
 $font-family-primary:   'Roboto', sans-serif !default;
 
 $light-font-color : #fff;
 $dark-font-color  : #333;
+
+$navbar-height: 5.625rem;
+$nav-brand-logo-height: 2rem;
+
+$showcase-bg-color: #fff;
+$showcase-border-color: $showcase-bg-color;
+
+$featured-bg-color: #ddd;
+$featured-title-color: #fff;
+$featured-text-color: #333;
+$featured-item-border-color: #fff;
+
+$about-bg-color: #fff;
 
 //NOTE: Bootstrap Variables Below
 // Variables
@@ -39,7 +50,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary             : #445768 !default;
-$transparent-brand-primary : transparentize($brand-primary, 0.25%) !default;
+$transparent-brand-primary : transparentize($brand-primary, 0.10%) !default;
 $brand-secondary           : #C34C3B !default;
 $light                     : #eee !default;
 $light-transparent         : transparentize(#eee, 0.10%) !default;
@@ -106,7 +117,7 @@ $body-color:                 $dark-font-color !default;
 
 $link-color:                 $brand-primary !default;
 $link-decoration:            none !default;
-$link-hover-color:           darken($link-color, 15%) !default;
+$link-hover-color:           $brand-secondary !default;
 $link-hover-decoration:      none !default;
 
 
@@ -189,7 +200,7 @@ $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       $font-family-primary;
 $headings-font-weight:       300 !default;
 $headings-line-height:       1.1 !default;
-$headings-color:             inherit !default;
+$headings-color:             #222 !default;
 
 $lead-font-size:             1.25rem !default;
 $lead-font-weight:           300 !default;

@@ -1,9 +1,9 @@
 BangarangBend.Views.Featured ||= {}
 
 class BangarangBend.Views.Featured extends Backbone.View
-  template: JST["backbone/templates/featured"]
+  template: JST["backbone/templates/home/featured"]
 
-  className: 'col-xs-12 featured'
+  className: 'section-inner'
 
   initialize: ->
     @render()

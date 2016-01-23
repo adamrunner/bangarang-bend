@@ -1,0 +1,12 @@
+<a class="navbar-brand" href="#">
+  <img class="nav-brand-logo" src="/images/logo/bangarang_haute_cuisine.svg" alt="" />
+</a>
+
+<div class="nav-links">
+  <a class="nav-link" href="#">home</a>
+  <a class="nav-link" href="#">services</a>
+  <a class="nav-link" href="#">catering menu</a>
+  <a class="nav-link" href="#">personalized events</a>
+  <a class="nav-link" href="#">philosophy</a>
+  <a class="nav-link" href="#">contact</a>
+</div>

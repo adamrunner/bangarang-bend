@@ -1,0 +1,42 @@
+#about {
+  background-color: $about-bg-color;
+  .section-inner {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+.about-item {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 0rem 1rem;
+  @include media-breakpoint-up(lg) {
+    padding: 0rem;
+    width: 50%;
+  }
+  &:nth-of-type(2) .headshot {
+    background-image: url("/images/headshot_01.jpg");
+  }
+  &:nth-of-type(1) .headshot {
+    background-image: url("/images/headshot_02.jpg");
+  }
+}
+.about-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1rem;
+}
+.headshot {
+  width: 12rem;
+  height: 12rem;
+  margin: 1rem 0rem;
+  border-radius: 50%;
+  background-color: #ddd;
+  background-position: center;
+  background-size: cover;
+}

@@ -1,222 +1,24 @@
-#mobile-nav-bar {
-  box-sizing: border-box;
+#navbar {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 3.75rem;
-  background-color: $dark-font-color;
-  color: $light-font-color;
-  z-index: 20;
-  border-bottom: solid 1px #111;
+  height: $navbar-height;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-  @include media-breakpoint-up(lg) {
+  &:after {
+    content: none;
+  }
+}
+.nav-brand-logo {
+  height: $nav-brand-logo-height;
+}
+.nav-links {
+  @extend .pull-xs-right;
+  @include media-breakpoint-down(md) {
     display: none;
   }
-  i {
-    box-sizing: border-box;
-    text-align: center;
-    width: 4.25rem;
-    height: 3.75rem;
-    line-height: 3.75rem;
-    font-size: 2.5em;
-    border-right: solid 1px #111;
-  }
-  .nav-button {
-    &.active {
-      background-color: #222;
-    }
-  }
 }
-#navigation {
-  height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-}
-.nav-wrap {
-  box-sizing: border-box;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  transform: translateX(-100%);
-  z-index: 10;
-  font-size: 1.4rem;
-  @include media-breakpoint-up(sm) {
-    font-size: 1.2rem;
-  }
-  @include media-breakpoint-up(md) {
-    font-size: 1.5rem;
-  }
-  @include media-breakpoint-up(lg) {
-    transform: translateX(0%) !important;
-    height: 100vh;
-    width: 15.63rem;
-    font-size: 1rem;
-    border: none;
-  }
-  @include media-breakpoint-up(xl) {
-    width: 18.75em;
-  }
-  .nav-links {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    box-sizing: inherit;
-    width: 100%;
-    height: calc(100vh - 27rem);
-    padding-top: 7rem;
-    background-color: $brand-primary;
-    @include media-breakpoint-up(sm) {
-      height: 50vh;
-      padding-top: 3.75rem;;
-    }
-    @include media-breakpoint-up(lg) {
-      background-color: $transparent-brand-primary;
-      height: calc(100vh - 25rem);
-      padding: 0em;
-    }
-    ul {
-      text-transform: uppercase;
-      margin: 0em;
-      @include media-breakpoint-up(sm) {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-flow: row nowrap;
-        padding: 0em 1em;
-      }
-      @include media-breakpoint-up(lg) {
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: flex-start;
-        padding-left: 1.25rem;
-        margin: 0em;
-      }
-      @include media-breakpoint-up(xl) {
-        padding-left: 2rem;
-      }
-    }
-    li {
-      color: $light-font-color;
-      transition: letter-spacing .2s ease;
-      &.active {
-        color: #222;
-        font-weight: bold;
-        letter-spacing: 1px;
-      }
-      &:hover {
-        color: #222;
-        font-weight: bold;
-        letter-spacing: 1px;
-      }
-      a {
-        color: inherit;
-        font-weight: inherit;
-      }
-    }
-  }
-  .contact-links {
-    box-sizing: inherit;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    width: 100%;
-    height: 27rem;
-    background-color: $light;
-    @include media-breakpoint-up(sm) {
-      height: 50vh;
-    }
-    @include media-breakpoint-up(lg) {
-      background-color: $light-transparent;
-      height: 25rem;
-      font-size: 1em;
-    }
-    a {
-      color: $dark-font-color;
-      &:hover {
-        color: $brand-secondary;
-      }
-    }
-    span {
-      font-family: $font-family-secondary;
-      font-weight: bold;
-    }
-  }
-  .contact-item-wrap {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    @include media-breakpoint-up(sm) {
-      width: 45%;
-      justify-content: center;
-      align-items: center;
-      border-right: solid 1px #ddd;
-    }
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      border: none;
-      align-items: flex-start;
-    }
-  }
-  .contact-item {
-    display: flex;
-    flex-flow: column nowrap;
-    margin-bottom: 0em;
-    @include media-breakpoint-up(sm) {
-      padding: 0rem;
-      align-content: center;
-      justify-content: center;
-    }
-    @include media-breakpoint-up(lg) {
-      width: auto;
-      height: auto;
-      padding-left: 1.25rem;
-    }
-    @include media-breakpoint-up(xl) {
-      padding-left: 2rem;
-    }
-  }
-  hr {
-    width: 90%;
-    @include media-breakpoint-up(sm) {
-      display: none;
-    }
-    @include media-breakpoint-up(lg) {
-      display: block;
-    }
-  }
-  .social-links {
-    box-sizing: inherit;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    font-size: 2.5em;
-    @include media-breakpoint-up(sm) {
-      width: 10%;
-      flex-flow: column nowrap;
-      align-items: center;
-    }
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      flex-flow: row nowrap;
-    }
-    a {
-      line-height: 2.5rem;
-      margin: 0em 0.25rem;
-      @include media-breakpoint-up(sm) {
-        margin: 0rem;
-      }
-      @include media-breakpoint-up(lg) {
-        margin: 0em 0.25rem;
-      }
-    }
-  }
+.nav-link {
+  margin-right: 2rem;
+  text-transform: uppercase;
 }
