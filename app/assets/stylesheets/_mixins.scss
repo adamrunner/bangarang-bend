@@ -1,0 +1,31 @@
+@mixin border ($style,  $sides...) {
+  @if ($style != "") {
+    @if ($sides == "") {
+      border: $style;
+    } @else {
+    @each $side in $sides {
+      @if ($side == 'top' or $side == 'right' or $side == 'bottom' or $side == 'left') {
+          border-#{$side}: $style;
+        }
+      }
+    }
+  }
+}
+
+@mixin line-fade {
+  background: -moz-radial-gradient(center, ellipse cover, rgba(136,136,136,0.9) 0%, rgba(204,204,204,0.45) 50%, rgba(136,136,136,0) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(136,136,136,0.9) 0%,rgba(204,204,204,0.45) 50%,rgba(136,136,136,0) 100%);
+  background: radial-gradient(ellipse at center, rgba(136,136,136,0.9) 0%,rgba(204,204,204,0.45) 50%,rgba(136,136,136,0) 100%);
+}
+
+@mixin short-flex ($flex-flow:null, $justify-content:null, $align-items:null) {
+  display: flex;
+  flex-flow: $flex-flow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin background ($background, $background-size:null) {
+  background: $background;
+  background-size: $background-size;
+}

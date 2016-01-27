@@ -1,4 +1,4 @@
-<div id="landing-unit" class="landing">
+<div id="landing">
   <h1>
     catering & <br>
     event services.
@@ -10,3 +10,5 @@
 <section id="featured"></section>
 
 <section id="about"></section>
+
+<section id="contact"></section>

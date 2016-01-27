@@ -1,21 +1,3 @@
-$font-family-secondary: 'Open Sans', sans-serif !default;
-$font-family-primary:   'Roboto', sans-serif !default;
-
-$light-font-color : #fff;
-$dark-font-color  : #333;
-
-$navbar-height: 5.625rem;
-$nav-brand-logo-height: 2rem;
-
-$showcase-bg-color: #fff;
-$showcase-border-color: $showcase-bg-color;
-
-$featured-bg-color: #ddd;
-$featured-title-color: #fff;
-$featured-text-color: #333;
-$featured-item-border-color: #fff;
-
-$about-bg-color: #fff;
 
 //NOTE: Bootstrap Variables Below
 // Variables
@@ -50,15 +32,40 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary             : #445768 !default;
-$transparent-brand-primary : transparentize($brand-primary, 0.10%) !default;
+$transparent-brand-primary : transparentize($brand-primary, 0.15%) !default;
 $brand-secondary           : #C34C3B !default;
 $light                     : #eee !default;
-$light-transparent         : transparentize(#eee, 0.10%) !default;
-$dark-transparent          : transparentize(#333, 0.10%) !default;
 $brand-success             : #5cb85c !default;
 $brand-info                : #5bc0de !default;
 $brand-warning             : #f0ad4e !default;
 $brand-danger              : #d9534f !default;
+
+// #NOTE custom variables
+$font-family-secondary: 'Open Sans', sans-serif !default;
+$font-family-primary:   'Roboto', sans-serif !default;
+
+$light-font-color : #fff;
+$dark-font-color  : #333;
+
+$light-transparent: transparentize(#eee, 0.10%) !default;
+$dark-transparent: transparentize(#333, 0.15%) !default;
+
+$navbar-height: 5.625rem;
+$nav-brand-logo-height: 2rem;
+
+$showcase-bg-color: #fff;
+$showcase-border-color: $showcase-bg-color;
+
+$featured-bg-color: $light-transparent;
+$featured-title-color: #fff;
+$featured-text-color: #333;
+$featured-item-border-color: darken($light-transparent, 10%);
+$featured-item-border-style: 1px solid $featured-item-border-color;
+
+$about-bg-color: $transparent-brand-primary;
+
+$contact-bg-color: $light-transparent;
+//
 
 
 // Options
@@ -108,16 +115,16 @@ $border-width:               1px !default;
 // Settings for the `<body>` element.
 
 $body-bg:                    #fff !default;
-$body-color:                 $dark-font-color !default;
+$body-color:                 #333 !default;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                 $brand-primary !default;
+$link-color:                 lighten($brand-secondary, 5%) !default;
 $link-decoration:            none !default;
-$link-hover-color:           $brand-secondary !default;
+$link-hover-color:           darken($brand-secondary, 10%) !default;
 $link-hover-decoration:      none !default;
 
 
@@ -200,7 +207,7 @@ $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       $font-family-primary;
 $headings-font-weight:       300 !default;
 $headings-line-height:       1.1 !default;
-$headings-color:             #222 !default;
+$headings-color:             #555 !default;
 
 $lead-font-size:             1.25rem !default;
 $lead-font-weight:           300 !default;

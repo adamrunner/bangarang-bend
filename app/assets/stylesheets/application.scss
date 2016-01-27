@@ -4,6 +4,7 @@
 @import 'font-awesome';
 @import 'variables';
 @import 'bootstrap';
+@import 'mixins';
 @import 'navigation';
 @import 'home/home-index';
 @import 'philosophy';
@@ -27,29 +28,24 @@ body {
   display: flex;
   flex-flow: column nowrap;
   font-size: inherit !important;
-  @include media-breakpoint-up(lg) {
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-  }
 }
 ul {
   list-style: none;
 }
 a {
   font-family: $font-family-secondary;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
 em,p {
   font-weight: 300;
-}
-b {
-  font-weight: 500;
 }
 strong {
   font-family: $font-family-secondary;
 }
 section {
   height: 100%;
-  margin: 0rem auto 3rem auto;
+  margin: 0rem auto;
 }
 .btn {
   text-transform: capitalize;
