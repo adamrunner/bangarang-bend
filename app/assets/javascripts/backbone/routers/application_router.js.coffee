@@ -9,8 +9,8 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     'personalized-events' : 'personalizedEventsPage'
 
   homePage: ->
-    home = new BangarangBend.Views.Home()
-    @swapPage(home)
+    @home = new BangarangBend.Views.Home()
+    @swapPage(@home)
 
   philosophyPage: ->
     philosophy = new BangarangBend.Views.Philosophy()
@@ -30,6 +30,9 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
 
   swapPage: (view) ->
     if @currentView
+      if @currentView.subViews
+        @currentView.subViews.forEach (view) ->
+          view.remove()
       @currentView.remove()
       @currentView = view
       BangarangBend.content.html(view.render().$el)

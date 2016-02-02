@@ -1,56 +1,33 @@
 #menu-container {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0px;
-  @include media-breakpoint-up(lg) {
-    max-width: 80%;
-    margin: 20px auto;
+  h3 {
+    width: 100%;
+    margin-bottom: 0;
   }
-  .pricing {
-    font-size: .9em;
-    font-family: $font-family-primary;
-    font-weight: 300;
-    letter-spacing: .25em;
-    em {
-      letter-spacing: normal;
-    }
-  }
-  .menu-header {
-    box-sizing: border-box;
-    text-transform: capitalize;
-    text-align: center;
-    background-color: $light-transparent;
-    color: $dark-font-color;
-    border-bottom: solid 1px #ccc;
-    padding: 1.25rem;
-  }
-  .menu-section {
-    box-sizing: border-box;
-    background-color: $light-transparent;
-    color: $dark-font-color;
-    padding: 0.9375rem 1.25rem;
-  }
-  .menu-section-body {
-    padding: 1.25rem 1.25rem 0.3125rem 1.25rem;
-    border-bottom: solid 1px #ccc;
+  .page-section-body {
     h5 {
-      font-weight: normal;
+      @extend %small-caps;
     }
   }
-  .menu-footer {
-    box-sizing: border-box;
-    color: $light-font-color;
-    background-color: $dark-transparent;
-    padding: 20px;
+  .page-section-title {
+    color: $brand-secondary;
+  }
+  .menu-section-item {
+    width: 50%;
+    &:nth-child(odd) {
+      padding-right: 2rem;
+      border-right: 2px solid darken($light-transparent, 10%);
+    }
+    &:nth-child(even) {
+      padding-left: 2.5rem;
+    }
+  }
+  .page-footer {
     ul {
       padding: 0em;
     }
     li {
-      font-family: $font-family-primary;
-      font-weight: 300;
-      font-style: italic;
       text-align: center;
-      padding: 0.25em;
+      padding: 0.35rem;
     }
   }
 }

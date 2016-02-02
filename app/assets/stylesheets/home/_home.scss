@@ -2,18 +2,25 @@
   @include short-flex(row nowrap, flex-start, center);
   width: 100%;
   height: 45vh;
+  max-height: 17.5rem;
   background-color: $transparent-brand-primary;
   background-image: url("/images/background/background_07.jpg");
   background-size: cover;
   background-position: right top;
-  border-bottom: solid 1px $showcase-border-color;
+  @include media-breakpoint-up(sm) {
+    height: 60vh;
+    max-height: 14.06rem;
+  }
+  @include media-breakpoint-up(md) {
+    height: calc(55vh - #{$navbar-height});
+    max-height: 55vh;
+  }
   @include media-breakpoint-up(lg) {
     background-attachment: fixed;
   }
   h1 {
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    @extend %light-uppercase;
     margin: 0rem 0.5rem;
     @include media-breakpoint-up(sm) {
       font-size: 3em;
@@ -23,27 +30,4 @@
       margin: 0rem 2rem;
     }
   }
-}
-.section-inner {
-  @include short-flex(row wrap, center);
-  width: 100%;
-  margin: 0 auto 0.15rem auto;
-  @include media-breakpoint-up(md) {
-    width: 70%;
-    margin: 0 auto 5.65rem auto;
-  }
-  @include media-breakpoint-up(lg) {
-    width: 100%;
-  }
-  @include media-breakpoint-up(xl) {
-    width: 60%;
-  }
-}
-.section-header {
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: bold;
-  margin: 2rem auto;
 }

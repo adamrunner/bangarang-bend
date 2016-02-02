@@ -1,7 +1,7 @@
-BangarangBend.Views.Navigation ||= {}
+BangarangBend.Views.MobileNav ||= {}
 
-class BangarangBend.Views.Navigation extends Backbone.View
-  template: JST["backbone/templates/navigation/navigation"]
+class BangarangBend.Views.MobileNav extends Backbone.View
+  template: JST["backbone/templates/navigation/mobile_nav"]
 
   events:
     'click a' : 'navClick'

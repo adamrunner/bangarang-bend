@@ -1,68 +1,58 @@
 
-  <div class="section-header">
-    <h1>Services</h1>
+  <div class="page-header primary">
+    <h1>Our Services</h1>
   </div>
 
-  <div class="philosophy-body">
+  <div class="page-wrap no-footer">
 
-
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>Pick up or drop off</h2>
-        <hr>
+    <div class="page-section">
+      <h2 class="page-section-title small-title">Pick up or drop off</h2>
+      <div class="page-section-body">
         <p>
           Stop by at your convenience or let us deliver, assemble, and
           clean up your buffet when your event is finished
         </p>
-        <hr>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>Buffet</h2>
-        <hr>
+    <div class="page-section">
+      <h2 class="page-section-title small-title">Buffet</h2>
+      <div class="page-section-body">
         <p>
           We will assemble and staff your buffet keeping it looking
           fresh until you event is over
         </p>
-        <hr>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>Family Style</h2>
-        <hr>
+    <div class="page-section">
+      <h2 class="page-section-title small-title">Family Style</h2>
+      <div class="page-section-body">
         <p>
           Let our servers deliver your spread to your guest tables in a
           family style dining format
         </p>
-        <hr>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>Butlered</h2>
-        <hr>
+    <div class="page-section">
+      <h2 class="page-section-title small-title">Butlered</h2>
+      <div class="page-section-body">
         <p>
           We will hand pass any number of your hor dourves
           throughout your party as your guests mingle
         </p>
-        <hr>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>Plated service</h2>
-        <hr>
+    <div class="page-section">
+      <h2 class="page-section-title small-title">Plated service</h2>
+      <div class="page-section-body">
         <p>
           This is our premiere restaurant style service where we will
           serve each one of your guests’ entrees at their table
         </p>
-        <hr>
       </div>
     </div>
+
   </div>

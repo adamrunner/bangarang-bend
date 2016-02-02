@@ -1,15 +1,40 @@
 #contact {
+  @include short-flex(column nowrap, center, center);
   background-color: $contact-bg-color;
+  .section-inner {
+    @include short-flex(column nowrap, center, center);
+  }
+  .hr-fade {
+    width: 50%;
+  }
+}
+.contact-items {
+  @include short-flex(column nowrap, center, center);
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    @include short-flex(row wrap, center, flex-end);
+  }
 }
 .contact-item {
-  @include short-flex(column nowrap, space-between, center);
+  @include short-flex(column nowrap, flex-end);
   text-align: center;
-  margin: 0 1rem;
-  width: 21.25rem;
-  padding: 1rem;
+  flex-grow: 1;
+  margin: 1rem 0;
   border-radius: 3px;
+  @include media-breakpoint-up(sm) {
+    width: 50%;
+    max-width: 20rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 1rem;
+    max-width: 18.75rem;
+  }
   a {
-    font-size: 1.5em;
+    @extend %small-caps;
+    font-size: 1.3em;
+  }
+  h4 {
+    @extend %small-caps;
   }
 }
 .social-links {
@@ -21,7 +46,7 @@
     @include short-flex(row nowrap, center, center);
     width: 2.1em;
     height: 2.1em;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     border-radius: 50%;
     border: 2px solid transparentize(#fff , 0.03);
     background-color: $transparent-brand-primary;
@@ -35,11 +60,4 @@
 }
 .name {
   font-weight: normal;
-}
-.hr-fade {
-  margin: 25px 0;
-  height: 1px;
-  width: 70%;
-  background: #888;
-  @include line-fade();
 }

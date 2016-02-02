@@ -3,10 +3,9 @@
   color: transparentize(#fff, 0.05);
   font-size: 1.2em;
   letter-spacing: 2px;
-  .section-inner {
-    h3 {
-      color: transparentize(#fff, 0.05);
-    }
+  h3 {
+    @extend %small-caps;
+    color: #fff;
   }
 }
 .about-item {
@@ -15,7 +14,10 @@
   text-align: center;
   padding: 1rem 2rem;
   @include media-breakpoint-up(lg) {
-    width: 50%;
+    width: 40%;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 30%;
   }
   &:nth-of-type(2) .headshot {
     background-image: url("/images/headshot_01.jpg");
@@ -26,8 +28,8 @@
 }
 .about-content {
   @include short-flex(column nowrap, center, center);
-  @include media-breakpoint-down(md) {
-    padding: 0rem 5rem;
+  h3 {
+    margin-bottom: 2rem;
   }
 }
 .headshot {

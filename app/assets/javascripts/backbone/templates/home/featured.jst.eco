@@ -1,4 +1,4 @@
-<h3 class="section-header"><small>featured</small></h3>
+<h3 class="section-header">featured</h3>
 
 <div class="featured-item featured-sm">
   <div class="featured-img" style="background-image: url(/images/featured/featured_01.jpg)"></div>

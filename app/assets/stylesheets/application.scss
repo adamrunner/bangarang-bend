@@ -11,6 +11,30 @@
 @import 'services';
 @import 'menu';
 
+// extends
+%small-caps {
+  font-family: $font-family-secondary;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
+%light-font {
+  font-family: $font-family-primary;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+%light-uppercase {
+  @extend %light-font;
+  font-variant: small-caps;
+  text-transform: uppercase;
+}
+%light-capitalize {
+  @extend %light-font;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+
 // Global Styling
 html {
   @include media-breakpoint-up(xs) {
@@ -25,63 +49,156 @@ html {
 }
 
 body {
-  display: flex;
-  flex-flow: column nowrap;
+  position: relative;
   font-size: inherit !important;
+  margin-top: $navbar-height;
+  overflow-x: hidden;
+}
+h1, h2 {
+  margin-bottom: 0;
+  width: 100%;
 }
 ul {
   list-style: none;
 }
 a {
-  font-family: $font-family-secondary;
-  letter-spacing: 1px;
-  font-weight: 400;
+  @extend %light-uppercase;
 }
-em,p {
-  font-weight: 300;
+p {
+  @extend %light-font;
+}
+.lead {
+  font-family: $font-family-secondary;
+  font-weight: bold;
+}
+em {
+  font-size: 0.8em;
 }
 strong {
   font-family: $font-family-secondary;
 }
 section {
   height: 100%;
-  margin: 0rem auto;
 }
 .btn {
   text-transform: capitalize;
 }
 #content {
-  box-sizing: border-box;
-  padding-top: $navbar-height;
   width: 100%;
-  min-height: 100vh;
+  @include media-breakpoint-up(md) {
+    background: url("/images/background/background_04.jpg") no-repeat fixed center;
+    background-size: cover;
+  }
 }
-// #TODO rename these
-// .section-title {
-//   box-sizing: border-box;
-//   padding: 1.25rem;
-//   color: #fff;
-//   background-color: $dark-transparent;
-//   text-align: center;
-// }
-//
-// .section {
-//   width: 100%;
-//   @include media-breakpoint-up(lg) {
-//     max-width: 80%;
-//     margin: 0 auto;
-//   }
-// }
-// .section-header {
-//   box-sizing: inherit;
-//   background-color: $dark-transparent;
-//   color: $light-font-color;
-//   width: 100%;
-//   padding: 1.875rem;
-//   text-align: center;
-//   font-weight: normal;
-//   h1 {
-//     text-transform: capitalize;
-//     margin: 0px;
-//   }
-// }
+
+.section-inner {
+  @include short-flex(row wrap, center);
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  @include media-breakpoint-up(md) {
+    width: 70%;
+    margin: 0 auto;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+  }
+}
+.section-header {
+  @extend %small-caps;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0rem;
+}
+
+.primary {
+  color: #fff;
+  background-color: $transparent-brand-primary;
+}
+
+.page-container {
+  @include short-flex(column nowrap);
+  width: 100%;
+  margin: 0 auto;
+  @include media-breakpoint-up(lg) {
+    width: 60%;
+    padding: 2rem 0rem;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 50%;
+    padding: 2rem 0rem;
+  }
+}
+.page-header {
+  @extend %light-capitalize;
+  padding: 2rem 0rem;
+  text-align: center;
+  width: 100%;
+}
+.page-sub-header {
+  @include short-flex(row wrap, center, center);
+  @extend %small-caps;
+  width: 100%;
+  text-align: center;
+  padding: 0 1rem 1rem 1rem;
+  h3 {
+    font-family: inherit;
+  }
+}
+.page-wrap {
+  @include short-flex(row wrap);
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    border-right: 1rem solid $transparent-brand-primary;
+    border-left: 1rem solid $transparent-brand-primary;
+  }
+  &.no-footer {
+    border-bottom: 1rem solid $transparent-brand-primary;
+  }
+}
+.page-section {
+  @include short-flex(row wrap, flex-start);
+  width: 100%;
+  padding: 0rem 1rem;
+  background: #fff;
+  @include media-breakpoint-up(md) {
+    padding: 0rem 5rem;
+  }
+  &:nth-of-type(1) {
+    padding-top: 4rem;
+  }
+  &:nth-last-of-type(1) {
+    padding-bottom: 4rem;
+  }
+}
+.page-section-title {
+  padding: 0.5rem;
+  font-family: $font-family-secondary;
+  border-bottom: 2px solid darken($light-transparent, 10%);
+  &.small-title {
+    @extend %small-caps;
+  }
+}
+.page-section-body {
+  @include short-flex(row wrap, space-between);
+  padding: 1rem;
+  width: 100%;
+  p {
+    width: 100%;
+  }
+}
+.page-footer {
+  @extend %small-caps;
+  width: 100%;
+  color: $light-font-color;
+  background-color: $transparent-brand-primary;
+  padding: 2rem;
+}
+
+.hr-fade {
+  background: #888;
+  @include line-fade();
+  margin: 25px 0;
+  height: 1px;
+  width: 80%;
+}

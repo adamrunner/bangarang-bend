@@ -1,70 +1,61 @@
 
-  <div class="section-header">
+  <div class="page-header primary">
     <h1>Personalized Events</h1>
   </div>
 
-  <div class="philosophy-body">
-    <div class="philosophy-item">
-      <div class="inner-wrap">
+  <div class="page-wrap no-footer">
+    <div class="page-section">
+      <div class="page-section-body">
         <p>Let’s make a menu as unique as the two of you are. We will collaborate with you to identify those foods that spark memories of the special moments in your lives. </p>
         <p>We’ll then work with your budget and build a specific menu just for your event.</p>
         <p>See what’s in season and let us incorporate these into your special day!</p>
       </div>
     </div>
-    <div class="philosophy-item">
-      <div class="inner-wrap">
+    <div class="page-section">
+      <div class="page-section-body">
         <h2>Local Produce</h2>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>June</h2>
-        <hr>
-        <p> asparagus ­ boysenberries ­ broccoli ­ cauliflower ­ cherries </p>
-
-        <p>gooseberries ­ hazelnuts ­ kohlrabi ­ radish ­ raspberries</p>
-
-        <p>rhubarb ­ strawberries ­ summer squash</p>
-        <hr>
+    <div class="page-section">
+      <div class="page-section-body">
+        <h2 class="page-section-title small-title">June</h2>
+        <p> asparagus boysenberries broccoli cauliflower cherries
+        gooseberries hazelnuts kohlrabi radish raspberries
+        rhubarb strawberries summer squash
+        </p>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>July</h2>
-        <hr>
-        <p>apricots ­ asparagus ­ beans ­ beets ­ blackberries</p>
-        <p>blueberries ­ broccoli ­ boysenberries ­ cabbage ­ carrots</p>
-        <p>cauliflower ­ cherries ­ celery ­ cucumber ­ cherries ­ eggplant ­ figs</p>
-        <p>green beans ­ gooseberries ­ hazelnuts ­ kohlrabi ­ melon ­ nectarine</p>
-        <p>peaches ­ parsnip ­ peas ­ potato ­ radish ­ raspberries</p>
-        <p>rhubarb ­ rutabaga ­ strawberries ­ summer squash ­ tomatoes</p>
-        <p>turnips ­ zucchini blossoms</p>
-        <hr>
+    <div class="page-section">
+      <div class="page-section-body">
+        <h2 class="page-section-title small-title">July</h2>
+        <p>apricots asparagus beans beets blackberries
+        blueberries broccoli boysenberries cabbage carrots
+        cauliflower cherries celery cucumber cherries eggplant figs
+        green beans gooseberries hazelnuts kohlrabi melon nectarine
+        peaches parsnip peas potato radish raspberries
+        rhubarb rutabaga strawberries summer squash tomatoes
+        turnips zucchini blossoms</p>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>August</h2>
-        <hr>
-        <p>apples ­ apricot ­ Asian pear ­ beans ­ beets ­ blackberries ­ broccoli ­ brussel sprouts ­ cabbage</p>
-        <p>carrots ­ cauliflower ­ celery root ­ cherries ­ corn ­ cucumber ­ green beans ­ eggplant ­ figs</p>
-        <p>kohlrabi ­ melons ­ nectarines ­ parsnips ­ peaches ­ peas ­ peppers ­ potatoes ­ radish ­ squash</p>
-        <p>plums ­ raspberries ­ sorrel ­ strawberries ­ tomatoes ­ turnips ­ rutabaga</p>
-        <hr>
+    <div class="page-section">
+      <div class="page-section-body">
+        <h2 class="page-section-title small-title">August</h2>
+        <p>apples apricot Asian pear beans beets blackberries broccoli brussel sprouts cabbage
+        carrots cauliflower celery root cherries corn cucumber green beans eggplant figs
+        kohlrabi melons nectarines parsnips peaches peas peppers potatoes radish squash
+        plums raspberries sorrel strawberries tomatoes turnips rutabaga</p>
       </div>
     </div>
 
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2>September</h2>
-        <hr>
-        <p>apples ­ artichokes ­ blackberries ­ broccoli ­ brussels ­ cabbage ­ carrots ­ cauliflower ­ celery</p>
-        <p>root ­ corn ­ cucumber ­ eggplant ­ grapes ­ green beans ­ kiwi ­ kohlrabi ­ leek ­ melons</p>
-        <p>parsnips ­ peas ­ peppers ­ peaches ­ pears ­ plums ­ potatoes ­ raspberries ­ squash ­tomatoes ­ turnips ­ rutabaga</p>
-        <hr>
+    <div class="page-section">
+      <div class="page-section-body">
+        <h2 class="page-section-title small-title">September</h2>
+        <p>apples artichokes blackberries broccoli brussels cabbage carrots cauliflower celery
+        root corn cucumber eggplant grapes green beans kiwi kohlrabi leek melons
+        parsnips peas peppers peaches pears plums potatoes raspberries squash ­tomatoes turnips rutabaga</p>
       </div>
     </div>
   </div>

@@ -50,21 +50,24 @@ $dark-font-color  : #333;
 $light-transparent: transparentize(#eee, 0.10%) !default;
 $dark-transparent: transparentize(#333, 0.15%) !default;
 
-$navbar-height: 5.625rem;
+$navbar-height: 4.25rem;
 $nav-brand-logo-height: 2rem;
 
 $showcase-bg-color: #fff;
 $showcase-border-color: $showcase-bg-color;
+$showcase-border-size: 2px;
 
-$featured-bg-color: $light-transparent;
+$featured-bg-color: transparentize($transparent-brand-primary, 0.25);
 $featured-title-color: #fff;
 $featured-text-color: #333;
-$featured-item-border-color: darken($light-transparent, 10%);
-$featured-item-border-style: 1px solid $featured-item-border-color;
+$featured-item-border-color: darken($light-transparent, 35%);
+$featured-item-border-style: 3px solid #fff;
 
-$about-bg-color: $transparent-brand-primary;
+$about-bg-color: transparentize($transparent-brand-primary, 0.25);
 
 $contact-bg-color: $light-transparent;
+
+$footer-bg-color: $light-transparent;
 //
 
 
@@ -143,7 +146,7 @@ $grid-breakpoints: (
   // Large screen / desktop
   lg: 992px,
   // Extra large screen / wide desktop
-  xl: 1200px
+  xl: 1460px
 ) !default;
 
 
@@ -205,9 +208,9 @@ $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       $font-family-primary;
-$headings-font-weight:       300 !default;
+$headings-font-weight:       inherit !default;
 $headings-line-height:       1.1 !default;
-$headings-color:             #555 !default;
+$headings-color:             inherit !default;
 
 $lead-font-size:             1.25rem !default;
 $lead-font-weight:           300 !default;

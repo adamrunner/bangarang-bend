@@ -1,34 +1,56 @@
+#showcase {
+  @include short-flex(column nowrap);
+  width: 100%;
+  background: $showcase-bg-color;
+}
 .showcase-inner {
   @include short-flex(row wrap);
   width: 100%;
-  height: 60vh;
-  background-color: $showcase-bg-color;
-  padding: 0rem 0.125rem;
+  min-height: 20rem;
+  padding: ($showcase-border-size / 2);
+  background-color: inherit;
+  @include media-breakpoint-up(md) {
+    height: 45vh;
+  }
   @include media-breakpoint-up(xl) {
-    width:75%;
-    height: calc(50vh - #{$navbar-height});
-    margin: 2rem auto 5.65rem auto;
+    width:80%;
+    margin: 0 auto;
+    padding: 2rem 0rem;
   }
 }
 .showcase-item {
-  box-sizing: border-box;
-  @include short-flex(null, center, center);
+  @include short-flex(row wrap, center, center);
   @include background(center, cover);
   flex-grow: 1;
-  flex-shrink: .5;
-  border: solid 1px $showcase-border-color;
-  opacity: .85;
+  flex-shrink: 0.20;
+  border: ($showcase-border-size / 2) solid $showcase-border-color;
+  opacity: .9;
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 11.25rem;
   &:hover {
     opacity: 1;
+  }
+  @include media-breakpoint-up(sm) {
+    min-height: 2rem;
+    height: 8rem;
+  }
+  @include media-breakpoint-up(md) {
+    min-width: 33.3%;
+    max-width: 50%;
+    height: auto;
+  }
+  @include media-breakpoint-up(xl) {
+    min-width: inherit;
+    max-width: inherit;
   }
   h3 {
     width: 100%;
     color: #fff;
     background-color: $transparent-brand-primary;
-    text-transform: uppercase;
     padding: 1rem;
     margin: 0;
-    letter-spacing: 2px;
+    @extend %light-capitalize;
     opacity: 1;
   }
 }

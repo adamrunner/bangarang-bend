@@ -1,0 +1,8 @@
+<div class="mobile-nav-links">
+  <a class="mobile-nav-link" id="homeView" href="#">home</a>
+  <a class="mobile-nav-link" id="philosophyView" href="#/philosophy">philosophy</a>
+  <a class="mobile-nav-link" id="servicesView" href="#/services">services</a>
+  <a class="mobile-nav-link" id="menuView" href="#/menu">catering menu</a>
+  <a class="mobile-nav-link" id="personalizedEventsView" href="#/personalized-events">personalized events</a>
+  <!-- <a class="mobile-nav-link" id="" href="#">contact</a> -->
+</div>
