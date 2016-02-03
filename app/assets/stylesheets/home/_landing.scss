@@ -16,9 +16,6 @@
     height: calc(55vh - #{$navbar-height});
     max-height: 55vh;
   }
-  @include media-breakpoint-up(lg) {
-    background-attachment: fixed;
-  }
   h1 {
     color: #fff;
     @extend %light-uppercase;
