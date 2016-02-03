@@ -36,6 +36,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
       @currentView.remove()
       @currentView = view
       BangarangBend.content.html(view.render().$el)
+      window.scrollTo(0,0)
     else
       @currentView = view
       BangarangBend.content.html(view.render().$el)
