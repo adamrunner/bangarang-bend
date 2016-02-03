@@ -6,6 +6,9 @@ class BangarangBend.Views.Home extends Backbone.View
   className: 'page-view'
   id: 'home-page'
 
+  events: ->
+    'click #contact-btn' : 'scrollToSection'
+
   initialize: ->
     @createSubViews()
     @subViews = [@featured, @showcase, @about]
@@ -22,3 +25,7 @@ class BangarangBend.Views.Home extends Backbone.View
     @featured = new BangarangBend.Views.Featured()
     @showcase = new BangarangBend.Views.Showcase()
     @about    = new BangarangBend.Views.About()
+
+  scrollToSection: (event) ->
+    event.preventDefault()
+    $('#contact').velocity('scroll', { duration: 1000, easing: 'easeOutQuad' })

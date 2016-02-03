@@ -5,11 +5,9 @@
 @import 'variables';
 @import 'bootstrap';
 @import 'mixins';
-@import 'navigation';
-@import 'home/home-index';
-@import 'philosophy';
-@import 'services';
-@import 'menu';
+@import 'static_elements/static';
+@import 'home/home';
+@import 'pages/pages';
 
 // extends
 %small-caps {
@@ -17,7 +15,7 @@
   font-weight: bold;
   font-variant: small-caps;
   text-transform: lowercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 %light-font {
   font-family: $font-family-primary;
@@ -47,12 +45,20 @@ html {
     font-size: $font-size-lg;
   }
 }
-
+html {
+  position: relative;
+  overflow-x: hidden;
+}
 body {
   position: relative;
   font-size: inherit !important;
   margin-top: $navbar-height;
   overflow-x: hidden;
+}
+#main-wrap {
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
 }
 h1, h2 {
   margin-bottom: 0;
@@ -83,14 +89,31 @@ section {
 .btn {
   text-transform: capitalize;
 }
+
+// primary color scheme
+.primary {
+  color: #fff;
+  background-color: $transparent-brand-primary;
+}
+//
+
+.hr-fade {
+  background: #888;
+  @include line-fade();
+  margin: 25px 0;
+  height: 1px;
+  width: 80%;
+}
 #content {
   width: 100%;
+  height: 100%;
   @include media-breakpoint-up(md) {
     background: url("/images/background/background_04.jpg") no-repeat fixed center;
     background-size: cover;
   }
 }
 
+// homepage and contact sections
 .section-inner {
   @include short-flex(row wrap, center);
   width: 100%;
@@ -110,12 +133,9 @@ section {
   text-align: center;
   padding: 2rem 0rem;
 }
+//
 
-.primary {
-  color: #fff;
-  background-color: $transparent-brand-primary;
-}
-
+// common styling for philosophy, services, menu, events
 .page-container {
   @include short-flex(column nowrap);
   width: 100%;
@@ -194,11 +214,4 @@ section {
   background-color: $transparent-brand-primary;
   padding: 2rem;
 }
-
-.hr-fade {
-  background: #888;
-  @include line-fade();
-  margin: 25px 0;
-  height: 1px;
-  width: 80%;
-}
+//

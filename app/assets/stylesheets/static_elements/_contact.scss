@@ -3,6 +3,7 @@
   background-color: $contact-bg-color;
   .section-inner {
     @include short-flex(column nowrap, center, center);
+    padding-bottom: 0rem;
   }
   .hr-fade {
     width: 50%;
@@ -57,7 +58,4 @@
       background-color: lighten($transparent-brand-primary, 10%);
     }
   }
-}
-.name {
-  font-weight: normal;
 }

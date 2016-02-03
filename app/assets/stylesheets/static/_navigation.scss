@@ -42,7 +42,7 @@
   @include short-flex(row wrap, center, center);
   img {
     width: 100%;
-    max-width: 15em;
+    max-width: 20em;
     @include media-breakpoint-up(lg) {
       max-width: 25em;
     }
@@ -59,8 +59,8 @@
 
 // mobile navigation styling
 .mobile-nav-wrap {
-  width: 100%;
-  height: 101vh;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -72,11 +72,12 @@
 }
 #mobile-nav {
   @include short-flex(column nowrap);
-  height: 100vh;
-  padding-top: $navbar-height;
+  height: 100%;
+  // padding-top: $navbar-height;
   font-size: 1.3em;
   .mobile-nav-links {
     @include short-flex(column nowrap);
+    margin-top: $navbar-height;
     width: 100%;
     height: 100%;
     background-color: #555;

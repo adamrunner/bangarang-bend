@@ -57,13 +57,13 @@ $showcase-bg-color: #fff;
 $showcase-border-color: $showcase-bg-color;
 $showcase-border-size: 2px;
 
-$featured-bg-color: transparentize($transparent-brand-primary, 0.25);
+$featured-bg-color: transparentize($transparent-brand-primary, 0.15);
 $featured-title-color: #fff;
 $featured-text-color: #333;
 $featured-item-border-color: darken($light-transparent, 35%);
 $featured-item-border-style: 3px solid #fff;
 
-$about-bg-color: transparentize($transparent-brand-primary, 0.25);
+$about-bg-color: transparentize($transparent-brand-primary, 0.15);
 
 $contact-bg-color: $light-transparent;
 

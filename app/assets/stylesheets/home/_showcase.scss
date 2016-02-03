@@ -10,6 +10,7 @@
   padding: ($showcase-border-size / 2);
   background-color: inherit;
   @include media-breakpoint-up(md) {
+    @include short-flex(row nowrap);
     height: 45vh;
   }
   @include media-breakpoint-up(xl) {
@@ -22,11 +23,9 @@
   @include short-flex(row wrap, center, center);
   @include background(center, cover);
   flex-grow: 1;
-  flex-shrink: 0.20;
   border: ($showcase-border-size / 2) solid $showcase-border-color;
   opacity: .9;
-  min-width: 50%;
-  max-width: 100%;
+  width: 50%;
   min-height: 11.25rem;
   &:hover {
     opacity: 1;
@@ -36,13 +35,8 @@
     height: 8rem;
   }
   @include media-breakpoint-up(md) {
-    min-width: 33.3%;
-    max-width: 50%;
+    width: 20%;
     height: auto;
-  }
-  @include media-breakpoint-up(xl) {
-    min-width: inherit;
-    max-width: inherit;
   }
   h3 {
     width: 100%;
