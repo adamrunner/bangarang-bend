@@ -1,0 +1,53 @@
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit menu item</h3>
+
+      <%= form_for @menu_item, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "name", class: "font-weight-bold" %>:
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :choices, "choices", class: "font-weight-bold" %>:
+          <%= f.text_area :choices, rows: 6, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :price, "price", class: "font-weight-bold" %>:
+          <%= f.text_field :price, class: "form-control" %>
+        </div>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "cancel", admin_catering_menu_path(@menu_item.catering_menu), class: "btn btn-secondary" %>
+        <%= link_to "delete", admin_menu_item_path(@menu_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@menu_item.name}?"}, class: "btn btn-danger pull-xs-right" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="text-capitalize">belongs to:</h4>
+      <ul>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">Menu:</b> <%= @menu_item.catering_menu.name %></p></li>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">Section:</b> <%= @menu_item.menu_section.name %></p></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="text-capitalize">info:</h4>
+      <ul>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">created at:</b> <%= ftime(@menu_item.created_at) %></p></li>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">updated at:</b> <%= ftime(@menu_item.updated_at) %></p></li>
+      </ul>
+    </div>
+  </div>
+</div>

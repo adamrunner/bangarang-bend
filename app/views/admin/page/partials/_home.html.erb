@@ -1,0 +1,20 @@
+<% @content_items.each do |content_item| %>
+
+  <div class="card card-inverse card-primary">
+    
+    <div class="card-block">
+      <h3 class="card-title"><%= content_item[:name] %></h3>
+    </div>
+
+    <div class="list-group list-group-flush">
+      <% content_item[:content_items].each do |item| %>
+        <div class="list-group-item">
+          <h5><%= item[:name] %></h5>
+          <p><%= item[:description] %></p>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,12 @@
+<div class="card card-inverse card-primary">
+  <div class="card-block">
+    <h3 class="card-title">Content</h3>
+  </div>
+  <div class="list-group list-group-flush">
+    <% @content_items.each do |content_item| %>
+      <div class="list-group-item">
+        <h4><%= content_item.name %> </h4>
+      </div>
+    <% end %>
+  </div>
+</div>

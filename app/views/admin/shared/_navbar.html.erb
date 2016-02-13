@@ -1,0 +1,13 @@
+<nav class="navbar navbar-full navbar-fixed-top">
+
+  <%= link_to "BangarangBend Admin", admin_root_path, class: "navbar-brand" %>
+
+  <div class="nav navbar-nav">
+    <% if admin_signed_in? %>
+      <%= link_to(destroy_admin_session_path, method: :delete, class: "nav-item nav-link pull-xs-right") do %>
+        <i class="fa fa-sign-out"></i> Sign Out
+      <% end %>
+    <% end %>
+  </div>
+  
+</nav>

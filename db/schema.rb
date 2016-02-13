@@ -11,14 +11,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108041516) do
+ActiveRecord::Schema.define(version: 20160209192437) do
 
-  create_table "featured_items", force: :cascade do |t|
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+  end
+
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "biography_items", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
+    t.string   "img_url",     limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "biography_items", ["page_id"], name: "index_biography_items_on_page_id", using: :btree
+
+  create_table "catering_menus", force: :cascade do |t|
+    t.integer  "page_id",    limit: 4
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "catering_menus", ["page_id"], name: "index_catering_menus_on_page_id", using: :btree
+
+  create_table "event_items", force: :cascade do |t|
+    t.integer  "page_id",    limit: 4
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "event_items", ["page_id"], name: "index_event_items_on_page_id", using: :btree
+
+  create_table "event_items_produce_items", id: false, force: :cascade do |t|
+    t.integer "event_item_id",         limit: 4
+    t.integer "event_produce_item_id", limit: 4
+  end
+
+  add_index "event_items_produce_items", ["event_item_id"], name: "index_event_items_produce_items_on_event_item_id", using: :btree
+  add_index "event_items_produce_items", ["event_produce_item_id"], name: "index_event_items_produce_items_on_event_produce_item_id", using: :btree
+
+  create_table "event_produce_items", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "featured_items", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "image_url",   limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "featured_items", ["page_id"], name: "index_featured_items_on_page_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "url",            limit: 255
@@ -31,10 +96,51 @@ ActiveRecord::Schema.define(version: 20160108041516) do
   add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
 
   create_table "menu_items", force: :cascade do |t|
+    t.integer  "menu_section_id", limit: 4
+    t.string   "name",            limit: 255
+    t.text     "choices",         limit: 65535
+    t.string   "price",           limit: 255
+    t.string   "special_attr",    limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "menu_items", ["menu_section_id"], name: "index_menu_items_on_menu_section_id", using: :btree
+
+  create_table "menu_sections", force: :cascade do |t|
+    t.integer  "catering_menu_id", limit: 4
+    t.string   "name",             limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "menu_sections", ["catering_menu_id"], name: "index_menu_sections_on_catering_menu_id", using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "link_name",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "philosophy_items", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "philosophy_items", ["page_id"], name: "index_philosophy_items_on_page_id", using: :btree
+
+  create_table "service_items", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "service_items", ["page_id"], name: "index_service_items_on_page_id", using: :btree
 
 end

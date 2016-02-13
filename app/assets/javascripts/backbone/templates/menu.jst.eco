@@ -52,11 +52,11 @@
           <p>parmesan Reggiano gougeres, Brazilian cheese bread, challah, black truffle butter</p>
       </div>
       <div class="menu-section-item">
-          <h5>Andouille Soup <em>(cup..4) (bowl..6)</em></h5>
+          <h5>Andouille Soup <em>(cup..4 bowl..6)</em></h5>
           <p>wheat berry, Queensland squash, sage, maple</p>
       </div>
       <div class="menu-section-item">
-          <h5>Beer Cheese Soup <em>(cup..4) (bowl..6)</em></h5>
+          <h5>Beer Cheese Soup <em>(cup..4 bowl..6)</em></h5>
           <p>Dead Guy Ale, Tillamook vintage white cheddar, shallot</p>
       </div>
       <div class="menu-section-item">
@@ -70,11 +70,11 @@
     <h3 class="page-section-title small-title">Harvest</h3>
     <div class="page-section-body">
       <div class="menu-section-item">
-          <h5>Citrus <em>(side..4) (entrée..9)</em></h5>
+          <h5>Citrus <em>(side..4 entrée..9)</em></h5>
           <p>mache, frisee, blood orange, prosciutto, pomegranate, fennel, yuzu kaffir vinaigrette</p>
       </div>
       <div class="menu-section-item">
-          <h5>Bibb <em>(side..3) (entrée..8)</em></h5>
+          <h5>Bibb <em>(side..3 entrée..8)</em></h5>
           <p>wheat berry, roasted root veggies, pine nut, herbs, anchovy dressing</p>
       </div>
     </div>
