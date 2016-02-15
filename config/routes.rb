@@ -18,11 +18,16 @@ Rails.application.routes.draw do
     root to: 'admin_user#index'
     resources :admin_user
     resources :page
-    resources :catering_menu
-    resources :menu_section do
+
+    resources :catering_menu do
+      resources :menu_section, only: [:new, :create]
+    end
+
+    resources :menu_section, only: [:edit, :update, :destroy] do
       resources :menu_item, only: [:new, :create]
     end
-    resources :menu_item, only: [:edit, :update, :destroy]
-  end
 
+    resources :menu_item, only: [:edit, :update, :destroy]
+
+  end
 end
