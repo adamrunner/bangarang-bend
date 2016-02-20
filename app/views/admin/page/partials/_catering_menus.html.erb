@@ -1,12 +1,7 @@
+<div class="card-block">
+  <%= link_to "new menu", new_admin_page_catering_menu_path(@page), class: "btn btn-success" %>
+</div>
+
 <% @content_items.each do |catering_menu| %>
-
-  <div class="card card-inverse card-primary">
-    <div class="card-block"></div>
-    
-    <div class="list-group list-group-flush">
-      <%= link_to catering_menu.name, admin_catering_menu_path(catering_menu), class: "list-group-item" %>
-    </div>
-
-  </div>
-
+  <%= render partial: "admin/catering_menu/partials/catering_menu", locals: {catering_menu: catering_menu} %>
 <% end %>

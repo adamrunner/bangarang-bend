@@ -1,29 +1,22 @@
 <div class="col-xs-12">
 
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">menu options</h3>
-    </div>
-    <div class="card-block">
-      <%= link_to "add section", new_admin_catering_menu_menu_section_path(@catering_menu), class: "btn btn-success text-capitalize" %>
-    </div>
-  </div>
+  <%= render partial: "admin/catering_menu/partials/catering_menu", locals: {catering_menu: @catering_menu} %>
 
+  <div class="card border-inverse">
 
-  <div class="card card-inverse card-primary">
-
-    <div class="card-block">
-      <h3 class="card-title text-capitalize"><%= @catering_menu[:name] %></h3>
+    <div class="card-block bg-inverse border-inverse">
+      <h3 class="card-title text-capitalize">menu sections</h3>
+      <%= link_to "add section", new_admin_catering_menu_menu_section_path(@catering_menu), class: "btn btn-success" %>
     </div>
 
     <div class="list-group list-group-flush">
       <% @catering_menu.menu_sections.each do |section| %>
-        <div class="list-group-item">
+        <div class="list-group-item border-inverse menu-list">
 
-          <div class="section-nav">
+          <div class="card-nav">
             <h4 class="font-weight-bold text-capitalize"><%= section[:name] %></h4>
             <%= link_to "edit section", edit_admin_menu_section_path(section), class: "btn btn-info" %>
-            <%= link_to "delete section", admin_menu_section_path(section), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(section.name)}' and all menu items associated with it?"}, class: "btn btn-danger" %>
+            <%= link_to "delete section", admin_menu_section_path(section), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(section.name)}' and all menu items associated with it?"}, class: "btn btn-danger pull-md-right" %>
           </div>
 
           <div class="row menu-row">

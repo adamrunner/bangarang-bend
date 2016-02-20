@@ -3,6 +3,7 @@ class CreateEventItems < ActiveRecord::Migration
     create_table :event_items do |t|
       t.references :page, index: true
       t.string :name
+      t.text :description
       t.timestamps null: false
     end
     create_table :event_items_produce_items, id: false do |t|

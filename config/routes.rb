@@ -15,11 +15,15 @@ Rails.application.routes.draw do
     }
 
   namespace :admin do
-    root to: 'admin_user#index'
-    resources :admin_user
-    resources :page
+    root to: 'page#index'
 
-    resources :catering_menu do
+    resources :admin_user
+
+    resources :page, only: [:index, :show] do
+      resources :catering_menu, only: [:new, :create]
+    end
+
+    resources :catering_menu, only: [:index, :show, :edit, :update, :destroy] do
       resources :menu_section, only: [:new, :create]
     end
 

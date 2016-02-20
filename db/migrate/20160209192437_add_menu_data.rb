@@ -84,7 +84,7 @@ class AddMenuData < ActiveRecord::Migration
   end
 
   def down
-    MenuPage.all.each do |page|
+    CateringMenu.all.each do |page|
       page.destroy
     end
 

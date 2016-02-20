@@ -1,0 +1,40 @@
+<div class="card border-inverse">
+
+  <div class="card-block bg-inverse">
+    <h3 class="card-title no-margin"><%= catering_menu[:name] %></h3>
+  </div>
+
+  <div class="card-block">
+    <span class="font-weight-bold">Description:</span>
+    <p class="description text-muted">
+      <% if catering_menu.description === nil %>
+        No description entered yet
+      <% else %>
+        <%= catering_menu.description %>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="catering-menu-stats">
+    <div class="stats-section">
+        <span class="font-weight-bold">Menu Sections: </span>
+        <span><%= catering_menu.num_of_sections %></span>
+        <span class="font-weight-bold">Menu Items: </span>
+        <span><%= catering_menu.num_of_items %></span>
+    </div>
+    <div class="stats-section">
+        <span class="font-weight-bold">Created At:</span>
+        <span><%= ftime_short(catering_menu.created_at) %></span>
+        <span class="font-weight-bold">Updated At:</span>
+        <span><%= ftime_short(catering_menu.updated_at) %></span>
+    </div>
+  </div>
+
+  <div class="catering-menu-nav" class="card-block">
+    <% #TODO fix this so it doesn't render a view button while your currently viewing the menu %>
+    <%= link_to "view / edit contents", admin_catering_menu_path(catering_menu), class: "btn btn-primary" %>
+    <%= link_to "edit name / description", edit_admin_catering_menu_path(catering_menu), class: "btn btn-info" %>
+    <%= link_to "delete", admin_catering_menu_path(catering_menu), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(catering_menu.name)}' and all menu sections/items associated with it?"}, class: "btn btn-danger pull-md-right" %>
+  </div>
+
+</div>

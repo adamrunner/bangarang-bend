@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card border-inverse">
+      <div class="card-block bg-inverse">
+        <h3 class="card-title">Pages</h3>
+      </div>
+      <div id="admin-page-select" class="list-group list-group-flush">
+        <% @pages.each do |page| %>
+          <div class="list-group-item border-inverse">
+            <h4 class="no-margin text-capitalize font-weight-bold"><%= page.link_name %></h4>
+            <div class="card-block">
+              <span class="font-weight-bold">Description:</span>
+              <p class="description text-muted">
+                <% if page.description == nil %>
+                  No description entered yet
+                <% else %>
+                  <%= page.description %>
+                <% end %>
+              </p>
+            </div>
+            <%= link_to "view / edit content", admin_page_path(page), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
