@@ -1,0 +1,24 @@
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit biography</h3>
+
+      <%= form_for @biography_item, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "name", class: "font-weight-bold" %>:
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, "description", class: "font-weight-bold" %>:
+          <%= f.text_area :description, rows: 6, class: "form-control" %>
+        </div>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "cancel", :back, class: "btn btn-secondary" %>
+        <%= link_to "delete", admin_biography_item_path(@biography_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@biography_item.name.titleize}'?"}, class: "btn btn-danger pull-md-right" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

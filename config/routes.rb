@@ -21,9 +21,14 @@ Rails.application.routes.draw do
 
     resources :page, only: [:index, :show] do
       resources :catering_menu, only: [:new, :create]
+      resources :biography_item, only: [:new, :create]
+      resources :featured_item, only: [:new, :create]
     end
 
-    resources :catering_menu, only: [:index, :show, :edit, :update, :destroy] do
+    resources :biography_item, only: [:edit, :update, :destroy]
+    resources :featured_item, only: [:edit, :update, :destroy]
+
+    resources :catering_menu, only: [:show, :edit, :update, :destroy] do
       resources :menu_section, only: [:new, :create]
     end
 
