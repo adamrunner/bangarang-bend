@@ -15,10 +15,10 @@ class Page < ActiveRecord::Base
   end
 
   def home_items
-    home_items = [
-      {name: "featured", content_items: self.featured_items},
-      {name: "biography", content_items: self.biography_items}
-    ]
+    home_items = {
+      featured: {name: "featured", featured_items: self.featured_items},
+      biography: {name: "biography", biography_items: self.biography_items}
+    }
   end
 
   def page_content

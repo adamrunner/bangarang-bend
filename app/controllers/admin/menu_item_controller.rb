@@ -8,6 +8,10 @@ class Admin::MenuItemController < Admin::BaseController
     end
   end
 
+  def new
+    @menu_section = MenuSection.find(params[:menu_section_id])
+  end
+
   def edit
     @menu_item = MenuItem.find(params[:id])
   end

@@ -8,14 +8,16 @@ class Admin::CateringMenuController < Admin::BaseController
     end
   end
 
+  def new
+    @page = Page.find(params[:page_id])
+  end
+
   def show
     @catering_menu = CateringMenu.find(params[:id])
-    @breadcrumbs = MenuCrumbs.show(@catering_menu)
   end
 
   def edit
     @catering_menu = CateringMenu.find(params[:id])
-    @breadcrumbs = MenuCrumbs.edit(@catering_menu)
   end
 
   def update

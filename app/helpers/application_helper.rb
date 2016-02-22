@@ -14,22 +14,4 @@ module ApplicationHelper
     string.split.map(&:capitalize).join(' ')
   end
 
-  def breadcrumb_link(breadcrumb)
-    controller = breadcrumb[0]
-    action = breadcrumb[1]
-    data_model = breadcrumb[2] ? breadcrumb[2] : nil
-
-    if action === "index"
-      name = controller.pluralize.titleize
-      id = nil
-    elsif action === "edit"
-      name = "edit".titleize
-      id = data_model.id
-    else
-      name = data_model.name.titleize
-      id = data_model.id
-    end
-    link_to_unless_current(name, {controller: controller, action: action, id: id})
-  end
-
 end

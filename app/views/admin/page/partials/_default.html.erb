@@ -3,9 +3,9 @@
     <h3 class="card-title">Content</h3>
   </div>
   <div class="list-group list-group-flush">
-    <% @content_items.each do |content_item| %>
+    <% @page_contents.each do |content| %>
       <div class="list-group-item">
-        <h4><%= content_item.name %> </h4>
+        <h4><%= content.name %> </h4>
       </div>
     <% end %>
   </div>

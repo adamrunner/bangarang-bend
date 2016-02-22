@@ -1,0 +1,18 @@
+<div class="card card-inverse card-primary">
+
+  <div class="card-block">
+    <h3 class="card-title"><%= biography[:name] %></h3>
+  </div>
+
+  <div class="list-group list-group-flush">
+    <% biography[:biography_items].each do |biography_item| %>
+
+      <div class="list-group-item">
+        <h5><%= biography_item[:name] %></h5>
+        <p><%= biography_item[:description] %></p>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>

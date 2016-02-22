@@ -1,0 +1,18 @@
+<div class="card card-inverse card-primary">
+
+  <div class="card-block">
+    <h3 class="card-title"><%= featured[:name] %></h3>
+  </div>
+
+  <div class="list-group list-group-flush">
+    <% featured[:featured_items].each do |featured_item| %>
+
+      <div class="list-group-item">
+        <h5><%= featured_item[:name] %></h5>
+        <p><%= featured_item[:description] %></p>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>

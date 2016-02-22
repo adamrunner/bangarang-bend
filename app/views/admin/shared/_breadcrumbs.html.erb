@@ -1,14 +1,7 @@
 <div class="col-xs-12">
   <div class="card card-block">
 
-    <ol class="breadcrumb">
-      <li class="text-muted"><b>Admin</b></li>
-      <% if @breadcrumbs %>
-        <% @breadcrumbs.each do |breadcrumb| %>
-          <li><%= breadcrumb_link(breadcrumb) %></li>
-        <% end %>
-      <% end %>
-    </ol>
+    <%= breadcrumbs style: :bootstrap, display_single_fragment: true %>
 
   </div>
 </div>

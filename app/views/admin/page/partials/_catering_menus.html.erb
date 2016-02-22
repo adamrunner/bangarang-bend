@@ -2,6 +2,6 @@
   <%= link_to "new menu", new_admin_page_catering_menu_path(@page), class: "btn btn-success" %>
 </div>
 
-<% @content_items.each do |catering_menu| %>
-  <%= render partial: "admin/catering_menu/partials/catering_menu", locals: {catering_menu: catering_menu} %>
+<% @page_contents.each do |catering_menu| %>
+  <%= render partial: "admin/catering_menu/partials/show", locals: {catering_menu: catering_menu} %>
 <% end %>
