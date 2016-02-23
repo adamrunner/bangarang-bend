@@ -23,10 +23,16 @@ Rails.application.routes.draw do
       resources :catering_menu, only: [:new, :create]
       resources :biography_item, only: [:new, :create]
       resources :featured_item, only: [:new, :create]
+      resources :service_item, only: [:new, :create]
+      resources :philosophy_item, only: [:new, :create]
+      resources :event_item, only: [:new, :create]
     end
 
     resources :biography_item, only: [:edit, :update, :destroy]
     resources :featured_item, only: [:edit, :update, :destroy]
+    resources :service_item, only: [:edit, :update, :destroy]
+    resources :philosophy_item, only: [:edit, :update, :destroy]
+    resources :event_item, only: [:edit, :update, :destroy]
 
     resources :catering_menu, only: [:show, :edit, :update, :destroy] do
       resources :menu_section, only: [:new, :create]
