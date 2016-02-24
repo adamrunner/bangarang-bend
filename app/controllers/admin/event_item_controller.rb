@@ -9,10 +9,16 @@ class Admin::EventItemController < Admin::BaseController
     end
   end
 
+  def edit
+    @current_produce = @event_item.event_produce_items
+    @all_produce = EventProduceItem.all
+    @difference_produce = @all_produce - @current_produce
+  end
+
   def update
     @event_item.update(event_item_params)
     if @event_item.save
-      redirect_to admin_page_path(event_item.page), notice: "Event Item Successfully Updated"
+      redirect_to edit_admin_event_item_path(@event_item), notice: "Event Item Successfully Updated"
     end
   end
 
@@ -24,7 +30,7 @@ class Admin::EventItemController < Admin::BaseController
 
   private
   def event_item_params
-    params.require(:event_item).permit(:name, :description)
+    params.require(:event_item).permit(:name, :description, event_produce_item_ids:[])
   end
 
   def find_page

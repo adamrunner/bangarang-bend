@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :service_item, only: [:new, :create]
       resources :philosophy_item, only: [:new, :create]
       resources :event_item, only: [:new, :create]
+      resources :event_produce_item, only: [:new, :create]
     end
 
     resources :biography_item, only: [:edit, :update, :destroy]
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
     resources :service_item, only: [:edit, :update, :destroy]
     resources :philosophy_item, only: [:edit, :update, :destroy]
     resources :event_item, only: [:edit, :update, :destroy]
+    resources :event_produce_item, only: [:edit, :update, :destroy]
 
     resources :catering_menu, only: [:show, :edit, :update, :destroy] do
       resources :menu_section, only: [:new, :create]

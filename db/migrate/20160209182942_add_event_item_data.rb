@@ -39,7 +39,7 @@ class AddEventItemData < ActiveRecord::Migration
     end
 
     event_produce_items.each do |event_produce_item|
-      EventProduceItem.create(name: event_produce_item)
+      events.event_produce_items.create(name: event_produce_item)
     end
 
     june = EventItem.find_by(name: "june")

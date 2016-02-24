@@ -1,0 +1,52 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+  Add / Remove Produce
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-xs-12">
+
+                <%= form_for @event_item, url: {action: "update"} do |f| %>
+
+                  <div class="form-group">
+                    <div class="produce">
+
+                      <%= f.collection_check_boxes :event_produce_item_ids, EventProduceItem.all, :id, :name do |b| %>
+
+                        <div class="produce-item">
+                          <%= b.check_box %>
+                          <%= b.label do %>
+                            <%= b.text %>
+                            <i class="fa fa-check-circle"></i>
+                          <% end %>
+                        </div>
+
+                      <% end %>
+                    </div>
+
+                  </div>
+                  <%= f.submit "save", class: "btn btn-success" %>
+                <% end %>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

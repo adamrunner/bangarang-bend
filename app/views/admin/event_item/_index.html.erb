@@ -1,12 +1,12 @@
 <div class="card border-inverse">
 
   <div class="card-block bg-inverse">
-    <h3 class="card-title">personalized events</h3>
-    <%= link_to "add event", new_admin_page_event_item_path(params[:id]), class: "btn btn-success" %>
+    <h3 class="card-title">months</h3>
+    <%= link_to "add month", new_admin_page_event_item_path(params[:id]), class: "btn btn-success" %>
   </div>
 
   <div class="list-group list-group-flush">
-    <% event_items.each do |event_item| %>
+    <% event_items[:event_items].each do |event_item| %>
 
       <div class="list-group-item border-inverse">
         <h4 class="font-weight-bold text-capitalize"><%= event_item[:name] %></h4>

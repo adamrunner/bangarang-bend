@@ -71,11 +71,14 @@ ActiveRecord::Schema.define(version: 20160209192437) do
   add_index "event_items_produce_items", ["event_produce_item_id"], name: "index_event_items_produce_items_on_event_produce_item_id", using: :btree
 
   create_table "event_produce_items", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "event_produce_items", ["page_id"], name: "index_event_produce_items_on_page_id", using: :btree
 
   create_table "featured_items", force: :cascade do |t|
     t.integer  "page_id",     limit: 4

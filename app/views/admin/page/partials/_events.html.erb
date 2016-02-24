@@ -1,1 +1,3 @@
-<%= render partial: "admin/event_item/index", locals: {event_items: @page_contents} %>
+<%= render partial: "admin/event_item/index", locals: {event_items: @page_contents[:months]} %>
+
+<%= render partial: "admin/event_produce_item/index", locals: {event_produce_items: @page_contents[:produce]} %>

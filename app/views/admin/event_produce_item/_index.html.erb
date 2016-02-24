@@ -1,0 +1,18 @@
+<div class="card border-inverse">
+
+  <div class="card-block bg-inverse">
+    <h3 class="card-title">produce</h3>
+    <%= link_to "add produce", new_admin_page_event_produce_item_path(@page), class: "btn btn-success" %>
+  </div>
+
+  <div class="card-block produce">
+    <% event_produce_items[:event_produce_items].each do |event_produce_item| %>
+
+      <div class="produce-item">
+        <p class="text-muted"><%= event_produce_item[:name] %></p>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>
