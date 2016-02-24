@@ -30,10 +30,10 @@
     </div>
   </div>
 
-  <div class="catering-menu-nav" class="card-block">
+  <div class="catering-menu-nav card-block">
     <% #TODO fix this so it doesn't render a view button while your currently viewing the menu %>
-    <%= link_to "view / edit contents", admin_catering_menu_path(catering_menu), class: "btn btn-primary" %>
-    <%= link_to "edit name / description", edit_admin_catering_menu_path(catering_menu), class: "btn btn-info" %>
+    <%= link_to "view / edit contents", admin_catering_menu_path(catering_menu), class: "btn btn-info" %>
+    <%= link_to "edit name / description", edit_admin_catering_menu_path(catering_menu), class: "btn btn-primary" %>
     <%= link_to "delete", admin_catering_menu_path(catering_menu), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(catering_menu.name)}' and all menu sections/items associated with it?"}, class: "btn btn-danger pull-md-right" %>
   </div>
 

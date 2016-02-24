@@ -9,8 +9,24 @@
     <% event_items[:event_items].each do |event_item| %>
 
       <div class="list-group-item border-inverse">
-        <h4 class="font-weight-bold text-capitalize"><%= event_item[:name] %></h4>
-        <p class="text-muted"><%= event_item[:description] %></p>
+        <h4 class="font-weight-bold text-capitalize no-margin"><%= event_item[:name] %></h4>
+
+        <small class="font-weight-bold text-uppercase">Assigned Produce: </small>
+        <small><%= event_item.num_of_produce %></small>
+
+        <div class="card-block">
+          <span class="font-weight-bold">Description:</span>
+          <p class="description text-muted">
+            <% if event_item[:description] === nil %>
+              No description entered yet
+            <% else %>
+              <%= event_item[:description] %>
+            <% end %>
+          </p>
+        </div>
+
+
+
         <%= link_to "edit", edit_admin_event_item_path(event_item), class: "btn btn-info" %>
         <%= link_to "delete", admin_event_item_path(event_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{event_item.name.titleize}' ?"}, class: "btn btn-danger pull-md-right" %>
       </div>

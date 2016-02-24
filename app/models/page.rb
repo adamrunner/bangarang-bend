@@ -8,7 +8,7 @@ class Page < ActiveRecord::Base
   has_many :service_items
 
   def content_type
-    if self.name === "catering_menus" || "events"
+    if self.name === "catering_menus" || self.name === "events"
       return self.name
     else
       return self.name.singularize << "_items"

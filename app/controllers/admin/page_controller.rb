@@ -7,6 +7,7 @@ class Admin::PageController < Admin::BaseController
   def show
     @page = Page.find(params[:id])
     @page_contents = @page.page_content
+    @tab = params[:tab]
   end
 
   private

@@ -10,6 +10,9 @@
 
       <div class="produce-item">
         <p class="text-muted"><%= event_produce_item[:name] %></p>
+        <%= link_to admin_event_produce_item_path(event_produce_item), method: "delete", data: {confirm: "Are you sure you want to delete '#{event_produce_item.name.titleize}' ?"}, class: "produce-delete" do %>
+          <i class="fa fa-close"></i>
+        <% end %>
       </div>
 
     <% end %>

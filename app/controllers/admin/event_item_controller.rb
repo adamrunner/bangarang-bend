@@ -11,8 +11,6 @@ class Admin::EventItemController < Admin::BaseController
 
   def edit
     @current_produce = @event_item.event_produce_items
-    @all_produce = EventProduceItem.all
-    @difference_produce = @all_produce - @current_produce
   end
 
   def update
