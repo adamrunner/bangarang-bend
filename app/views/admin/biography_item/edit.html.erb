@@ -14,9 +14,26 @@
           <%= f.text_area :description, rows: 6, class: "form-control" %>
         </div>
 
+        <% if @biography_item.image? %>
+          <figure class="form-group">
+            <%= image_tag(@biography_item.image.biography_thumb.url, class:"figure-img") %>
+            <figcaption class="figure-caption"><%= @biography_item[:image] %></figcaption>
+          </figure>
+
+          <div class="form-group">
+            <%= f.label :remove_image, "Delete Image: ", class: "font-weight-bold" %>
+            <%= f.check_box :remove_image %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :image, "change image", class: "font-weight-bold" %>:
+          <%= f.file_field :image, class: "form-control-file" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
         <%= f.submit "save", class: "btn btn-success" %>
         <%= link_to "cancel", :back, class: "btn btn-secondary" %>
-        <%= link_to "delete", admin_biography_item_path(@biography_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@biography_item.name.titleize}'?"}, class: "btn btn-danger pull-md-right" %>
       <% end %>
 
     </div>

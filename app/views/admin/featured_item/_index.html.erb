@@ -10,9 +10,18 @@
 
       <div class="list-group-item border-inverse">
         <h4 class="font-weight-bold text-capitalize"><%= featured_item[:name] %></h4>
-        <p class="text-muted"><%= featured_item[:description] %></p>
-        <%= link_to "edit", edit_admin_featured_item_path(featured_item), class: "btn btn-info" %>
-        <%= link_to "delete", admin_featured_item_path(featured_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{featured_item.name.titleize}'?"}, class: "btn btn-danger pull-md-right" %>
+        <div class="row">
+          <div class="col-xs-12 col-md-9">
+            <p class="text-muted"><%= featured_item[:description] %></p>
+          </div>
+          <div class="col-xs-8 col-md-3">
+            <%= image_tag(featured_item.image.featured_thumb.url, class:"img-fluid img-thumbnail") if featured_item.image? %>
+          </div>
+          <div class="col-xs-12 list-item-footer">
+          <%= link_to "edit", edit_admin_featured_item_path(featured_item), class: "btn btn-info" %>
+          <%= link_to "delete", admin_featured_item_path(featured_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{featured_item.name.titleize}'?"}, class: "btn btn-danger pull-md-right" %>
+          </div>
+        </div>
       </div>
 
     <% end %>

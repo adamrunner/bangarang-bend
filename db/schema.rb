@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209192437) do
+ActiveRecord::Schema.define(version: 20160225185711) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160209192437) do
     t.string   "img_url",     limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "image",       limit: 255
   end
 
   add_index "biography_items", ["page_id"], name: "index_biography_items_on_page_id", using: :btree
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160209192437) do
     t.string   "image_url",   limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "image",       limit: 255
   end
 
   add_index "featured_items", ["page_id"], name: "index_featured_items_on_page_id", using: :btree
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 20160209192437) do
     t.string   "imageable_type", limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "avatar",         limit: 255
   end
 
   add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree

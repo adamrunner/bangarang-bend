@@ -18,7 +18,7 @@ class Page < ActiveRecord::Base
   def events
     events = {
       months: {name: "months", event_items: self.event_items},
-      produce: {name: "produce", event_produce_items: self.event_produce_items}
+      produce: {name: "produce", event_produce_items: self.event_produce_items.order(name: :asc)}
     }
   end
 

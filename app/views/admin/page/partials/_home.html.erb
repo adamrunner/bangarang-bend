@@ -1,3 +1,17 @@
-<%= render partial: "admin/featured_item/index", locals: {featured: @page_contents[:featured]} %>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link <%= @tab != "biography" ? "active" : "" %>" data-toggle="tab" href="#featured-tab" role="tab">Featured Items</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= @tab == "biography" ? "active" : "" %>" data-toggle="tab" href="#biography-tab" role="tab">Biography</a>
+  </li>
+</ul>
 
-<%= render partial: "admin/biography_item/index", locals: {biography: @page_contents[:biography]} %>
+<div class="tab-content">
+  <div class="tab-pane <%= @tab != "biography" ? "active" : "" %>" id="featured-tab" role="tabpanel">
+    <%= render partial: "admin/featured_item/index", locals: {featured: @page_contents[:featured]} %>
+  </div>
+  <div class="tab-pane <%= @tab == "biography" ? "active" : "" %>" id="biography-tab" role="tabpanel">
+    <%= render partial: "admin/biography_item/index", locals: {biography: @page_contents[:biography]} %>
+  </div>
+</div>

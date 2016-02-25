@@ -5,26 +5,26 @@ class Admin::BiographyItemController < Admin::BaseController
     page = Page.find(params[:page_id])
     biography_item = page.biography_items.create(biography_item_params)
     if biography_item.save
-      redirect_to admin_page_path(biography_item.page), notice: "Biography Successfully Created"
+      redirect_to admin_page_path(biography_item.page, tab: "biography"), notice: "Biography Successfully Created"
     end
   end
 
   def update
     @biography_item.update(biography_item_params)
     if @biography_item.save
-      redirect_to admin_page_path(@biography_item.page), notice: "Biography Item Updated Successfully"
+      redirect_to admin_page_path(@biography_item.page, tab: "biography"), notice: "Biography Item Updated Successfully"
     end
   end
 
   def destroy
     if @biography_item.destroy
-      redirect_to admin_page_path(@biography_item.page), alert: "Biography Item Deleted Successfully"
+      redirect_to admin_page_path(@biography_item.page, tab: "biography"), alert: "Biography Item Deleted Successfully"
     end
   end
 
   private
   def biography_item_params
-    params.require(:biography_item).permit(:name, :description, :img_url)
+    params.require(:biography_item).permit(:name, :description, :image, :remove_image)
   end
 
   def find_biography_item

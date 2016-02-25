@@ -31,6 +31,9 @@ Rails.application.routes.draw do
 
     resources :biography_item, only: [:edit, :update, :destroy]
     resources :featured_item, only: [:edit, :update, :destroy]
+
+    delete '/featured_item/:id/delete_img', to: 'featured_item#destroy_img', as: 'delete_featured_img'
+
     resources :service_item, only: [:edit, :update, :destroy]
     resources :philosophy_item, only: [:edit, :update, :destroy]
     resources :event_item, only: [:edit, :update, :destroy]
