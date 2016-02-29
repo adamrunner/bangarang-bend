@@ -65,9 +65,9 @@ $featured-item-border-style: 3px solid #fff;
 
 $about-bg-color: transparentize($transparent-brand-primary, 0.15);
 
-$contact-bg-color: darken(#fff, 4%);
+$contact-bg-color: #eee;
 
-$footer-bg-color: darken(#fff, 4%);
+$footer-bg-color: $contact-bg-color;
 //
 
 

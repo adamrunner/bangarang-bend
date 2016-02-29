@@ -4,7 +4,7 @@
   background-color: #fff;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
-  .container-fluid {
+  .container-main {
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,9 @@
 #footer {
   width: 100%;
   height: 20rem;
-  background-color: $footer-bg-color;
+  background-color: transparent;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 .footer-inner {
   width: 100%;
@@ -79,7 +81,6 @@
 #mobile-nav {
   @include short-flex(column nowrap);
   height: 100%;
-  // padding-top: $navbar-height;
   font-size: 1.3em;
   .mobile-nav-links {
     @include short-flex(column nowrap);

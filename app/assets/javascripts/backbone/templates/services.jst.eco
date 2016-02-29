@@ -1,21 +1,22 @@
+<div class="card-block">
+  <h1>Our Services</h1>
+</div>
 
-  <div class="page-header primary">
-    <h1>Our Services</h1>
-  </div>
+<div class="card-block inner-block">
+  <div class="row">
 
-  <div class="page-wrap no-footer">
-
-    <% @service_items.forEach (service_item) ->: %>
-
-    <div class="page-section">
-      <h2 class="page-section-title small-title"><%= service_item.get('name') %></h2>
-      <div class="page-section-body">
-        <p>
-          <%= service_item.get('description') %>
-        </p>
+  <% @service_items.forEach (service_item) ->: %>
+    <div class="col-xs-6 service-col">
+      <div class="card service-card">
+        <div class="card-block">
+          <h3 class="service-title m-a-0"><%= service_item.get('name') %></h3>
+        </div>
+        <div class="card-block service-block">
+          <p><%= service_item.get('description') %></p>
+        </div>
       </div>
     </div>
-
-    <% end %>
+  <% end %>
 
   </div>
+</div>

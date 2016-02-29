@@ -1,21 +1,10 @@
+<div class="card-block">
+  <h1>Our Philosophy</h1>
+</div>
 
-  <div class="page-header primary">
-    <h1>Our Philosophy</h1>
+<% @philosophy_items.forEach (philosophy_item) ->: %>
+  <div class="card-block">
+    <h2 class="light-caps"><%= philosophy_item.get('name') %></h2>
+    <p class=text-muted><%= philosophy_item.get('description') %></p>
   </div>
-
-  <div class="page-wrap no-footer">
-
-    <% @philosophy_items.forEach (philosophy_item) ->: %>
-
-    <div class="page-section">
-      <h2 class="page-section-title"><%= philosophy_item.get('name') %></h2>
-      <div class="page-section-body">
-        <p>
-          <%= philosophy_item.get('description') %>
-        </p>
-      </div>
-    </div>
-
-    <% end %>
-
-  </div>
+<% end %>

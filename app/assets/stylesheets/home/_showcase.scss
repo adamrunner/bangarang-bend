@@ -1,6 +1,7 @@
 #showcase {
   width: 100%;
-  background: $showcase-bg-color;
+  background: transparent;
+  border: solid 1px #000;
 }
 .showcase-inner {
   @include short-flex(row wrap);
@@ -10,14 +11,13 @@
   background-color: inherit;
   @include media-breakpoint-up(md) {
     @include short-flex(row nowrap);
-    height: 35vh;
+    height: 30vh;
   }
 }
 .showcase-item {
   @include short-flex(row wrap, center, center);
   @include background(center, cover);
   flex-grow: 1;
-  border: ($showcase-border-size / 2) solid $showcase-border-color;
   opacity: .9;
   width: 50%;
   min-height: 11.25rem;

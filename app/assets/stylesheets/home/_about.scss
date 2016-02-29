@@ -1,13 +1,8 @@
 #about {
-  background-color: $about-bg-color;
+  background-color: transparent;
   color: transparentize(#fff, 0.05);
-  font-size: 1.2em;
   letter-spacing: 2px;
-  background-image: url("/images/background/classy_fabric.png");
-  h3 {
-    @extend %small-caps;
-    color: #fff;
-  }
+  border-radius: 1px;
 }
 .about-content {
   @include short-flex(column nowrap, center, center);

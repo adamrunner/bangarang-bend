@@ -4,7 +4,7 @@ class BangarangBend.Views.Services extends Backbone.View
   template: JST["backbone/templates/services"]
 
   id: 'services'
-  className: 'page-container'
+  className: 'card card-block shadow'
 
   initialize: ->
     @render()

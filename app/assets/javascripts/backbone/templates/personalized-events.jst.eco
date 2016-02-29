@@ -1,34 +1,24 @@
+<div class="card-block">
+  <h1>Personalized Events</h1>
+</div>
 
-  <div class="page-header primary">
-    <h1>Personalized Events</h1>
+<div class="card-block">
+  <p class="text-muted">Let’s make a menu as unique as the two of you are. We will collaborate with you to identify those foods that spark memories of the special moments in your lives. </p>
+  <p class="text-muted">We’ll then work with your budget and build a specific menu just for your event.</p>
+  <p class="text-muted">See what’s in season and let us incorporate these into your special day!</p>
+</div>
+
+<div class="card-block">
+    <h2>Local Produce</h2>
+</div>
+
+<% @event_items.forEach (event_item) ->: %>
+  <div class="card-block">
+    <h2><%= event_item.get('name') %></h2>
   </div>
-
-
-  <div class="page-wrap no-footer">
-    <div class="page-section">
-      <div class="page-section-body">
-        <p>Let’s make a menu as unique as the two of you are. We will collaborate with you to identify those foods that spark memories of the special moments in your lives. </p>
-        <p>We’ll then work with your budget and build a specific menu just for your event.</p>
-        <p>See what’s in season and let us incorporate these into your special day!</p>
-      </div>
-    </div>
-    <div class="page-section">
-      <div class="page-section-body">
-        <h2>Local Produce</h2>
-      </div>
-    </div>
-
-    <% @event_items.forEach (event_item) ->: %>
-
-    <div class="page-section">
-      <div class="page-section-body">
-        <h2 class="page-section-title small-title"><%= event_item.get('name') %></h2>
-        <p><% event_item.get('produce_items').forEach (produce_item) ->: %></p>
-        <span><%= produce_item.name %></span>
-        <% end %>
-      </div>
-    </div>
-
+  <div class="card-block produce-block inner-block">
+    <% event_item.get('produce_items').forEach (produce_item) ->: %>
+      <span class="produce-item"><%= produce_item.name %></span>
     <% end %>
-
   </div>
+<% end %>

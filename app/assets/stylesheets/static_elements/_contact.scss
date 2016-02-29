@@ -1,6 +1,8 @@
 #contact {
   @include short-flex(column nowrap, center, center);
-  background-color: $contact-bg-color;
+  background-color: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   .section-inner {
     @include short-flex(column nowrap, center, center);
     padding-bottom: 0rem;
@@ -22,6 +24,7 @@
   flex-grow: 1;
   margin: 1rem 0;
   border-radius: 3px;
+  color: #fff;
   @include media-breakpoint-up(sm) {
     width: 50%;
     max-width: 20rem;
@@ -49,7 +52,7 @@
     height: 2.1em;
     margin: 0 0.5rem;
     border-radius: 50%;
-    border: 2px solid transparentize(#fff , 0.03);
+    border: 2px solid #fff;
     background-color: $transparent-brand-primary;
     i {
       color: #fff;

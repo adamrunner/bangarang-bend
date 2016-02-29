@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container container-main">
   <i id="menu-btn" class="fa fa-bars nav-button"></i>
 
   <a class="navbar-brand" href="#">

@@ -1,42 +1,22 @@
 #featured {
   width: 100%;
-  background-color: $featured-bg-color;
-  background-image: url("/images/background/classy_fabric.png");
-  .section-header {
-    color: #fff;
-  }
-}
-.featured-item {
-  @include short-flex(column nowrap);
-  padding: 0.125rem;
-  width: 50%;
-  @include media-breakpoint-up(lg) {
-    width: 25%;
-    padding: 0.5rem;
-  }
-}
-.featured-img {
-  width: 100%;
-  height: 12rem;
-  @include background(#fff center, cover);
-  @include border($featured-item-border-style, top, right, left);
-}
-.featured-title {
-  background-color: $transparent-brand-primary;
-  color: $featured-title-color;
-  padding: 1rem;
-  margin: 0;
-  @extend %light-font;
-  @include border($featured-item-border-style, right, left);
-}
-.featured-block {
-  width: 100%;
-  flex-grow: 1;
-  font-size: 1.05em;
-  padding: 1rem;
-  background-color: darken(#fff, 3%);
-  @include border($featured-item-border-style, right, bottom, left);
+  background-color: transparent;
 }
 .card-featured {
   background-color: transparent;
+  border-color: transparent;
+}
+
+.featured-item {
+  border-color: #000;
+  background-color: transparent;
+}
+
+.featured-block {
+  background-color: transparentize(#222, 0.50);
+  color: #eee;
+}
+
+.featured-img {
+  border-bottom: 1px solid #000;
 }

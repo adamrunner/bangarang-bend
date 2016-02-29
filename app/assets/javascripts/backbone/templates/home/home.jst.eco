@@ -1,5 +1,11 @@
-<div id="showcase"></div>
+<div class="card card-block shadow">
+  <div id="showcase"></div>
+</div>
 
-<div id="featured"></div>
+<div class="card card-block shadow">
+  <div id="featured"></div>
+</div>
 
-<div id="about"></div>
+<div class="card card-block shadow">
+  <div id="about"></div>
+</div>

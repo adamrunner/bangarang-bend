@@ -32,6 +32,9 @@
   font-variant: small-caps;
   text-transform: capitalize;
 }
+.light-caps {
+  @extend %light-capitalize;
+}
 
 // Global Styling
 html {
@@ -54,24 +57,29 @@ body {
   font-size: inherit !important;
   margin-top: $navbar-height;
   overflow-x: hidden;
-  background-color: #eee;
+  background-image: url("/images/background/background_bio.jpg");
 }
 .no-padding {
   padding: 0;
 }
-.container-fluid {
-  max-width: 1366px;
+.container-main {
+  @media (min-width: 2000px) {
+    max-width: 1366px;
+  }
 }
 #main-wrap {
   height: auto;
   overflow: hidden;
-  max-width: 1366px;
   margin: 0 auto;
 }
 h1, h2 {
+  color: #fff;
   margin: 0;
-  width: 100%;
 }
+h1 {
+  @extend %light-uppercase;
+}
+
 ul {
   list-style: none;
 }
@@ -112,16 +120,6 @@ section {
   height: 1px;
   width: 80%;
 }
-#content {
-  // width: 100%;
-  // height: 100%;
-  @include media-breakpoint-up(md) {
-    overflow: hidden;
-    background-color: white;
-    // background: url('/images/background/dark_wall.png');
-    // background-size: cover;
-  }
-}
 
 // homepage and contact sections
 .section-inner {
@@ -142,6 +140,7 @@ section {
   width: 100%;
   text-align: center;
   padding: 1rem 0rem;
+  color: #fff;
 }
 //
 
@@ -182,7 +181,7 @@ section {
   @include short-flex(row wrap, flex-start);
   width: 100%;
   padding: 0rem;
-  background: #fff;
+  background: transparentize(#eee, 0.05);
   @include media-breakpoint-up(md) {
     padding: 0rem 3rem;
   }
@@ -218,3 +217,33 @@ section {
   padding: 2rem;
 }
 //
+
+.shadow {
+  background-color: $transparent-brand-primary;
+  border: 0;
+}
+
+.produce-item {
+  width: 10rem;
+  color: #fff;
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.5rem;
+  flex-grow: 2;
+  background-color: transparentize(#333, 0.50);
+  text-transform: capitalize;
+  text-align: center;
+  border: solid 1px #000;
+  @include media-breakpoint-down(sm) {
+    width: 25%;
+  }
+}
+.produce-block {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.inner-block {
+  padding: 0;
+}
