@@ -1,12 +1,5 @@
-<div id="landing">
-  <h1>
-    catering & <br>
-    event services.
-  </h1>
-</div>
+<div id="showcase"></div>
 
-<section id="showcase"></section>
+<div id="featured"></div>
 
-<section id="featured"></section>
-
-<section id="about"></section>
+<div id="about"></div>

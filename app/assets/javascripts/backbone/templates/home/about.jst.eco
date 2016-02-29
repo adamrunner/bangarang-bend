@@ -1,35 +1,18 @@
-<h3 class="section-header">about us</h3>
-
-<div class="about-item">
-  <div class="headshot"></div>
-  <div class="about-content">
-    <h3>Chef Dave Bodi</h3>
-    <p>
-      Chef Dave Bodi is a 4.0 graduate of
-      Le Cordon Bleu, Portland, OR, was the
-      owner/operator of Black Dog Baking Co.
-      and went on to be the Executive Chef for
-      Oregon Bride Magazine’s 2015 Caterer of
-      the Year , statewide. He has customized
-      hundreds of menus in all different styles and
-      cultures of cooking and enjoys taking part
-      in charitable community actions.
-    </p>
-  </div>
+<div class="card-block">
+  <h3 class="section-header no-margin">about us</h3>
 </div>
 
-<div class="about-item">
-  <div class="headshot"></div>
-  <div class="about-content">
-    <h3>Amy Bodi</h3>
-    <p>
-      Amy Bodi is a graduate from Oregon State
-      University with a degree in Merchandising
-      and Interior Design. With over fifteen years in
-      customer service, building and maintaining
-      relationships is at the forefront of every
-      interaction. Event coordination from logistics
-      to décor is available with any booking.
-    </p>
+<div class="card-block">
+  <div class="row">
+
+  <% @biography_items.forEach (biography_item) ->: %>
+    <div class="col-xs-12 col-md-6">
+      <img src="<%= biography_item.get('image_url') %>" class="headshot"></img>
+      <div class="about-content">
+        <h3><%= biography_item.get('name') %></h3>
+        <p class="p-x-1"><%= biography_item.get('description') %></p>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>

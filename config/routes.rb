@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       sign_out: 'logout',
     }
 
+  resources :service_items, only: [:index]
+  resources :event_items, only: [:index]
+  resources :philosophy_items, only: [:index]
+
   namespace :admin do
     root to: 'page#index'
 

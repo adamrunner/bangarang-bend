@@ -1,6 +1,7 @@
 class MainController < ApplicationController
-  
+
   def index
-    @bg_images = Image.all.where(imageable_type: "background")
+    @featured_items = FeaturedItem.all
+    @biography_items = BiographyItem.all
   end
 end

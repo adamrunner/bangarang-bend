@@ -1,23 +1,29 @@
 // navbar styling
 #navbar {
-  @include short-flex(row nowrap, space-between, center);
-  width: 100vw;
   height: $navbar-height;
   background-color: #fff;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-  &:after {
-    content: none;
+  margin: 0 auto;
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
   }
 }
 #menu-btn {
   height: $navbar-height;
   line-height: $navbar-height;
+  width: 4rem;
+  padding-left: 1rem;
 }
 .nav-brand-logo {
   height: $nav-brand-logo-height;
 }
-.nav-links {
-  @extend .pull-xs-right;
+.navbar-nav {
   @include media-breakpoint-down(md) {
     display: none;
   }

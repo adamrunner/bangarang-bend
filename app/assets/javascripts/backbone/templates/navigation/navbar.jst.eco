@@ -1,14 +1,16 @@
-<i id="menu-btn" class="fa fa-bars nav-button"></i>
 
-<a class="navbar-brand" href="#">
-  <img class="nav-brand-logo" src="/images/logo/bangarang_haute_cuisine.svg"/>
-</a>
+<div class="container-fluid">
+  <i id="menu-btn" class="fa fa-bars nav-button"></i>
 
-<div class="nav-links">
-  <a class="nav-link" href="#">home</a>
-  <a class="nav-link" href="#/services">services</a>
-  <a class="nav-link" href="#/menu">catering menu</a>
-  <a class="nav-link" href="#/personalized-events">personalized events</a>
-  <a class="nav-link" href="#/philosophy">philosophy</a>
-  <!-- <a class="nav-link" href="#">contact</a> -->
+  <a class="navbar-brand" href="#">
+    <img class="nav-brand-logo" src="/images/logo/bangarang_haute_cuisine.svg"/>
+  </a>
+
+  <div class="nav navbar-nav pull-xs-right">
+    <a class="nav-item nav-link" href="#">home</a>
+    <a class="nav-item nav-link" href="#/services">services</a>
+    <a class="nav-item nav-link" href="#/menu">catering menu</a>
+    <a class="nav-item nav-link" href="#/personalized-events">personalized events</a>
+    <a class="nav-item nav-link" href="#/philosophy">philosophy</a>
+  </div>
 </div>

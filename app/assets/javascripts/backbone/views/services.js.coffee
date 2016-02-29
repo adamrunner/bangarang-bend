@@ -10,5 +10,5 @@ class BangarangBend.Views.Services extends Backbone.View
     @render()
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(service_items: @collection))
     @

@@ -10,5 +10,5 @@ class BangarangBend.Views.Philosophy extends Backbone.View
     @render()
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(philosophy_items: @collection))
     @

@@ -1,6 +1,7 @@
 #featured {
   width: 100%;
   background-color: $featured-bg-color;
+  background-image: url("/images/background/classy_fabric.png");
   .section-header {
     color: #fff;
   }
@@ -8,29 +9,10 @@
 .featured-item {
   @include short-flex(column nowrap);
   padding: 0.125rem;
-  @include media-breakpoint-up(lg) {
-    padding: 0.5rem;
-  }
-}
-.featured-sm {
   width: 50%;
   @include media-breakpoint-up(lg) {
     width: 25%;
-    max-width: 18.13rem;
-  }
-}
-.featured-md {
-  width: 50%;
-  @include media-breakpoint-up(lg) {
-    width: 35%;
-    max-width: 25.31rem;
-  }
-}
-.featured-lg {
-  width: 100%;
-  @include media-breakpoint-up(lg) {
-    width: 40%;
-    max-width: 29.69rem;
+    padding: 0.5rem;
   }
 }
 .featured-img {
@@ -54,4 +36,7 @@
   padding: 1rem;
   background-color: darken(#fff, 3%);
   @include border($featured-item-border-style, right, bottom, left);
+}
+.card-featured {
+  background-color: transparent;
 }

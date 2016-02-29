@@ -3,27 +3,10 @@
   color: transparentize(#fff, 0.05);
   font-size: 1.2em;
   letter-spacing: 2px;
+  background-image: url("/images/background/classy_fabric.png");
   h3 {
     @extend %small-caps;
     color: #fff;
-  }
-}
-.about-item {
-  @include short-flex(column nowrap, flex-start, center);
-  width: 100%;
-  text-align: center;
-  padding: 1rem 2rem;
-  @include media-breakpoint-up(lg) {
-    width: 40%;
-  }
-  @include media-breakpoint-up(xl) {
-    width: 30%;
-  }
-  &:nth-of-type(2) .headshot {
-    background-image: url("/images/headshot_01.jpg");
-  }
-  &:nth-of-type(1) .headshot {
-    background-image: url("/images/headshot_02.jpg");
   }
 }
 .about-content {
@@ -33,9 +16,10 @@
   }
 }
 .headshot {
+  display: block;
   width: 12rem;
   height: 12rem;
-  margin: 1rem 0rem;
+  margin: 1rem auto;
   border-radius: 50%;
   background-color: #ddd;
   background-position: center;

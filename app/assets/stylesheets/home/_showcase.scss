@@ -1,5 +1,4 @@
 #showcase {
-  @include short-flex(column nowrap);
   width: 100%;
   background: $showcase-bg-color;
 }
@@ -11,12 +10,7 @@
   background-color: inherit;
   @include media-breakpoint-up(md) {
     @include short-flex(row nowrap);
-    height: 45vh;
-  }
-  @include media-breakpoint-up(xl) {
-    width:80%;
-    margin: 0 auto;
-    padding: 2rem 0rem;
+    height: 35vh;
   }
 }
 .showcase-item {

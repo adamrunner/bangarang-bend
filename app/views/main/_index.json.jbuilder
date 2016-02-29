@@ -1,6 +1,15 @@
 json.data do
-  json.bg_images @bg_images do |bg_image|
-    json.id bg_image.id
-    json.url bg_image.url
+  json.featured_items @featured_items do |featured_item|
+    json.id featured_item.id
+    json.name featured_item.name
+    json.description featured_item.description
+    json.image_url featured_item.image.url
+  end
+
+  json.biography_items @biography_items do |biography_item|
+    json.id biography_item.id
+    json.name biography_item.name
+    json.description biography_item.description
+    json.image_url biography_item.image.url
   end
 end

@@ -1,37 +1,20 @@
-<h3 class="section-header">featured</h3>
+    <div class="card-block">
+      <h3 class="section-header no-margin">featured</h3>
+    </div>
 
-<div class="featured-item featured-sm">
-  <div class="featured-img" style="background-image: url(/images/featured/featured_01.jpg)"></div>
-  <h4 class="featured-title">Brides and Grooms­-To-­Be</h4>
-  <div class="featured-block">
-    <p class="featured-text">
-      Book your catering with us by March 15th
-      and we will waive ALL gratuities!
-      Call to set up your tasting.
-    </p>
-  </div>
-</div>
+    <div class="card-block">
 
-<div class="featured-item featured-md">
-  <div class="featured-img" style="background-image: url(/images/featured/featured_02.jpg)"></div>
-  <h4 class="featured-title">Oregon Black Truffles in season</h4>
-  <div class="featured-block">
-    <p class="featured-text">
-      We are working with a few purveyors in the valley
-      who take on the laborious task of collecting these beauties.
-      We will be rocking Gougeres and Truffle butter for the next two months!
-    </p>
+      <div class="card-columns">
+        <% @featured_items.forEach (featured_item) ->: %>
+            <div class="card">
+              <img class="card-img-top img-fluid" src="<%= featured_item.get('image_url') %>"></img>
+              <div class="card-block">
+                <h4 class="card-title"><%= featured_item.get('name') %></h4>
+                <p class="card-text featured-item-text">
+                  <%= featured_item.get('description') %>
+                </p>
+              </div>
+            </div>
+        <% end %>
+      </div>
   </div>
-</div>
-
-<div class="featured-item featured-lg">
-  <div class="featured-img" style="background-image: url(/images/featured/featured_03.jpg)"></div>
-  <h4 class="featured-title">Stay tuned for the winning couple from the CO Bridal Show</h4>
-  <div class="featured-block">
-    <p class="featured-text">
-      Their bridal party will be sipping on bold Napa Valley reds and
-      tasting French cheese while cooking with Chef Dave.
-      What do the groomsmen get out of the deal? Beer and butchery! Need we say more?
-    </p>
-  </div>
-</div>

@@ -1,4 +1,4 @@
-BangarangBend.Views.Services ||= {}
+BangarangBend.Views.PersonalizedEvents ||= {}
 
 class BangarangBend.Views.PersonalizedEvents extends Backbone.View
   template: JST["backbone/templates/personalized-events"]
@@ -10,5 +10,5 @@ class BangarangBend.Views.PersonalizedEvents extends Backbone.View
     @render()
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(event_items: @collection))
     @

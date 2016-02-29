@@ -2,6 +2,7 @@
   h3 {
     width: 100%;
     margin-bottom: 0;
+    padding-bottom: $spacer / 2;
   }
   .page-section-body {
     h5 {
@@ -14,11 +15,14 @@
   .menu-section-item {
     width: 50%;
     &:nth-child(odd) {
-      padding-right: 2rem;
+      padding-right: 1rem;
       border-right: 2px solid darken($light-transparent, 10%);
     }
     &:nth-child(even) {
-      padding-left: 2.5rem;
+      padding-left: 1rem;
+    }
+    p {
+      @extend .text-muted;
     }
   }
   .page-footer {

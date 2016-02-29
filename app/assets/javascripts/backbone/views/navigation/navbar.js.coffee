@@ -18,10 +18,10 @@ class BangarangBend.Views.Navbar extends Backbone.View
 
   mobileNav: ->
     if BangarangBend.menuToggled == true
-      @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration: 350, "easeOutCirc"
-      $('#main-wrap').velocity {translateX: ["0%", "100%"]}, duration: 350, "easeInCirc"
+      @navCollapse.velocity {translateX: ["-100%", "0%"], translateZ: "0"}, duration: 350, "easeOutCirc"
+      $('#main-wrap').velocity {translateX: ["0%", "100%"], translateZ: "0"}, duration: 350, "easeInCirc"
       window.BangarangBend.menuToggled = false
     else
-      @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 350, "easeInCirc"
-      $('#main-wrap').velocity {translateX: ["100%", "0%"]}, duration: 450, "easeOutCirc"
+      @navCollapse.velocity {translateX: ["0%", "-100%"], translateZ: "0"}, duration: 350, "easeInCirc"
+      $('#main-wrap').velocity {translateX: ["100%", "0%"], translateZ: "0"}, duration: 450, "easeOutCirc"
       window.BangarangBend.menuToggled = true
