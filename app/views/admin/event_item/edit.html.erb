@@ -1,7 +1,9 @@
+<% breadcrumb :event_item, @event_item, "edit" %>
+
 <div class="col-xs-12 col-md-6">
   <div class="card">
     <div class="card-block">
-      <h3 class="card-title text-capitalize">edit event</h3>
+      <h3 class="card-title text-capitalize">edit month</h3>
 
       <%= form_for @event_item, url: {action: "update"} do |f| %>
         <div class="form-group">

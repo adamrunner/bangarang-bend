@@ -1,7 +1,6 @@
 #showcase {
   width: 100%;
-  background: transparent;
-  border: solid 1px #000;
+  background: #000;
 }
 .showcase-inner {
   @include short-flex(row wrap);
@@ -21,6 +20,7 @@
   opacity: .9;
   width: 50%;
   min-height: 11.25rem;
+  border: solid 1px #000;
   &:hover {
     opacity: 1;
   }

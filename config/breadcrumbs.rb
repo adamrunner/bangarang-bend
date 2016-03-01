@@ -45,7 +45,7 @@ end
 
 crumb :service_item do |model, type|
   if type && type === "edit"
-    link "edit", edit_admin_service_item_path(model)
+    link "Edit", edit_admin_service_item_path(model)
     parent :page, model.page
   elsif type && type === "new"
     link "New", new_admin_page_service_item_path
@@ -55,21 +55,48 @@ end
 
 crumb :featured_item do |model, type|
   if type && type === "edit"
-    link "edit featured item", edit_admin_featured_item_path(model)
+    link "Edit Featured Item", edit_admin_featured_item_path(model)
     parent :page, model.page
   elsif type && type === "new"
-    link "New featured item", new_admin_page_featured_item_path
+    link "New Featured Item", new_admin_page_featured_item_path
     parent :page, model
   end
 end
 
 crumb :biography_item do |model, type|
   if type && type === "edit"
-    link "edit biography item", edit_admin_biography_item_path(model)
+    link "Edit Biography Item", edit_admin_biography_item_path(model)
     parent :page, model.page, tab: "biography"
   elsif type && type === "new"
-    link "New biography item", new_admin_page_biography_item_path
+    link "New Biography Item", new_admin_page_biography_item_path
+    parent :page, model, tab: "biography"
+  end
+end
+
+crumb :event_item do |model, type|
+  if type && type === "edit"
+    link "Edit Month", edit_admin_event_item_path(model)
+    parent :page, model.page
+  elsif type && type === "new"
+    link "New Month", new_admin_page_event_item_path
     parent :page, model
+  end
+end
+
+crumb :event_produce_item do |model, type|
+  if type && type === "new"
+    link "Add Produce", new_admin_page_event_produce_item_path
+    parent :page, model, tab: "produce"
+  end
+end
+
+crumb :philosophy_item do |model, type|
+  if type && type === "new"
+    link "New Philosophy", new_admin_page_philosophy_item_path
+    parent :page, model
+  elsif type && type === "edit"
+    link "Edit Philosophy", edit_admin_philosophy_item_path(model)
+    parent :page, model.page
   end
 end
 
