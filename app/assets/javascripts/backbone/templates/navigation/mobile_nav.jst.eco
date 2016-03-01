@@ -2,6 +2,6 @@
   <a class="mobile-nav-link" id="homeView" href="#">home</a>
   <a class="mobile-nav-link" id="philosophyView" href="#/philosophy">philosophy</a>
   <a class="mobile-nav-link" id="servicesView" href="#/services">services</a>
-  <a class="mobile-nav-link" id="menuView" href="#/catering_menu/1">catering menu</a>
+  <a class="mobile-nav-link" id="menuView" href="#/catering_menus">catering menus</a>
   <a class="mobile-nav-link" id="personalizedEventsView" href="#/personalized_events">personalized events</a>
 </div>
