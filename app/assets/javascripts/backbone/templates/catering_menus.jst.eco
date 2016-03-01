@@ -1,0 +1,12 @@
+<div class="card-block">
+    <h1>Catering Menus</h1>
+</div>
+
+<% @catering_menus.forEach (catering_menu) ->: %>
+  <a class="catering-menu-btn" href="#/catering_menu/<%= catering_menu.get('id') %>">
+    <div class="card-block catering-menus-block">
+      <h2 class="light-caps text-secondary"><%= catering_menu.get('name') %> <i class="fa fa-angle-double-right fa-1x"></i></h2>
+      <p class="small-caps text-white"><%= catering_menu.get('description') %></p>
+    </div>
+  </a>
+<% end %>

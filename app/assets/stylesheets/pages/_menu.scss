@@ -1,37 +1,21 @@
-#menu-container {
-  h3 {
-    width: 100%;
-    margin-bottom: 0;
-    padding-bottom: $spacer / 2;
+.catering-menu-btn {
+  display: block;
+  background-color: transparentize(#222, 0.50);
+  border: 1px solid #000;
+  transition: all 0.15s ease-in-out;
+  i {
+    transition: all 0.15s ease-in-out;
   }
-  .page-section-body {
-    h5 {
-      @extend %small-caps;
-    }
-  }
-  .page-section-title {
-    color: $brand-secondary;
-  }
-  .menu-section-item {
-    width: 50%;
-    &:nth-child(odd) {
-      padding-right: 1rem;
-      border-right: 2px solid darken($light-transparent, 10%);
-    }
-    &:nth-child(even) {
-      padding-left: 1rem;
+  &:hover {
+    background-color: darken(transparentize(#222, 0.50), 20%);
+    h2 {
+      color: darken($brand-secondary, 10%);
     }
     p {
-      @extend .text-muted;
+      color: darken(#fff, 25%);
     }
-  }
-  .page-footer {
-    ul {
-      padding: 0em;
-    }
-    li {
-      text-align: center;
-      padding: 0.35rem;
+    i {
+      transform: translateX(100%) scale(1.2);
     }
   }
 }

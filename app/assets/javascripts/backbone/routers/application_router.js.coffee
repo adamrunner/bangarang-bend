@@ -5,7 +5,8 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     ''                    : 'homePage'
     'philosophy'          : 'philosophyPage'
     'services'            : 'servicesPage'
-    'menu'                : 'menuPage'
+    'catering_menus'      : 'cateringMenusPage'
+    'catering_menu/:id'   : 'cateringMenu'
     'personalized-events' : 'personalizedEventsPage'
 
   homePage: ->
@@ -13,23 +14,29 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     @swapPage(@home)
 
   philosophyPage: ->
-    BangarangBend.loadData BangarangBend.philosophyItems, =>
+    BangarangBend.loadData BangarangBend.philosophyItems, null, =>
       philosophyItems = new BangarangBend.Views.Philosophy(collection: BangarangBend.philosophyItems)
       @swapPage(philosophyItems)
 
   personalizedEventsPage: ->
-    BangarangBend.loadData BangarangBend.eventItems, =>
+    BangarangBend.loadData BangarangBend.eventItems, null, =>
       eventItems = new BangarangBend.Views.PersonalizedEvents(collection: BangarangBend.eventItems)
       @swapPage(eventItems)
 
   servicesPage: ->
-    BangarangBend.loadData BangarangBend.serviceItems, =>
+    BangarangBend.loadData BangarangBend.serviceItems, null, =>
       services = new BangarangBend.Views.Services(collection: BangarangBend.serviceItems)
       @swapPage(services)
 
-  menuPage: ->
-    menu = new BangarangBend.Views.Menu()
-    @swapPage(menu)
+  cateringMenusPage: ->
+    BangarangBend.loadData BangarangBend.cateringMenus, null, =>
+      cateringMenus = new BangarangBend.Views.CateringMenus(collection: BangarangBend.cateringMenus)
+      @swapPage(cateringMenus)
+
+  cateringMenu: (id) ->
+    BangarangBend.loadData BangarangBend.cateringMenus, id, =>
+      cateringMenu = new BangarangBend.Views.CateringMenu(model: BangarangBend.cateringMenus.get(id: id))
+      @swapPage(cateringMenu)
 
   swapPage: (view) ->
     if @currentView

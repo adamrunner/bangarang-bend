@@ -35,7 +35,9 @@
 .light-caps {
   @extend %light-capitalize;
 }
-
+.small-caps {
+  @extend %small-caps;
+}
 // Global Styling
 html {
   @include media-breakpoint-up(xs) {
@@ -213,7 +215,7 @@ section {
   @extend %small-caps;
   width: 100%;
   color: $light-font-color;
-  background-color: $transparent-brand-primary;
+  background-color: transparent;
   padding: 2rem;
 }
 //
@@ -246,4 +248,27 @@ section {
 
 .inner-block {
   padding: 0;
+}
+
+.menu-inner-block {
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+  }
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.text-secondary {
+  color: $brand-secondary;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-grey {
+  color: #5f5f5f;
+  font-weight: normal;
 }

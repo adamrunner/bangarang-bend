@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :service_items, only: [:index]
   resources :event_items, only: [:index]
   resources :philosophy_items, only: [:index]
+  resources :catering_menus, only: [:index, :show]
 
   namespace :admin do
     root to: 'page#index'

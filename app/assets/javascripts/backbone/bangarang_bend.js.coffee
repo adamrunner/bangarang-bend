@@ -21,9 +21,15 @@ window.BangarangBend =
     @serviceItems    = new BangarangBend.Collections.ServiceItems()
     @eventItems      = new BangarangBend.Collections.EventItems()
     @philosophyItems = new BangarangBend.Collections.PhilosophyItems()
+    @cateringMenus   = new BangarangBend.Collections.CateringMenus()
 
-  loadData: (collection, callback) ->
-    if _.isEmpty(collection.models)
+  loadData: (collection, id, callback) ->
+    if id?
+      collection.fetch().done () ->
+        model = collection.get(id: id)
+        model.fetch().done () ->
+          callback()
+    else if _.isEmpty(collection.models)
       collection.fetch().done () ->
         callback()
     else
