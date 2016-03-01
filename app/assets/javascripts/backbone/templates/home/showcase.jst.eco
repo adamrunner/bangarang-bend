@@ -2,7 +2,7 @@
     <h3>our <br> services</h3>
   </a>
 
-  <a href="#/menu" class="showcase-item" style="background-image: url(/images/showcase/menu.jpg)">
+  <a href="#/catering_menu/1" class="showcase-item" style="background-image: url(/images/showcase/menu.jpg)">
     <h3>catering <br> menu</h3>
   </a>
 
