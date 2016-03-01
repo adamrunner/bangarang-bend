@@ -10,7 +10,7 @@
     <a class="nav-item nav-link" href="#">home</a>
     <a class="nav-item nav-link" href="#/services">services</a>
     <a class="nav-item nav-link" href="#/catering_menu/1">catering menu</a>
-    <a class="nav-item nav-link" href="#/personalized-events">personalized events</a>
+    <a class="nav-item nav-link" href="#/personalized_events">personalized events</a>
     <a class="nav-item nav-link" href="#/philosophy">philosophy</a>
   </div>
 </div>

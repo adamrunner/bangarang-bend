@@ -7,7 +7,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     'services'            : 'servicesPage'
     'catering_menus'      : 'cateringMenusPage'
     'catering_menu/:id'   : 'cateringMenu'
-    'personalized-events' : 'personalizedEventsPage'
+    'personalized_events' : 'personalizedEventsPage'
 
   homePage: ->
     @home = new BangarangBend.Views.Home()

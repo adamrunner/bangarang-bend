@@ -1,17 +1,17 @@
 #landing {
   position: relative;
-  @include short-flex(column nowrap, center, flex-start);
+  @include short-flex(column nowrap, center, center);
   background-image: url("/images/background/background_main.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 60vh;
   overflow: hidden;
-  max-width: 1920px;
   margin: 0 auto;
   border: solid 1px #000;
   @include media-breakpoint-up(md) {
     height: 40vh;
+    align-items: flex-start;
   }
   h1 {
     text-transform: uppercase;
@@ -26,7 +26,13 @@
     position: absolute;
     bottom:0;
     right: 0;
+    width: 10rem;
     padding: 1rem;
-    width: 18rem;
+    @include media-breakpoint-up(md) {
+      width: 12rem;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 15rem;
+    }
   }
 }

@@ -7,18 +7,18 @@
   <h4 class="small-caps text-white">all prices are per person a la carte</h4>
 </div>
 
-<div class="list-group-fluid">
+<div class="list-group-fluid border-inverse">
 <% @catering_menu.get('menu_sections').forEach (menu_section) ->: %>
-  <div class="list-group-item">
+  <div class="list-group-item border-inverse">
     <h3 class="text-secondary small-caps"><%= menu_section.name %></h3>
 
     <div class="row">
 
     <% menu_section.menu_items.forEach (menu_item) ->: %>
-      <div class="col-xs-6">
+      <div class="col-xs-6 menu-col">
         <div class="card-block menu-inner-block">
-          <h5 class="small-caps"><%= menu_item.name %> <em>(<%= menu_item.price %>)</em></h5>
-          <p class="text-muted font-weight-normal"><%= menu_item.choices %></p>
+          <h5 class="small-caps"><%= menu_item.name %> <em class="light-font">(<%= menu_item.price %>)</em></h5>
+          <p><%= menu_item.choices %></p>
         </div>
       </div>
     <% end %>
@@ -29,7 +29,7 @@
 <% end %>
 </div>
 
-<div class="page-footer bg-transparent">
+<div class="card-block menu-footer">
   <ul>
     <li>15 persons minimum, Delivery and other charges may apply.</li>
     <li>Our menu is based on seasonality and we reserve the right to make subtle substitutions based on

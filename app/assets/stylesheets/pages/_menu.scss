@@ -19,3 +19,43 @@
     }
   }
 }
+.menu-inner-block {
+  flex-grow: 1;
+  @include media-breakpoint-down(sm) {
+    border-top: solid 1px #eee;
+    padding:0.25rem;
+  }
+  p {
+    margin: 0;
+    color: #555;
+    @include media-breakpoint-down(sm) {
+      font-size: 0.75em;
+    }
+  }
+  em {
+    @extend .light-font;
+    display: inline-block;
+    text-transform: capitalize;
+    font-variant: normal;
+    font-size: 0.6em;
+  }
+}
+.menu-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.menu-footer {
+  @extend .bg-transparent;
+  @extend .small-caps;
+  @extend .text-white;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      @include media-breakpoint-down(sm) {
+        padding: 1rem 0;
+      }
+    }
+  }
+}

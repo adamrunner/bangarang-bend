@@ -59,10 +59,15 @@
       color: #fff;
     }
     &:hover {
-      background-color: transparentize($brand-secondary, 0.70);
+      background-color: transparentize($brand-secondary, 0.60);
       i {
         color: #000;
       }
     }
   }
+}
+.contact-block {
+  @extend .inner-block;
+  @extend .bg-transparent;
+  @include short-flex(row wrap, center);
 }

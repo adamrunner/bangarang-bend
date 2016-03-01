@@ -1,6 +1,8 @@
-<div class="section-inner">
+<div class="card-block contact-block">
 
-  <h3 class="section-header">contact</h3>
+  <div class="card-block">
+    <h3 class="card-title-small">contact</h3>
+  </div>
 
   <div class="contact-items">
     <div class="contact-item">
