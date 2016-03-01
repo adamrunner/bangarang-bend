@@ -2,8 +2,8 @@ crumb :root do
   link "Pages", admin_root_path
 end
 
-crumb :page do |page|
-  link page.name.titleize, admin_page_path(page)
+crumb :page do |page, tab|
+  link page.name.titleize, admin_page_path(page, tab ? tab : "")
 end
 
 crumb :catering_menu do |model, type|
@@ -40,6 +40,36 @@ crumb :menu_item do |model, type|
   elsif type && type === "new"
     link "New", new_admin_menu_section_menu_item_path
     parent :menu_section, model
+  end
+end
+
+crumb :service_item do |model, type|
+  if type && type === "edit"
+    link "edit", edit_admin_service_item_path(model)
+    parent :page, model.page
+  elsif type && type === "new"
+    link "New", new_admin_page_service_item_path
+    parent :page, model
+  end
+end
+
+crumb :featured_item do |model, type|
+  if type && type === "edit"
+    link "edit featured item", edit_admin_featured_item_path(model)
+    parent :page, model.page
+  elsif type && type === "new"
+    link "New featured item", new_admin_page_featured_item_path
+    parent :page, model
+  end
+end
+
+crumb :biography_item do |model, type|
+  if type && type === "edit"
+    link "edit biography item", edit_admin_biography_item_path(model)
+    parent :page, model.page, tab: "biography"
+  elsif type && type === "new"
+    link "New biography item", new_admin_page_biography_item_path
+    parent :page, model
   end
 end
 

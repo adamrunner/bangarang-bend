@@ -1,4 +1,5 @@
 class Admin::BiographyItemController < Admin::BaseController
+  before_filter :find_page, only: [:new, :create]
   before_filter :find_biography_item, only: [:edit, :update, :destroy ]
 
   def create
@@ -29,5 +30,9 @@ class Admin::BiographyItemController < Admin::BaseController
 
   def find_biography_item
     @biography_item = BiographyItem.find(params[:id])
+  end
+
+  def find_page
+    @page = Page.find(params[:page_id])
   end
 end

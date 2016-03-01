@@ -1,9 +1,9 @@
 class Admin::FeaturedItemController < Admin::BaseController
+  before_filter :find_page, only: [:new, :create]
   before_filter :find_featured_item, only: [:edit, :update, :destroy, :destroy_img]
 
   def create
-    page = Page.find(params[:page_id])
-    featured_item = page.featured_items.build(featured_item_params)
+    featured_item = @page.featured_items.build(featured_item_params)
     if featured_item.save
       redirect_to admin_page_path(featured_item.page), notice: "Featured Item Successfully Created"
     end
@@ -36,5 +36,9 @@ class Admin::FeaturedItemController < Admin::BaseController
 
   def find_featured_item
     @featured_item = FeaturedItem.find(params[:id])
+  end
+
+  def find_page
+    @page = Page.find(params[:page_id])
   end
 end
