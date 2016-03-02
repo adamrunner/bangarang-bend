@@ -7,7 +7,6 @@ class BangarangBend.Views.CateringMenu extends Backbone.View
   className: 'card card-block shadow'
 
   initialize: ->
-    console.log(@model)
     @render()
 
   render: ->

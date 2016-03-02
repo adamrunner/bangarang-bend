@@ -34,7 +34,3 @@ window.BangarangBend =
         callback()
     else
       callback()
-
-# $(document).on "click", "a[href^='/']", (event) ->
-#   if !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey
-#   	event.preventDefault()

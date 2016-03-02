@@ -1,7 +1,5 @@
 class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
-  initialize: () ->
-
-  routes: ->
+  routes:
     ''                    : 'homePage'
     'philosophy'          : 'philosophyPage'
     'services'            : 'servicesPage'
@@ -10,8 +8,8 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     'personalized_events' : 'personalizedEventsPage'
 
   homePage: ->
-    @home = new BangarangBend.Views.Home()
-    @swapPage(@home)
+    home = new BangarangBend.Views.Home()
+    @swapPage(home)
 
   philosophyPage: ->
     BangarangBend.loadData BangarangBend.philosophyItems, null, =>
@@ -45,8 +43,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
           view.remove()
       @currentView.remove()
       @currentView = view
-      BangarangBend.content.html(view.render().$el)
-      window.scrollTo(0,0)
+      BangarangBend.content.html(view.render().$el.velocity("fadeIn"))
     else
       @currentView = view
       BangarangBend.content.html(view.render().$el)

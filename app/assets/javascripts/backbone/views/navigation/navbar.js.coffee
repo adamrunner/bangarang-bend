@@ -25,3 +25,6 @@ class BangarangBend.Views.Navbar extends Backbone.View
       @navCollapse.velocity {translateX: ["0%", "-100%"], translateZ: "0"}, duration: 350, "easeInCirc"
       $('#main-wrap').velocity {translateX: ["100%", "0%"], translateZ: "0"}, duration: 450, "easeOutCirc"
       window.BangarangBend.menuToggled = true
+
+  # navLink: (event) ->
+  #   event.preventDefault()

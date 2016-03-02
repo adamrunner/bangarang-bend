@@ -7,18 +7,17 @@ class BangarangBend.Views.Home extends Backbone.View
   id: 'home-page'
 
   events: ->
-    'click #contact-btn' : 'scrollToSection'
+    'click #contact-btn'     : 'scrollToSection'
 
   initialize: ->
     @createSubViews()
     @subViews = [@featured, @showcase, @about]
-    @render()
 
   render: ->
     @$el.html(@template())
-    @$('#featured').append(@featured.render().$el)
-    @$('#showcase').append(@showcase.render().$el)
-    @$('#about').append(@about.render().$el)
+    @$('#featured').html(@featured.render().$el)
+    @$('#showcase').html(@showcase.render().$el)
+    @$('#about').html(@about.render().$el)
     @
 
   createSubViews: ->

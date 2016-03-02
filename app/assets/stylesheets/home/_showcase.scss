@@ -3,6 +3,7 @@
   background: #000;
 }
 .showcase-inner {
+  position: relative;
   @include short-flex(row wrap);
   width: 100%;
   min-height: 20rem;

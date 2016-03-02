@@ -60,9 +60,6 @@
     }
     &:hover {
       background-color: transparentize($brand-secondary, 0.60);
-      i {
-        color: #000;
-      }
     }
   }
 }
