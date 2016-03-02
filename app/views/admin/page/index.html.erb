@@ -20,6 +20,9 @@
             </p>
           </div>
           <%= link_to "view / edit content", admin_page_path(page), class: "btn btn-info" %>
+          <% if page.landings.empty? != true %>
+            <%= link_to "Landing", admin_page_path(page, tab: "landing"), class: "btn btn-secondary" %>
+          <% end %>
         </div>
       <% end %>
     </div>
