@@ -253,3 +253,45 @@ a:hover {
 .list-item-footer {
   margin-top: ($spacer / 2);
 }
+
+#landing {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  overflow: hidden;
+  margin: 0 auto;
+  border: solid 1px #000;
+  @include media-breakpoint-up(md) {
+    height: 40vh;
+    align-items: flex-start;
+  }
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+    width: auto;
+    padding: 1rem;
+    background: transparentize(#000, 0.30);
+    @include media-breakpoint-down(sm) {
+      font-size: 2rem;
+    }
+  }
+  img {
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: 10rem;
+    padding: 1rem;
+    @include media-breakpoint-up(md) {
+      width: 12rem;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 15rem;
+    }
+  }
+}

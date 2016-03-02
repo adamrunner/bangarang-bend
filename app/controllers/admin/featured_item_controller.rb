@@ -5,14 +5,14 @@ class Admin::FeaturedItemController < Admin::BaseController
   def create
     featured_item = @page.featured_items.build(featured_item_params)
     if featured_item.save
-      redirect_to admin_page_path(featured_item.page), notice: "Featured Item Successfully Created"
+      redirect_to admin_page_path(featured_item.page, tab: "featured"), notice: "Featured Item Successfully Created"
     end
   end
 
   def update
     @featured_item.update(featured_item_params)
     if @featured_item.save
-      redirect_to admin_page_path(@featured_item.page), notice: "Featured Item Updated Successfully"
+      redirect_to admin_page_path(@featured_item.page, tab: "featured"), notice: "Featured Item Updated Successfully"
     end
   end
 
@@ -25,7 +25,7 @@ class Admin::FeaturedItemController < Admin::BaseController
 
   def destroy
     if @featured_item.destroy
-      redirect_to admin_page_path(@featured_item.page), alert: "Featured Item Deleted Successfully"
+      redirect_to admin_page_path(@featured_item.page, tab: "featured"), alert: "Featured Item Deleted Successfully"
     end
   end
 

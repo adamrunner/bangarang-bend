@@ -64,7 +64,10 @@ body {
   font-size: inherit !important;
   margin-top: $navbar-height;
   overflow-x: hidden;
-  background-image: url("/images/background/background_bio.jpg");
+  background-image: url("/images/background/background_main.jpg");
+  @include media-breakpoint-down(sm) {
+    background-size: 100%;
+  }
 }
 .no-padding {
   padding: 0;

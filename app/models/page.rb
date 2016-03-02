@@ -6,6 +6,7 @@ class Page < ActiveRecord::Base
   has_many :featured_items
   has_many :philosophy_items
   has_many :service_items
+  has_many :landings
 
   def content_type
     if self.name === "catering_menus" || self.name === "events"

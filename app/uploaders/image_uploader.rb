@@ -57,7 +57,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   private
 
   def is_featured? picture
-    model.class.name == "FeaturedItem"
+    model.class.name == "FeaturedItem" || "Landing"
   end
 
   def is_biography? picture

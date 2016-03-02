@@ -32,12 +32,17 @@ Rails.application.routes.draw do
       resources :philosophy_item, only: [:new, :create]
       resources :event_item, only: [:new, :create]
       resources :event_produce_item, only: [:new, :create]
+      resources :landing, only: [:new, :create]
     end
 
     resources :biography_item, only: [:edit, :update, :destroy]
     resources :featured_item, only: [:edit, :update, :destroy]
 
     delete '/featured_item/:id/delete_img', to: 'featured_item#destroy_img', as: 'delete_featured_img'
+
+    resources :landing, only: [:edit, :update, :destroy]
+
+    delete '/landing/:id/delete_img', to: 'landing#destroy_img', as: 'delete_landing_img'
 
     resources :service_item, only: [:edit, :update, :destroy]
     resources :philosophy_item, only: [:edit, :update, :destroy]

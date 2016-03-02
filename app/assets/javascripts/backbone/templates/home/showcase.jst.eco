@@ -6,7 +6,7 @@
     <h3>catering <br> menus</h3>
   </a>
 
-  <a href="#/personalized-events" class="showcase-item" style="background-image: url(/images/showcase/events.jpg)">
+  <a href="#/personalized_events" class="showcase-item" style="background-image: url(/images/showcase/events.jpg)">
     <h3>personalized <br> events</h3>
   </a>
 

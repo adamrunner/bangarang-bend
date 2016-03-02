@@ -73,6 +73,16 @@ crumb :biography_item do |model, type|
   end
 end
 
+crumb :landing do |model, type|
+  if type && type === "edit"
+    link "Edit Landing", edit_admin_landing_path(model)
+    parent :page, model.page, tab: "landing"
+  elsif type && type === "new"
+    link "New Landing", new_admin_page_landing_path
+    parent :page, model, tab: "landing"
+  end
+end
+
 crumb :event_item do |model, type|
   if type && type === "edit"
     link "Edit Month", edit_admin_event_item_path(model)
@@ -99,28 +109,3 @@ crumb :philosophy_item do |model, type|
     parent :page, model.page
   end
 end
-
-# crumb :projects do
-#   link "Projects", projects_path
-# end
-
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
-
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
-
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
-
-# If you want to split your breadcrumbs configuration over multiple files, you
-# can create a folder named `config/breadcrumbs` and put your configuration
-# files there. All *.rb files (e.g. `frontend.rb` or `products.rb`) in that
-# folder are loaded and reloaded automatically when you change them, just like
-# this file (`config/breadcrumbs.rb`).
