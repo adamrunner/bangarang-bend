@@ -1,7 +1,7 @@
 <div class="mobile-nav-links">
-  <a class="mobile-nav-link" id="homeView" href="#">home</a>
-  <a class="mobile-nav-link" id="philosophyView" href="#/philosophy">philosophy</a>
-  <a class="mobile-nav-link" id="servicesView" href="#/services">services</a>
-  <a class="mobile-nav-link" id="menuView" href="#/catering_menus">catering menus</a>
-  <a class="mobile-nav-link" id="personalizedEventsView" href="#/personalized_events">personalized events</a>
+  <a class="mobile-nav-link" href="#home">home</a>
+  <a class="mobile-nav-link" href="#/philosophy">philosophy</a>
+  <a class="mobile-nav-link" href="#/services">services</a>
+  <a class="mobile-nav-link" href="#/catering_menus">catering menus</a>
+  <a class="mobile-nav-link" href="#/personalized_events">personalized events</a>
 </div>

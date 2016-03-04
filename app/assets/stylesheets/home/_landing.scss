@@ -5,11 +5,13 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 60vh;
+  max-height: 25rem;
   overflow: hidden;
   margin: 0 auto;
   border: solid 1px #000;
   @include media-breakpoint-up(md) {
     height: 40vh;
+    max-height: none;
     align-items: flex-start;
   }
   h1 {

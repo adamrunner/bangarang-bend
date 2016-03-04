@@ -3,8 +3,8 @@ BangarangBend.Views.Home ||= {}
 class BangarangBend.Views.Home extends Backbone.View
   template: JST["backbone/templates/home/home"]
 
-  className: 'page-view'
-  id: 'home-page'
+  className: 'page-view hidden'
+  id: 'home-block'
 
   events: ->
     'click #contact-btn'     : 'scrollToSection'
@@ -12,6 +12,7 @@ class BangarangBend.Views.Home extends Backbone.View
   initialize: ->
     @createSubViews()
     @subViews = [@featured, @showcase, @about]
+    @subViewEls = [@featured.$el, @showcase.$el, @about.$el]
 
   render: ->
     @$el.html(@template())

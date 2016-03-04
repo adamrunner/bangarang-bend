@@ -1,6 +1,7 @@
 class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
+
   routes:
-    ''                    : 'homePage'
+    'home'                    : 'homePage'
     'philosophy'          : 'philosophyPage'
     'services'            : 'servicesPage'
     'catering_menus'      : 'cateringMenusPage'
@@ -8,8 +9,8 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     'personalized_events' : 'personalizedEventsPage'
 
   homePage: ->
-    home = new BangarangBend.Views.Home()
-    @swapPage(home)
+    @home = new BangarangBend.Views.Home()
+    @swapPage(@home)
 
   philosophyPage: ->
     BangarangBend.loadData BangarangBend.philosophyItems, null, =>
@@ -39,11 +40,17 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
   swapPage: (view) ->
     if @currentView
       if @currentView.subViews
-        @currentView.subViews.forEach (view) ->
-          view.remove()
-      @currentView.remove()
-      @currentView = view
-      BangarangBend.content.html(view.render().$el.velocity("fadeIn"))
+        @currentView.$el.velocity "transition.slideDownOut", duration: 400, complete: =>
+          @currentView.subViews.forEach (view) ->
+            view.remove()
+          @currentView.remove()
+          @currentView = view
+          BangarangBend.content.html(view.render().$el.velocity("transition.slideDownIn", duration: 400))
+      else
+        @currentView.$el.velocity "transition.slideDownOut", duration: 400, complete: =>
+          @currentView.remove()
+          @currentView = view
+          BangarangBend.content.html(view.render().$el.velocity("transition.slideDownIn", duration: 400))
     else
       @currentView = view
-      BangarangBend.content.html(view.render().$el)
+      BangarangBend.content.html(view.render().$el.velocity("transition.slideDownIn", duration: 400))

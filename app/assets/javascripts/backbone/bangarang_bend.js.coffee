@@ -34,3 +34,14 @@ window.BangarangBend =
         callback()
     else
       callback()
+
+Backbone.history.on "route", ->
+  if location.href.slice(-1) == '#'
+    location.replace("#{location.href}" + "home")
+  else if location.href.slice(-1) == "/"
+    location.replace("#{location.href}" + "#home")
+
+$(document).ready ->
+  if location.href.slice(-1) == '/'
+    location.replace("#{location.href}" + '#home')
+  return

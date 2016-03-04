@@ -17,6 +17,7 @@ class BangarangBend.Views.MobileNav extends Backbone.View
   navClick: ->
     if BangarangBend.menuToggled
       Backbone.trigger "navClose"
+      window.scrollTo(0,0)
 
   noScroll: (event) ->
     event.preventDefault()
