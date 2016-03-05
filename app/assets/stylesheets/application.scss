@@ -62,7 +62,7 @@ html {
 body {
   position: relative;
   font-size: inherit !important;
-  margin-top: $navbar-height;
+  padding-top: $navbar-height;
   overflow-x: hidden;
   background-image: url("/images/background/background_main.jpg");
   @include media-breakpoint-down(sm) {
@@ -78,6 +78,7 @@ body {
   }
 }
 #main-block {
+  position: relative;
   @extend .container;
   @extend .container-main;
   transform: translate3d(0);

@@ -8,6 +8,7 @@ class BangarangBend.Views.MobileNav extends Backbone.View
     'touchmove' : 'noScroll'
 
   initialize: ->
+    @listenTo Backbone, 'navClosed', @scrollTop
     @render()
 
   render: ->
@@ -16,7 +17,9 @@ class BangarangBend.Views.MobileNav extends Backbone.View
 
   navClick: (event) ->
     Backbone.trigger "navClose"
-    $('body').velocity('scroll', {offset: "-70px", duration: 1500, delay: 600, easing: 'easeOutQuad' })
+
+  scrollTop: ->
+    $('body').velocity('scroll', {duration: 1000, easing: 'easeOutQuad' })
 
   noScroll: (event) ->
     event.preventDefault()

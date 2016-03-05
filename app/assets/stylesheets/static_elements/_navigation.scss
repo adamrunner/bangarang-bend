@@ -9,6 +9,7 @@
   margin: 0 auto;
   .navbar-inner {
     @extend .container;
+    @extend .container-main;
     height: 100%;
     display: flex;
     justify-content: space-between;
