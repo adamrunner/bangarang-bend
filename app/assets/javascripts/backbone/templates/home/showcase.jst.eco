@@ -1,19 +1,19 @@
-  <a href="#/services" class="showcase-item" style="background-image: url(/images/showcase/services.jpg)">
+  <a class="showcase-item" href="#services" style="background-image: url(/images/showcase/services.jpg)">
     <h3>our <br> services</h3>
   </a>
 
-  <a href="#/catering_menus" class="showcase-item" style="background-image: url(/images/showcase/menu.jpg)">
+  <a class="showcase-item" href="#catering_menus" style="background-image: url(/images/showcase/menu.jpg)">
     <h3>catering <br> menus</h3>
   </a>
 
-  <a href="#/personalized_events" class="showcase-item" style="background-image: url(/images/showcase/events.jpg)">
+  <a class="showcase-item" href="#personalized_events" style="background-image: url(/images/showcase/events.jpg)">
     <h3>personalized <br> events</h3>
   </a>
 
-  <a href="#/philosophy" class="showcase-item" style="background-image: url(/images/showcase/philosophy.jpg)">
+  <a class="showcase-item" href="#philosophy" style="background-image: url(/images/showcase/philosophy.jpg)">
     <h3>our <br> philosophy</h3>
   </a>
 
-  <a href="contact" id="contact-btn" class="showcase-item" style="background-image: url(/images/showcase/contact.jpg)">
+  <a id="contact-btn" href="contact" class="showcase-item" style="background-image: url(/images/showcase/contact.jpg)">
     <h3>contact <br> us</h3>
   </a>

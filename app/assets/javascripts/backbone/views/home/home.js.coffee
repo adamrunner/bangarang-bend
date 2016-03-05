@@ -12,7 +12,6 @@ class BangarangBend.Views.Home extends Backbone.View
   initialize: ->
     @createSubViews()
     @subViews = [@featured, @showcase, @about]
-    @subViewEls = [@featured.$el, @showcase.$el, @about.$el]
 
   render: ->
     @$el.html(@template())
@@ -28,4 +27,4 @@ class BangarangBend.Views.Home extends Backbone.View
 
   scrollToSection: (event) ->
     event.preventDefault()
-    $('#contact').velocity('scroll', { duration: 1000, easing: 'easeOutQuad' })
+    $('#contact').velocity('scroll', { duration: 1500, easing: 'easeOutQuad' })

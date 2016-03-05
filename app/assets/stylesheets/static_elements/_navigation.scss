@@ -1,10 +1,14 @@
 // navbar styling
 #navbar {
+  @extend .navbar;
+  @extend .navbar-full;
+  @extend .navbar-fixed-top;
   height: $navbar-height;
   background-color: #fff;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
-  .container-main {
+  .navbar-inner {
+    @extend .container;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -14,11 +18,27 @@
     }
   }
 }
-#menu-btn {
+#nav-btn {
+  @extend .fa;
+  @extend .fa-bars;
+  font-size: 2em;
+  color: #333;
   height: $navbar-height;
   line-height: $navbar-height;
   width: 4rem;
-  padding-left: 1rem;
+  @include media-breakpoint-up(sm) {
+    padding-left: 1rem;
+  }
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+#nav-brand {
+  @extend .navbar-brand;
+  margin: 0;
+  @include media-breakpoint-up(sm) {
+    margin-right: 1rem;
+  }
 }
 .nav-brand-logo {
   height: $nav-brand-logo-height;
@@ -41,12 +61,6 @@
   width: 100%;
   height: 20rem;
   background-color: transparent;
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
-}
-.footer-inner {
-  width: 100%;
-  height: 100%;
   @include short-flex(row wrap, center, center);
   img {
     width: 100%;
@@ -57,18 +71,14 @@
   }
 }
 
-
-#menu-btn {
-  font-size: 2em;
-  @include media-breakpoint-up(lg) {
-    display: none;
-  }
-}
-
 // mobile navigation styling
-.mobile-nav-wrap {
-  width: 100vw;
+#mobile-nav {
+  @extend .card-block;
+  @extend .p-a-0;
+  @include short-flex(column nowrap);
+  width: 100%;
   height: 100vh;
+  background-color: transparentize(#000, 0.10);
   position: fixed;
   top: 0;
   left: 0;
@@ -77,30 +87,20 @@
   @include media-breakpoint-up(lg) {
     display: none;
   }
-}
-#mobile-nav {
-  @include short-flex(column nowrap);
-  height: 100%;
-  font-size: 1.3em;
-  .mobile-nav-links {
-    @include short-flex(column nowrap);
+  .list-group-fluid {
     margin-top: $navbar-height;
-    width: 100%;
-    height: 100%;
-    background-color: #555;
   }
-  .mobile-nav-link {
-    display: block;
+  .list-group-item {
+    @include font($font-secondary, bold, #fff);
+    padding: 1rem;
     text-transform: uppercase;
-    color: $light-font-color;
-    background-color: #444;
-    border-bottom: 1px solid #333;
-    padding: 0.5rem;
+    background-color: transparentize(#222, 0.10);
+    border: 1px solid #000;
+    margin: 0.5rem 0rem;
     &.active, &:hover {
-      color: #222;
-    }
-    &:nth-child(1) {
-      border-top: 1px solid #333;
+      color: $brand-secondary;
+      border-color: $brand-secondary;
+      background-color: transparentize(#111, 0.10);
     }
   }
 }

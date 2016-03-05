@@ -34,12 +34,12 @@
     height: auto;
   }
   h3 {
+    @include font($color:#fff);
+    @include small-caps(capitalize);
     width: 100%;
-    color: #fff;
     background-color: $transparent-brand-primary;
     padding: 1rem;
     margin: 0;
-    @extend %light-capitalize;
     opacity: 1;
   }
 }

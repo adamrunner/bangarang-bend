@@ -1,7 +1,7 @@
-<div class="mobile-nav-links">
-  <a class="mobile-nav-link" href="#home">home</a>
-  <a class="mobile-nav-link" href="#/philosophy">philosophy</a>
-  <a class="mobile-nav-link" href="#/services">services</a>
-  <a class="mobile-nav-link" href="#/catering_menus">catering menus</a>
-  <a class="mobile-nav-link" href="#/personalized_events">personalized events</a>
+<div class="list-group-fluid">
+  <a class="mobile-nav-link list-group-item" href="#home">home</a>
+  <a class="mobile-nav-link list-group-item" href="#philosophy">philosophy</a>
+  <a class="mobile-nav-link list-group-item" href="#services">services</a>
+  <a class="mobile-nav-link list-group-item" href="#catering_menus">catering menus</a>
+  <a class="mobile-nav-link list-group-item" href="#personalized_events">personalized events</a>
 </div>

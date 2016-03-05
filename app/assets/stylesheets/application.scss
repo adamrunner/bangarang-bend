@@ -11,14 +11,14 @@
 
 // extends
 %small-caps {
-  font-family: $font-family-secondary;
+  font-family: $font-secondary;
   font-weight: bold;
   font-variant: small-caps;
   text-transform: lowercase;
   letter-spacing: 1px;
 }
 %light-font {
-  font-family: $font-family-primary;
+  font-family: $font-primary;
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -77,13 +77,13 @@ body {
     max-width: 1366px;
   }
 }
-#main-wrap {
-  height: auto;
-  overflow: hidden;
-  margin: 0 auto;
+#main-block {
+  @extend .container;
+  @extend .container-main;
+  transform: translate3d(0);
+  overflow-x: hidden;
 }
 h1, h2 {
-  color: #fff;
   margin: 0;
 }
 h1 {
@@ -100,14 +100,14 @@ p {
   @extend %light-font;
 }
 .lead {
-  font-family: $font-family-secondary;
+  font-family: $font-secondary;
   font-weight: bold;
 }
 em {
   font-size: 0.8em;
 }
 strong {
-  font-family: $font-family-secondary;
+  font-family: $font-secondary;
 }
 .btn {
   text-transform: capitalize;
@@ -148,8 +148,8 @@ strong {
 }
 
 .card-title-small {
-  @extend .small-caps;
-  @extend .text-white;
+  @include font($font-secondary, null, #fff);
+  @include small-caps(lowercase);
   text-align: center;
   margin: 0;
 }
@@ -184,5 +184,5 @@ strong {
 }
 
 #content {
-  transform: translateZ(0);
+  overflow: hidden;
 }

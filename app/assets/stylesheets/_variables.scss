@@ -1,5 +1,4 @@
 
-//NOTE: Bootstrap Variables Below
 // Variables
 //
 
@@ -41,26 +40,25 @@ $brand-warning             : #f0ad4e !default;
 $brand-danger              : #d9534f !default;
 
 // #NOTE custom variables
-$font-family-secondary: 'Open Sans', sans-serif !default;
-$font-family-primary:   'Roboto', sans-serif !default;
+$font-secondary: 'Open Sans', sans-serif !default;
+$font-primary:   'Roboto', sans-serif !default;
 
 $light-font-color : #fff;
 $dark-font-color  : #333;
 
-$light-transparent: transparentize(#eee, 0.10%) !default;
-$dark-transparent: transparentize(#333, 0.15%) !default;
+$dark-transparent: transparentize(#222, 0.50) !default;
 
 $navbar-height: 4.25rem;
 $nav-brand-logo-height: 2rem;
 
 $showcase-bg-color: #fff;
 $showcase-border-color: $showcase-bg-color;
-$showcase-border-size: 2px;
+$showcase-border-size: 1px;
 
 $featured-bg-color: transparentize($transparent-brand-primary, 0.15);
 $featured-title-color: #fff;
 $featured-text-color: #333;
-$featured-item-border-color: darken($light-transparent, 35%);
+$featured-item-border-color: #000;
 $featured-item-border-style: 3px solid #fff;
 
 $about-bg-color: transparentize($transparent-brand-primary, 0.15);
@@ -118,7 +116,7 @@ $border-width:               1px !default;
 // Settings for the `<body>` element.
 
 $body-bg:                    #fff !default;
-$body-color:                 #333 !default;
+$body-color:                 #fff !default;
 
 
 // Links
@@ -207,7 +205,7 @@ $display4-weight:             300 !default;
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       $font-family-primary;
+$headings-font-family:       $font-primary;
 $headings-font-weight:       inherit !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;

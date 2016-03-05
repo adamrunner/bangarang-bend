@@ -1,23 +1,23 @@
-<div class="card-block bg-transparent">
+<div class="card-block">
   <h1><%= @catering_menu.get('name') %></h1>
 </div>
 
-<div class="card-block bg-transparent">
-  <h4 class="small-caps text-white">Hand pick your fare</h4>
-  <h4 class="small-caps text-white">all prices are per person a la carte</h4>
+<div class="card-block">
+  <h4>Hand pick your fare</h4>
+  <h4>all prices are per person a la carte</h4>
 </div>
 
-<div class="list-group-fluid border-inverse">
+<div class="list-group-fluid">
 <% @catering_menu.get('menu_sections').forEach (menu_section) ->: %>
-  <div class="list-group-item border-inverse">
-    <h3 class="text-secondary small-caps"><%= menu_section.name %></h3>
+  <div class="list-group-item">
+    <h3><%= menu_section.name %></h3>
 
     <div class="row">
 
     <% menu_section.menu_items.forEach (menu_item) ->: %>
       <div class="col-xs-6 menu-col">
         <div class="card-block menu-inner-block">
-          <h5 class="small-caps"><%= menu_item.name %> <em class="light-font">(<%= menu_item.price %>)</em></h5>
+          <h5><%= menu_item.name %> <em class="light-font">(<%= menu_item.price %>)</em></h5>
           <p><%= menu_item.choices %></p>
         </div>
       </div>

@@ -34,3 +34,22 @@
   background: $background;
   background-size: $background-size;
 }
+
+@mixin font ($family:$font-primary, $weight:300, $color:null) {
+  color: $color;
+  font-family: $family;
+  font-weight: $weight;
+}
+
+@mixin small-caps ($transform, $spacing:1px) {
+  font-variant: small-caps;
+  text-transform: $transform;
+  letter-spacing: $spacing;
+}
+
+@mixin content-card {
+  @extend .card;
+  @extend .card-block;
+  @extend .shadow;
+  @extend .hidden;
+}
