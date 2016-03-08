@@ -5,7 +5,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
 
   events:
     'click #nav-btn'        : 'mobileNav'
-    'click #nav-brand'      : 'scroll'
+    'click #nav-brand'      : 'mobileNavCheck'
 
   initialize: ->
     @menus = BangarangBend.menus
@@ -21,11 +21,24 @@ class BangarangBend.Views.Navbar extends Backbone.View
     if BangarangBend.menuToggled == true
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
         if options.scroll == true && window.scrollY != 0
-          @scroll()
+          @scrollContent()
         window.BangarangBend.menuToggled = false
     else
       @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = true
 
+  mobileNavCheck: ->
+    if BangarangBend.menuToggled == true
+      @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
+        if window.scrollY != 0
+          @scroll()
+        window.BangarangBend.menuToggled = false
+    else
+      if window.scrollY != 0
+        @scroll()
+
   scroll: ->
     $('body').velocity('scroll', {duration: 700})
+
+  scrollContent: ->
+    $('#content').velocity('scroll', {offset: "-70px", duration: 700})
