@@ -7,7 +7,8 @@ class BangarangBend.Views.Home extends Backbone.View
   id: 'home-block'
 
   events: ->
-    'click #contact-btn'     : 'scrollToSection'
+    'touchstart #contact-btn' : 'scrollToSection'
+    'click #contact-btn'      : 'scrollToSection'
 
   initialize: ->
     @createSubViews()

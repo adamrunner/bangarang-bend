@@ -4,22 +4,19 @@ class BangarangBend.Views.MobileNav extends Backbone.View
   template: JST["backbone/templates/navigation/mobile_nav"]
 
   events:
-    'click .mobile-nav-link'   : 'navClick'
-    'touchmove' : 'noScroll'
+    'click .nav-close'      : 'navClick'
+    # 'touchmove'             : 'noScroll'
 
   initialize: ->
-    @listenTo Backbone, 'navClosed', @scrollTop
+    @menus = BangarangBend.menus
     @render()
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(menus: @menus))
     @
 
   navClick: (event) ->
-    Backbone.trigger "navClose"
+    Backbone.trigger "navClose", {scroll: true}
 
-  scrollTop: ->
-    $('body').velocity('scroll', {duration: 1000, easing: 'easeOutQuad' })
-
-  noScroll: (event) ->
-    event.preventDefault()
+  # noScroll: (event) ->
+    # event.preventDefault()

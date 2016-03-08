@@ -34,7 +34,7 @@
     }
   }
   em {
-    @extend .light-font;
+    @include font($spacing:1px);
     display: inline-block;
     text-transform: capitalize;
     font-variant: normal;
@@ -48,8 +48,8 @@
 
 .menu-footer {
   @extend .bg-transparent;
-  @extend .small-caps;
-  @extend .text-white;
+  @include font($font-secondary, bold, #fff);
+  @include small-caps(lowercase);
   ul {
     padding: 0;
     margin: 0;
@@ -67,6 +67,14 @@
   background-color: transparentize(#222, 0.50);
   border: 1px solid #000;
   transition: all 0.15s ease-out;
+  h2 {
+    @include font($color:$brand-secondary);
+    @include small-caps(capitalize);
+  }
+  p {
+    @include font($font-secondary, bold, #fff);
+    @include small-caps(lowercase);
+  }
   i {
     transition: all 0.15s ease-out;
   }

@@ -9,40 +9,6 @@
 @import 'home/home';
 @import 'pages/pages';
 
-// extends
-%small-caps {
-  font-family: $font-secondary;
-  font-weight: bold;
-  font-variant: small-caps;
-  text-transform: lowercase;
-  letter-spacing: 1px;
-}
-%light-font {
-  font-family: $font-primary;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-%light-uppercase {
-  @extend %light-font;
-  font-variant: small-caps;
-  text-transform: uppercase;
-}
-%light-capitalize {
-  @extend %light-font;
-  font-variant: small-caps;
-  text-transform: capitalize;
-}
-.light-caps {
-  @extend %light-capitalize;
-}
-.small-caps {
-  @extend %small-caps;
-}
-.light-font {
-  @extend %light-font;
-}
-
-
 // Global Styling
 html {
   @include media-breakpoint-up(xs) {
@@ -69,17 +35,14 @@ body {
     background-size: 100%;
   }
 }
-.no-padding {
-  padding: 0;
-}
 .container-main {
+  @extend .container;
   @media (min-width: 2000px) {
     max-width: 1366px;
   }
 }
 #main-block {
   position: relative;
-  @extend .container;
   @extend .container-main;
   transform: translate3d(0);
   overflow-x: hidden;
@@ -88,32 +51,23 @@ h1, h2 {
   margin: 0;
 }
 h1 {
-  @extend %light-uppercase;
+  @include font($spacing:1px, $transform:uppercase);
 }
-
 ul {
   list-style: none;
 }
 a {
-  @extend %light-uppercase;
+  @include font($spacing:1px, $transform:uppercase);
 }
 p {
-  @extend %light-font;
-}
-.lead {
-  font-family: $font-secondary;
-  font-weight: bold;
+  @include font();
 }
 em {
   font-size: 0.8em;
 }
-strong {
-  font-family: $font-secondary;
-}
 .btn {
   text-transform: capitalize;
 }
-
 .hr-fade {
   background: #888;
   @include line-fade();
@@ -121,69 +75,30 @@ strong {
   height: 1px;
   width: 80%;
 }
-
 .shadow {
   background-color: $transparent-brand-primary;
   border: 0;
 }
-
-.produce-item {
-  width: 10rem;
-  color: #fff;
-  display: inline-block;
-  margin: 0.25rem;
-  padding: 0.5rem;
-  flex-grow: 2;
-  background-color: transparentize(#333, 0.50);
-  text-transform: capitalize;
-  text-align: center;
-  border: solid 1px #000;
-  @include media-breakpoint-down(sm) {
-    width: 25%;
-  }
-}
-.produce-block {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
 .card-title-small {
   @include font($font-secondary, null, #fff);
   @include small-caps(lowercase);
   text-align: center;
   margin: 0;
 }
-
 .inner-block {
   padding: 0;
 }
-
 .bg-transparent {
   background-color: transparent;
 }
-
-.text-secondary {
-  color: $brand-secondary;
-}
-
-.text-white {
-  color: #fff;
-}
-
-.text-grey {
-  color: #5f5f5f;
-  font-weight: normal;
-}
-
 .border-inverse {
   border-color: #000;
 }
-
 .hidden {
   opacity: 0;
 }
-
-#content {
-  overflow: hidden;
+.block {
+  @extend .card;
+  @extend .card-block;
+  @extend .shadow;
 }

@@ -4,26 +4,28 @@ class BangarangBend.Views.Navbar extends Backbone.View
   template: JST["backbone/templates/navigation/navbar"]
 
   events:
-    'click #nav-btn'   : 'mobileNav'
-    'click #nav-brand' : 'scroll'
+    'click #nav-btn'        : 'mobileNav'
+    'click #nav-brand'      : 'scroll'
 
   initialize: ->
+    @menus = BangarangBend.menus
     @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
     @render()
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(menus: @menus))
     @
 
-  mobileNav: ->
+  mobileNav: (options) ->
     if BangarangBend.menuToggled == true
-      @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:300, delay:400, easing:"easeOutExpo", complete: ->
-        Backbone.trigger "navClosed"
+      @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
+        if options.scroll == true && window.scrollY != 0
+          @scroll()
         window.BangarangBend.menuToggled = false
     else
-      @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 300, "easeInExpo"
+      @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = true
 
   scroll: ->
-    $('#landing').velocity('scroll', {duration: 1000, easing: 'easeInQuad' })
+    $('body').velocity('scroll', {duration: 700})

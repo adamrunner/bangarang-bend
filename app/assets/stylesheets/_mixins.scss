@@ -35,10 +35,12 @@
   background-size: $background-size;
 }
 
-@mixin font ($family:$font-primary, $weight:300, $color:null) {
+@mixin font ($family:$font-primary, $weight:300, $color:null, $spacing:null, $transform:null) {
   color: $color;
   font-family: $family;
   font-weight: $weight;
+  letter-spacing: $spacing;
+  text-transform: $transform;
 }
 
 @mixin small-caps ($transform, $spacing:1px) {

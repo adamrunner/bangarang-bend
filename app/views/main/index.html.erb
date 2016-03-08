@@ -3,7 +3,7 @@
 <div id="main-block">
   <div id="mobile-nav"></div>
 
-  <div class="card card-block shadow">
+  <div class="block">
     <div id="landing" class="jumbotron" style="background-image: url(<%= @landing ? @landing.image.url : '' %>)">
       <img src="/images/logo/bangarang_catering_logo_white.svg" />
       <h1><%= @landing ? @landing.heading.html_safe : 'catering & event services' %></h1>
@@ -12,7 +12,7 @@
 
   <div id="content"></div>
 
-  <div class="card card-block shadow">
+  <div class="block">
     <div id="contact"></div>
     <div id="footer"></div>
   </div>

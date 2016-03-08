@@ -7,6 +7,9 @@
   background-color: #fff;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
+  @include media-breakpoint-down(md) {
+    padding-left: 0;
+  }
   .navbar-inner {
     @extend .container;
     @extend .container-main;
@@ -15,8 +18,25 @@
     justify-content: space-between;
     align-items: center;
     @include media-breakpoint-down(md) {
+      max-width: 100%;
       padding: 0;
     }
+  }
+  .navbar-btn {
+    @include font($font-secondary, bold, $brand-secondary, $transform: uppercase !important);
+    font-size: 0.8rem;
+    border-color: #333;
+    background-color: #333;
+    color: #fff;
+    &:hover, &:focus {
+      background-color: $brand-secondary;
+      border-color: lighten($brand-secondary, 10%);
+      color: #fff;
+    }
+  }
+  .dropdown-item {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
   }
 }
 #nav-btn {
@@ -27,9 +47,7 @@
   height: $navbar-height;
   line-height: $navbar-height;
   width: 4rem;
-  @include media-breakpoint-up(sm) {
-    padding-left: 1rem;
-  }
+  padding-left: 1rem;
   @include media-breakpoint-up(lg) {
     display: none;
   }
@@ -47,13 +65,6 @@
 .navbar-nav {
   @include media-breakpoint-down(md) {
     display: none;
-  }
-}
-.nav-link {
-  margin-right: 1rem;
-  text-transform: uppercase;
-  @include media-breakpoint-down(lg) {
-    letter-spacing: normal;
   }
 }
 
@@ -85,6 +96,8 @@
   left: 0;
   transform: translateX(-100%);
   z-index: 10;
+  overflow-y: scroll;
+  overflow-x: hidden;
   @include media-breakpoint-up(lg) {
     display: none;
   }
