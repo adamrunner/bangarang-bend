@@ -29,7 +29,6 @@ body {
   position: relative;
   font-size: inherit !important;
   padding-top: $navbar-height;
-  overflow-x: hidden;
   background-image: url("/images/background/background_main.jpg");
   @include media-breakpoint-down(sm) {
     background-size: 100%;
@@ -44,8 +43,6 @@ body {
 #main-block {
   position: relative;
   @extend .container-main;
-  transform: translate3d(0);
-  overflow-x: hidden;
 }
 h1, h2 {
   margin: 0;

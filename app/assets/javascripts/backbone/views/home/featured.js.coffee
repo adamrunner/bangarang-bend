@@ -7,6 +7,7 @@ class BangarangBend.Views.Featured extends Backbone.View
 
   initialize: ->
     @collection = BangarangBend.featuredItems
+    console.log(@collection)
 
   render: ->
     @$el.html(@template(featured_items: @collection))
