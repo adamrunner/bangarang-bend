@@ -1,6 +1,9 @@
 #featured {
   width: 100%;
   background-color: transparent;
+  h4 {
+    text-transform: capitalize;
+  }
 }
 .card-featured {
   background-color: transparent;
@@ -19,4 +22,16 @@
 
 .featured-img {
   border-bottom: 1px solid #000;
+}
+.card-columns {
+  @include media-breakpoint-up(sm) {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
+  @include media-breakpoint-up(md) {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+  }
 }

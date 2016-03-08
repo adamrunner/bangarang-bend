@@ -25,6 +25,7 @@ $menu-item-primary-bg-color: #f1f1f1;
 body {
   margin-top: 3.375rem;
   background: #f1f1f1;
+  color: #333;
 }
 .btn {
   @extend .text-capitalize;
@@ -192,19 +193,32 @@ a:hover {
 .produce {
   display: flex;
   flex-flow: row wrap;
-
+  padding: 0.5rem;
+  @include media-breakpoint-up(md) {
+    padding: 1rem;
+  }
   .produce-item {
     position: relative;
-    width: 20%;
-    padding: 0.5rem;
+    width: 33.3%;
+    padding: 0.25rem;
+    @include media-breakpoint-up(md) {
+      padding: 0.5rem;
+      width: 20%;
+    }
     p {
+      font-size: 0.7em;
       margin: 0;
-      padding: 1.5rem;
+      padding: 0.75rem 0.25rem;
       background-color: #eee;
       text-align: center;
       text-transform: capitalize;
+      @include media-breakpoint-up(md) {
+        font-size: 1em;
+        padding: 1.5rem;
+      }
     }
     label {
+      font-size: 0.7em;
       position: relative;
       display:flex;
       flex-flow: column nowrap;
@@ -219,6 +233,10 @@ a:hover {
       border: solid 2px #eee;
       color: #aaa;
       cursor: pointer;
+      overflow: hidden;
+      @include media-breakpoint-up(md) {
+        font-size: 1em;
+      }
       i {
         position: absolute;
         bottom: 2px;

@@ -4,27 +4,41 @@ class BangarangBend.Views.Navbar extends Backbone.View
   template: JST["backbone/templates/navigation/navbar"]
 
   events:
-    'click .nav-button' : 'mobileNav'
+    'click #nav-btn'        : 'mobileNav'
+    'click #nav-brand'      : 'mobileNavCheck'
 
   initialize: ->
-    @navCollapse = $('.mobile-nav-wrap')
+    @menus = BangarangBend.menus
+    @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
     @render()
-    @menuBtn = @$('#menu-btn')
 
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(menus: @menus))
     @
 
-  mobileNav: ->
+  mobileNav: (options) ->
     if BangarangBend.menuToggled == true
-      @navCollapse.velocity {translateX: ["-100%", "0%"], translateZ: "0"}, duration: 350, "easeOutCirc"
-      $('#main-wrap').velocity {translateX: ["0%", "100%"], translateZ: "0"}, duration: 350, "easeInCirc"
-      window.BangarangBend.menuToggled = false
+      @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
+        if options.scroll == true && window.scrollY != 0
+          @scrollContent()
+        window.BangarangBend.menuToggled = false
     else
-      @navCollapse.velocity {translateX: ["0%", "-100%"], translateZ: "0"}, duration: 350, "easeInCirc"
-      $('#main-wrap').velocity {translateX: ["100%", "0%"], translateZ: "0"}, duration: 450, "easeOutCirc"
+      @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = true
 
-  # navLink: (event) ->
-  #   event.preventDefault()
+  mobileNavCheck: ->
+    if BangarangBend.menuToggled == true
+      @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
+        if window.scrollY != 0
+          @scroll()
+        window.BangarangBend.menuToggled = false
+    else
+      if window.scrollY != 0
+        @scroll()
+
+  scroll: ->
+    $('body').velocity('scroll', {duration: 700})
+
+  scrollContent: ->
+    $('#content').velocity('scroll', {offset: "-70px", duration: 700})

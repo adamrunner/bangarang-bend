@@ -34,11 +34,13 @@
     max-width: 18.75rem;
   }
   a {
-    @extend %small-caps;
+    @include font($font-secondary, 400);
+    @include small-caps(lowercase);
     font-size: 1.3em;
   }
   h4 {
-    @extend %small-caps;
+    @include font($font-secondary, bold);
+    @include small-caps(lowercase);
   }
 }
 .social-links {

@@ -1,8 +1,8 @@
-#philosophy {
-  .page-section-title {
-    font-variant: small-caps;
-    font-weight: bold;
-    letter-spacing: 2px;
+#philosophy-block {
+  @include content-card;
+  h2 {
+    @include font();
+    @include small-caps(capitalize);
   }
   p {
     margin: 1rem auto;

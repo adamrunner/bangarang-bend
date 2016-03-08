@@ -1,19 +1,20 @@
-#services {
-  height: 100%;
+#services-block {
+  @include content-card;
+  h3 {
+    @include font($font-secondary, bold, $brand-secondary);
+    @include small-caps(lowercase);
+    @extend .m-a-0;
+  }
 }
-.service-col {
+.services-column {
   display: flex;
   flex-flow: column nowrap;
 }
-.service-card {
+.services-card {
   flex-grow: 1;
-  color: #fff;
   background-color: transparentize(#333, 0.50);
   border-color: #000;
 }
-.service-block {
+.services-block {
   background-color: transparent;
-}
-.service-title {
-  @extend %small-caps;
 }

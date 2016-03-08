@@ -6,12 +6,12 @@
   <div class="row">
 
   <% @service_items.forEach (service_item) ->: %>
-    <div class="col-xs-6 service-col">
-      <div class="card service-card">
+    <div class="col-xs-6 services-column">
+      <div class="card services-card">
         <div class="card-block">
-          <h3 class="service-title text-secondary m-a-0"><%= service_item.get('name') %></h3>
+          <h3><%= service_item.get('name') %></h3>
         </div>
-        <div class="card-block service-block">
+        <div class="card-block services-block">
           <p><%= service_item.get('description') %></p>
         </div>
       </div>

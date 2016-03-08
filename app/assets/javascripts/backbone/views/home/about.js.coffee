@@ -7,7 +7,6 @@ class BangarangBend.Views.About extends Backbone.View
 
   initialize: ->
     @collection = BangarangBend.biographyItems
-    @render()
 
   render: ->
     @$el.html(@template(biography_items: @collection))

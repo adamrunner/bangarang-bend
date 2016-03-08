@@ -3,8 +3,8 @@ BangarangBend.Views.PersonalizedEvents ||= {}
 class BangarangBend.Views.PersonalizedEvents extends Backbone.View
   template: JST["backbone/templates/personalized-events"]
 
-  id: 'services'
-  className: 'card card-block shadow'
+  id: 'personalized-events-block'
+  className: 'card card-block shadow hidden'
 
   initialize: ->
     @render()

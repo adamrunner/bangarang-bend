@@ -1,6 +1,18 @@
 #showcase {
   width: 100%;
   background: #000;
+  h4 {
+    @include font($color:#fff);
+    @include small-caps(capitalize);
+    width: 100%;
+    background-color: $transparent-brand-primary;
+    padding: 0.75rem;
+    margin: 0;
+    opacity: 1;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.6rem;
+    }
+  }
 }
 .showcase-inner {
   position: relative;
@@ -16,7 +28,7 @@
 }
 .showcase-item {
   @include short-flex(row wrap, center, center);
-  @include background(center, cover);
+  @include background(center);
   flex-grow: 1;
   opacity: .9;
   width: 50%;
@@ -32,14 +44,5 @@
   @include media-breakpoint-up(md) {
     width: 20%;
     height: auto;
-  }
-  h3 {
-    width: 100%;
-    color: #fff;
-    background-color: $transparent-brand-primary;
-    padding: 1rem;
-    margin: 0;
-    @extend %light-capitalize;
-    opacity: 1;
   }
 }
