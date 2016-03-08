@@ -30,13 +30,8 @@ class BangarangBend.Views.Navbar extends Backbone.View
   mobileNavCheck: ->
     if BangarangBend.menuToggled == true
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart"
-      window.scrollTo(0,0)
       window.BangarangBend.menuToggled = false
-    else
-      window.scrollTo(0,0)
-
-  scroll: ->
-    $('body').velocity('scroll', {duration: 700})
-
+      return true
+      
   scrollContent: ->
-    $('#content').velocity('scroll', {offset: "-150px", duration: 700})
+    $('#content').velocity('scroll', {offset: "-70px", duration: 700})
