@@ -1,5 +1,5 @@
 <div class="list-group-fluid">
-  <a class="mobile-nav-link nav-close list-group-item" href="#home">home</a>
+  <a class="mobile-nav-link nav-close list-group-item" href="#">home</a>
   <a class="mobile-nav-link nav-close list-group-item" href="#philosophy">philosophy</a>
   <a class="mobile-nav-link nav-close list-group-item" href="#services">services</a>
   <a class="mobile-nav-link list-group-item" data-toggle="collapse" href="#menuCollapse">menus <i class="fa fa-caret-down"></i> </a>

@@ -1,7 +1,7 @@
 class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
 
   routes:
-    'home'                : 'homePage'
+    ''                    : 'homePage'
     'philosophy'          : 'philosophyPage'
     'services'            : 'servicesPage'
     'menus'               : 'menusPage'
