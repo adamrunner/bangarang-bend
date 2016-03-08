@@ -48,6 +48,7 @@
   line-height: $navbar-height;
   width: 4rem;
   padding-left: 1rem;
+  cursor: pointer;
   @include media-breakpoint-up(lg) {
     display: none;
   }
