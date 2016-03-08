@@ -22,9 +22,6 @@ window.BangarangBend =
     @serviceItems    = new BangarangBend.Collections.ServiceItems(options.data.service_items)
     @eventItems      = new BangarangBend.Collections.EventItems(options.data.event_items)
     @philosophyItems = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)
-    console.log(@serviceItems)
-    console.log(@eventItems)
-    console.log(@philosophyItems)
     Backbone.history.on "route", ->
       if location.href.slice(-1) == '#'
         location.replace(location.href + "home")

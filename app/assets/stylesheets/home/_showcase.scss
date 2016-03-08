@@ -28,7 +28,7 @@
 }
 .showcase-item {
   @include short-flex(row wrap, center, center);
-  @include background(center);
+  @include background(center, cover);
   flex-grow: 1;
   opacity: .9;
   width: 50%;

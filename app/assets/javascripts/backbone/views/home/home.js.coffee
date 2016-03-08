@@ -7,7 +7,6 @@ class BangarangBend.Views.Home extends Backbone.View
   id: 'home-block'
 
   events: ->
-    'touchstart #contact-btn' : 'scrollToSection'
     'click #contact-btn'      : 'scrollToSection'
 
   initialize: ->
