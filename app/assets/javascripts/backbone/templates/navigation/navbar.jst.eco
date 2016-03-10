@@ -19,7 +19,7 @@
         <% end %>
       </div>
     </div>
-    <a class="btn navbar-btn" href="#personalized_events">personalized events</a>
+    <a class="btn navbar-btn" href="#customized_events">customized events</a>
     <a class="btn navbar-btn" href="#philosophy">philosophy</a>
   </div>
 </div>

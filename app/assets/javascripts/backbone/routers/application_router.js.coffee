@@ -1,12 +1,12 @@
 class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
 
   routes:
-    ''                    : 'homePage'
-    'philosophy'          : 'philosophyPage'
-    'services'            : 'servicesPage'
-    'menus'               : 'menusPage'
-    'menu/:id'            : 'menuPage'
-    'personalized_events' : 'personalizedEventsPage'
+    ''                  : 'homePage'
+    'philosophy'        : 'philosophyPage'
+    'services'          : 'servicesPage'
+    'menus'             : 'menusPage'
+    'menu/:id'          : 'menuPage'
+    'customized_events' : 'customizedEventsPage'
 
   homePage: ->
     home = new BangarangBend.Views.Home()
@@ -16,8 +16,8 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     philosophyItems = new BangarangBend.Views.Philosophy(collection: BangarangBend.philosophyItems)
     @swapPage(philosophyItems)
 
-  personalizedEventsPage: ->
-    eventItems = new BangarangBend.Views.PersonalizedEvents(collection: BangarangBend.eventItems)
+  customizedEventsPage: ->
+    eventItems = new BangarangBend.Views.CustomizedEvents(collection: BangarangBend.eventItems)
     @swapPage(eventItems)
 
   servicesPage: ->
