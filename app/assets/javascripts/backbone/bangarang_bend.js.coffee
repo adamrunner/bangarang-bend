@@ -10,6 +10,7 @@ window.BangarangBend =
   Routers: {}
   Views: {}
   initialize: (options) ->
+    @pages           = new BangarangBend.Collections.Pages(options.data.pages)
     @featuredItems   = new BangarangBend.Collections.FeaturedItems(options.data.featured_items)
     @biographyItems  = new BangarangBend.Collections.BiographyItems(options.data.biography_items)
     @menus           = new BangarangBend.Collections.CateringMenus(options.data.menus)

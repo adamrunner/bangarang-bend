@@ -3,7 +3,7 @@ class Admin::CateringMenuController < Admin::BaseController
   before_filter :find_catering_menu, only: [:show, :edit, :update, :destroy]
 
   def create
-    @catering_menu = @page.catering_menus.create(catering_menu_params)
+    @catering_menu = @page.catering_menus.build(catering_menu_params)
     if @catering_menu.save
       redirect_to admin_catering_menu_path(@catering_menu), notice: "Catering Menu Successfully Created"
     end

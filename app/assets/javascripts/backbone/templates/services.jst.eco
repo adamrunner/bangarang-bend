@@ -1,5 +1,5 @@
 <div class="card-block">
-  <h1>Our Services</h1>
+  <h1><%= @page.get('link_name') %></h1>
 </div>
 
 <div class="card-block inner-block">

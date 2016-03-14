@@ -1,7 +1,9 @@
 <% breadcrumb :page, @page %>
 
 <div class="col-xs-12">
-  <h1 class="text-uppercase"><%= @page.link_name %></h1>
+  <div class="card card-block">
+    <h1 class="text-uppercase"><%= @page.link_name %></h1>
+  </div>
 
   <%= render "admin/page/partials/#{@page.name}" %>
 

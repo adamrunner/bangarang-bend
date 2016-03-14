@@ -1,7 +1,8 @@
 class MainController < ApplicationController
 
   def index
-    @page = Page.first
+    @pages = Page.all
+    @page = @pages.find_by(name: "home")
     @landing = @page.landings.first
     @featured_items = FeaturedItem.all
     @biography_items = BiographyItem.all

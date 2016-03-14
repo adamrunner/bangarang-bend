@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
   has_many :philosophy_items
   has_many :service_items
   has_many :landings
+  before_save :link_name_lowercase,
+              :format_text
 
   def content_type
     if self.name === "catering_menus" || self.name === "events"
@@ -30,7 +32,28 @@ class Page < ActiveRecord::Base
     }
   end
 
+  def tab
+    if self.name === "home"
+      return "featured"
+    elsif self.name === "events"
+      return "months"
+    end
+  end
+
   def page_content
     self.send(self.content_type)
+  end
+
+  def format_edit_text
+    self.copy_text.gsub("<br\/>", "\n") if attribute_present?("copy_text")
+  end
+
+  private
+  def link_name_lowercase
+    self.link_name = self.link_name.downcase
+  end
+
+  def format_text
+    self.copy_text = self.copy_text.gsub("\n", "<br/>") if attribute_present?("copy_text")
   end
 end

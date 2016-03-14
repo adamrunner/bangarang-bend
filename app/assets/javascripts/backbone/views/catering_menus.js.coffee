@@ -7,8 +7,9 @@ class BangarangBend.Views.CateringMenus extends Backbone.View
   className: 'card card-block shadow hidden'
 
   initialize: ->
+    @page = BangarangBend.pages.findWhere(name: 'catering_menus')
     @render()
 
   render: ->
-    @$el.html(@template(catering_menus: @collection))
+    @$el.html(@template(page: @page, menus: @collection))
     @

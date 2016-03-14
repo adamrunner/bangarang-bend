@@ -7,19 +7,24 @@
   </a>
 
   <div class="nav navbar-nav pull-xs-right">
-    <a class="btn navbar-btn" href="#">home</a>
-    <a class="btn navbar-btn" href="#services">services</a>
-    <div class="btn-group">
-      <button type="button" class="btn navbar-btn dropdown-toggle" data-toggle="dropdown">
-        Menus
-      </button>
-      <div class="dropdown-menu">
-        <% @menus.forEach (menu) ->: %>
-          <a class="dropdown-item" href="#menu/<%= menu.get('id') %>"><%= menu.get('name') %></a>
+    <% @pages.forEach (page) =>: %>
+      <% if page.get('name') == 'catering_menus' :%>
+
+        <div class="btn-group">
+          <button type="button" class="btn navbar-btn dropdown-toggle" data-toggle="dropdown">
+            <%= page.get('link_name') %>
+          </button>
+          <div class="dropdown-menu">
+            <% @menus.forEach (menu) ->: %>
+              <a class="dropdown-item" href="#<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
+            <% end %>
+          </div>
+        </div>
+
+        <% else :%>
+          <a class="btn navbar-btn" href="#<%= page.link() %>"><%= page.get('link_name') %></a>
         <% end %>
-      </div>
+
+      <% end %>
     </div>
-    <a class="btn navbar-btn" href="#customized_events">customized events</a>
-    <a class="btn navbar-btn" href="#philosophy">philosophy</a>
   </div>
-</div>

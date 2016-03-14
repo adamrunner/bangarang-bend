@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       sign_out: 'logout',
     }
 
+  resources :pages, only: [:index]
   resources :service_items, only: [:index]
   resources :event_items, only: [:index]
   resources :philosophy_items, only: [:index]
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
 
     resources :admin_user
 
-    resources :page, only: [:index, :show] do
+    resources :page, only: [:index, :show, :edit, :update] do
       resources :catering_menu, only: [:new, :create]
       resources :biography_item, only: [:new, :create]
       resources :featured_item, only: [:new, :create]

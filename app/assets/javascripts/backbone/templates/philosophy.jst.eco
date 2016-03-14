@@ -1,5 +1,5 @@
 <div class="card-block">
-  <h1>Our Philosophy</h1>
+  <h1><%= @page.get('link_name') %></h1>
 </div>
 
 <% @philosophy_items.forEach (philosophy_item) ->: %>

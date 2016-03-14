@@ -17,7 +17,7 @@
         </div>
 
         <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", admin_page_path(@event_item.page), class: "btn btn-secondary" %>
+        <%= link_to "back", admin_page_path(@event_item.page, tab: "months"), class: "btn btn-secondary" %>
         <%= link_to "delete", admin_event_item_path(@event_item), method: "delete", data: {confirm: "Are you sure you want to delete '#{@event_item.name.titleize}' ?"}, class: "btn btn-danger pull-md-right" %>
       <% end %>
 

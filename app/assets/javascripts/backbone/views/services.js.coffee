@@ -6,8 +6,9 @@ class BangarangBend.Views.Services extends Backbone.View
   id: 'services-block'
 
   initialize: ->
+    @page = BangarangBend.pages.findWhere(name: "services")
     @render()
 
   render: ->
-    @$el.html(@template(service_items: @collection))
+    @$el.html(@template(page: @page, service_items: @collection))
     @

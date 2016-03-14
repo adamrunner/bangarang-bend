@@ -3,15 +3,14 @@ class Admin::MenuItemController < Admin::BaseController
   before_filter :find_menu_item, only: [:edit, :update, :destroy]
 
   def create
-    menu_item = @menu_section.menu_items.create(menu_item_params)
+    menu_item = @menu_section.menu_items.build(menu_item_params)
     if menu_item.save
       redirect_to admin_catering_menu_path(menu_item.catering_menu), notice: "Menu Item Successfully Created"
     end
   end
 
   def update
-    @menu_item.update(menu_item_params)
-    if @menu_item.save
+    if @menu_item.update(menu_item_params)
       redirect_to admin_catering_menu_path(@menu_item.catering_menu), notice: "Menu Item Successfully Updated"
     end
   end

@@ -1,14 +1,22 @@
 <div class="list-group-fluid">
-  <a class="mobile-nav-link nav-close list-group-item" href="#">home</a>
-  <a class="mobile-nav-link nav-close list-group-item" href="#philosophy">philosophy</a>
-  <a class="mobile-nav-link nav-close list-group-item" href="#services">services</a>
-  <a class="mobile-nav-link list-group-item" data-toggle="collapse" href="#menuCollapse">menus <i class="fa fa-caret-down"></i> </a>
-  <div class="collapse" id="menuCollapse">
-    <div class="card-block">
-      <% @menus.forEach (menu) ->: %>
-        <a class="mobile-nav-link nav-close list-group-item" href="#menu/<%= menu.get('id') %>"><%= menu.get('name') %></a>
-      <% end %>
-    </div>
-  </div>
-  <a class="mobile-nav-link nav-close list-group-item" href="#customized_events">customized events</a>
+
+  <% @pages.forEach (page) =>: %>
+    <% if page.get('name') == 'catering_menus' :%>
+
+      <a class="mobile-nav-link list-group-item" data-toggle="collapse" href="#menuCollapse"><%= page.get('link_name') %> <i class="fa fa-caret-down"></i> </a>
+      <div class="collapse" id="menuCollapse">
+        <div class="card-block">
+          <% @menus.forEach (menu) ->: %>
+            <a class="mobile-nav-link nav-close list-group-item" href="#<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
+          <% end %>
+        </div>
+      </div>
+
+    <% else :%>
+
+      <a class="mobile-nav-link nav-close list-group-item" href="#<%= page.link() %>"><%= page.get('link_name') %></a>
+
+    <% end %>
+  <% end %>
+
 </div>

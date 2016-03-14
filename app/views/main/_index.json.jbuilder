@@ -1,4 +1,13 @@
 json.data do
+  json.pages @pages do |page|
+    json.id page.id
+    json.name page.name
+    json.link_name page.link_name
+    if page.show_copy_text
+      json.copy_text page.copy_text
+    end
+  end
+
   json.featured_items @featured_items do |featured_item|
     json.id featured_item.id
     json.name featured_item.name

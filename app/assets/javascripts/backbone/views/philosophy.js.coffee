@@ -6,8 +6,9 @@ class BangarangBend.Views.Philosophy extends Backbone.View
   id: 'philosophy-block'
 
   initialize: ->
+    @page = BangarangBend.pages.findWhere(name: "philosophy")
     @render()
 
   render: ->
-    @$el.html(@template(philosophy_items: @collection))
+    @$el.html(@template(page: @page, philosophy_items: @collection))
     @

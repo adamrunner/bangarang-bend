@@ -5,18 +5,15 @@ class BangarangBend.Views.MobileNav extends Backbone.View
 
   events:
     'click .nav-close'      : 'navClick'
-    # 'touchmove'             : 'noScroll'
 
   initialize: ->
     @menus = BangarangBend.menus
+    @pages = BangarangBend.pages
     @render()
 
   render: ->
-    @$el.html(@template(menus: @menus))
+    @$el.html(@template(pages: @pages, menus: @menus))
     @
 
   navClick: (event) ->
     Backbone.trigger "navClose", {scroll: true}
-
-  # noScroll: (event) ->
-    # event.preventDefault()

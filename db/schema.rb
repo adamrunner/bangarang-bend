@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301231038) do
+ActiveRecord::Schema.define(version: 20160311174447) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -137,11 +137,13 @@ ActiveRecord::Schema.define(version: 20160301231038) do
   add_index "menu_sections", ["catering_menu_id"], name: "index_menu_sections_on_catering_menu_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "link_name",   limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",           limit: 255
+    t.string   "link_name",      limit: 255
+    t.text     "description",    limit: 65535
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.text     "copy_text",      limit: 65535
+    t.boolean  "show_copy_text",               default: false
   end
 
   create_table "philosophy_items", force: :cascade do |t|

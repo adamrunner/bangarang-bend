@@ -8,13 +8,14 @@ class BangarangBend.Views.Navbar extends Backbone.View
     'click #nav-brand'      : 'mobileNavCheck'
 
   initialize: ->
+    @pages = BangarangBend.pages
     @menus = BangarangBend.menus
     @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
     @render()
 
   render: ->
-    @$el.html(@template(menus: @menus))
+    @$el.html(@template(menus: @menus, pages: @pages))
     @
 
   mobileNav: (options) ->
@@ -32,6 +33,6 @@ class BangarangBend.Views.Navbar extends Backbone.View
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = false
       return true
-      
+
   scrollContent: ->
     $('#content').velocity('scroll', {offset: "-70px", duration: 700})

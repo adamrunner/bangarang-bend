@@ -1,12 +1,14 @@
 class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
+  initialize: ->
+    pages = BangarangBend.pages
+    @route pages.at(0).link(), 'homePage'
+    @route pages.at(1).link(), 'servicesPage'
+    @route pages.at(2).link(), 'menusPage'
+    @route "#{pages.at(2).link()}/:name", 'menuPage'
+    @route pages.at(3).link(), 'customizedEventsPage'
+    @route pages.at(4).link(), 'philosophyPage'
 
-  routes:
-    ''                  : 'homePage'
-    'philosophy'        : 'philosophyPage'
-    'services'          : 'servicesPage'
-    'menus'             : 'menusPage'
-    'menu/:id'          : 'menuPage'
-    'customized_events' : 'customizedEventsPage'
+  # routes: ->
 
   homePage: ->
     home = new BangarangBend.Views.Home()
@@ -25,12 +27,12 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     @swapPage(services)
 
   menusPage: ->
-    cateringMenus = new BangarangBend.Views.CateringMenus(collection: BangarangBend.menus)
-    @swapPage(cateringMenus)
+    menus = new BangarangBend.Views.CateringMenus(collection: BangarangBend.menus)
+    @swapPage(menus)
 
-  menuPage: (id) ->
-    cateringMenu = new BangarangBend.Views.CateringMenu(model: BangarangBend.menus.get(id: id))
-    @swapPage(cateringMenu)
+  menuPage: (name) ->
+    menu = new BangarangBend.Views.CateringMenu(model: BangarangBend.menus.findWhere(name: name.replace(/_/g, ' ')))
+    @swapPage(menu)
 
   swapPage: (view) ->
     if @currentView

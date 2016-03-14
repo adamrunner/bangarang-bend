@@ -34,10 +34,17 @@
         </div>
 
         <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", admin_page_path(@landing.page), class: "btn btn-secondary" %>
+        <%= link_to "back", admin_page_path(@landing.page, tab: "landing"), class: "btn btn-secondary" %>
         <%= link_to "delete", admin_landing_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "btn btn-danger pull-md-right" %>
       <% end %>
 
     </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card card-block">
+    <h3>CATERING & <small class="m-l-2 font-italic text-muted"><-- line one</small> <br>
+    EVENT SERVICES <small class="m-l-2 font-italic text-muted"><-- line two</small> </h3>
   </div>
 </div>

@@ -1,0 +1,25 @@
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit <%= @page.link_name %> page</h3>
+
+      <%= form_for @page, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <%= f.label :link_name, "name", class: "font-weight-bold" %>:
+          <%= f.text_field :link_name, class: "form-control" %>
+        </div>
+
+        <% if @page.show_copy_text %>
+          <div class="form-group">
+            <%= f.label :copy_text, "description", class: "font-weight-bold" %>:
+            <%= f.text_area :copy_text, rows: 6, value: @page.format_edit_text, class: "form-control" %>
+          </div>
+        <% end %>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "back", :back, class: "btn btn-secondary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
