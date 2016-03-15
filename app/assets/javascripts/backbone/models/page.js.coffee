@@ -8,6 +8,20 @@ class BangarangBend.Models.Page extends Backbone.Model
     else
       return linkName.replace(/ /g, '_')
 
+  splitName: ->
+    return @get('link_name').split(' ')
+
 class BangarangBend.Collections.Pages extends Backbone.Collection
   model: BangarangBend.Models.Page
   url: '/pages'
+
+  showcaseLink: (name) ->
+    nameSplit = @findWhere(name: name).splitName()
+    if nameSplit.length < 2
+      nameSplit.unshift("our")
+      return nameSplit
+    else
+      return nameSplit
+
+  linkName: (name) ->
+    @findWhere(name: name).link()

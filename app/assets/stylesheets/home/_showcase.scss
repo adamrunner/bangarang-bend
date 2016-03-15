@@ -13,6 +13,11 @@
       font-size: 1.6rem;
     }
   }
+  .showcase-link-name {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
 }
 .showcase-inner {
   position: relative;
@@ -33,7 +38,9 @@
   opacity: .9;
   width: 50%;
   min-height: 11.25rem;
-  border: solid 1px #000;
+  @include media-breakpoint-up(md) {
+    border-right: solid 1px #000;
+  }
   &:hover {
     opacity: 1;
   }

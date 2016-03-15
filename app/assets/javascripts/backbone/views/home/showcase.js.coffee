@@ -5,6 +5,9 @@ class BangarangBend.Views.Showcase extends Backbone.View
 
   className: 'showcase-inner'
 
+  initialize: ->
+    @pages = BangarangBend.pages
+
   render: ->
-    @$el.html(@template())
+    @$el.html(@template(pages: @pages))
     @

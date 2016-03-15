@@ -2,13 +2,10 @@
 
 <div class="col-xs-12">
   <div class="card border-inverse">
-    <div class="card-block bg-inverse">
-      <h3 class="card-title">Pages</h3>
-    </div>
     <div id="admin-page-select" class="list-group list-group-flush">
       <% @pages.each do |page| %>
         <div class="list-group-item border-inverse">
-          <h4 class="no-margin text-capitalize font-weight-bold"><%= page.link_name %></h4>
+          <h4 class="no-margin text-capitalize font-weight-bold"><%= page.link_name %> <small class="text-muted">page</small></h4>
 
           <div class="card-block">
             <span class="text-muted"><%= page.description ? page.description : "" %></span>
@@ -20,7 +17,7 @@
             <button class="btn btn-info" disabled>view / edit content</button> <small class="text-danger">(Not Availiable Yet)</small>
           <% end %>
 
-          <%= link_to "edit page", edit_admin_page_path(page), class: "btn btn-primary" %>
+          <%= link_to "edit", edit_admin_page_path(page), class: "btn btn-primary" %>
 
           <% if page.landings.empty? != true %>
             <%= link_to "edit Landing", admin_page_path(page, tab: "landing"), class: "btn btn-secondary" %>

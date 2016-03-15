@@ -1,19 +1,35 @@
-  <a class="showcase-item" href="#services" style="background-image: url(/images/showcase/services.jpg)">
-    <h4>our <br> services</h4>
+  <a class="showcase-item" href="#<%= @pages.linkName('services') %>" style="background-image: url(/images/showcase/services.jpg)">
+    <h4 class="showcase-link-name">
+      <% @pages.showcaseLink("services").forEach (word) ->: %>
+        <span><%= word %></span>
+      <% end %>
+    </h4>
   </a>
 
-  <a class="showcase-item" href="#menus" style="background-image: url(/images/showcase/menu.jpg)">
-    <h4>our <br> menus</h4>
+  <a class="showcase-item" href="#<%= @pages.linkName('catering_menus') %>" style="background-image: url(/images/showcase/menu.jpg)">
+    <h4 class="showcase-link-name">
+      <% @pages.showcaseLink("catering_menus").forEach (word) ->: %>
+        <span><%= word %></span>
+      <% end %>
+    </h4>
   </a>
 
-  <a class="showcase-item" href="#personalized_events" style="background-image: url(/images/showcase/events.jpg)">
-    <h4>customized <br> events</h4>
+  <a class="showcase-item" href="#<%= @pages.linkName('events') %>" style="background-image: url(/images/showcase/events.jpg)">
+    <h4 class="showcase-link-name">
+      <% @pages.showcaseLink("events").forEach (word) ->: %>
+        <span><%= word %></span>
+      <% end %>
+    </h4>
   </a>
 
-  <a class="showcase-item" href="#philosophy" style="background-image: url(/images/showcase/philosophy.jpg)">
-    <h4>our <br> philosophy</h4>
+  <a class="showcase-item" href="#<%= @pages.linkName('philosophy') %>" style="background-image: url(/images/showcase/philosophy.jpg)">
+    <h4 class="showcase-link-name">
+      <% @pages.showcaseLink("philosophy").forEach (word) ->: %>
+        <span><%= word %></span>
+      <% end %>
+    </h4>
   </a>
 
   <a id="contact-btn" href="contact" class="showcase-item" style="background-image: url(/images/showcase/contact.jpg)">
-    <h4>contact <br> us</h4>
+    <h4 class="showcase-link-name"><span>contact</span><span>us</span></h4>
   </a>

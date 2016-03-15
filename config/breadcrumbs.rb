@@ -2,8 +2,13 @@ crumb :root do
   link "Pages", admin_root_path
 end
 
-crumb :page do |page, tab|
-  link page.name.titleize, admin_page_path(page, tab ? tab : "")
+crumb :page do |page, tab, type|
+  if type && type === 'edit'
+    link page.link_name.titleize, admin_page_path(page, tab ? tab : "")
+    link "Edit", edit_admin_page_path(page)
+  else
+    link page.link_name.titleize, admin_page_path(page, tab ? tab : "")
+  end
 end
 
 crumb :catering_menu do |model, type|
