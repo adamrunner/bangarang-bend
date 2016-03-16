@@ -1,4 +1,4 @@
-  <a class="showcase-item" href="#<%= @pages.linkName('services') %>" style="background-image: url(/images/showcase/services.jpg)">
+  <a class="showcase-item" href="/<%= @pages.linkName('services') %>" style="background-image: url(/images/showcase/services.jpg)">
     <h4 class="showcase-link-name">
       <% @pages.showcaseLink("services").forEach (word) ->: %>
         <span><%= word %></span>
@@ -6,7 +6,7 @@
     </h4>
   </a>
 
-  <a class="showcase-item" href="#<%= @pages.linkName('catering_menus') %>" style="background-image: url(/images/showcase/menu.jpg)">
+  <a class="showcase-item" href="/<%= @pages.linkName('catering_menus') %>" style="background-image: url(/images/showcase/menu.jpg)">
     <h4 class="showcase-link-name">
       <% @pages.showcaseLink("catering_menus").forEach (word) ->: %>
         <span><%= word %></span>
@@ -14,7 +14,7 @@
     </h4>
   </a>
 
-  <a class="showcase-item" href="#<%= @pages.linkName('events') %>" style="background-image: url(/images/showcase/events.jpg)">
+  <a class="showcase-item" href="/<%= @pages.linkName('events') %>" style="background-image: url(/images/showcase/events.jpg)">
     <h4 class="showcase-link-name">
       <% @pages.showcaseLink("events").forEach (word) ->: %>
         <span><%= word %></span>
@@ -22,7 +22,7 @@
     </h4>
   </a>
 
-  <a class="showcase-item" href="#<%= @pages.linkName('philosophy') %>" style="background-image: url(/images/showcase/philosophy.jpg)">
+  <a class="showcase-item" href="/<%= @pages.linkName('philosophy') %>" style="background-image: url(/images/showcase/philosophy.jpg)">
     <h4 class="showcase-link-name">
       <% @pages.showcaseLink("philosophy").forEach (word) ->: %>
         <span><%= word %></span>

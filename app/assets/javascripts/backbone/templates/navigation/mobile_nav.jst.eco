@@ -7,14 +7,14 @@
       <div class="collapse" id="menuCollapse">
         <div class="card-block">
           <% @menus.forEach (menu) ->: %>
-            <a class="mobile-nav-link nav-close list-group-item" href="#<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
+            <a class="mobile-nav-link nav-close list-group-item" href="/<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
           <% end %>
         </div>
       </div>
 
     <% else :%>
 
-      <a class="mobile-nav-link nav-close list-group-item" href="#<%= page.link() %>"><%= page.get('link_name') %></a>
+      <a class="mobile-nav-link nav-close list-group-item" href="/<%= page.link() %>"><%= page.get('link_name') %></a>
 
     <% end %>
   <% end %>

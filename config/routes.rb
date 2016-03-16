@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  resources :pages, only: [:index]
+  resources :service_items, only: [:index]
+  resources :event_items, only: [:index]
+  resources :philosophy_items, only: [:index]
+  resources :catering_menus, only: [:index, :show]
+
   devise_for :admin,
       class_name: 'AdminUser',
       controllers: {
@@ -13,12 +19,6 @@ Rails.application.routes.draw do
       sign_in:  'login',
       sign_out: 'logout',
     }
-
-  resources :pages, only: [:index]
-  resources :service_items, only: [:index]
-  resources :event_items, only: [:index]
-  resources :philosophy_items, only: [:index]
-  resources :catering_menus, only: [:index, :show]
 
   namespace :admin do
     root to: 'page#index'
@@ -61,4 +61,7 @@ Rails.application.routes.draw do
     resources :menu_item, only: [:edit, :update, :destroy]
 
   end
+
+  get '*path' => 'main#index', defaults:{path:"/"}
+
 end

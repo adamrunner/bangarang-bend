@@ -2,7 +2,7 @@
 <div class="navbar-inner">
   <i id="nav-btn" class="fa fa-bars nav-button"></i>
 
-  <a id="nav-brand" href="#">
+  <a id="nav-brand" href="/">
     <img class="nav-brand-logo" src="/images/logo/bangarang_haute_cuisine.svg"/>
   </a>
 
@@ -16,13 +16,13 @@
           </button>
           <div class="dropdown-menu">
             <% @menus.forEach (menu) ->: %>
-              <a class="dropdown-item" href="#<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
+              <a class="dropdown-item" href="/<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
             <% end %>
           </div>
         </div>
 
         <% else :%>
-          <a class="btn navbar-btn" href="#<%= page.link() %>"><%= page.get('link_name') %></a>
+          <a class="btn navbar-btn" href="/<%= page.link() %>"><%= page.get('link_name') %></a>
         <% end %>
 
       <% end %>
