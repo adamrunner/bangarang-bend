@@ -51,6 +51,7 @@ class Page < ActiveRecord::Base
   private
   def link_name_lowercase
     self.link_name = self.link_name.downcase
+    self.link_name = self.link_name.strip
   end
 
   def format_text

@@ -15,5 +15,6 @@ class CateringMenu < ActiveRecord::Base
   private
   def name_lowercase
     self.name = self.name.downcase
+    self.name = self.name.strip
   end
 end
