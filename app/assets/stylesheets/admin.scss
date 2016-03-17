@@ -44,7 +44,9 @@ body {
   margin: 0 auto;
   border-color: #ddd;
 }
-
+.info-block {
+  font-family: $font-family-monospace;
+}
 .card-title {
   @extend .text-capitalize;
   @extend .font-weight-bold;

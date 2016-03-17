@@ -17,6 +17,11 @@
         </div>
 
         <div class="form-group">
+          <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
+          <%= f.text_field :link_url, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :image, "upload image", class: "font-weight-bold" %>
           <%= f.file_field :image, class: "form-control-file" %>
         </div>
@@ -25,6 +30,36 @@
         <%= link_to "back", :back, class: "btn btn-secondary" %>
       <% end %>
 
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card card-block info-block">
+    <h3 class="card-title text-capitalize">tips for adding links</h3>
+    <div class="card-block bg-info m-b-1">
+      <p>Link to other pages on the Bangarang site simply by entering in their name with underscores replacing the spaces</p>
+      <ul>
+        <li><b>For Example</b></li>
+        <li>Customized Events = customized_events</li>
+        <li>Menus = menus</li>
+      </ul>
+    </div>
+    <div class="card-block bg-info m-b-1">
+      <p>Link to menu pages by entering in menus/ followed by the name of the menu, with underscores replacing the spaces</p>
+      <ul>
+        <li><b>For Example</b></li>
+        <li>Catered Fare = menus/catered_fare</li>
+        <li>Food Truck = menus/food_truck</li>
+      </ul>
+    </div>
+    <div class="card-block bg-info">
+      <p>Link to other web pages by entering the whole entire URL</p>
+      <ul>
+        <li><b>For Example</b></li>
+        <li>https://www.google.com/</li>
+        <li>https://www.instagram.com/chefdavebodi/</li>
+      </ul>
     </div>
   </div>
 </div>
