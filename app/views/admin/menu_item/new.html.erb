@@ -1,0 +1,30 @@
+<% breadcrumb :menu_item, @menu_section, "new" %>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">new menu item</h3>
+
+      <%= form_for :menu_item, url: admin_menu_section_menu_item_index_path do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "name", class: "font-weight-bold" %>:
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :choices, "choices", class: "font-weight-bold" %>:
+          <%= f.text_area :choices, rows: 6, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :price, "price", class: "font-weight-bold" %>:
+          <%= f.text_field :price, class: "form-control" %>
+        </div>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "cancel", :back, class: "btn btn-secondary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

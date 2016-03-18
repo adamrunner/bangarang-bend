@@ -1,0 +1,72 @@
+#contact {
+  @include short-flex(column nowrap, center, center);
+  background-color: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  .section-inner {
+    @include short-flex(column nowrap, center, center);
+    padding-bottom: 0rem;
+  }
+  .hr-fade {
+    width: 50%;
+  }
+}
+.contact-items {
+  @include short-flex(column nowrap, center, center);
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    @include short-flex(row wrap, center, flex-end);
+  }
+}
+.contact-item {
+  @include short-flex(column nowrap, flex-end);
+  text-align: center;
+  flex-grow: 1;
+  margin: 1rem 0;
+  border-radius: 3px;
+  color: #fff;
+  @include media-breakpoint-up(sm) {
+    width: 50%;
+    max-width: 20rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 1rem;
+    max-width: 18.75rem;
+  }
+  a {
+    @include font($font-secondary, 400);
+    @include small-caps(lowercase);
+    font-size: 1.3em;
+  }
+  h4 {
+    @include font($font-secondary, bold);
+    @include small-caps(lowercase);
+  }
+}
+.social-links {
+  @include short-flex(row wrap, center);
+  width: 100%;
+  text-align: center;
+  font-size: 2.4em;
+  a {
+    @include short-flex(row nowrap, center, center);
+    width: 2.1em;
+    height: 2.1em;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    background-color: transparentize(#000, 0.50);
+    transition: all .2s ease;
+    i {
+      transition: all .2s ease;
+      color: #fff;
+    }
+    &:hover {
+      background-color: transparentize($brand-secondary, 0.60);
+    }
+  }
+}
+.contact-block {
+  @extend .inner-block;
+  @extend .bg-transparent;
+  @include short-flex(row wrap, center);
+}

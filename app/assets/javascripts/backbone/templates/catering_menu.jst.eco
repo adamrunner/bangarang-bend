@@ -1,0 +1,41 @@
+<div class="card-block">
+  <h1><%= @catering_menu.get('name') %></h1>
+</div>
+
+<div class="card-block">
+  <h4>Hand pick your fare</h4>
+  <h4>all prices are per person a la carte</h4>
+</div>
+
+<div class="list-group-fluid">
+<% @catering_menu.get('menu_sections').forEach (menu_section) ->: %>
+  <div class="list-group-item">
+    <h3><%= menu_section.name %></h3>
+
+    <div class="row">
+
+    <% menu_section.menu_items.forEach (menu_item) ->: %>
+      <div class="col-xs-6 menu-col">
+        <div class="card-block menu-inner-block">
+          <h5><%= menu_item.name %> <em class="light-font">(<%= menu_item.price %>)</em></h5>
+          <p><%= menu_item.choices %></p>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+
+  </div>
+<% end %>
+</div>
+
+<div class="card-block menu-footer">
+  <ul>
+    <li>Catering requires 15 persons minimum, Delivery and other charges may apply.</li>
+    <li>Our menus are based on seasonality and we reserve the right to make subtle substitutions based on
+      quality and availability.
+    </li>
+    <li>Consuming raw or undercooked meat, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</li>
+    <li>We love custom menus so let us know if you have something else in mind.</li>
+  </ul>
+</div>

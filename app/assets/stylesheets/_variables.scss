@@ -1,12 +1,4 @@
-$top-spacing: 50px;
 
-$font-family-secondary: 'Open Sans', sans-serif !default;
-$font-family-primary:   'Roboto', sans-serif !default;
-
-$light-font-color : #fff;
-$dark-font-color  : #333;
-
-//NOTE: Bootstrap Variables Below
 // Variables
 //
 
@@ -39,15 +31,42 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary             : #445768 !default;
-$transparent-brand-primary : transparentize($brand-primary, 0.25%) !default;
+$transparent-brand-primary : transparentize(#000, 0.15%) !default;
 $brand-secondary           : #C34C3B !default;
 $light                     : #eee !default;
-$light-transparent         : transparentize(#eee, 0.10%) !default;
-$dark-transparent          : transparentize(#333, 0.10%) !default;
 $brand-success             : #5cb85c !default;
 $brand-info                : #5bc0de !default;
 $brand-warning             : #f0ad4e !default;
 $brand-danger              : #d9534f !default;
+
+// #NOTE custom variables
+$font-secondary: 'Open Sans', sans-serif !default;
+$font-primary:   'Roboto', sans-serif !default;
+
+$light-font-color : #fff;
+$dark-font-color  : #333;
+
+$dark-transparent: transparentize(#222, 0.50) !default;
+
+$navbar-height: 4.25rem;
+$nav-brand-logo-height: 2rem;
+
+$showcase-bg-color: #fff;
+$showcase-border-color: $showcase-bg-color;
+$showcase-border-size: 1px;
+
+$featured-bg-color: transparentize($transparent-brand-primary, 0.15);
+$featured-title-color: #fff;
+$featured-text-color: #333;
+$featured-item-border-color: #000;
+$featured-item-border-style: 3px solid #fff;
+
+$about-bg-color: transparentize($transparent-brand-primary, 0.15);
+
+$contact-bg-color: #eee;
+
+$footer-bg-color: $contact-bg-color;
+//
 
 
 // Options
@@ -97,16 +116,16 @@ $border-width:               1px !default;
 // Settings for the `<body>` element.
 
 $body-bg:                    #fff !default;
-$body-color:                 $dark-font-color !default;
+$body-color:                 #fff !default;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                 $brand-primary !default;
+$link-color:                 lighten($brand-secondary, 5%) !default;
 $link-decoration:            none !default;
-$link-hover-color:           darken($link-color, 15%) !default;
+$link-hover-color:           darken($brand-secondary, 10%) !default;
 $link-hover-decoration:      none !default;
 
 
@@ -125,7 +144,7 @@ $grid-breakpoints: (
   // Large screen / desktop
   lg: 992px,
   // Extra large screen / wide desktop
-  xl: 1200px
+  xl: 1460px
 ) !default;
 
 
@@ -186,8 +205,8 @@ $display4-weight:             300 !default;
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       $font-family-primary;
-$headings-font-weight:       300 !default;
+$headings-font-family:       $font-primary;
+$headings-font-weight:       inherit !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 
@@ -488,7 +507,7 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 // Cards
 $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
-$card-border-width:        0px !default;
+$card-border-width:        1px !default;
 $card-border-radius:       $border-radius !default;
 $card-border-color:        #ddd !default;
 $card-border-radius-inner: $card-border-radius !default;
@@ -616,7 +635,7 @@ $list-group-disabled-color:      $gray-light !default;
 $list-group-disabled-bg:         $gray-lighter !default;
 $list-group-disabled-text-color: $list-group-disabled-color !default;
 
-$list-group-link-color:         #555 !default;
+$list-group-link-color:         #333 !default;
 $list-group-link-hover-color:   $list-group-link-color !default;
 $list-group-link-heading-color: #333 !default;
 

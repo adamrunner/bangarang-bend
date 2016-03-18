@@ -1,0 +1,121 @@
+// navbar styling
+#navbar {
+  @extend .navbar;
+  @extend .navbar-full;
+  @extend .navbar-fixed-top;
+  height: $navbar-height;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+  margin: 0 auto;
+  @include media-breakpoint-down(md) {
+    padding-left: 0;
+  }
+  .navbar-inner {
+    @extend .container;
+    @extend .container-main;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+  .navbar-btn {
+    @include font($font-secondary, bold, $brand-secondary, $transform: uppercase !important);
+    font-size: 0.8rem;
+    border-color: #333;
+    background-color: #333;
+    color: #fff;
+    &:hover, &:focus {
+      background-color: $brand-secondary;
+      border-color: lighten($brand-secondary, 10%);
+      color: #fff;
+    }
+  }
+  .dropdown-item {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+}
+#nav-btn {
+  @extend .fa;
+  @extend .fa-bars;
+  font-size: 2em;
+  color: #333;
+  height: $navbar-height;
+  line-height: $navbar-height;
+  width: 4rem;
+  padding-left: 1rem;
+  cursor: pointer;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+#nav-brand {
+  @extend .navbar-brand;
+  margin: 0;
+  @include media-breakpoint-up(sm) {
+    margin-right: 1rem;
+  }
+}
+.nav-brand-logo {
+  height: $nav-brand-logo-height;
+}
+.navbar-nav {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+// footer styling
+#footer {
+  width: 100%;
+  height: 20rem;
+  background-color: transparent;
+  @include short-flex(row wrap, center, center);
+  img {
+    width: 100%;
+    max-width: 20em;
+    @include media-breakpoint-up(lg) {
+      max-width: 25em;
+    }
+  }
+}
+
+// mobile navigation styling
+#mobile-nav {
+  @extend .card-block;
+  @extend .p-a-0;
+  @include short-flex(column nowrap);
+  width: 100%;
+  height: 100vh;
+  background-color: transparentize(#000, 0.10);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  z-index: 10;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+  .list-group-fluid {
+    margin-top: $navbar-height;
+  }
+  .list-group-item {
+    @include font($font-secondary, bold, #fff);
+    padding: 1rem;
+    text-transform: uppercase;
+    background-color: transparentize(#222, 0.10);
+    border: 1px solid #000;
+    margin: 0.5rem 0rem;
+    &.active, &:hover {
+      color: $brand-secondary;
+      border-color: $brand-secondary;
+      background-color: transparentize(#111, 0.10);
+    }
+  }
+}

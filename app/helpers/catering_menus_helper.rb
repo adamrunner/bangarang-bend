@@ -1,0 +1,2 @@
+module CateringMenusHelper
+end

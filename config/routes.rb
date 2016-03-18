@@ -1,56 +1,67 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-  root 'application#index'
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  root 'main#index'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  resources :pages, only: [:index]
+  resources :service_items, only: [:index]
+  resources :event_items, only: [:index]
+  resources :philosophy_items, only: [:index]
+  resources :catering_menus, only: [:index, :show]
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  devise_for :admin,
+      class_name: 'AdminUser',
+      controllers: {
+      sessions: "admin/sessions",
+      passwords: 'admin/passwords',
+      unlocks: 'admin/unlocks'
+    },
+    path_names: {
+      sign_in:  'login',
+      sign_out: 'logout',
+    }
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  namespace :admin do
+    root to: 'page#index'
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    resources :admin_user
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+    resources :page, only: [:index, :show, :edit, :update] do
+      resources :catering_menu, only: [:new, :create]
+      resources :biography_item, only: [:new, :create]
+      resources :featured_item, only: [:new, :create]
+      resources :service_item, only: [:new, :create]
+      resources :philosophy_item, only: [:new, :create]
+      resources :event_item, only: [:new, :create]
+      resources :event_produce_item, only: [:new, :create]
+      resources :landing, only: [:new, :create]
+    end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+    resources :biography_item, only: [:edit, :update, :destroy]
+    resources :featured_item, only: [:edit, :update, :destroy]
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    delete '/featured_item/:id/delete_img', to: 'featured_item#destroy_img', as: 'delete_featured_img'
+
+    resources :landing, only: [:edit, :update, :destroy]
+
+    delete '/landing/:id/delete_img', to: 'landing#destroy_img', as: 'delete_landing_img'
+
+    resources :service_item, only: [:edit, :update, :destroy]
+    resources :philosophy_item, only: [:edit, :update, :destroy]
+    resources :event_item, only: [:edit, :update, :destroy]
+    resources :event_produce_item, only: [:edit, :update, :destroy]
+
+    resources :catering_menu, only: [:show, :edit, :update, :destroy] do
+      resources :menu_section, only: [:new, :create]
+    end
+
+    resources :menu_section, only: [:edit, :update, :destroy] do
+      resources :menu_item, only: [:new, :create]
+    end
+
+    resources :menu_item, only: [:edit, :update, :destroy]
+
+  end
+
+  get '*path' => 'main#index', defaults:{path:"/"}
+
 end

@@ -1,68 +1,10 @@
+<div class="card-block">
+  <h1><%= @page.get('link_name') %></h1>
+</div>
 
-  <div class="section-header">
-    <h1>What We Do</h1>
+<% @philosophy_items.forEach (philosophy_item) ->: %>
+  <div class="card-block">
+    <h2><%= philosophy_item.get('name') %></h2>
+    <p><%= philosophy_item.get('description') %></p>
   </div>
-
-  <div class="philosophy-body">
-
-
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2><b>S</b>easonality.</h2>
-        <hr>
-        <p>
-          Our menu is 100% based on seasonally available and organic ingredients and is
-          changing constantly.  If you care about where your food comes from, we may be the
-          caterer for you.
-        </p>
-        <hr>
-      </div>
-    </div>
-
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2><b>B</b>enefits.</h2>
-        <hr>
-        <p>
-          When we shop, cook, and eat seasonally we do a number of great things.  First, we
-          support our local farms and ranches who bring food  to our tables.  Second, we ensure
-          we are getting products at the best version of themselves and simultaneously at their
-          best values.  We keep a perfect Oregon strawberry exactly where it belongs; signifying
-          the beginning of summer, where it makes the biggest impact on our minds and palates.
-          In the dead of winter, we would serve a perfect pomegranate or quince instead.
-        </p>
-        <hr>
-      </div>
-    </div>
-
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2><b>L</b>ow <b>I</b>mpact.</h2>
-        <hr>
-        <p>
-          Sustainability in a time of enlightenment should be important to us all.  At BANGARANG
-          we strive to utilize whole products while composting the unusable portions.  We
-          purchase from low impact purveyors and recycle everything possible.  In doing this, we
-          have adopted a “no disposables” policy. We have seen firsthand the exorbitant amount
-          of waste that takes place in the restaurant industry and this is an area we can all make
-          an impact in while helping to keep our beautiful Central Oregon the place we have come
-          to love.
-        </p>
-        <hr>
-      </div>
-    </div>
-
-    <div class="philosophy-item">
-      <div class="inner-wrap">
-        <h2><b>E</b>xperience.</h2>
-        <hr>
-        <p>
-          Experience has taught us that certain foods adapt well to catered events while others do
-          not.  We center our menu around foods that hold presentation and flavors well.  We strive
-          to put forth entrees that will be as delicious at your event as they were the day of your
-          tasting.
-        </p>
-        <hr>
-      </div>
-    </div>
-  </div>
+<% end %>

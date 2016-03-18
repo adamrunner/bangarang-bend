@@ -1,0 +1,30 @@
+
+<div class="navbar-inner">
+  <i id="nav-btn" class="fa fa-bars nav-button"></i>
+
+  <a id="nav-brand" href="/">
+    <img class="nav-brand-logo" src="/images/logo/bangarang_haute_cuisine.svg"/>
+  </a>
+
+  <div class="nav navbar-nav pull-xs-right">
+    <% @pages.forEach (page) =>: %>
+      <% if page.get('name') == 'catering_menus' :%>
+
+        <div class="btn-group">
+          <button type="button" class="btn navbar-btn dropdown-toggle" data-toggle="dropdown">
+            <%= page.get('link_name') %>
+          </button>
+          <div class="dropdown-menu">
+            <% @menus.forEach (menu) ->: %>
+              <a class="dropdown-item" href="/<%= page.get('link_name') %>/<%= menu.link() %>"><%= menu.get('name') %></a>
+            <% end %>
+          </div>
+        </div>
+
+        <% else :%>
+          <a class="btn navbar-btn" href="/<%= page.link() %>"><%= page.get('link_name') %></a>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>

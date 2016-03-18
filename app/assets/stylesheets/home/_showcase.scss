@@ -1,0 +1,55 @@
+#showcase {
+  width: 100%;
+  background: #000;
+  h4 {
+    @include font($color:#fff);
+    @include small-caps(capitalize);
+    width: 100%;
+    background-color: $transparent-brand-primary;
+    padding: 0.75rem;
+    margin: 0;
+    opacity: 1;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.6rem;
+    }
+  }
+  .showcase-link-name {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+}
+.showcase-inner {
+  position: relative;
+  @include short-flex(row wrap);
+  width: 100%;
+  min-height: 20rem;
+  padding: ($showcase-border-size / 2);
+  background-color: inherit;
+  @include media-breakpoint-up(md) {
+    @include short-flex(row nowrap);
+    height: 30vh;
+  }
+}
+.showcase-item {
+  @include short-flex(row wrap, center, center);
+  @include background(center, cover);
+  flex-grow: 1;
+  opacity: .9;
+  width: 50%;
+  min-height: 11.25rem;
+  @include media-breakpoint-up(md) {
+    border-right: solid 1px #000;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  @include media-breakpoint-up(sm) {
+    min-height: 2rem;
+    height: 8rem;
+  }
+  @include media-breakpoint-up(md) {
+    width: 20%;
+    height: auto;
+  }
+}

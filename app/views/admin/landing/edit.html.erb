@@ -1,0 +1,50 @@
+<% breadcrumb :landing, @landing, "edit" %>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit landing</h3>
+
+      <%= form_for @landing, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <%= f.label :first_line, "Heading Line 1", class: "font-weight-bold" %>:
+          <%= f.text_field :first_line, value: @line_1, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :second_line, "Heading Line 2", class: "font-weight-bold" %>:
+          <%= f.text_field :second_line, value: @line_2, class: "form-control" %>
+        </div>
+
+        <% if @landing.image? %>
+          <figure class="form-group">
+            <%= image_tag(@landing.image.featured_thumb.url, class:"figure-img") %>
+            <figcaption class="figure-caption"><%= @landing[:image] %></figcaption>
+          </figure>
+
+          <div class="form-group">
+            <%= link_to "delete image", admin_delete_landing_img_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete #{@landing[:image]}?"},  class: "btn btn-danger" %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :image, @landing.image? ? "Replace Image" : "Add Image", class: "font-weight-bold" %>:
+          <%= f.file_field :image, class: "form-control-file" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "back", admin_page_path(@landing.page, tab: "landing"), class: "btn btn-secondary" %>
+        <%= link_to "delete", admin_landing_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "btn btn-danger pull-md-right" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card card-block">
+    <h3>CATERING & <small class="m-l-2 font-italic text-muted"><-- line one</small> <br>
+    EVENT SERVICES <small class="m-l-2 font-italic text-muted"><-- line two</small> </h3>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<% breadcrumb :catering_menu, @catering_menu %>
+
+<div class="col-xs-12">
+
+  <%= render partial: "admin/catering_menu/partials/show", locals: {catering_menu: @catering_menu} %>
+
+  <div class="card border-inverse">
+
+    <div class="card-block bg-inverse border-inverse">
+      <h3 class="card-title text-capitalize">menu sections</h3>
+      <%= link_to "add section", new_admin_catering_menu_menu_section_path(@catering_menu), class: "btn btn-success" %>
+    </div>
+
+    <div class="list-group list-group-flush">
+      <% @catering_menu.menu_sections.each do |section| %>
+        <div class="list-group-item border-inverse menu-list">
+
+          <div class="card-nav">
+            <h4 class="font-weight-bold text-capitalize"><%= section[:name] %></h4>
+            <%= link_to "edit section", edit_admin_menu_section_path(section), class: "btn btn-info" %>
+            <%= link_to "delete section", admin_menu_section_path(section), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(section.name)}' and all menu items associated with it?"}, class: "btn btn-danger pull-md-right" %>
+          </div>
+
+          <div class="row menu-row">
+            <% section.menu_items.each do |item| %>
+              <%= link_to edit_admin_menu_item_path(item), class:"col-xs-6 menu-item-col" do %>
+                <div class="menu-item">
+                  <p><%= item[:name] %> <em>(<%= item[:price] %>)</em></p>
+                  <p class="text-muted choices"><%= item[:choices] %></p>
+                </div>
+              <% end %>
+            <% end %>
+
+            <%= link_to new_admin_menu_section_menu_item_path(section), class: "col-xs-6 menu-item-col text-capitalize" do %>
+              <div class="menu-item-link-success">
+                <p class="lead"><i class="fa fa-plus-circle"></i> add menu item</p>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

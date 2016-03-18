@@ -1,0 +1,32 @@
+<div class="card-block contact-block">
+
+  <div class="card-block">
+    <h3 class="card-title-small">contact</h3>
+  </div>
+
+  <div class="contact-items">
+    <div class="contact-item">
+      <h4 class="name m-a-0">Dave Bodi</h4>
+      <h4 class="name"><em>Executive Chef</em></h4>
+      <a href="tel:+15039302722">503-930-2722</a>
+      <a href="mailto:dave@bangarangbend.com">dave@bangarangbend.com</a>
+    </div>
+
+    <div class="contact-item">
+      <h4 class="name m-a-0">Amy Bodi</h4>
+      <h4 class="name"><em>Event Services</em></h4>
+      <a href="tel:+15419688003">541-968-8003</a>
+      <a href="mailto:amy@bangarangbend.com">amy@bangarangbend.com</a>
+    </div>
+  </div>
+
+  <div class="hr-fade"></div>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/bangarangbend/" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/chefdavebodi/" target="_blank"><i class="fa fa-instagram"></i></a>
+  </div>
+
+  <div class="hr-fade"></div>
+
+</div>

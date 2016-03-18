@@ -24,6 +24,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'rmagick'
 gem 'font-awesome-sass', github: 'adamrunner/font-awesome-sass'
+# Gretel to handle Breadcrumbs
+gem "gretel"
 # Transactional email support
 gem 'mailgun_rails'
 # Markdown Parsing

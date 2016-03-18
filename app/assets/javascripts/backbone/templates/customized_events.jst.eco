@@ -1,0 +1,22 @@
+<div class="card-block">
+  <h1><%= @page.get('link_name') %></h1>
+</div>
+
+<div class="card-block">
+  <p id="events-text"></p>
+</div>
+
+<div class="card-block">
+    <h2>Local Produce</h2>
+</div>
+
+<% @event_items.forEach (event_item) ->: %>
+  <div class="card-block">
+    <h2><%= event_item.get('name') %></h2>
+  </div>
+  <div class="card-block produce-block inner-block">
+    <% event_item.get('produce_items').forEach (produce_item) ->: %>
+      <span class="produce-item"><%= produce_item.name %></span>
+    <% end %>
+  </div>
+<% end %>

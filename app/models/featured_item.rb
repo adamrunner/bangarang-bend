@@ -1,3 +1,4 @@
 class FeaturedItem < ActiveRecord::Base
-  has_one :image, as: :imageable, dependent: :destroy
+  mount_uploader :image, ImageUploader
+  belongs_to :page
 end

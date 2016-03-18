@@ -1,0 +1,20 @@
+#services-block {
+  @include content-card;
+  h3 {
+    @include font($font-secondary, bold, $brand-secondary);
+    @include small-caps(lowercase);
+    @extend .m-a-0;
+  }
+}
+.services-column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.services-card {
+  flex-grow: 1;
+  background-color: transparentize(#333, 0.50);
+  border-color: #000;
+}
+.services-block {
+  background-color: transparent;
+}

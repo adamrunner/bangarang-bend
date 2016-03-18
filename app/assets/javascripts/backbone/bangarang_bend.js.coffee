@@ -10,14 +10,16 @@ window.BangarangBend =
   Routers: {}
   Views: {}
   initialize: (options) ->
-    @content    = $('#content')
-    @featured   = $('#featured')
-    @bgImages   = new BangarangBend.Collections.BgImages(options.data.bg_images)
-    @router     = new BangarangBend.Routers.ApplicationRouter()
-    @navigation = new BangarangBend.Views.Navigation(el: '#navigation')
-    @mobileNav  = new BangarangBend.Views.MobileNav(el: '#mobile-nav-bar')
-    @bgCarousel = new BangarangBend.Views.BgCarousel(el: '#background-carousel', collection: @bgImages)
-
-# $(document).on "click", "a[href^='/']", (event) ->
-#   if !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey
-#   	event.preventDefault()
+    @pages           = new BangarangBend.Collections.Pages(options.data.pages)
+    @featuredItems   = new BangarangBend.Collections.FeaturedItems(options.data.featured_items)
+    @biographyItems  = new BangarangBend.Collections.BiographyItems(options.data.biography_items)
+    @menus           = new BangarangBend.Collections.CateringMenus(options.data.menus)
+    @content         = $('#content')
+    @router          = new BangarangBend.Routers.ApplicationRouter()
+    @mobileNav       = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
+    @navbar          = new BangarangBend.Views.Navbar(el: '#navbar')
+    @footer          = new BangarangBend.Views.Footer(el: '#footer')
+    @contact         = new BangarangBend.Views.Contact(el: '#contact')
+    @serviceItems    = new BangarangBend.Collections.ServiceItems(options.data.service_items)
+    @eventItems      = new BangarangBend.Collections.EventItems(options.data.event_items)
+    @philosophyItems = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)

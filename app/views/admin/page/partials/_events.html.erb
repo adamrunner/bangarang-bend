@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link <%= @tab == "months" ? "active" : "" %>" data-toggle="tab" href="#event_months" role="tab">Months</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= @tab == "produce" ? "active" : "" %>" data-toggle="tab" href="#event_produce" role="tab">Produce</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane <%= @tab == "months" ? "active" : "" %>" id="event_months" role="tabpanel">
+    <%= render partial: "admin/event_item/index", locals: {event_items: @page_contents[:months]} %>
+  </div>
+  <div class="tab-pane <%= @tab == "produce" ? "active" : "" %>" id="event_produce" role="tabpanel">
+    <%= render partial: "admin/event_produce_item/index", locals: {event_produce_items: @page_contents[:produce]} %>
+  </div>
+</div>

@@ -1,75 +1,51 @@
 class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
-  initialize: () ->
+  initialize: ->
+    pages = BangarangBend.pages
+    @route pages.at(0).link(), 'homePage'
+    @route pages.at(1).link(), 'servicesPage'
+    @route pages.at(2).link(), 'menusPage'
+    @route "#{pages.at(2).link()}/:name", 'menuPage'
+    @route pages.at(3).link(), 'customizedEventsPage'
+    @route pages.at(4).link(), 'philosophyPage'
 
-  routes: ->
-    ''                    : 'homeView'
-    'philosophy'          : 'philosophyView'
-    'services'            : 'servicesView'
-    'menu'                : 'menuView'
-    'personalized-events' : 'personalizedEventsView'
+  # routes: ->
 
-  homeView: ->
-    home     = new BangarangBend.Views.Home()
-    featured = new BangarangBend.Views.Featured()
-    @swapView([home, featured])
+  homePage: ->
+    home = new BangarangBend.Views.Home()
+    @swapPage(home)
 
-  philosophyView: ->
-    philosophy = new BangarangBend.Views.Philosophy()
-    @swapView([philosophy])
-    #TODO dry all views up, should check if featured is rendered before clearing it out
+  philosophyPage: ->
+    philosophyItems = new BangarangBend.Views.Philosophy(collection: BangarangBend.philosophyItems)
+    @swapPage(philosophyItems)
 
-  personalizedEventsView: ->
-    personalizedEvents = new BangarangBend.Views.PersonalizedEvents()
-    @swapView([personalizedEvents])
+  customizedEventsPage: ->
+    eventItems = new BangarangBend.Views.CustomizedEvents(collection: BangarangBend.eventItems)
+    @swapPage(eventItems)
 
-  servicesView: ->
-    services = new BangarangBend.Views.Services()
-    @swapView([services])
+  servicesPage: ->
+    services = new BangarangBend.Views.Services(collection: BangarangBend.serviceItems)
+    @swapPage(services)
 
-  menuView: ->
-    menu = new BangarangBend.Views.Menu()
-    @swapView([menu])
+  menusPage: ->
+    menus = new BangarangBend.Views.CateringMenus(collection: BangarangBend.menus)
+    @swapPage(menus)
 
-  swapView: (view) ->
-    @newView = view
+  menuPage: (name) ->
+    menu = new BangarangBend.Views.CateringMenu(model: BangarangBend.menus.findWhere(name: name.replace(/_/g, ' ')))
+    @swapPage(menu)
+
+  swapPage: (view) ->
     if @currentView
-      @animateViewsOut()
+      if @currentView.subViews
+          @currentView.subViews.forEach (view) ->
+            view.remove()
+          @currentView.remove()
+          @currentView = view
+          BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 400))
+      else
+        @currentView.remove()
+        @currentView = view
+        BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 400))
     else
       @currentView = view
-      BangarangBend.content.html(view[0].render().$el)
-      if view.length > 1
-        BangarangBend.content.append(view[1].render().$el)
-
-  animateOut: (view, boolean) ->
-    view.$el.velocity "transition.slideLeftOut", delay: 100, duration: 300, complete: =>
-      if boolean && boolean == true
-        @removeViews()
-        @animateViewsIn()
-
-  animateIn: (view) ->
-    view.velocity("transition.slideRightIn", delay: 100, duration: 300)
-
-  removeViews: ->
-    if @currentView.length > 1
-      @currentView[0].remove()
-      @currentView[1].remove()
-    else
-      @currentView[0].remove()
-
-  animateViewsOut: ->
-    if @currentView.length > 1
-      @animateOut(@currentView[0])
-      @animateOut(@currentView[1], true)
-    else
-      @animateOut(@currentView[0], true)
-
-  animateViewsIn: ->
-    @currentView = @newView
-    if @currentView.length > 1
-      BangarangBend.content.html(@currentView[0].render().$el.css({opacity: "0"}))
-      BangarangBend.content.append(@currentView[1].render().$el.css({opacity: "0"}))
-      @animateIn(@currentView[0].$el)
-      @animateIn(@currentView[1].$el)
-    else
-      BangarangBend.content.html(@currentView[0].render().$el.css({opacity: "0"}))
-      @animateIn(@currentView[0].$el)
+      BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 400))

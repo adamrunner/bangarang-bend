@@ -1,0 +1,10 @@
+#philosophy-block {
+  @include content-card;
+  h2 {
+    @include font();
+    @include small-caps(capitalize);
+  }
+  p {
+    margin: 1rem auto;
+  }
+}

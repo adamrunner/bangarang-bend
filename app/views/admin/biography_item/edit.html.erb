@@ -1,0 +1,43 @@
+<% breadcrumb :biography_item, @biography_item, "edit" %>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit biography</h3>
+
+      <%= form_for @biography_item, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "name", class: "font-weight-bold" %>:
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, "description", class: "font-weight-bold" %>:
+          <%= f.text_area :description, rows: 6, class: "form-control" %>
+        </div>
+
+        <% if @biography_item.image? %>
+          <figure class="form-group">
+            <%= image_tag(@biography_item.image.biography_thumb.url, class:"figure-img") %>
+            <figcaption class="figure-caption"><%= @biography_item[:image] %></figcaption>
+          </figure>
+
+          <div class="form-group">
+            <%= f.label :remove_image, "Delete Image: ", class: "font-weight-bold" %>
+            <%= f.check_box :remove_image %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :image, "change image", class: "font-weight-bold" %>:
+          <%= f.file_field :image, class: "form-control-file" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "back", admin_page_path(@biography_item.page, tab: "biography"), class: "btn btn-secondary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

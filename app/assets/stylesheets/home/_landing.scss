@@ -1,0 +1,39 @@
+#landing {
+  position: relative;
+  @include short-flex(column nowrap, center, center);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  max-height: 25rem;
+  overflow: hidden;
+  margin: 0 auto;
+  border: solid 1px #000;
+  @include media-breakpoint-up(md) {
+    height: 40vh;
+    max-height: none;
+    align-items: flex-start;
+  }
+  h1 {
+    text-transform: uppercase;
+    width: auto;
+    padding: 1rem;
+    background: transparentize(#000, 0.30);
+    @include media-breakpoint-down(sm) {
+      font-size: 2rem;
+    }
+  }
+  img {
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: 10rem;
+    padding: 1rem;
+    @include media-breakpoint-up(md) {
+      width: 12rem;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 15rem;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<% breadcrumb :page, @page, nil, 'edit' %>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit <%= @page.link_name %> <small class="text-muted">page</small></h3>
+
+      <%= form_for @page, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <p class="text-info card-text"><b>Note:</b> Please see important information section to the right <em>(below if on mobile)</em> for important details.<p/>
+          <%= f.label :link_name, "Name", class: "font-weight-bold" %>:
+          <%= f.text_field :link_name, class: "form-control" %>
+        </div>
+
+        <% if @page.show_copy_text %>
+          <div class="form-group">
+            <%= f.label :copy_text, "Description", class: "font-weight-bold" %>:
+            <%= f.text_area :copy_text, rows: 6, value: @page.format_edit_text, class: "form-control" %>
+          </div>
+        <% end %>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "back", :back, class: "btn btn-secondary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card card-info">
+    <div class="card-block bg-info">
+      <h3 class="card-title text-capitalize">important information</h3>
+        <p><b>Names longer than Two Words</b> may break the layout on the main site. Try to keep them short and simple if possible</p>
+        <p><b>Names that contain only one word</b> will have <b>"Our"</b> prepended to itself when displayed in the showcase section of the main site <em>(homepage, section with pictures in the links)</em>. For example "Menus" will become "Our Menus"</p>
+    </div>
+  </div>
+</div>

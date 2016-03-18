@@ -1,0 +1,44 @@
+<% breadcrumb :menu_section, @menu_section, "edit" %>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title text-capitalize">edit menu section</h3>
+
+      <%= form_for @menu_section, url: {action: "update"} do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "name", class: "font-weight-bold" %>:
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <%= f.submit "save", class: "btn btn-success" %>
+        <%= link_to "cancel", admin_catering_menu_path(@menu_section.catering_menu), class: "btn btn-secondary" %>
+        <%= link_to "delete", admin_menu_section_path(@menu_section), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(@menu_section.name)}' and all menu items associated with it?"}, class: "btn btn-danger pull-xs-right" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="text-capitalize">belongs to:</h4>
+      <ul>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">Menu:</b> <%= @menu_section.catering_menu.name %></p></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="text-capitalize">info:</h4>
+      <ul>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">created at:</b> <%= ftime(@menu_section.created_at) %></p></li>
+        <li><p class="text-capitalize text-muted"><b class="text-primary">updated at:</b> <%= ftime(@menu_section.updated_at) %></p></li>
+      </ul>
+    </div>
+  </div>
+</div>
