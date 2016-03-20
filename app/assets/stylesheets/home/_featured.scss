@@ -11,38 +11,28 @@
   border-color: transparent;
 }
 
-.featured-item {
+%featured-item {
+  @extend .card;
   position: relative;
   border-color: #000;
   background-color: transparent;
   transition: all 0.2s ease;
-  .roll-over-link {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    height: 2rem;
-    width: 2rem;
-    color: $brand-secondary;
-    background-color: transparentize(#000, 0.25);
-    transition: all 0.4s ease;
-  }
-  &:hover {
-    background-color: #222;
-    .roll-over-link {
-      opacity: 1;
-    }
-  }
-  &.no-link:hover {
-    background-color: transparent;
-    border-color: #000;
-  }
 }
-
+.roll-over-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  height: 2rem;
+  width: 2rem;
+  color: $brand-secondary;
+  background-color: transparentize(#000, 0.25);
+  transition: all 0.4s ease;
+}
 .featured-icon {
   font-size: 1.2rem;
   line-height: 1rem;
@@ -71,5 +61,23 @@
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
+  }
+}
+.featured-item-card {
+  @extend %featured-item;
+  &:hover {
+    background-color: #222;
+    .roll-over-link {
+      opacity: 1;
+    }
+  }
+}
+.featured-item-card-no-link {
+  @extend %featured-item;
+  &:hover {
+    background-color: transparent;
+    .roll-over-link {
+      opacity: 0;
+    }
   }
 }
