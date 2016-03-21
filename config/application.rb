@@ -32,5 +32,15 @@ module BangarangBend
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(#{config.root}/lib, #{config.root}/uploaders)
+
+    config.action_mailer.delivery_method = :mailgun
+    config.action_mailer.mailgun_settings = {
+            api_key: 'key-e05d26cc276c0c1c8c911a9408cdd5ae',
+            domain: 'mg.bangarangbend.com'
+    }
+
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default_options = {from: 'no-reply@bangarangbend.com'}
   end
 end
