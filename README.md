@@ -45,7 +45,6 @@ https://trello.com/b/6LseRF5z/bangarang-bend-website
 
 ## Deployment
 ### Staging Deployment
-To deploy your changes to Staging
 1. Pull Request your changes to the `staging` branch.
 1. Merge changes to `staging`
 1. Run a deploy against the staging environment. `cap staging deploy`
