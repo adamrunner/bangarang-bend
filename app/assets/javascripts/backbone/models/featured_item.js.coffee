@@ -1,7 +1,7 @@
 class BangarangBend.Models.FeaturedItem extends Backbone.Model
 
   isLinkOut: ->
-    if @get('link_url').match(/^http/) != null
+    if @get('link_url') && @get('link_url').match(/^http/) != null
       return true
     else
       return false

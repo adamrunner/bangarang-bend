@@ -44,9 +44,6 @@ body {
   margin: 0 auto;
   border-color: #ddd;
 }
-.info-block {
-  font-family: $font-family-monospace;
-}
 .card-title {
   @extend .text-capitalize;
   @extend .font-weight-bold;
@@ -314,4 +311,8 @@ a:hover {
       width: 15rem;
     }
   }
+}
+
+.field_with_errors {
+  @extend .has-danger;
 }
