@@ -15,10 +15,12 @@
     align-items: flex-start;
   }
   h1 {
+    color: #CEC7C6;
     text-transform: uppercase;
+    font-weight: 300;
     width: auto;
     padding: 1rem;
-    background: transparentize(#000, 0.30);
+    background: transparentize(#1a1a1a, 0.15);
     @include media-breakpoint-down(sm) {
       font-size: 2rem;
     }

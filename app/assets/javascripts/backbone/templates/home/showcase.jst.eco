@@ -1,35 +1,48 @@
   <a class="showcase-item" href="/<%= @pages.linkName('services') %>" style="background-image: url(/images/showcase/services.jpg)">
-    <h4 class="showcase-link-name">
+    <i class="btl bt-circle-arrow-right"></i>
+    <div id="showcase-one" class="showcase-link-name">
       <% @pages.showcaseLink("services").forEach (word) ->: %>
         <span><%= word %></span>
       <% end %>
-    </h4>
+    </div>
   </a>
 
   <a class="showcase-item" href="/<%= @pages.linkName('catering_menus') %>" style="background-image: url(/images/showcase/menu.jpg)">
-    <h4 class="showcase-link-name">
+    <i class="btl bt-circle-arrow-right"></i>
+    <div class="showcase-link-name">
       <% @pages.showcaseLink("catering_menus").forEach (word) ->: %>
         <span><%= word %></span>
       <% end %>
-    </h4>
+    </div>
   </a>
 
   <a class="showcase-item" href="/<%= @pages.linkName('events') %>" style="background-image: url(/images/showcase/events.jpg)">
-    <h4 class="showcase-link-name">
+    <i class="btl bt-circle-arrow-right"></i>
+    <div class="showcase-link-name">
       <% @pages.showcaseLink("events").forEach (word) ->: %>
         <span><%= word %></span>
       <% end %>
-    </h4>
+    </div>
   </a>
 
   <a class="showcase-item" href="/<%= @pages.linkName('philosophy') %>" style="background-image: url(/images/showcase/philosophy.jpg)">
-    <h4 class="showcase-link-name">
+    <i class="btl bt-circle-arrow-right"></i>
+    <div class="showcase-link-name">
       <% @pages.showcaseLink("philosophy").forEach (word) ->: %>
         <span><%= word %></span>
       <% end %>
-    </h4>
+    </div>
   </a>
 
   <a id="contact-btn" href="contact" class="showcase-item" style="background-image: url(/images/showcase/contact.jpg)">
-    <h4 class="showcase-link-name"><span>contact</span><span>us</span></h4>
+    <i class="btl bt-circle-arrow-right"></i>
+    <div class="showcase-link-name"><span>contact</span><span>us</span></div>
+  </a>
+
+  <a class="showcase-item" href="/" style="background-image: url(/images/showcase/sm_truck.jpg)">
+    <i class="btl bt-circle-arrow-right"></i>
+    <div class="showcase-link-name">
+      <span>food</span>
+      <span>truck</span>
+    </div>
   </a>

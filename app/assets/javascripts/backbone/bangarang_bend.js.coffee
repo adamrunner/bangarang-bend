@@ -23,3 +23,6 @@ window.BangarangBend =
     @serviceItems    = new BangarangBend.Collections.ServiceItems(options.data.service_items)
     @eventItems      = new BangarangBend.Collections.EventItems(options.data.event_items)
     @philosophyItems = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)
+    @animating       = false
+    @animateOut      = false
+    @animatingOut    = false

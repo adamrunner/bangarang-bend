@@ -33,6 +33,8 @@ module BangarangBend
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(#{config.root}/lib, #{config.root}/uploaders)
 
+    config.assets.paths << Rails.root.join('/app/assets/fonts')
+
     config.action_mailer.delivery_method = :mailgun
     config.action_mailer.mailgun_settings = {
             api_key: 'key-e05d26cc276c0c1c8c911a9408cdd5ae',

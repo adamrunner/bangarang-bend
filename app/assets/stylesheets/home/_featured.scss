@@ -3,6 +3,13 @@
   background-color: transparent;
   h4 {
     text-transform: capitalize;
+    color: $brand-secondary;
+    letter-spacing: 1px;
+  }
+  hr {
+    width: 100%;
+    margin: 0.5rem auto;
+    border-bottom: dotted 1px #333;
   }
 }
 .card-featured {
@@ -16,8 +23,8 @@
 }
 
 .featured-block {
-  background-color: transparentize(#222, 0.50);
-  color: #eee;
+  background-color: transparentize(#1a1a1a, 0.15);
+  color: #CEC7C6;
 }
 
 .featured-img {
@@ -34,4 +41,8 @@
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
   }
+}
+
+.featured-item-text {
+  color: #CEC7C6;
 }

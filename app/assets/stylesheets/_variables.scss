@@ -40,7 +40,7 @@ $brand-warning             : #f0ad4e !default;
 $brand-danger              : #d9534f !default;
 
 // #NOTE custom variables
-$font-secondary: 'Open Sans', sans-serif !default;
+$font-secondary: 'Roboto', sans-serif !default;
 $font-primary:   'Roboto', sans-serif !default;
 
 $light-font-color : #fff;
@@ -206,7 +206,7 @@ $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       $font-primary;
-$headings-font-weight:       inherit !default;
+$headings-font-weight:       100 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 
@@ -269,9 +269,9 @@ $table-border-color:            $gray-lighter !default;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-padding-x:                  1rem !default;
+$btn-padding-x:                  0.75rem !default;
 $btn-padding-y:                  .375rem !default;
-$btn-font-weight:                normal !default;
+$btn-font-weight:                100 !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;

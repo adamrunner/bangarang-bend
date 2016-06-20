@@ -4,7 +4,7 @@
   @extend .navbar-full;
   @extend .navbar-fixed-top;
   height: $navbar-height;
-  background-color: #fff;
+  background-color: #fafafa;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
   @include media-breakpoint-down(md) {
@@ -22,20 +22,31 @@
       padding: 0;
     }
   }
+  button {
+    background: transparent;
+  }
   .navbar-btn {
-    @include font($font-secondary, bold, $brand-secondary, $transform: uppercase !important);
-    font-size: 0.8rem;
-    border-color: #333;
-    background-color: #333;
-    color: #fff;
+    color: darken(#CEC7C6, 25%);
+    text-transform: uppercase;
+    font-weight: 300;
+    border-right: solid 1px #ccc;
+    &:nth-child(1) {
+      border-left: solid 1px #ccc;
+    }
     &:hover, &:focus {
-      background-color: $brand-secondary;
-      border-color: lighten($brand-secondary, 10%);
-      color: #fff;
+      color: $brand-secondary;
+    }
+  }
+  .btn-group {
+    .navbar-btn {
+      &:nth-child(1) {
+        border-left: none;
+      }
     }
   }
   .dropdown-item {
     font-size: 0.8rem;
+    text-transform: uppercase;
     letter-spacing: 2px;
   }
 }

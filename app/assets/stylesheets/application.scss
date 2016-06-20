@@ -2,6 +2,7 @@
 // require bootstrap-loader
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'black-tie/black-tie';
 @import 'variables';
 @import 'bootstrap';
 @import 'mixins';
@@ -26,9 +27,11 @@ html {
   overflow-x: hidden;
 }
 body {
+  font-weight: 100;
+  font-family: $font-primary;
   position: relative;
   font-size: inherit !important;
-  padding-top: $navbar-height;
+  padding-top: $navbar-height + 1rem;
   background-image: url("/images/background/background_main.jpg");
   @include media-breakpoint-down(sm) {
     background-size: 100%;
@@ -48,21 +51,25 @@ h1, h2 {
   margin: 0;
 }
 h1 {
-  @include font($spacing:1px, $transform:uppercase);
+  letter-spacing: 1px;
 }
 ul {
   list-style: none;
 }
 a {
-  @include font($spacing:1px, $transform:uppercase);
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 p {
-  @include font();
+  letter-spacing: 1px;
 }
 em {
+  font-weight: 100;
   font-size: 0.8em;
 }
 .btn {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
   text-transform: capitalize;
 }
 .hr-fade {
@@ -77,8 +84,7 @@ em {
   border: 0;
 }
 .card-title-small {
-  @include font($font-secondary, null, #fff);
-  @include small-caps(lowercase);
+  text-transform: uppercase;
   text-align: center;
   margin: 0;
 }

@@ -4,7 +4,6 @@
   display: inline-block;
   margin: 0.25rem;
   padding: 0.5rem;
-  flex-grow: 2;
   background-color: transparentize(#333, 0.50);
   text-transform: capitalize;
   text-align: center;
@@ -16,5 +15,5 @@
 .produce-block {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
