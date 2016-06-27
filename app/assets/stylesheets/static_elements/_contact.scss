@@ -7,15 +7,12 @@
     @include short-flex(column nowrap, center, center);
     padding-bottom: 0rem;
   }
-  .hr-fade {
-    width: 50%;
-  }
 }
 .contact-items {
   @include short-flex(column nowrap, center, center);
   width: 100%;
   @include media-breakpoint-up(sm) {
-    @include short-flex(row wrap, center, flex-end);
+    @include short-flex(row nowrap, center, flex-end);
   }
 }
 .contact-item {
@@ -24,23 +21,19 @@
   flex-grow: 1;
   margin: 1rem 0;
   padding: 1rem 0;
-  border-radius: 3px;
-  color: #CEC7C6;
-  border-left: dotted 1px #333;
-  border-right: dotted 1px #333;
   @include media-breakpoint-up(sm) {
     width: 50%;
     max-width: 20rem;
   }
   @include media-breakpoint-up(lg) {
     margin: 1rem;
-    // max-width: 18.75rem;
   }
   a {
     font-weight: 100;
     font-size: 1.3em;
   }
   h4 {
+    color: $color-two;
     font-weight: 300;
     em {
       font-weight: inherit;
@@ -48,6 +41,7 @@
   }
 }
 .social-links {
+  background: transparent;
   @include short-flex(row wrap, center);
   margin-top: 2rem;
   width: 100%;
@@ -63,11 +57,10 @@
     background-color: transparentize(#1a1a1a, 0.15);
     transition: all .2s ease;
     &:hover {
-      background-color: transparentize($brand-secondary, 0.60);
+      background-color: transparentize($brand-secondary, 0.50);
     }
     i {
-      transition: all .2s ease;
-      color: #CEC7C6;
+      color: $color-two;
     }
   }
 }

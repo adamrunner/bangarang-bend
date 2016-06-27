@@ -1,6 +1,6 @@
 
 <div class="navbar-inner">
-  <i id="nav-btn" class="fa fa-bars nav-button"></i>
+  <i id="nav-btn" class="btl bt-bars nav-button"></i>
 
   <a id="nav-brand" href="/">
     <img class="nav-brand-logo" src="/images/logo/bangarang_haute_cuisine.svg"/>

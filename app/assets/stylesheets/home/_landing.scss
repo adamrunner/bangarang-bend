@@ -15,14 +15,24 @@
     align-items: flex-start;
   }
   h1 {
-    color: #CEC7C6;
+    @extend .display-3;
     text-transform: uppercase;
     font-weight: 300;
+    font-family: $font-secondary;
+    letter-spacing: 1px;
     width: auto;
     padding: 1rem;
-    background: transparentize(#1a1a1a, 0.15);
+    background: #1a1a1a;
     @include media-breakpoint-down(sm) {
       font-size: 2rem;
+    }
+    span {
+      &:nth-child(1) {
+        color: $color-two;
+      }
+      &:nth-child(3) {
+        color: $brand-secondary;
+      }
     }
   }
   img {

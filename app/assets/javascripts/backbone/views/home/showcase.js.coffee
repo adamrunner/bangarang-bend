@@ -11,33 +11,25 @@ class BangarangBend.Views.Showcase extends Backbone.View
 
   initialize: ->
     @pages = BangarangBend.pages
+    @registerAnimations()
 
   render: ->
     @$el.html(@template(pages: @pages))
     @
 
-  animateOverlayIn: (event, btl, overlay) ->
-    overlayIn = [
-      { e: $(overlay), p: {width: '100%'}, o: {duration: 125} },
-      { e: $(overlay), p: {height: '100%', fontSize: ['1.5em', '1.5em'], color: '#C34C3B'}, o: {duration: 125} }
-    ]
-    $(overlay).velocity("stop")
-    $.Velocity.RunSequence(overlayIn)
+  animateOverlayIn: (btl, overlay) ->
+    $(overlay).velocity('overlayShow')
     $(btl).velocity("stop").velocity({opacity: '1'}, {duration: 150, delay: 250})
 
   animateOverlayOut: (event) ->
-    clearInterval(@interval)
     $(event.currentTarget).off("mousemove")
+    clearInterval(@interval)
 
     btl     = $(event.currentTarget).children('.btl')
     overlay = $(event.currentTarget).children('.showcase-link-name')
-    overlayOut = [
-      { e: $(overlay), p: {height: @overlayHeight, fontSize: '1em', color: '#CEC7C6'}, o: {duration: 125} },
-      { e: $(overlay), p: {width: '37%'}, o: {duration: 125} }
-    ]
-    $(overlay).velocity("stop")
+
+    $(overlay).velocity("overlayShrink")
     $(btl).velocity("stop").velocity({opacity: '0'}, {duration: 0})
-    $.Velocity.RunSequence(overlayOut)
 
   getDifference: (prev, current) ->
     difX = Math.abs(prev[0] - current[0])
@@ -48,26 +40,42 @@ class BangarangBend.Views.Showcase extends Backbone.View
     target       = $(e.currentTarget)
     btl          = target.children('.btl')
     overlay      = target.children('.showcase-link-name')
-    parentOffset = $(e.currentTarget).offset()
+    parentOffset = target.offset()
+    # @overlayWidth  = overlay.css('width')
 
-    if @overlayHeight == undefined
-      @overlayHeight = overlay.css('height')
+    # if @overlayHeight == undefined
+    #   @overlayHeight = overlay.css('height')
 
-    $(e.currentTarget).mousemove event, =>
-      @posX = event.pageX - parentOffset.left
-      @posY = event.pageY - parentOffset.top
+    target.mousemove (event) =>
+      @posX = event.pageX - (parentOffset.left)
+      @posY = event.pageY - (parentOffset.top)
 
     @interval = setInterval(( =>
       if @prevPos != undefined
-        currentPos = [@posX, @posY]
+        currentPos = [Math.round(@posX), Math.round(@posY)]
         diff = @getDifference(@prevPos, currentPos)
         @prevPos = currentPos
       else
-        @prevPos = [@posX, @posY]
+        @prevPos = [Math.round(@posX), Math.round(@posY)]
 
-      if diff[0] <= 2 && diff[1] <= 2
+      if diff != undefined && diff[0] <= 2 && diff[1] <= 2
+        target.off("mousemove")
         clearInterval(@interval)
-        $(e.currentTarget).off("mousemove")
-        @animateOverlayIn(e, btl, overlay)
-
+        @animateOverlayIn(btl, overlay)
     ), 100)
+
+  registerAnimations: ->
+    $.Velocity.RegisterEffect('overlayShow', {
+    defaultDuration: 250,
+    calls: [
+        [ { width:  '100%', borderColor: '#333' }, 0.5 ],
+        [ { height: '100%', fontSize: '+=0.5em', color: '#C34C3B'}, 0.5 ]
+    ]
+    })
+    .RegisterEffect('overlayShrink', {
+    defaultDuration: 250,
+    calls: [
+        [ { height: '3.5rem', fontSize: '1em', borderColor: '#C34C3B'}, 0.5 ],
+        [ { width:  '37%', color: '#CEC7C6' }, 0.5 ]
+    ]
+    })

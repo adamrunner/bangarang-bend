@@ -1,9 +1,24 @@
 #services-block {
   @include content-card;
   h3 {
-    @include font($font-secondary, bold, $brand-secondary);
-    @include small-caps(lowercase);
+    font-family: $font-secondary;
+    letter-spacing: 2px;
+    color: $brand-secondary;
+    text-transform: uppercase;
     @extend .m-a-0;
+  }
+  .blockquote {
+    margin: 0;
+    padding-right: 0;
+    border-color: darken(#877674, 30%);
+  }
+  p {
+    font-weight: 100;
+    color: $color-one;
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+      font-size: 0.75rem;
+    }
   }
 }
 .services-column {
@@ -12,9 +27,11 @@
 }
 .services-card {
   flex-grow: 1;
-  background-color: transparentize(#333, 0.50);
+  background-color: transparentize(#1a1a1a, 0.15);
   border-color: #000;
 }
 .services-block {
   background-color: transparent;
+  padding-top: 0;
+  padding-left: 1.5rem;
 }

@@ -4,7 +4,7 @@ class Admin::LandingController < Admin::BaseController
 
   def create
     landing = @page.landings.new()
-    landing.heading = "#{landing_params[:first_line]} <br> #{landing_params[:second_line]}"
+    landing.heading = "<span>#{landing_params[:first_line]}</span> <br> <span>#{landing_params[:second_line]}</span>"
     landing.image = landing_params[:image]
     if landing.save
       redirect_to admin_page_path(landing.page, tab: "landing"), notice: "Landing Created Successfully"

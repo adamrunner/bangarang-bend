@@ -17,8 +17,11 @@
     <% menu_section.menu_items.forEach (menu_item) ->: %>
       <div class="col-xs-6 menu-col">
         <div class="card-block menu-inner-block">
-          <h5><%= menu_item.name %> <em class="light-font">(<%= menu_item.price %>)</em></h5>
-          <p><%= menu_item.choices %></p>
+          <h5><%= menu_item.name %></h5>
+          <div class="blockquote">
+            <p><%= menu_item.choices %></p>
+            <em class="light-font"><%= menu_item.price %></em>
+          </div>
         </div>
       </div>
     <% end %>

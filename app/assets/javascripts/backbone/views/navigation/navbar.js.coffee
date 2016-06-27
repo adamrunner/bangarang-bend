@@ -20,11 +20,15 @@ class BangarangBend.Views.Navbar extends Backbone.View
 
   mobileNav: (options) ->
     if BangarangBend.menuToggled == true
+      $('#nav-btn').addClass('bt-bars')
+      $('#nav-btn').removeClass('bt-times')
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
         if options.scroll == true && window.scrollY != 0
           @scrollContent()
         window.BangarangBend.menuToggled = false
     else
+      $('#nav-btn').addClass('bt-times')
+      $('#nav-btn').removeClass('bt-bars')
       @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = true
 

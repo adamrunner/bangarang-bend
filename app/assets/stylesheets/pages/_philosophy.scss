@@ -1,10 +1,14 @@
 #philosophy-block {
   @include content-card;
   h2 {
-    @include font();
-    @include small-caps(capitalize);
+    color: $brand-secondary;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: $font-secondary;
   }
   p {
     margin: 1rem auto;
+    color: $color-one;
   }
 }

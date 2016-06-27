@@ -12,6 +12,8 @@
 
 // Global Styling
 html {
+  position: relative;
+  overflow-x: hidden;
   @include media-breakpoint-up(xs) {
     font-size: $font-size-xs;
   }
@@ -21,10 +23,6 @@ html {
   @include media-breakpoint-up(lg) {
     font-size: $font-size-lg;
   }
-}
-html {
-  position: relative;
-  overflow-x: hidden;
 }
 body {
   font-weight: 100;
@@ -51,7 +49,10 @@ h1, h2 {
   margin: 0;
 }
 h1 {
+  color: #877674;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: $font-secondary;
 }
 ul {
   list-style: none;
@@ -84,9 +85,13 @@ em {
   border: 0;
 }
 .card-title-small {
+  color: #877674;
+  margin: 0;
+  font-family: $font-secondary;
   text-transform: uppercase;
   text-align: center;
-  margin: 0;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 .inner-block {
   padding: 0;
@@ -104,4 +109,7 @@ em {
   @extend .card;
   @extend .card-block;
   @extend .shadow;
+}
+.page-title {
+  margin-bottom: 1rem;
 }

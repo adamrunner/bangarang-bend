@@ -26,9 +26,11 @@
     background: transparent;
   }
   .navbar-btn {
-    color: darken(#CEC7C6, 25%);
+    color: darken(#CEC7C6, 30%);
     text-transform: uppercase;
     font-weight: 300;
+    border-top: none;
+    border-bottom: none;
     border-right: solid 1px #ccc;
     &:nth-child(1) {
       border-left: solid 1px #ccc;
@@ -44,15 +46,21 @@
       }
     }
   }
+  .dropdown-menu {
+    top: calc(100% + 16px);
+    background-color: #fafafa;
+    border: none;
+    border-top: solid 1px #ccc;
+  }
   .dropdown-item {
     font-size: 0.8rem;
+    padding-top: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: $dropdown-link-font-weight;
   }
 }
 #nav-btn {
-  @extend .fa;
-  @extend .fa-bars;
   font-size: 2em;
   color: #333;
   height: $navbar-height;
