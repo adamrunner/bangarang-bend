@@ -6,6 +6,9 @@
     color: $brand-secondary;
     text-transform: uppercase;
     @extend .m-a-0;
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
   }
   .blockquote {
     margin: 0;
@@ -13,7 +16,7 @@
     border-color: darken(#877674, 30%);
   }
   p {
-    font-weight: 100;
+    font-weight: 300;
     color: $color-one;
     margin: 0;
     @include media-breakpoint-down(sm) {

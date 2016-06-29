@@ -20,7 +20,7 @@
   }
   h5 {
     font-family: $font-secondary;
-    color: transparentize(#222, 0.15);
+    color: transparentize(#1a1a1a, 0.15);
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -48,7 +48,7 @@
     }
   }
   em {
-    color: transparentize(#222, 0.15);
+    color: transparentize(#1a1a1a, 0.15);
     font-family: $font-secondary;
     letter-spacing: 2px;
     display: inline-block;
@@ -92,6 +92,7 @@
   border: 1px solid #000;
   transition: all 0.15s ease-out;
   h3 {
+    color: $brand-secondary;
     letter-spacing: 2px;
     font-family: $font-secondary;
     text-transform: uppercase;
@@ -108,12 +109,6 @@
   }
   &:hover {
     background-color: darken(transparentize(#222, 0.50), 20%);
-    h2 {
-      color: darken($brand-secondary, 10%);
-    }
-    p {
-      color: darken(#fff, 25%);
-    }
     i {
       transform: translateX(100%);
     }

@@ -1,74 +1,79 @@
 #showcase {
   width: 100%;
-  background: #000;
+  background: transparent;
 }
 .showcase-inner {
-  position: relative;
-  @include short-flex(row wrap);
-  width: 100%;
-  min-height: 20rem;
-  outline: solid 1px #000;
-  outline-offset: -1px;
-  padding: ($showcase-border-size / 2);
-  background-color: inherit;
-  // @include media-breakpoint-up(md) {
-    // @include short-flex(row wrap);
-    // height: 30vh;
-  // }
+  @include make-row($gutter:  1.25rem);
+  margin-top: (1.25rem / -2);
+  margin-bottom: (1.25rem / -2);
 }
-.showcase-item {
+.img-wrap {
   position: relative;
   overflow: hidden;
-  @include background(center, cover);
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  min-height: 11.25rem;
+  width: 100%;
+}
+.img-inner-wrap {
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 100%;
+}
+.showcase-item {
+  @include make-col($gutter:  1.25rem);
+  @include make-col-span(6);
+  margin-top: (1.25rem / 2);
+  margin-bottom: (1.25rem / 2);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(4);
+  }
   &:nth-child(3n) {
     border-right: none;
   }
-  @include media-breakpoint-up(md) {
-    border-right: solid 1px #000;
-    border-bottom: solid 1px #000;
+  .showcase-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
   .btl {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 4em;
     z-index: 100;
     color: #C34C3B;
-    font-weight: 100;
     opacity: 0;
   }
   @include media-breakpoint-up(sm) {
     min-height: 2rem;
-    height: 8rem;
   }
+}
+.showcase-link-name {
+  position: absolute;
+  font-weight: 300;
+  bottom: 0;
+  right: 0;
+  line-height: 1.1;
+  color: $color-two;
+  text-transform: uppercase;
+  background-color: transparentize(#1a1a1a, 0.07);
+  padding: 0.75rem;
+  height: 3.5rem;
+  margin: 0;
+  width: 100%;
   @include media-breakpoint-up(md) {
-    width: 33.3%;
-    height: 15rem;
   }
-  .showcase-link-name {
-    position: absolute;
-    font-weight: 300;
-    bottom: 0;
-    right: 0;
-    line-height: 1.1;
-    display: flex;
-    flex-flow: column nowrap;
-    color: $color-two;
-    text-transform: uppercase;
-    background-color: transparentize(#1a1a1a, 0.15);
-    padding: 0.75rem;
-    height: 3.5rem;
-    margin: 0;
-    width: 100%;
-    @include media-breakpoint-up(md) {
-      border-left: solid 2px $brand-secondary;
-      width: 37%;
-    }
-    @include media-breakpoint-up(lg) {
-      font-size: 1rem;
-    }
+  @include media-breakpoint-up(lg) {
+    font-size: 1rem;
   }
+}
+
+.name-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-right: 1rem;
+  border-right: solid 1px $brand-secondary;
+  height: 100%;
 }

@@ -25,7 +25,7 @@ html {
   }
 }
 body {
-  font-weight: 100;
+  font-weight: 300;
   font-family: $font-primary;
   position: relative;
   font-size: inherit !important;
@@ -58,27 +58,18 @@ ul {
   list-style: none;
 }
 a {
-  font-weight: 100;
   letter-spacing: 1px;
 }
 p {
   letter-spacing: 1px;
 }
 em {
-  font-weight: 100;
   font-size: 0.8em;
 }
 .btn {
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: capitalize;
-}
-.hr-fade {
-  background: #888;
-  @include line-fade();
-  margin: 25px 0;
-  height: 1px;
-  width: 80%;
 }
 .shadow {
   background-color: $transparent-brand-primary;

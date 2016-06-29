@@ -1,48 +1,111 @@
-  <a class="showcase-item" href="/<%= @pages.linkName('services') %>" style="background-image: url(/images/showcase/services.jpg)">
-    <i class="btl bt-circle-arrow-right"></i>
-    <div id="showcase-one" class="showcase-link-name">
-      <% @pages.showcaseLink("services").forEach (word) ->: %>
-        <span><%= word %></span>
-      <% end %>
+  <a class="showcase-item" href="/<%= @pages.linkName('services') %>" >
+    <div class="img-wrap">
+      <i class="btl bt-circle-arrow-right"></i>
+
+      <div class="img-inner-wrap">
+        <img src="/images/showcase/services.jpg" alt="bangarang-services" class="showcase-img" />
+      </div>
+
+      <div class="showcase-link-name">
+        <span class="name-wrap">
+          <% @pages.showcaseLink("services").forEach (word) ->: %>
+            <span><%= word %></span>
+          <% end %>
+        </span>
+      </div>
+
     </div>
   </a>
 
-  <a class="showcase-item" href="/<%= @pages.linkName('catering_menus') %>" style="background-image: url(/images/showcase/menu.jpg)">
-    <i class="btl bt-circle-arrow-right"></i>
-    <div class="showcase-link-name">
-      <% @pages.showcaseLink("catering_menus").forEach (word) ->: %>
-        <span><%= word %></span>
-      <% end %>
+  <a class="showcase-item" href="/">
+    <div class="img-wrap">
+      <i class="btl bt-circle-arrow-right"></i>
+
+      <div class="img-inner-wrap">
+        <img src="/images/showcase/sm_truck.jpg" alt="bangarang-food-truck" class="showcase-img" />
+      </div>
+
+      <div class="showcase-link-name">
+        <span class="name-wrap">
+          <span>food</span>
+          <span>truck</span>
+        </span>
+      </div>
+
     </div>
   </a>
 
-  <a class="showcase-item" href="/<%= @pages.linkName('events') %>" style="background-image: url(/images/showcase/events.jpg)">
-    <i class="btl bt-circle-arrow-right"></i>
-    <div class="showcase-link-name">
-      <% @pages.showcaseLink("events").forEach (word) ->: %>
-        <span><%= word %></span>
-      <% end %>
+  <a class="showcase-item" href="/<%= @pages.linkName('catering_menus') %>" >
+    <div class="img-wrap">
+      <i class="btl bt-circle-arrow-right"></i>
+
+      <div class="img-inner-wrap">
+        <img src="/images/showcase/menu.jpg" alt="bangarang-menu" class="showcase-img" />
+      </div>
+
+      <div class="showcase-link-name">
+        <span class="name-wrap">
+          <% @pages.showcaseLink("catering_menus").forEach (word) ->: %>
+            <span><%= word %></span>
+          <% end %>
+        </span>
+      </div>
+
     </div>
   </a>
 
-  <a class="showcase-item" href="/<%= @pages.linkName('philosophy') %>" style="background-image: url(/images/showcase/philosophy.jpg)">
-    <i class="btl bt-circle-arrow-right"></i>
-    <div class="showcase-link-name">
-      <% @pages.showcaseLink("philosophy").forEach (word) ->: %>
-        <span><%= word %></span>
-      <% end %>
+  <a class="showcase-item" href="/<%= @pages.linkName('events') %>" >
+    <div class="img-wrap">
+      <i class="btl bt-circle-arrow-right"></i>
+
+      <div class="img-inner-wrap">
+        <img src="/images/showcase/events.jpg" alt="bangarang-events" class="showcase-img" />
+      </div>
+
+      <div class="showcase-link-name">
+        <span class="name-wrap">
+          <% @pages.showcaseLink("events").forEach (word) ->: %>
+            <span><%= word %></span>
+          <% end %>
+        </span>
+      </div>
+
     </div>
   </a>
 
-  <a id="contact-btn" href="contact" class="showcase-item" style="background-image: url(/images/showcase/contact.jpg)">
-    <i class="btl bt-circle-arrow-right"></i>
-    <div class="showcase-link-name"><span>contact</span><span>us</span></div>
+  <a class="showcase-item" href="/<%= @pages.linkName('philosophy') %>" >
+    <div class="img-wrap">
+      <i class="btl bt-circle-arrow-right"></i>
+
+      <div class="img-inner-wrap">
+        <img src="/images/showcase/philosophy.jpg" alt="bangarang-events" class="showcase-img" />
+      </div>
+
+      <div class="showcase-link-name">
+        <span class="name-wrap">
+          <% @pages.showcaseLink("philosophy").forEach (word) ->: %>
+            <span><%= word %></span>
+          <% end %>
+        </span>
+      </div>
+
+    </div>
   </a>
 
-  <a class="showcase-item" href="/" style="background-image: url(/images/showcase/sm_truck.jpg)">
-    <i class="btl bt-circle-arrow-right"></i>
-    <div class="showcase-link-name">
-      <span>food</span>
-      <span>truck</span>
+  <a id="contact-btn" href="contact" class="showcase-item" >
+    <div class="img-wrap">
+      <i class="btl bt-circle-arrow-right"></i>
+
+      <div class="img-inner-wrap">
+        <img src="/images/showcase/contact.jpg" alt="bangarang-events" class="showcase-img" />
+      </div>
+
+      <div class="showcase-link-name">
+        <span class="name-wrap">
+          <span>contact</span>
+          <span>us</span>
+        </span>
+      </div>
+
     </div>
   </a>

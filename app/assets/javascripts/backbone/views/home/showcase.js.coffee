@@ -4,6 +4,7 @@ class BangarangBend.Views.Showcase extends Backbone.View
   template: JST["backbone/templates/home/showcase"]
 
   className: 'showcase-inner'
+  # className: 'row'
 
   events:
     'mouseenter .showcase-item' : 'trackCursor'
@@ -25,8 +26,8 @@ class BangarangBend.Views.Showcase extends Backbone.View
     $(event.currentTarget).off("mousemove")
     clearInterval(@interval)
 
-    btl     = $(event.currentTarget).children('.btl')
-    overlay = $(event.currentTarget).children('.showcase-link-name')
+    btl     = $(event.currentTarget).find('.btl')
+    overlay = $(event.currentTarget).find('.showcase-link-name')
 
     $(overlay).velocity("overlayShrink")
     $(btl).velocity("stop").velocity({opacity: '0'}, {duration: 0})
@@ -38,13 +39,9 @@ class BangarangBend.Views.Showcase extends Backbone.View
 
   trackCursor: (e) ->
     target       = $(e.currentTarget)
-    btl          = target.children('.btl')
-    overlay      = target.children('.showcase-link-name')
+    btl          = target.find('.btl')
+    overlay      = target.find('.showcase-link-name')
     parentOffset = target.offset()
-    # @overlayWidth  = overlay.css('width')
-
-    # if @overlayHeight == undefined
-    #   @overlayHeight = overlay.css('height')
 
     target.mousemove (event) =>
       @posX = event.pageX - (parentOffset.left)
@@ -68,7 +65,7 @@ class BangarangBend.Views.Showcase extends Backbone.View
     $.Velocity.RegisterEffect('overlayShow', {
     defaultDuration: 250,
     calls: [
-        [ { width:  '100%', borderColor: '#333' }, 0.5 ],
+        [ { borderColor: '#333' }, 0.5 ],
         [ { height: '100%', fontSize: '+=0.5em', color: '#C34C3B'}, 0.5 ]
     ]
     })
@@ -76,6 +73,6 @@ class BangarangBend.Views.Showcase extends Backbone.View
     defaultDuration: 250,
     calls: [
         [ { height: '3.5rem', fontSize: '1em', borderColor: '#C34C3B'}, 0.5 ],
-        [ { width:  '37%', color: '#CEC7C6' }, 0.5 ]
+        [ { color: '#CEC7C6' }, 0.5 ]
     ]
     })

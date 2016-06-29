@@ -1,8 +1,6 @@
 #contact {
   @include short-flex(column nowrap, center, center);
   background-color: transparent;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
   .section-inner {
     @include short-flex(column nowrap, center, center);
     padding-bottom: 0rem;
@@ -29,12 +27,10 @@
     margin: 1rem;
   }
   a {
-    font-weight: 100;
     font-size: 1.3em;
   }
   h4 {
     color: $color-two;
-    font-weight: 300;
     em {
       font-weight: inherit;
     }

@@ -4,8 +4,7 @@
   <div id="mobile-nav"></div>
 
   <div class="block">
-    <div id="landing" class="jumbotron" style="background-image: url(<%= @landing ? @landing.image.url : '' %>)">
-      <%# <img src="/images/logo/bangarang_catering_logo_white.svg" /> %>
+    <div id="landing" style="background-image: url(<%= @landing ? @landing.image.url : '' %>)">
       <h1><%= @landing ? @landing.heading.html_safe : 'catering & event services' %></h1>
     </div>
   </div>
