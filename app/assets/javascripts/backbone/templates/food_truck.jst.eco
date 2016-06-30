@@ -1,0 +1,3 @@
+<div class="card-block">
+  <h1><%= @page.get('link_name') %></h1>
+</div>

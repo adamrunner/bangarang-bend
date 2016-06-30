@@ -7,6 +7,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     @route "#{pages.at(2).link()}/:name", 'menuPage'
     @route pages.at(3).link(), 'customizedEventsPage'
     @route pages.at(4).link(), 'philosophyPage'
+    @route pages.at(5).link(), 'foodTruckPage'
 
   # routes: ->
 
@@ -33,6 +34,10 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
   menuPage: (name) ->
     menu = new BangarangBend.Views.CateringMenu(model: BangarangBend.menus.findWhere(name: name.replace(/_/g, ' ')))
     @swapPage(menu)
+
+  foodTruckPage: ->
+    foodTruck = new BangarangBend.Views.FoodTruck()
+    @swapPage(foodTruck)
 
   swapPage: (view) ->
     if @currentView

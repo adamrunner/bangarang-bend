@@ -111,9 +111,14 @@ em {
   align-items: center;
   overflow-x: hidden;
   @include media-breakpoint-up(md) {
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+  }
+  @include media-breakpoint-up(lg) {
+    flex-flow: row nowrap;
+    // align-items: center;
+    // justify-content: center;
   }
 }
 .map-link {
@@ -156,7 +161,7 @@ em {
   }
 }
 .map-link-text {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-weight: 300;
   display: flex;
   flex-flow: column nowrap;
@@ -197,6 +202,6 @@ em {
   @include media-breakpoint-up(lg) {
     height: 2.75rem;
     padding: 0 1rem;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 }
