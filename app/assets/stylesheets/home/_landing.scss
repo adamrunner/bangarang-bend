@@ -3,32 +3,36 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   overflow: hidden;
   margin: 0 auto;
   min-height: 18rem;
   height: 50vh;
   background-position: center;
   background-size: cover;
-  @include media-breakpoint-up(md) {
-    justify-content: flex-end;
+  @include media-breakpoint-up(lg) {
+    padding: 2rem;
   }
   h1 {
-    @extend .display-4;
+    display: inline;
+    align-self: center;
     text-transform: uppercase;
     font-weight: 300;
     font-family: $font-secondary;
     letter-spacing: 1px;
-    width: 50%;
     padding: 2rem;
-    background: #1a1a1a;
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-      font-size: 1.75rem;
+    background: transparentize(#1a1a1a, 0.10);
+    font-size: 2.3rem;
+    @include media-breakpoint-up(md) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+      align-self: flex-start;
     }
     span {
       &:nth-child(1) {
-        color: $color-two;
+        color: $color-one;
       }
       &:nth-child(3) {
         color: $brand-secondary;

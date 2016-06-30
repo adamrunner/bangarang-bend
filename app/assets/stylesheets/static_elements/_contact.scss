@@ -30,7 +30,7 @@
     font-size: 1.3em;
   }
   h4 {
-    color: $color-two;
+    color: $color-one;
     em {
       font-weight: inherit;
     }
@@ -49,14 +49,14 @@
     height: 2.1em;
     margin: 0 0.5rem;
     border-radius: 50%;
-    border: solid 1px #111;
-    background-color: transparentize(#1a1a1a, 0.15);
+    border: solid 1px transparentize(#111, 0.15);
+    background-color: transparentize($color-four, 0.1);
     transition: all .2s ease;
     &:hover {
-      background-color: transparentize($brand-secondary, 0.50);
+      background-color: darken($color-four, 5%);
     }
     i {
-      color: $color-two;
+      color: transparentize(#111, 0.15);
     }
   }
 }
