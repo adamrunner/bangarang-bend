@@ -23,7 +23,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
       $('#nav-btn').addClass('bt-bars')
       $('#nav-btn').removeClass('bt-times')
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
-        if options.scroll == true && window.scrollY != 0
+        if options.scroll == true
           @scrollContent()
         window.BangarangBend.menuToggled = false
     else
