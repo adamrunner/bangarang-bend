@@ -4,15 +4,14 @@ class BangarangBend.Views.Showcase extends Backbone.View
   template: JST["backbone/templates/home/showcase"]
 
   className: 'showcase-inner'
-  # className: 'row'
 
+  #NOTE custom Velocity animations animateOverlayIn animateOverlayOut are defined in bangarand_bend.js.coffee
   events:
     'mouseenter .showcase-item' : 'trackCursor'
     'mouseleave .showcase-item' : 'animateOverlayOut'
 
   initialize: ->
     @pages = BangarangBend.pages
-    @registerAnimations()
 
   render: ->
     @$el.html(@template(pages: @pages))
@@ -60,19 +59,3 @@ class BangarangBend.Views.Showcase extends Backbone.View
         clearInterval(@interval)
         @animateOverlayIn(btl, overlay)
     ), 100)
-
-  registerAnimations: ->
-    $.Velocity.RegisterEffect('overlayShow', {
-    defaultDuration: 250,
-    calls: [
-        [ { borderColor: '#333' }, 0.5 ],
-        [ { height: '100%', fontSize: '+=0.5em', color: '#C34C3B'}, 0.5 ]
-    ]
-    })
-    .RegisterEffect('overlayShrink', {
-    defaultDuration: 250,
-    calls: [
-        [ { height: '3.5rem', fontSize: '1em', borderColor: '#C34C3B'}, 0.5 ],
-        [ { color: '#CEC7C6' }, 0.5 ]
-    ]
-    })

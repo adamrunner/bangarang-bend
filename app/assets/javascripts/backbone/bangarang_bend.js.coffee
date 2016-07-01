@@ -23,3 +23,20 @@ window.BangarangBend =
     @serviceItems    = new BangarangBend.Collections.ServiceItems(options.data.service_items)
     @eventItems      = new BangarangBend.Collections.EventItems(options.data.event_items)
     @philosophyItems = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)
+    @registerAnimations()
+
+  registerAnimations: ->
+    $.Velocity.RegisterEffect('overlayShow', {
+    defaultDuration: 250,
+    calls: [
+        [ { borderColor: '#333' }, 0.5 ],
+        [ { height: '100%', fontSize: '+=0.5em', color: '#C34C3B'}, 0.5 ]
+    ]
+    })
+    .RegisterEffect('overlayShrink', {
+    defaultDuration: 250,
+    calls: [
+        [ { height: '3.5rem', fontSize: '1em', borderColor: '#C34C3B'}, 0.5 ],
+        [ { color: '#CEC7C6' }, 0.5 ]
+    ]
+    })
