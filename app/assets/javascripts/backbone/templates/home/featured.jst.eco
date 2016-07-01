@@ -6,10 +6,18 @@
 
       <div class="card-columns p-t-1">
         <% @featured_items.forEach (featured_item) ->: %>
-          <div class="card featured-item">
+
+          <a <%= featured_item.linkTag() %> >
+            <% if featured_item.get('link_url') :%>
+              <div class="roll-over-link">
+                <i class="fa fa-angle-double-right featured-icon"></i>
+              </div>
+            <% end %>
+
             <% if featured_item.get('image_url'): %>
               <img class="card-img-top img-fluid featured-img" src="<%= featured_item.get('image_url') %>"></img>
             <% end %>
+
             <div class="card-block featured-block">
               <h4 class="card-title"><%= featured_item.get('name') %></h4>
               <hr>
@@ -17,7 +25,8 @@
                 <%= featured_item.get('description') %>
               </p>
             </div>
-          </div>
+          </a>
+
         <% end %>
       </div>
   </div>

@@ -12,14 +12,42 @@
     border-bottom: dotted 1px #333;
   }
 }
+
 .card-featured {
   background-color: transparent;
   border-color: transparent;
 }
 
-.featured-item {
+%featured-item {
+  @extend .card;
+  position: relative;
   border-color: #000;
   background-color: transparent;
+  transition: all 0.2s ease;
+}
+.roll-over-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  height: 2rem;
+  width: 2rem;
+  color: $brand-secondary;
+  background-color: transparentize(#000, 0.25);
+  transition: all 0.4s ease;
+}
+.featured-icon {
+  font-size: 1.2rem;
+  line-height: 1rem;
+  padding-right: 0.5rem;
+}
+
+.featured-item-text {
+  text-transform: none;
 }
 
 .featured-block {

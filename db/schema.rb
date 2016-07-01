@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160630224635) do
 
   create_table "admin_users", force: :cascade do |t|
@@ -89,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160630224635) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "image",       limit: 255
+    t.string   "link_url",    limit: 255
   end
 
   add_index "featured_items", ["page_id"], name: "index_featured_items_on_page_id", using: :btree
