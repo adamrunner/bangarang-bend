@@ -7,13 +7,18 @@
 
       <%= form_for @featured_item, url: {action: "update"} do |f| %>
         <div class="form-group">
-          <%= f.label :name, "name", class: "font-weight-bold" %>:
+          <%= f.label :name, "Name", class: "font-weight-bold" %>:
           <%= f.text_field :name, class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label :description, "description", class: "font-weight-bold" %>:
+          <%= f.label :description, "Description", class: "font-weight-bold" %>:
           <%= f.text_area :description, rows: 6, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
+          <%= f.text_field :link_url, class: "form-control", value: @featured_item.full_link_url %>
         </div>
 
         <% if @featured_item.image? %>
@@ -40,4 +45,26 @@
 
     </div>
   </div>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="card card-block info-block">
+    <h3 class="card-title text-capitalize">tips for adding links</h3>
+      <div class="card-block bg-info">
+        <p>Add links to pages within BangarangBend.com or to completely different websites outside BangarangBend.com. This will be great for featuring specific vendors or events and adding a link to their website.</p>
+        <p>Check out the examples below for valid link formats</p>
+        <b>Examples for Bangarangbend.com</b>
+        <ul>
+          <li>http://bangarangbend.com/services</li>
+          <li>bangarangbend.com/services</li>
+          <li>www.bangarangbend.com/services</li>
+          <li>/services</li>
+        </ul>
+        <b>Examples for Other Websites</b>
+        <ul>
+          <li>http://www.google.com</li>
+          <li>www.google.com</li>
+          <li>www.instagram.com/chefdavebodi</li>
+        </ul>
+      </div>
 </div>

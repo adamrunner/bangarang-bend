@@ -12,14 +12,45 @@
     border-bottom: dotted 1px #333;
   }
 }
+
 .card-featured {
   background-color: transparent;
   border-color: transparent;
 }
 
-.featured-item {
+%featured-item {
+  @extend .card;
+  position: relative;
   border-color: #000;
   background-color: transparent;
+  &:hover {
+    .roll-over-link {
+      opacity: 1;
+    }
+  }
+}
+.roll-over-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  opacity: 0;
+  height: 2rem;
+  width: 2rem;
+  color: $brand-secondary;
+  background-color: transparentize(#1a1a1a, 0.05);
+  transition: all 0.2s ease-out;
+}
+.featured-icon {
+  font-size: 1rem;
+  margin-left: 0.15rem;
+}
+
+.featured-item-text {
+  text-transform: none;
 }
 
 .featured-block {
@@ -45,4 +76,12 @@
 
 .featured-item-text {
   color: $color-one;
+}
+
+.featured-item-card {
+  @extend %featured-item;
+}
+
+.featured-item-card-no-link {
+  @extend %featured-item;
 }

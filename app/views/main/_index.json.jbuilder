@@ -13,6 +13,7 @@ json.data do
     json.name featured_item.name
     json.description featured_item.description
     json.image_url featured_item.image.url
+    json.link_url featured_item.link_url
   end
 
   json.biography_items @biography_items do |biography_item|
