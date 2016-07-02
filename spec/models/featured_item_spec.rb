@@ -14,6 +14,11 @@ RSpec.describe FeaturedItem, type: :model do
     f.link_url = "www.google.com"
     f.save
     expect(f.reload.link_url).to eql "http://www.google.com"
+
+    f = FeaturedItem.new
+    f.link_url = "google.com"
+    f.save
+    expect(f.reload.link_url).to eql "http://google.com"
   end
 
   it "allows relative uri" do
@@ -29,6 +34,11 @@ RSpec.describe FeaturedItem, type: :model do
 
     f = FeaturedItem.new
     f.link_url = "www.bangarangbend.com/services"
+    f.save
+    expect(f.reload.link_url).to eql "/services"
+
+    f = FeaturedItem.new
+    f.link_url = "/services"
     f.save
     expect(f.reload.link_url).to eql "/services"
   end
