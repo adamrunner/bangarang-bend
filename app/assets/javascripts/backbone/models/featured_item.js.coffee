@@ -1,33 +1,30 @@
 class BangarangBend.Models.FeaturedItem extends Backbone.Model
 
   isLinkOut: ->
-    if @get('link_url') && @get('link_url').match(/^http/) != null
-      return true
-    else
+    url = @get('link_url')
+    if url && url.match(/^[\/]/)
       return false
+    else
+      return true
 
   tab: ->
     if @isLinkOut()
-      'target=' + '_blank'
+      'target=_blank'
     else
       ''
 
   createLink: ->
-    if @isLinkOut()
-      url = "#{@get('link_url')}"
-    else
-      url = "/#{@get('link_url')}"
-
-    if @get('link_url')
+    url = @get('link_url')
+    if url
       'href=' + url
     else
       ''
 
   createClass: ->
     if @get('link_url')
-      'class=' + 'featured-item-card'
+      'class=featured-item-card'
     else
-      'class=' + 'featured-item-card-no-link'
+      'class=featured-item-card-no-link'
 
   linkTag: ->
     "#{@createLink()} #{@createClass()} #{@tab()}"

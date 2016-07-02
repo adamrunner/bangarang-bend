@@ -10,7 +10,7 @@
           <a <%= featured_item.linkTag() %> >
             <% if featured_item.get('link_url') :%>
               <div class="roll-over-link">
-                <i class="fa fa-angle-double-right featured-icon"></i>
+                <i class="btl bt-angles-right featured-icon"></i>
               </div>
             <% end %>
 

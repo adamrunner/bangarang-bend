@@ -1,27 +1,39 @@
 class FeaturedItem < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :page
-  before_save :format_link_url
+
+  def link_url=(value)
+    return if value.blank?
+    value = "http://" << value unless value =~ /http/i
+    uri = URI.parse(value)
+    link = if uri.host =~ /(www\.)?bangarangbend.com/i
+            uri.path
+          # elsif uri.instance_of?(URI::Generic)
+          #   uri.path.gsub(/(www\.)?bangarangbend.com/i, '')
+          else
+            uri.scheme = "http" if uri.instance_of?(URI::HTTPS)
+            uri.to_s
+          end
+    write_attribute(:link_url, link)
+  end
+
 
   def full_link_url
-    if self.link_url != nil && !self.link_url[/http/i]
-      "https://bangarangbend.com/" << self.link_url
-    else
-      self.link_url
-    end
+    link = self.link_url
   end
 
   private
 
-  def format_link_url
-    link = self.link_url
-    if link && link[/bangarangbend.com/i]
-      # Ugly strip method, grabs everything after bangarangbend.com/, removes any slashes from start and end as well as any 2 or more slashes in the middle of the url
-      #TODO find a cleaner way to do this some time
-      link = link[/bangarangbend.com\/(.+)/i, 1].gsub(/^\/{1,}/, '').gsub(/\/{2,}/, '/').gsub(/\/{1,}$/, '')
-      self.link_url = link
-    elsif link === ""
-      self.link_url = nil
-    end
+  def is_internal?
+    true if link_url[/bangarangbend.com/i]
   end
+
+  def to_relative
+    link_url = link_url.gsub(/.+bangarangbend.com\//i, '/')
+  end
+
+  def to_http
+    link_url = link_url.gsub(/https/i, 'http')
+  end
+
 end
