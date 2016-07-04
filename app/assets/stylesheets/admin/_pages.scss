@@ -1,0 +1,89 @@
+#admin-pages {
+  @include make-row($gutter: 1rem);
+  .card-block {
+    width: 100%;
+  }
+}
+.card-text {
+  font-weight: 300;
+}
+.page-card-title {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  small {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+}
+.page-card-link {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 0 0.5rem;
+  border-right: solid 1px #ccc;
+  float: left;
+  &:nth-child(1) {
+    padding-left: 0rem;
+  }
+  &.disabled {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+}
+.inner-card-title {
+  @extend .text-warning;
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+  border-bottom: solid 1px #ddd;
+}
+.card-responsive {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 1rem;
+  @include make-col($gutter: 1rem);
+  @include make-col-span(12);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col-span(4);
+  }
+  @include media-breakpoint-up(xl) {
+    @include make-col-span(3);
+  }
+}
+
+.card-wrap {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.inner-card-wrap {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.page-card-block {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: flex-end;
+}
+.inner-page-card-block {
+  align-self: flex-end;
+  width: 100%;
+  padding: 1rem;
+  flex-grow: 1;
+}

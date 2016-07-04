@@ -1,56 +1,55 @@
 <% breadcrumb :featured_item, @featured_item, "edit" %>
+<div class="row">
 
-<div class="col-xs-12 col-md-6">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">edit featured item</h3>
+  <div class="col-xs-12 col-lg-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="text-capitalize">edit featured item</h3>
 
-      <%= form_for @featured_item, url: {action: "update"} do |f| %>
-        <div class="form-group">
-          <%= f.label :name, "Name", class: "font-weight-bold" %>:
-          <%= f.text_field :name, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :description, "Description", class: "font-weight-bold" %>:
-          <%= f.text_area :description, rows: 6, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
-          <%= f.text_field :link_url, class: "form-control", value: @featured_item.full_link_url %>
-        </div>
-
-        <% if @featured_item.image? %>
-          <figure class="form-group">
-            <%= image_tag(@featured_item.image.featured_thumb.url, class:"figure-img") %>
-            <figcaption class="figure-caption"><%= @featured_item[:image] %></figcaption>
-          </figure>
+        <%= form_for @featured_item, url: {action: "update"} do |f| %>
+          <div class="form-group">
+            <%= f.label :name, "Name", class: "font-weight-bold" %>:
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
 
           <div class="form-group">
-            <%= link_to "delete image", admin_delete_featured_img_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@featured_item[:image]}?"},  class: "btn btn-danger" %>
+            <%= f.label :description, "Description", class: "font-weight-bold" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
           </div>
+
+          <div class="form-group">
+            <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
+            <%= f.text_field :link_url, class: "form-control", value: @featured_item.full_link_url %>
+          </div>
+
+          <% if @featured_item.image? %>
+            <figure class="form-group">
+              <%= image_tag(@featured_item.image.featured_thumb.url, class:"figure-img") %>
+              <%= link_to "delete image", admin_delete_featured_img_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@featured_item[:image]}?"},  class: "btn btn-danger pull-xs-right" %>
+              <figcaption class="figure-caption"><%= @featured_item[:image] %></figcaption>
+            </figure>
+
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :image, @featured_item.image? ? "Replace Image" : "Add Image", class: "font-weight-bold" %>:
+            <%= f.file_field :image, class: "form-control-file" %>
+            <%= f.hidden_field :image_cache %>
+          </div>
+
+          <%= f.submit "save", class: "btn btn-success" %>
+          <%= link_to "back", admin_page_path(@featured_item.page, tab: "featured"), class: "btn btn-secondary" %>
+          <%= link_to "delete", admin_featured_item_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@featured_item.name.titleize}'?"}, class: "btn btn-danger pull-xs-right" %>
         <% end %>
 
-        <div class="form-group">
-          <%= f.label :image, @featured_item.image? ? "Replace Image" : "Add Image", class: "font-weight-bold" %>:
-          <%= f.file_field :image, class: "form-control-file" %>
-          <%= f.hidden_field :image_cache %>
-        </div>
-
-        <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", admin_page_path(@featured_item.page, tab: "featured"), class: "btn btn-secondary" %>
-        <%= link_to "delete", admin_featured_item_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@featured_item.name.titleize}'?"}, class: "btn btn-danger pull-md-right" %>
-      <% end %>
-
+      </div>
     </div>
   </div>
-</div>
 
-<div class="col-xs-12 col-md-6">
-  <div class="card card-block info-block">
-    <h3 class="card-title text-capitalize">tips for adding links</h3>
-      <div class="card-block bg-info">
+  <div class="col-xs-12 col-lg-6">
+    <div class="card card-block">
+      <h3 class="card-title text-capitalize">tips for adding links</h3>
+      <div class="card-block text-info">
         <p>Add links to pages within BangarangBend.com or to completely different websites outside BangarangBend.com. This will be great for featuring specific vendors or events and adding a link to their website.</p>
         <p>Check out the examples below for valid link formats</p>
         <b>Examples for Bangarangbend.com</b>
@@ -67,4 +66,8 @@
           <li>www.instagram.com/chefdavebodi</li>
         </ul>
       </div>
+    </div>
+  </div>
+
+
 </div>

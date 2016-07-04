@@ -1,18 +1,3 @@
 <% breadcrumb :page, @page %>
 
-<div class="col-xs-12">
-  <div class="card card-block">
-    <h1 class="text-uppercase">
-      <%= @page.link_name %> <small class="text-muted">page</small>
-      <%= link_to "edit", edit_admin_page_path(@page), class: "btn btn-primary pull-xs-right" %>
-    </h1>
-    <% if @page.show_copy_text === true %>
-    <div class="card-block">
-      <p class="text-muted"><%= @page.copy_text.html_safe %></p>
-    </div>
-    <% end %>
-  </div>
-
-  <%= render "admin/page/partials/#{@page.name}" %>
-
-</div>
+<%= render "admin/page/partials/#{@page.name}" %>

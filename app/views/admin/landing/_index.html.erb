@@ -1,20 +1,42 @@
-<div class="card border-inverse">
-  <div class="card-block bg-inverse">
-    <h3 class="card-title"><%= page.name %> Page Landing</h3>
-    <% if landing != nil %>
-      <%= link_to "edit landing", edit_admin_landing_path(landing), class: "btn btn-info" %>
-      <%= link_to "delete", admin_landing_path(landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "btn btn-danger pull-md-right" %>
-    <% end %>
+  <div class="heading-block">
+    <h1 class="card-title"><%= page.name %> Page Landing</h1>
   </div>
+  <div class="row">
 
-  <% if page.landings.empty? %>
-      <div class="card-block">
-        <p class="lead text-muted">No landing created yet.</p>
-        <%= link_to "create landing", new_admin_page_landing_path(page), class: "btn btn-success" %>
+  <div class="col-xs-12 col-lg-8">
+    <div class="featured-row">
+
+    <div class="landing-card-responsive">
+      <div class="landing-card-wrap">
+        <div class="row-no-gutter">
+
+            <% if page.landings.empty? %>
+                <div class="card-block">
+                  <p class="lead text-muted">No landing created yet.</p>
+                  <%= link_to "create landing", new_admin_page_landing_path(page), class: "btn btn-success" %>
+                </div>
+              <% else %>
+                <div id="landing" class="jumbotron" style="background-image: url(<%= landing.image.url %>)">
+                  <h1><%= landing.heading.html_safe %></h1>
+                </div>
+            <% end %>
+          </div>
+
+          <div class="inner-landing-card-block">
+            <% if landing != nil %>
+              <h5 class="inner-card-title">Manage Content</h5>
+              <%= link_to "edit landing", edit_admin_landing_path(landing), class: "page-card-link" %>
+              <%= link_to "delete", admin_landing_path(landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "page-card-link" %>
+            <% end %>
+          </div>
+
+          </div>
+
+        </div>
       </div>
-    <% else %>
-      <div id="landing" class="jumbotron" style="background-image: url(<%= landing.image.url %>)">
-        <h1><%= landing.heading.html_safe %></h1>
-      </div>
-  <% end %>
+    </div>
+
+
+
+
 </div>

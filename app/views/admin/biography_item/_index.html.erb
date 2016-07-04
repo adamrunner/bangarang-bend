@@ -1,27 +1,42 @@
-<div class="card border-inverse">
 
-  <div class="card-block bg-inverse">
-    <h3 class="card-title"><%= biography[:name] %></h3>
+  <div class="heading-block">
+    <h1><%= biography[:name] %></h1>
   </div>
+  <div class="featured-row">
 
-  <div class="list-group list-group-flush">
     <% biography[:biography_items].each do |biography_item| %>
 
-      <div class="list-group-item border-inverse">
-        <div class="row">
-          <div class="col-xs-12 col-md-10">
-            <p class="text-muted"><%= biography_item[:description] %></p>
+    <div class="featured-card-responsive">
+      <div class="featured-card-wrap">
+        <div class="row-no-gutter">
+
+
+          <div class="featured-card-fluid-block">
+            <h4 class="featured-card-title"><%= biography_item[:name] %></h4>
           </div>
-          <div class="col-xs-8 col-md-2">
-            <%= image_tag(biography_item.image.biography_thumb.url, class:"img-fluid img-thumbnail") if biography_item.image? %>
+
+          <div class="featured-card-fluid-block">
+            <div class="featured-row">
+
+              <div class="featured-card-desc">
+                <p class="text-muted"><%= biography_item[:description] %></p>
+              </div>
+
+              <div class="featured-card-img">
+                <%= image_tag(biography_item.image.biography_thumb.url, class:"img-fluid img-thumbnail") if biography_item.image? %>
+              </div>
+
+            </div>
           </div>
-          <div class="col-xs-12 list-item-footer">
-          <%= link_to "edit", edit_admin_biography_item_path(biography_item), class: "btn btn-info" %>
+
+          <div class="inner-feature-card-block">
+             <h5 class="inner-card-title">Manage Content</h5>
+            <%= link_to "edit", edit_admin_biography_item_path(biography_item), class: "page-card-link" %>
+          </div>
+
           </div>
         </div>
       </div>
 
     <% end %>
   </div>
-
-</div>

@@ -1,6 +1,8 @@
 <% breadcrumb :biography_item, @biography_item, "edit" %>
+<div class="row">
 
-<div class="col-xs-12 col-md-6">
+
+<div class="col-xs-12 col-lg-6">
   <div class="card">
     <div class="card-block">
       <h3 class="card-title text-capitalize">edit biography</h3>
@@ -19,13 +21,10 @@
         <% if @biography_item.image? %>
           <figure class="form-group">
             <%= image_tag(@biography_item.image.biography_thumb.url, class:"figure-img") %>
+            <%= link_to "delete image", admin_delete_biography_img_path(@biography_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@biography_item[:image]}?"},  class: "btn btn-danger pull-xs-right" %>
             <figcaption class="figure-caption"><%= @biography_item[:image] %></figcaption>
           </figure>
 
-          <div class="form-group">
-            <%= f.label :remove_image, "Delete Image: ", class: "font-weight-bold" %>
-            <%= f.check_box :remove_image %>
-          </div>
         <% end %>
 
         <div class="form-group">
@@ -40,4 +39,6 @@
 
     </div>
   </div>
+</div>
+
 </div>

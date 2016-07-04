@@ -1,6 +1,6 @@
 class Admin::BiographyItemController < Admin::BaseController
   before_filter :find_page, only: [:new, :create]
-  before_filter :find_biography_item, only: [:edit, :update, :destroy ]
+  before_filter :find_biography_item, only: [:edit, :update, :destroy, :destroy_img]
 
   def create
     page = Page.find(params[:page_id])
@@ -20,6 +20,13 @@ class Admin::BiographyItemController < Admin::BaseController
   def destroy
     if @biography_item.destroy
       redirect_to admin_page_path(@biography_item.page, tab: "biography"), alert: "Biography Item Deleted Successfully"
+    end
+  end
+
+  def destroy_img
+    @biography_item.remove_image!
+    if @biography_item.save
+      redirect_to edit_admin_biography_item_path(@biography_item), alert: "Image Deleted Successfully"
     end
   end
 

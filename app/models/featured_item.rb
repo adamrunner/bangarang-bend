@@ -18,11 +18,5 @@ class FeaturedItem < ActiveRecord::Base
   def full_link_url
     link = link_url
   end
-
-  private
-
-  def is_internal?
-    true if link_url[/bangarangbend.com/i]
-  end
-
+  
 end

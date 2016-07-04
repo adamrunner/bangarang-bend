@@ -1,0 +1,87 @@
+.featured-card-responsive {
+  display: flex;
+  flex-flow: column nowrap;
+  @extend .card-responsive;
+  @include media-breakpoint-up(md) {
+    @include make-col-span(12);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col-span(6);
+  }
+  @include media-breakpoint-up(xl) {
+    @include make-col-span(6);
+  }
+}
+.featured-row {
+  @include make-row($gutter: 1rem);
+}
+.row-no-gutter {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  flex-grow: 1;
+  @include make-row($gutter: 0rem);
+}
+.featured-card-wrap {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  flex-grow: 2;
+  align-self: stretch;
+  .row {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex-grow: 2;
+    align-self: stretch;
+  }
+}
+
+.featured-card-fluid-block {
+  @include make-col($gutter: 2rem);
+  @include make-col-span(12);
+  padding: 0rem;
+  align-self: stretch;
+  &:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+  &:nth-child(2) {
+    margin-bottom: auto;
+  }
+}
+
+.featured-card-desc {
+  @include make-col($gutter: 1rem);
+  @include make-col-span(12);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(8);
+  }
+}
+
+.featured-card-img {
+  @include make-col($gutter: 1rem);
+  @include make-col-span(6);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(4);
+  }
+}
+
+.featured-card-title {
+  @extend .page-card-title;
+  border-bottom: solid 1px #ddd;
+  padding: 0.5rem 0 1rem 0;
+}
+
+.featured-link-info {
+  font-size: 1.15rem;
+  margin: 0;
+  span {
+    @extend .text-info;
+  }
+}
+
+.inner-feature-card-block {
+  margin-top: auto;
+}

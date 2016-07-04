@@ -27,7 +27,7 @@ class Page < ActiveRecord::Base
 
   def home_items
     home_items = {
-      featured: {name: "featured", featured_items: self.featured_items},
+      featured: {name: "featured", featured_items: self.featured_items.order(position: :asc)},
       biography: {name: "biography", biography_items: self.biography_items}
     }
   end

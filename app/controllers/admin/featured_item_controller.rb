@@ -31,7 +31,7 @@ class Admin::FeaturedItemController < Admin::BaseController
 
   private
   def featured_item_params
-    params.require(:featured_item).permit(:name, :description, :image, :remove_image, :link_url)
+    params.require(:featured_item).permit(:name, :description, :image, :remove_image, :link_url, :position)
   end
 
   def find_featured_item
