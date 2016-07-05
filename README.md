@@ -1,5 +1,6 @@
 #Bangarang Bend
 A Rails Website for the Bangarang Bend catering company
+
 ##Colors
 Red - `#C34C3B`
 Blue - `#445768`
@@ -11,9 +12,10 @@ Blue - `#445768`
 
 ##Libraries Used
 Rails 4, Backbone, VelocityJS, Bootstrap 4 w/Flexbox, Devise, CarrierWave
+
 ## Todo List/Backlog
-The application backlog is maintained in Trello
-https://trello.com/b/6LseRF5z/bangarang-bend-website
+The application backlog is maintained in GitHub
+https://github.com/adamrunner/bangarang-bend/issues
 
 ## Dependencies
 
@@ -48,8 +50,10 @@ https://trello.com/b/6LseRF5z/bangarang-bend-website
 1. Pull Request your changes to the `staging` branch.
 1. Merge changes to `staging`
 1. Run a deploy against the staging environment. `cap staging deploy`
+1. View your changes https://staging.bangarangbend.com
 
 ### Production Deployment
 1. Pull Request your changes to the `master` branch
 1. Merge changes to `master`
 1. Run a deploy against the Production environment. `cap production deploy`
+1. View your changes https://bangarangbend.com
