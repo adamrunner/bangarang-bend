@@ -27,7 +27,7 @@
 $color-one  : #aaa;
 $color-two  : #c8cbc5;
 $color-three: #877674;
-$color-four : lighten(#3d4e54, 5%);
+$color-four : lighten(#43695b, 5%);
 
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
@@ -35,13 +35,13 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary             : #445768 !default;
+$brand-primary             : lighten(#3f5c77, 5%) !default;
 $transparent-brand-primary : transparentize(#000, 0.15%) !default;
 $brand-secondary           : #C34C3B !default;
 $light                     : #eee !default;
 // $brand-success             : #5cb85c !default;
-$brand-success             : $color-four !default;
-$brand-info                : darken(#5bc0de, 15%) !default;
+$brand-success             : lighten(#43695b, 15%) !default;
+$brand-info                : lighten(#0b4378, 40%) !default;
 $brand-warning             : #f0ad4e !default;
 // $brand-danger              : #d9534f !default;
 $brand-danger              : $brand-secondary !default;
@@ -131,9 +131,9 @@ $body-color:                 #fff !default;
 //
 // Style anchor elements.
 
-$link-color:                 lighten($color-four, 10%) !default;
+$link-color:                 lighten($brand-primary, 20%) !default;
 $link-decoration:            none !default;
-$link-hover-color:           darken($color-four, 10%) !default;
+$link-hover-color:           $brand-primary !default;
 $link-hover-decoration:      none !default;
 
 
@@ -496,8 +496,9 @@ $jumbotron-bg:                   $gray-lighter !default;
 //
 // Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
+$state-success-text:             $brand-success !default;
+$state-success-bg:               lighten($brand-success, 35%) !default;
+// $state-success-bg:               #dff0d8 !default;
 $state-success-border:           darken($state-success-bg, 5%) !default;
 
 $state-info-text:                #31708f !default;
@@ -508,8 +509,10 @@ $state-warning-text:             #8a6d3b !default;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken($state-warning-bg, 5%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
+// $state-danger-text:              #a94442 !default;
+$state-danger-text:              $brand-danger !default;
+// $state-danger-bg:                #f2dede !default;
+$state-danger-bg:                lighten($brand-danger, 30%) !default;
 $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 

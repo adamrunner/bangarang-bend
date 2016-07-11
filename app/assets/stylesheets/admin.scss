@@ -1,6 +1,7 @@
 // require bootstrap-loader
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'black-tie/black-tie';
 @import 'admin_variables';
 @import 'bootstrap';
 @import 'admin/pages';
@@ -8,6 +9,7 @@
 @import 'admin/produce';
 @import 'admin/landing';
 @import 'admin/featured_items';
+@import 'admin/biography_items';
 
 html {
   position: relative;
@@ -20,6 +22,83 @@ html {
   @include media-breakpoint-up(lg) {
     font-size: $font-size-lg;
   }
+}
+
+%link-danger {
+  color: $brand-danger;
+  &:hover {
+    color: darken($brand-danger, 15%);
+  }
+}
+
+%link-success {
+  color: $brand-success;
+  &:hover {
+    color: darken($brand-success, 10%);
+  }
+}
+
+#flash-messages {
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 1000;
+  position: fixed;
+  right: 0.5rem;
+  left: 0.5rem;
+  top: 4rem;
+  @include media-breakpoint-up(md) {
+    width: auto;
+    left: auto;
+  }
+}
+
+.flash_messages {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 7rem;
+  width: 100%;
+  letter-spacing: 1px;
+  @include media-breakpoint-up(md) {
+    width: 30rem;
+  }
+  .alert {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 0;
+    height: inherit;
+    width: inherit;
+    box-shadow: -3px 3px 10px 0px rgba(0,0,0,0.15);
+    button {
+      align-self: flex-end;
+      margin-bottom: auto;
+      margin-left: auto;
+      order: 3;
+    }
+  }
+}
+
+.flash-msg-block {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 0 1rem;
+  &.msg {
+    flex-grow: 2;
+    align-items: center;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  opacity: 0.5;
+  margin-top: 0.35rem;
 }
 
 .no-margin {
@@ -47,11 +126,8 @@ body {
 .btn {
   @extend .text-capitalize;
 }
-.flash_messages {
-  @include make-col();
-  @include make-col-span(12);
-}
 .admin-container {
+  position: relative;
   @extend .container-fluid;
   background-color: transparent;
   padding-top: 1rem;
@@ -59,7 +135,7 @@ body {
 
 .admin-login {
   max-width: 25rem;
-  margin: 0 auto;
+  margin: 7rem auto 0 auto;
   border-color: #ddd;
 }
 .card-title {
@@ -107,39 +183,62 @@ a:hover {
 }
 
 .heading-block {
+  overflow: hidden;
+  position: relative;
   background: #fff;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 1rem;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding: 1.5rem 1.25rem;
   margin-bottom: 1rem;
   border: solid 1px #ddd;
   border-top: none;
+  @include media-breakpoint-up(md) {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
   h1 {
-    color: #333;
-    margin: 0;
+    color: $color-three;
     display: inline;
     text-transform: capitalize;
+    @include media-breakpoint-up(md) {
+      margin: 0;
+    }
   }
   a {
-    padding: 0.5rem 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
     background: #fff;
     font-size: 1rem;
     text-transform: capitalize;
     letter-spacing: 1px;
+    border-top: 1px solid #ddd;
+    &:last-child {
+      border-bottom: 1px solid #ddd;
+    }
+    @include media-breakpoint-up(md) {
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-top: none;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
   .link-success {
-    background: lighten($brand-success, 25%);
-    color: darken($brand-success, 10%);
-    &:hover {
-      color: darken($brand-success, 12%);
-      background: lighten($brand-success, 20%);
+    @include media-breakpoint-up(md) {
+      margin-left: auto;
     }
     &::before {
+      @extend .bt-fw;
+      padding-bottom: 2px;
       margin-right: 0.5rem;
-      font-family: FontAwesome;
-      content: "\f055";
+      font-family: Black Tie;
+      content: "\F01B";
     }
   }
 }

@@ -1,8 +1,17 @@
-<div class="flash_messages">
+<script type="text/javascript">
+  Bangarang.flashMsg = new FlashMessage();
+  Bangarang.listenTo( 'flashMessage', function(data) {
+    Bangarang.flashMsg.render(data);
+  });
+
+  data = {
   <% if notice %>
-  <div class="alert alert-success"><%= notice %></div>
+    notice: "<%= notice %>"
   <% end %>
+
   <% if alert %>
-  <div class="alert alert-danger"><%= alert %></div>
+    alert: "<%= alert %>"
   <% end %>
-</div>
+  }
+  Bangarang.trigger( 'flashMessage', data );
+</script>

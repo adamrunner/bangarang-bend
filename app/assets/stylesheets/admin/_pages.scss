@@ -43,8 +43,7 @@
 }
 .card-responsive {
   position: relative;
-  display: flex;
-  flex-flow: column nowrap;
+  display: block;
   margin-bottom: 1rem;
   @include make-col($gutter: 1rem);
   @include make-col-span(12);
@@ -60,8 +59,12 @@
 }
 
 .card-wrap {
+  display: block;
   position: relative;
   padding-bottom: 100%;
+  &::after {
+    padding-bottom: 100%;
+  }
 }
 
 .inner-card-wrap {

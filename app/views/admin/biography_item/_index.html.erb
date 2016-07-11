@@ -16,13 +16,13 @@
           </div>
 
           <div class="featured-card-fluid-block">
-            <div class="featured-row">
+            <div class="featured-inner-row">
 
               <div class="featured-card-desc">
                 <p class="text-muted"><%= biography_item[:description] %></p>
               </div>
 
-              <div class="featured-card-img">
+              <div class="biography-card-img-col">
                 <%= image_tag(biography_item.image.biography_thumb.url, class:"img-fluid img-thumbnail") if biography_item.image? %>
               </div>
 

@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :featured_item, only: [:edit, :update, :destroy]
 
     delete '/featured_item/:id/delete_img', to: 'featured_item#destroy_img', as: 'delete_featured_img'
+    post '/featured_items/update_order', to: 'featured_item#update_order', as: 'update_order'
     delete '/biography_item/:id/delete_img', to: 'biography_item#destroy_img', as: 'delete_biography_img'
 
     resources :landing, only: [:edit, :update, :destroy]

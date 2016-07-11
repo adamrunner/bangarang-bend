@@ -2,6 +2,11 @@ class Admin::FeaturedItemController < Admin::BaseController
   before_filter :find_page, only: [:new, :create]
   before_filter :find_featured_item, only: [:edit, :update, :destroy, :destroy_img]
 
+  def update_order
+    params[:item_order].each { |id, position| FeaturedItem.find_by_id(id).update(position: position ) }
+    render status: 200, json: {notice: "Order Updated Successfully"}
+  end
+
   def create
     featured_item = @page.featured_items.build(featured_item_params)
     if featured_item.save
