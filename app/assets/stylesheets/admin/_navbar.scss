@@ -1,0 +1,27 @@
+.navbar {
+  background: $gray-dark;
+  border-bottom: solid 1px #555;
+
+  .navbar-brand {
+    @extend .nav-link;
+    @extend .nav-item;
+    padding: 0.425rem 0;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: #ccc;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    &:hover {
+      color: $color-three;
+    }
+    i {
+      font-size: 1.35rem;
+      margin-right: 0.35rem;
+      margin-bottom: 0.1rem;
+    }
+  }
+}

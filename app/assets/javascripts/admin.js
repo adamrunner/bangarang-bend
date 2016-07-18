@@ -12,7 +12,6 @@
 //= require bootstrap/tab
 // require bootstrap/tooltip
 // require bootstrap/popover
-//= require unobtrusive_flash
 //= require_tree ./admin/templates
 //= require velocity.min
 //= require velocity.ui.min

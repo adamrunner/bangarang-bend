@@ -1,7 +1,12 @@
-<div class="card-block">
-  <%= link_to "new menu", new_admin_page_catering_menu_path(@page), class: "btn btn-success" %>
+<div class="heading-block">
+  <h1>catering menus</h1>
+  <%= link_to "add menu", new_admin_page_catering_menu_path(@page), class: "add-link" %>
 </div>
 
-<% @page_contents.each do |catering_menu| %>
-  <%= render partial: "admin/catering_menu/partials/show", locals: {catering_menu: catering_menu} %>
-<% end %>
+<div class="card-bs-row">
+
+  <% @page_contents.each do |catering_menu| %>
+    <%= render partial: "admin/catering_menu/partials/show", locals: {catering_menu: catering_menu} %>
+  <% end %>
+
+</div>

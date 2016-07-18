@@ -1,11 +1,14 @@
 <% breadcrumb :featured_item, @featured_item, "edit" %>
-<div class="row">
+<div class="card-bs-row">
 
-  <div class="col-xs-12 col-lg-6">
-    <div class="card">
-      <div class="card-block">
-        <h3 class="text-capitalize">edit featured item</h3>
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
 
+      <div class="card-col title">
+        <h3 class="title-text">edit featured item</h3>
+      </div>
+
+      <div class="form-block">
         <%= form_for @featured_item, url: {action: "update"} do |f| %>
           <div class="form-group">
             <%= f.label :name, "Name", class: "font-weight-bold" %>:
@@ -28,7 +31,6 @@
               <%= link_to "delete image", admin_delete_featured_img_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@featured_item[:image]}?"},  class: "btn btn-danger pull-xs-right" %>
               <figcaption class="figure-caption"><%= @featured_item[:image] %></figcaption>
             </figure>
-
           <% end %>
 
           <div class="form-group">
@@ -37,35 +39,54 @@
             <%= f.hidden_field :image_cache %>
           </div>
 
-          <%= f.submit "save", class: "btn btn-success" %>
-          <%= link_to "back", admin_page_path(@featured_item.page, tab: "featured"), class: "btn btn-secondary" %>
-          <%= link_to "delete", admin_featured_item_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@featured_item.name.titleize}'?"}, class: "btn btn-danger pull-xs-right" %>
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "back", admin_page_path(@featured_item.page, tab: "featured"), class: "btn btn-secondary" %>
+            <%= link_to "delete", admin_featured_item_path(@featured_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@featured_item.name.titleize}'?"}, class: "btn btn-danger pull-xs-right" %>
+          </div>
         <% end %>
 
       </div>
     </div>
   </div>
 
-  <div class="col-xs-12 col-lg-6">
-    <div class="card card-block">
-      <h3 class="card-title text-capitalize">tips for adding links</h3>
-      <div class="card-block text-info">
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">tips for adding links</h3>
+      </div>
+
+      <div class="card-col card-text">
         <p>Add links to pages within BangarangBend.com or to completely different websites outside BangarangBend.com. This will be great for featuring specific vendors or events and adding a link to their website.</p>
         <p>Check out the examples below for valid link formats</p>
-        <b>Examples for Bangarangbend.com</b>
-        <ul>
-          <li>http://bangarangbend.com/services</li>
-          <li>bangarangbend.com/services</li>
-          <li>www.bangarangbend.com/services</li>
-          <li>/services</li>
-        </ul>
-        <b>Examples for Other Websites</b>
-        <ul>
-          <li>http://www.google.com</li>
-          <li>www.google.com</li>
-          <li>www.instagram.com/chefdavebodi</li>
+      </div>
+
+      <div class="card-col no-grow">
+        <h4 class="sub-title-text">Examples for Bangarangbend.com</h4>
+      </div>
+
+      <div class="card-col card-text text-primary">
+        <ul class="bt-ul link-example-list">
+          <li><i class="bt-li btl bt-angles-right"></i>http://bangarangbend.com/services</li>
+          <li><i class="bt-li btl bt-angles-right"></i>bangarangbend.com/services</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.bangarangbend.com/services</li>
+          <li><i class="bt-li btl bt-angles-right"></i>/services</li>
         </ul>
       </div>
+
+      <div class="card-col no-grow">
+        <h4 class="sub-title-text">Examples for Other Websites</h4>
+      </div>
+
+      <div class="card-col card-text text-primary">
+        <ul class="bt-ul link-example-list">
+          <li><i class="bt-li btl bt-angles-right"></i>http://www.google.com</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.google.com</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.instagram.com/chefdavebodi</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 

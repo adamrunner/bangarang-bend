@@ -35,41 +35,34 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary             : lighten(#3f5c77, 5%) !default;
-$transparent-brand-primary : transparentize(#000, 0.15%) !default;
-$brand-secondary           : #C34C3B !default;
-$light                     : #eee !default;
-// $brand-success             : #5cb85c !default;
+$brand-primary             : #538eac !default;
+$brand-secondary           : #D24D57 !default;
 $brand-success             : lighten(#43695b, 15%) !default;
-$brand-info                : lighten(#0b4378, 40%) !default;
+$brand-info                : lighten(#125fa7, 20%) !default;
 $brand-warning             : #f0ad4e !default;
-// $brand-danger              : #d9534f !default;
-$brand-danger              : $brand-secondary !default;
+$brand-danger              : darken($brand-secondary, 10%) !default;
 
 // #NOTE custom variables
 
 $font-secondary: 'Oswald', sans-serif !default;
 $font-primary:   'Roboto', sans-serif !default;
 
-$light-font-color : #fff;
-$dark-font-color  : #333;
-
 $dark-transparent: transparentize(#222, 0.50) !default;
 
 $navbar-height: 4.25rem;
 $nav-brand-logo-height: 2rem;
 
-$showcase-bg-color: #fff;
-$showcase-border-color: $showcase-bg-color;
-$showcase-border-size: 1px;
+// $showcase-bg-color: #fff;
+// $showcase-border-color: $showcase-bg-color;
+// $showcase-border-size: 1px;
 
-$featured-bg-color: transparentize($transparent-brand-primary, 0.15);
-$featured-title-color: #fff;
-$featured-text-color: #333;
-$featured-item-border-color: #000;
-$featured-item-border-style: 3px solid #fff;
+// // $featured-bg-color: transparentize($transparent-brand-primary, 0.15);
+// $featured-title-color: #fff;
+// $featured-text-color: #333;
+// $featured-item-border-color: #000;
+// $featured-item-border-style: 3px solid #fff;
 
-$about-bg-color: transparentize($transparent-brand-primary, 0.15);
+// $about-bg-color: transparentize($transparent-brand-primary, 0.15);
 
 $contact-bg-color: #eee;
 
@@ -131,9 +124,9 @@ $body-color:                 #fff !default;
 //
 // Style anchor elements.
 
-$link-color:                 lighten($brand-primary, 20%) !default;
+$link-color:                 $brand-primary !default;
 $link-decoration:            none !default;
-$link-hover-color:           $brand-primary !default;
+$link-hover-color:           darken($brand-primary, 10%) !default;
 $link-hover-decoration:      none !default;
 
 
@@ -180,8 +173,9 @@ $grid-gutter-width:          1.25rem !default; // 30px
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     'Roboto', sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:     'Roboto Condensed', sans-serif !default;
+$font-family-secondary:      'Roboto Condensed', sans-serif !default;
+$font-family-serif:          'Roboto Slab', serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
@@ -213,10 +207,10 @@ $display4-weight:             300 !default;
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       $font-primary;
-$headings-font-weight:       300 !default;
+$headings-font-family:       $font-family-serif;
+$headings-font-weight:       bold !default;
 $headings-line-height:       1.1 !default;
-$headings-color:             $color-three !default;
+$headings-color:             $gray !default;
 
 $lead-font-size:             1.25rem !default;
 $lead-font-weight:           300 !default;
@@ -285,25 +279,25 @@ $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             $btn-primary-bg !default;
 
-$btn-secondary-color:            $gray-dark !default;
-$btn-secondary-bg:               #fff !default;
-$btn-secondary-border:           #ccc !default;
+$btn-secondary-color:            lighten($color-three, 40%) !default;
+$btn-secondary-bg:               lighten($gray-dark, 5%) !default;
+$btn-secondary-border:           transparentize($color-three, 0.8) !default;
 
 $btn-info-color:                 #fff !default;
 $btn-info-bg:                    $brand-info !default;
 $btn-info-border:                $btn-info-bg !default;
 
-$btn-success-color:              #fff !default;
-$btn-success-bg:                 $brand-success !default;
-$btn-success-border:             $btn-success-bg !default;
+$btn-success-color:              lighten($color-three, 40%) !default;
+$btn-success-bg:                 lighten($brand-success, 5%) !default;
+$btn-success-border:             transparentize($color-three, 0.8) !default;
 
 $btn-warning-color:              #fff !default;
 $btn-warning-bg:                 $brand-warning !default;
 $btn-warning-border:             $btn-warning-bg !default;
 
-$btn-danger-color:               #fff !default;
-$btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              $btn-danger-bg !default;
+$btn-danger-color:               lighten($color-three, 40%) !default;
+$btn-danger-bg:                  lighten($brand-danger, 10%) !default;
+$btn-danger-border:              transparentize($color-three, 0.8) !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -324,11 +318,11 @@ $btn-border-radius-sm:           $border-radius-sm !default;
 $input-padding-x:                .75rem !default;
 $input-padding-y:                .375rem !default;
 
-$input-bg:                       #fff !default;
+$input-bg:                       lighten($color-three, 48%) !default;
 $input-bg-disabled:              $gray-lighter !default;
 
 $input-color:                    $gray !default;
-$input-border-color:             #ccc !default;
+$input-border-color:             transparentize($color-three, 0.5) !default;
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba(0,0,0,.075) !default;
 
@@ -336,7 +330,7 @@ $input-border-radius:            $border-radius !default;
 $input-border-radius-lg:         $border-radius-lg !default;
 $input-border-radius-sm:         $border-radius-sm !default;
 
-$input-border-focus:             #66afe9 !default;
+$input-border-focus:             $color-three !default;
 $input-box-shadow-focus:         rgba(102,175,233,.6) !default;
 
 $input-color-placeholder:        #999 !default;
@@ -426,14 +420,14 @@ $nav-link-hover-bg:                         $gray-lighter !default;
 $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;
 
-$nav-tabs-border-color:                     #ddd !default;
+$nav-tabs-border-color:                     transparent !default;
 
 $nav-tabs-link-border-width:                $border-width !default;
-$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+$nav-tabs-link-hover-border-color:          transparent !default;
 
 $nav-tabs-active-link-hover-bg:             $body-bg !default;
 $nav-tabs-active-link-hover-color:          $gray !default;
-$nav-tabs-active-link-hover-border-color:   #ddd !default;
+$nav-tabs-active-link-hover-border-color:   transparent !default;
 
 $nav-tabs-justified-link-border-color:            #ddd !default;
 $nav-tabs-justified-active-link-border-color:     $body-bg !default;

@@ -15,6 +15,7 @@
     padding: 2rem;
   }
   h1 {
+    color: $color-three;
     display: inline;
     align-self: center;
     text-transform: uppercase;
@@ -31,14 +32,6 @@
       font-size: 4rem;
       align-self: flex-start;
     }
-    span {
-      &:nth-child(1) {
-        color: $color-one;
-      }
-      &:nth-child(3) {
-        color: $brand-secondary;
-      }
-    }
   }
   img {
     @extend .img-fluid;
@@ -46,32 +39,10 @@
   }
 }
 
-.landing-card-responsive {
-  display: flex;
-  flex-flow: column nowrap;
-  @extend .card-responsive;
-  @include media-breakpoint-up(md) {
-    @include make-col-span(12);
+.landing-col {
+  @include make-col();
+  @include make-col-span(12);
+  @media (min-width: 90rem) {
+    @include make-col-span(8);
   }
-}
-
-.landing-card-wrap {
-  background-color: #fff;
-  padding: 1rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  flex-grow: 2;
-  align-self: stretch;
-  .row {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    flex-grow: 2;
-    align-self: stretch;
-  }
-}
-
-.inner-landing-card-block {
-  margin-top: 1rem;
 }

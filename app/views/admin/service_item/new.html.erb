@@ -1,25 +1,33 @@
 <% breadcrumb :service_item, @page, "new" %>
+<div class="card-bs-row">
 
-<div class="col-xs-12 col-md-6">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">add new service</h3>
+  <div class="card-span-md-6">
+    <div class="card-content-wrap">
 
-      <%= form_for :service_item, url: admin_page_service_item_index_path do |f| %>
-        <div class="form-group">
-          <%= f.label :name, "name", class: "font-weight-bold" %>:
-          <%= f.text_field :name, class: "form-control" %>
-        </div>
+      <div class="card-col title">
+        <h3 class="title-text">add new service</h3>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :description, "description", class: "font-weight-bold" %>:
-          <%= f.text_area :description, rows: 6, class: "form-control" %>
-        </div>
+      <div class="form-block">
+        <%= form_for :service_item, url: admin_page_service_item_index_path do |f| %>
+          <div class="form-group">
+            <%= f.label :name, "name", class: "font-weight-bold" %>:
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
 
-        <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "cancel", :back, class: "btn btn-secondary" %>
-      <% end %>
+          <div class="form-group">
+            <%= f.label :description, "description", class: "font-weight-bold" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
+          </div>
+
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "cancel", :back, class: "btn btn-secondary" %>
+          </div>
+        <% end %>
+      </div>
 
     </div>
   </div>
+
 </div>

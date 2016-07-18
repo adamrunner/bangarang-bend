@@ -1,53 +1,83 @@
 <% breadcrumb :featured_item, @page, "new" %>
+<div class="card-bs-row">
 
-<div class="col-xs-12 col-md-6">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">new featured item</h3>
+  <div class="card-span-md-6">
+    <div class="card-content-wrap">
 
-      <%= form_for :featured_item, url: admin_page_featured_item_index_path do |f| %>
-        <div class="form-group">
-          <%= f.label :name, "name", class: "font-weight-bold" %>:
-          <%= f.text_field :name, class: "form-control" %>
-        </div>
+      <div class="card-col title">
+        <h3 class="title-text">new featured item</h3>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :description, "description", class: "font-weight-bold" %>:
-          <%= f.text_area :description, rows: 6, class: "form-control" %>
-        </div>
+      <div class="form-block">
+        <%= form_for :featured_item, url: admin_page_featured_item_index_path do |f| %>
+          <div class="form-group">
+            <%= f.label :name, "name", class: "font-weight-bold" %>:
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
-          <%= f.text_field :link_url, class: "form-control" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :description, "description", class: "font-weight-bold" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :image, "upload image", class: "font-weight-bold" %>
-          <%= f.file_field :image, class: "form-control-file" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
+            <%= f.text_field :link_url, class: "form-control" %>
+          </div>
 
-        <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", :back, class: "btn btn-secondary" %>
-      <% end %>
+          <div class="form-group">
+            <%= f.label :image, "upload image", class: "font-weight-bold" %>
+            <%= f.file_field :image, class: "form-control-file" %>
+          </div>
+
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "back", :back, class: "btn btn-secondary" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">tips for adding links</h3>
+      </div>
+
+      <div class="card-col card-text">
+        <p>Add links to pages within BangarangBend.com or to completely different websites outside BangarangBend.com. This will be great for featuring specific vendors or events and adding a link to their website.</p>
+        <p>Check out the examples below for valid link formats</p>
+      </div>
+
+      <div class="card-col no-grow">
+        <h4 class="sub-title-text">Examples for Bangarangbend.com</h4>
+      </div>
+
+      <div class="card-col card-text text-primary">
+        <ul class="bt-ul link-example-list">
+          <li><i class="bt-li btl bt-angles-right"></i>http://bangarangbend.com/services</li>
+          <li><i class="bt-li btl bt-angles-right"></i>bangarangbend.com/services</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.bangarangbend.com/services</li>
+          <li><i class="bt-li btl bt-angles-right"></i>/services</li>
+        </ul>
+      </div>
+
+      <div class="card-col no-grow">
+        <h4 class="sub-title-text">Examples for Other Websites</h4>
+      </div>
+
+      <div class="card-col card-text text-primary">
+        <ul class="bt-ul link-example-list">
+          <li><i class="bt-li btl bt-angles-right"></i>http://www.google.com</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.google.com</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.instagram.com/chefdavebodi</li>
+        </ul>
+      </div>
 
     </div>
   </div>
-</div>
 
-<div class="col-xs-12 col-md-6">
-  <div class="card card-block">
-    <h3 class="card-title text-capitalize">tips for adding links</h3>
-      <div class="card-block bg-info">
-        <p>Add links to pages within BangarangBend.com or to completely different websites outside BangarangBend.com. For example this will be great for featuring specific vendors and adding a link to their website.</p>
-        <p>Simply copy the full URL of the page you would like to link to, and paste it into the Link URL field.</p>
-        <ul>
-          <li><b>For Example</b></li>
-          <li>https://bangarangbend.com/menus/catered_fare</li>
-          <li>https://bangarangbend.com/customized_events</li>
-          <br>
-          <li>https://www.google.com/</li>
-          <li>https://www.instagram.com/chefdavebodi/</li>
-        </ul>
-      </div>
-  </div>
 </div>

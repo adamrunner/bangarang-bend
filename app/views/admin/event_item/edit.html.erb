@@ -1,46 +1,54 @@
 <% breadcrumb :event_item, @event_item, "edit" %>
 
-<div class="col-xs-12 col-md-6">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">edit month</h3>
+<div class="card-bs-row">
 
-      <%= form_for @event_item, url: {action: "update"} do |f| %>
-        <div class="form-group">
-          <%= f.label :name, "name", class: "font-weight-bold" %>:
-          <%= f.text_field :name, class: "form-control" %>
-        </div>
+  <div class="card-span-md-6">
+    <div class="card-content-wrap">
 
-        <div class="form-group">
-          <%= f.label :description, "description", class: "font-weight-bold" %>:
-          <%= f.text_area :description, rows: 6, class: "form-control" %>
-        </div>
+      <div class="card-col title">
+        <h3 class="title-text">edit month</h3>
+      </div>
 
-        <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", admin_page_path(@event_item.page, tab: "months"), class: "btn btn-secondary" %>
-        <%= link_to "delete", admin_event_item_path(@event_item), method: "delete", data: {confirm: "Are you sure you want to delete '#{@event_item.name.titleize}' ?"}, class: "btn btn-danger pull-md-right" %>
-      <% end %>
+      <div class="form-block">
+        <%= form_for @event_item, url: {action: "update"} do |f| %>
+          <div class="form-group">
+            <%= f.label :name, "name", class: "font-weight-bold" %>:
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :description, "description", class: "font-weight-bold" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
+          </div>
+
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "back", admin_page_path(@event_item.page, tab: "months"), class: "btn btn-secondary" %>
+            <%= link_to "delete", admin_event_item_path(@event_item), method: "delete", data: {confirm: "Are you sure you want to delete '#{@event_item.name.titleize}' ?"}, class: "btn btn-danger pull-md-right" %>
+          </div>
+        <% end %>
+      </div>
 
     </div>
   </div>
-</div>
 
-<div class="col-xs-12">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">produce for <%= @event_item.name %></h4>
-      <%= render partial: "admin/shared/modal" %>
+  <div class="card-span-md-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">produce for <%= @event_item.name %></h3>
+        <%= render partial: "admin/shared/modal" %>
+      </div>
+
+      <div class="card-row produce">
+        <% @event_item.event_produce_items.each do |event_produce_item| %>
+          <div class="produce-item">
+            <p class="text-muted"><%= event_produce_item[:name] %></p>
+          </div>
+        <% end %>
+      </div>
+      
     </div>
-
-    <div class="card-block produce">
-      <% @event_item.event_produce_items.each do |event_produce_item| %>
-
-        <div class="produce-item">
-          <p class="text-muted"><%= event_produce_item[:name] %></p>
-        </div>
-
-      <% end %>
-    </div>
-
   </div>
+
 </div>

@@ -2,39 +2,35 @@
   <div class="heading-block">
     <h1><%= biography[:name] %></h1>
   </div>
-  <div class="featured-row">
+  <div class="card-bs-row">
 
     <% biography[:biography_items].each do |biography_item| %>
 
-    <div class="featured-card-responsive">
-      <div class="featured-card-wrap">
-        <div class="row-no-gutter">
+    <div class="card-span-lg-6">
+      <div class="card-content-wrap">
 
-
-          <div class="featured-card-fluid-block">
-            <h4 class="featured-card-title"><%= biography_item[:name] %></h4>
+          <div class="card-col title">
+            <h4 class="title-text"><%= biography_item[:name] %></h4>
           </div>
 
-          <div class="featured-card-fluid-block">
-            <div class="featured-inner-row">
+          <div class="card-row">
+            <div class="col-to-row-md">
 
-              <div class="featured-card-desc">
-                <p class="text-muted"><%= biography_item[:description] %></p>
+              <div class="inner-row m-r-1">
+                <p class="biography-text"><%= biography_item[:description] %></p>
               </div>
 
-              <div class="biography-card-img-col">
-                <%= image_tag(biography_item.image.biography_thumb.url, class:"img-fluid img-thumbnail") if biography_item.image? %>
+              <div class="card-img-col">
+                <%= image_tag(biography_item.image.biography_thumb.url, class:"biography-img") if biography_item.image? %>
               </div>
 
             </div>
           </div>
 
-          <div class="inner-feature-card-block">
-             <h5 class="inner-card-title">Manage Content</h5>
-            <%= link_to "edit", edit_admin_biography_item_path(biography_item), class: "page-card-link" %>
+          <div class="card-row controls">
+            <%= link_to "edit", edit_admin_biography_item_path(biography_item), class: "page-card-link edit" %>
           </div>
 
-          </div>
         </div>
       </div>
 

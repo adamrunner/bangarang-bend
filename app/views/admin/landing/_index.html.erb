@@ -3,13 +3,13 @@
   </div>
   <div class="row">
 
-  <div class="col-xs-12 col-lg-8">
-    <div class="featured-row">
+  <div class="landing-col">
+    <div class="card-bs-row">
 
-    <div class="landing-card-responsive">
-      <div class="landing-card-wrap">
-        <div class="row-no-gutter">
+    <div class="card-span-12">
+      <div class="card-content-wrap">
 
+        <div class="card-col">
             <% if page.landings.empty? %>
                 <div class="card-block">
                   <p class="lead text-muted">No landing created yet.</p>
@@ -22,11 +22,10 @@
             <% end %>
           </div>
 
-          <div class="inner-landing-card-block">
+          <div class="card-row controls">
             <% if landing != nil %>
-              <h5 class="inner-card-title">Manage Content</h5>
-              <%= link_to "edit landing", edit_admin_landing_path(landing), class: "page-card-link" %>
-              <%= link_to "delete", admin_landing_path(landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "page-card-link" %>
+              <%= link_to "edit", edit_admin_landing_path(landing), class: "page-card-link edit" %>
+              <%= link_to "delete", admin_landing_path(landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "page-card-link delete" %>
             <% end %>
           </div>
 

@@ -1,12 +1,14 @@
 <% breadcrumb :biography_item, @biography_item, "edit" %>
-<div class="row">
+<div class="card-bs-row">
 
+<div class="card-span-lg-6">
+  <div class="card-content-wrap">
 
-<div class="col-xs-12 col-lg-6">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">edit biography</h3>
+    <div class="card-col title">
+      <h3 class="title-text">edit biography</h3>
+    </div>
 
+    <div class="form-block">
       <%= form_for @biography_item, url: {action: "update"} do |f| %>
         <div class="form-group">
           <%= f.label :name, "name", class: "font-weight-bold" %>:
@@ -33,11 +35,13 @@
           <%= f.hidden_field :image_cache %>
         </div>
 
-        <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", admin_page_path(@biography_item.page, tab: "biography"), class: "btn btn-secondary" %>
+        <div class="form-group controls">
+          <%= f.submit "save", class: "btn btn-success" %>
+          <%= link_to "back", admin_page_path(@biography_item.page, tab: "biography"), class: "btn btn-secondary" %>
+        </div>
       <% end %>
-
     </div>
+
   </div>
 </div>
 

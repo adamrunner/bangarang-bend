@@ -19,3 +19,23 @@
     }
   }
 }
+
+.biography-img {
+  @extend .img-thumbnail;
+  @extend .circle;
+  margin: 2rem auto 0 auto;
+  @include media-breakpoint-up(md) {
+    margin: 0 auto 0 auto;
+  }
+}
+
+.biography-text {
+  @extend .card-text;
+  max-width: 31.25rem;
+  @include media-breakpoint-up(md) {
+    align-self: center;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 37.5rem;
+  }
+}

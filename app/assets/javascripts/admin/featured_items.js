@@ -6,8 +6,11 @@ var featuredItemsSort = function() {
   var featuredHead = $('#featured-head');
   var sortOn       = featuredHead.children('.sort-on');
   var sortOff      = featuredHead.children('.sort-off');
+  var childs       = $(el).children();
+  var $cardRow     = $(childs).find('.card-row');
 
   window.order = {}
+  window.order.items = childs
 
   window.sortable = Sortable.create(el, {
     disabled: true
@@ -16,17 +19,15 @@ var featuredItemsSort = function() {
   $.Velocity.RegisterEffect('transitionHeight', {
     defaultDuration: 200,
     calls: [
-        [ { height: '8.333rem' }, 1 ]
+        [ { height: '6.5rem' }, 1 ]
     ],
-    reset: { height: '100%', minHeight: '8.333rem' }
+    reset: { height: '100%', minHeight: '6.5rem' }
   });
 
   // toggle sorting when button clicked
   $('#toggle-sort').click(function (event) {
     // get sorting state, disabled == true || false
     var state = sortable.option("disabled");
-    var childs = $(el).children();
-    window.order.items = childs
 
   if (state == true) {
 
@@ -36,16 +37,15 @@ var featuredItemsSort = function() {
       // enable sorting
       window.sortable.option("disabled", false);
       $handles.addClass('enabled');
-      $(childs).velocity('transitionHeight', {duration: 200, delay: 200}, "easeInOutQuart");
-      $(childs).find('.featured-card-fluid-block').velocity('transition.slideDownOut', {duration: 250});
-      $(childs).find('.inner-feature-card-block').velocity('transition.slideDownOut', {duration: 250});
+      $(childs).velocity('transitionHeight', {duration: 300, delay: 250}, "easeInOutQuart");
+      $cardRow.velocity('transition.slideDownOut', {duration: 300});
     }
   });
 
   $('#save-sort').click(function(event){
     // get sorting state, disabled == true || false
     var state = sortable.option("disabled");
-    var childs = $el.children();
+    // var childs = $el.children();
 
     sortOn.velocity('transition.slideRightBigOut', {duration: 200, stagger: 100, backwards: true});
     sortOff.velocity('transition.slideLeftBigIn', {duration: 300, delay: 500, stagger: 25, display: "flex"});
@@ -62,7 +62,8 @@ var featuredItemsSort = function() {
       submitUpdate = $.post('/admin/featured_items/update_order.json', data);
 
       submitUpdate.fail(function(jqXHR, textStatus, errorThrown) {
-        var errorMsg = JST["admin/f_msg_temp"](jqXHR.responseJSON);
+        var data = jqXHR.responseJSON;
+        Bangarang.trigger( 'flashMessage', data );
       });
 
       submitUpdate.done(function(data, textStatus, jqXHR) {
@@ -74,8 +75,7 @@ var featuredItemsSort = function() {
       window.sortable.option("disabled", true);
       $handles.removeClass('enabled');
       $(childs).velocity({height: '100%'});
-      $(childs).find('.featured-card-fluid-block').velocity('transition.fadeIn');
-      $(childs).find('.inner-feature-card-block').velocity('transition.fadeIn');
+      $cardRow.velocity('transition.fadeIn');
     }
   });
 
@@ -91,8 +91,7 @@ var featuredItemsSort = function() {
       $handles.removeClass('enabled');
       $el.html(childs)
       $(childs).velocity({height: '100%'});
-      $(childs).find('.featured-card-fluid-block').velocity('transition.fadeIn');
-      $(childs).find('.inner-feature-card-block').velocity('transition.fadeIn');
+      $cardRow.velocity('transition.fadeIn');
       }
   });
 

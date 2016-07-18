@@ -1,5 +1,9 @@
 <% breadcrumb :root %>
 
+<div class="heading-block">
+  <h1>Page Index</h1>
+</div>
+
 <div id="admin-pages">
 
   <% @pages.each do |page| %>
@@ -15,18 +19,18 @@
 
           <div class="page-card-block">
             <div class="inner-page-card-block">
-               <h5 class="inner-card-title">Edit Page</h5>
+               <!-- <h6 class="inner-card-title">Edit Page</h6> -->
 
-               <%= link_to "name", edit_admin_page_path(page), class: "page-card-link" %>
+               <%= link_to "name", edit_admin_page_path(page), class: "page-card-link name" %>
 
               <% if page.respond_to?("#{page.content_type}") %>
-                <%= link_to "content", admin_page_path(page), class: "page-card-link" %>
+                <%= link_to "content", admin_page_path(page), class: "page-card-link content" %>
               <% else %>
                 <a class="page-card-link disabled">content</a>
               <% end %>
 
               <% if page.landings.empty? != true %>
-                <%= link_to "Landing", admin_page_path(page, tab: "landing"), class: "page-card-link" %>
+                <%= link_to "Landing", admin_page_path(page, tab: "landing"), class: "page-card-link landing" %>
               <% end %>
 
             </div>

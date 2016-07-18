@@ -11,3 +11,17 @@
   @extend .shadow;
   @extend .hidden;
 }
+
+@mixin link-icon ($icon, $font-size:0.9rem) {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: $font-size;
+  font-family: $font-family-secondary;
+  &::before {
+    display: flex;
+    flex-flow: column nowrap;
+    content: $icon;
+    font-family: Black Tie;
+    margin-right: 0.25rem;
+  }
+}

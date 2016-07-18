@@ -1,21 +1,32 @@
-<div class="card border-inverse">
+<div class="heading-block">
+  <h1>philosophies</h1>
+  <%= link_to "add philosophy", new_admin_page_philosophy_item_path(params[:id]), class: "add" %>
+</div>
 
-  <div class="card-block bg-inverse">
-    <h3 class="card-title">philosophies</h3>
-    <%= link_to "add philosophy", new_admin_page_philosophy_item_path(params[:id]), class: "btn btn-success" %>
-  </div>
+<div class="card-bs-row">
 
-  <div class="list-group list-group-flush">
     <% philosophy_items.each do |philosophy_item| %>
 
-      <div class="list-group-item border-inverse">
-        <h4 class="font-weight-bold text-capitalize"><%= philosophy_item[:name] %></h4>
-        <p class="text-muted"><%= philosophy_item[:description] %></p>
-        <%= link_to "edit", edit_admin_philosophy_item_path(philosophy_item), class: "btn btn-info" %>
-        <%= link_to "delete", admin_philosophy_item_path(philosophy_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{philosophy_item.name.titleize}' ?"}, class: "btn btn-danger pull-md-right" %>
+      <div class="card-span-lg-6">
+        <div class="card-content-wrap">
+
+            <div class="card-col title">
+              <h3 class="title-text"><%= philosophy_item[:name] %></h3>
+            </div>
+
+            <div class="card-col">
+              <h5>Description</h5>
+              <p class="card-text"><%= philosophy_item[:description] %></p>
+            </div>
+
+            <div class="card-row controls">
+                <%= link_to "edit", edit_admin_philosophy_item_path(philosophy_item), class: "card-control edit" %>
+                <%= link_to "delete", admin_philosophy_item_path(philosophy_item), method: "delete", data: {confirm: "Are you sure you want to delete  '#{philosophy_item.name.titleize}' ?"}, class: "card-control delete" %>
+            </div>
+
+        </div>
       </div>
 
     <% end %>
-  </div>
 
 </div>
