@@ -1,5 +1,5 @@
 <div id="featured-head" class="heading-block">
-  <h1><%= featured[:name] %> items</h1>
+  <h1><%= title %></h1>
   <%= link_to "add featured item", new_admin_page_featured_item_path(params[:id]), class: "sort-off add-link" %>
   <a id="toggle-sort" class="sort-off">Change Order</a>
   <a id="save-sort" class="sort-on">save changes</a>
@@ -7,7 +7,7 @@
 </div>
 
 <div id="featured-items" class="card-bs-row">
-  <% featured[:featured_items].each do |featured_item| %>
+  <% featured_items.each do |featured_item| %>
 
   <div class="card-span-lg-6" data-id="<%= featured_item.id %>">
     <div class="card-content-wrap">

@@ -4,18 +4,18 @@
   <div id="mobile-nav"></div>
 
   <div class="block">
-    <div id="landing" style="background-image: url(<%= @landing ? @landing.image.url : '' %>)">
+    <div id="landing" style="background-image: url(<%= @landing ? @landing.image.landing.url : '' %>)">
       <h1><%= @landing ? @landing.heading.html_safe : 'catering & event services' %></h1>
     </div>
   </div>
 
   <div class="block map-block">
-    <a class="map-link" href="https://goo.gl/maps/9sE4fqneCSx" target="_blank">
+    <a class="map-link" href="<%= @food_truck_address.link_url %>" target="_blank">
       <i class="btl bt-map-marker"></i>
       <span class="map-link-text">Get Directions</span>
     </a>
 
-    <span class="map-desc">Come find us at 542 NW Arizona Ave Bend, OR 97701. Tuesday through Saturday 11 to 7</span>
+    <span class="map-desc"><%= @food_truck_address.description %></span>
   </div>
 
   <div id="content"></div>

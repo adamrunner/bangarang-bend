@@ -50,7 +50,7 @@ var featuredItemsSort = function() {
     sortOn.velocity('transition.slideRightBigOut', {duration: 200, stagger: 100, backwards: true});
     sortOff.velocity('transition.slideLeftBigIn', {duration: 300, delay: 500, stagger: 25, display: "flex"});
 
-    if (state == false) {
+    if (state === false) {
       var order = sortable.toArray();
       data = {}
       data.item_order = {}
@@ -86,7 +86,7 @@ var featuredItemsSort = function() {
     sortOn.velocity('transition.slideRightBigOut', {duration: 200, stagger: 100, backwards: true});
     sortOff.velocity('transition.slideLeftBigIn', {duration: 300, delay: 500, stagger: 25, display: "flex"});
 
-    if (state == false) {
+    if (state === false) {
       window.sortable.option("disabled", true);
       $handles.removeClass('enabled');
       $el.html(childs)

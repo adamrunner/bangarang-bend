@@ -46,3 +46,8 @@
     @include make-col-span(8);
   }
 }
+
+.landing-center {
+  justify-content: center;
+  align-items: center;
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703200316) do
+ActiveRecord::Schema.define(version: 20160722233257) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -95,6 +95,27 @@ ActiveRecord::Schema.define(version: 20160703200316) do
 
   add_index "featured_items", ["page_id"], name: "index_featured_items_on_page_id", using: :btree
 
+  create_table "food_truck_addresses", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
+    t.string   "description", limit: 255
+    t.string   "link_url",    limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "options",     limit: 65535
+  end
+
+  add_index "food_truck_addresses", ["page_id"], name: "index_food_truck_addresses_on_page_id", using: :btree
+
+  create_table "food_truck_image_rows", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
+    t.string   "small_image", limit: 255
+    t.string   "large_image", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "food_truck_image_rows", ["page_id"], name: "index_food_truck_image_rows_on_page_id", using: :btree
+
   create_table "images", force: :cascade do |t|
     t.string   "url",            limit: 255
     t.integer  "imageable_id",   limit: 4
@@ -146,6 +167,7 @@ ActiveRecord::Schema.define(version: 20160703200316) do
     t.datetime "updated_at",                                   null: false
     t.text     "copy_text",      limit: 65535
     t.boolean  "show_copy_text",               default: false
+    t.text     "content",        limit: 65535
   end
 
   create_table "philosophy_items", force: :cascade do |t|

@@ -7,10 +7,14 @@
   overflow: hidden;
   margin: 0 auto;
   min-height: 18rem;
-  height: 50vh;
   background-position: center;
   background-size: cover;
+  height: 25rem;
+  @include media-breakpoint-up(md) {
+    height: 36.57rem;
+  }
   @include media-breakpoint-up(lg) {
+    height: 35rem;
     padding: 2rem;
   }
   h1 {

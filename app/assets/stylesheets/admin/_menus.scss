@@ -218,3 +218,24 @@ $menu-item-primary-bg-color: #f1f1f1;
   font-weight: 300;
   letter-spacing: 2px;
 }
+
+.details-list {
+  li {
+    color: $color-three;
+    letter-spacing: 1px;
+    padding: 0.25rem;
+    margin-left: 1rem;
+    border-bottom: solid 1px transparentize($color-three, 0.8);
+    text-transform: capitalize;
+    @include media-breakpoint-up(xl) {
+      width: 60%;
+      margin-right: auto;
+    }
+  }
+  span {
+    font-weight: bold;
+    color: $gray;
+    display: inline-block;
+    width: 10rem;
+  }
+}

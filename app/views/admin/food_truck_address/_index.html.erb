@@ -1,0 +1,30 @@
+<div class="heading-block">
+  <h1>Food Truck</h1>
+</div>
+<div class="card-bs-row">
+
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+        <div class="card-col title">
+          <h3 class="title-text">Address link</h3>
+        </div>
+
+        <div class="card-col">
+          <h5>Description</h5>
+          <p class="card-text"><%= food_truck_address[:description] %></p>
+        </div>
+
+        <div class="card-col">
+          <h5>Google Maps Link</h5>
+          <p class="card-text"><%= food_truck_address[:link_url] %></p>
+        </div>
+
+        <div class="card-row controls">
+          <%= link_to "edit", edit_admin_food_truck_address_path(food_truck_address), class: "page-card-link edit" %>
+        </div>
+
+      </div>
+    </div>
+
+</div>

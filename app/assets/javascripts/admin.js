@@ -18,3 +18,4 @@
 //= require Sortable.min
 //= require admin/bangarang_admin
 //= require admin/featured_items
+//= require admin/food_truck

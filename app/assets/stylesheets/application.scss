@@ -9,9 +9,12 @@
 @import 'pages/pages';
 
 // Global Styling
+
 html {
   position: relative;
   overflow-x: hidden;
+  background: #262c33 url("/images/background/background_main.jpg") no-repeat center center fixed;
+  background-size: cover;
   @include media-breakpoint-up(xs) {
     font-size: $font-size-xs;
   }
@@ -28,16 +31,13 @@ body {
   position: relative;
   font-size: inherit !important;
   padding-top: $navbar-height + 1rem;
-  background-image: url("/images/background/background_main.jpg");
+  background: transparent;
   @include media-breakpoint-down(sm) {
     background-size: 100%;
   }
 }
 .container-main {
   @extend .container;
-  @media (min-width: 2000px) {
-    max-width: 1366px;
-  }
 }
 #main-block {
   position: relative;
@@ -89,9 +89,7 @@ em {
 .bg-transparent {
   background-color: transparent;
 }
-.border-inverse {
-  border-color: #000;
-}
+
 .hidden {
   opacity: 0;
 }
@@ -202,4 +200,82 @@ em {
     padding: 0 1rem;
     font-size: 1.15rem;
   }
+}
+
+.card-text {
+  font-weight: 300;
+  color: $color-two;
+}
+
+.food-truck-img {
+  max-height: 400px;
+  overflow-x: hidden;
+  margin-bottom: $grid-gutter-width;
+  img {
+    border: solid 1px #000;
+  }
+}
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 -2rem;
+}
+.img-block {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.25rem;
+  height: 100%;
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    padding: 0.5rem;
+  }
+}
+
+.food-truck-images {
+  margin: 0 -0.5rem;
+  padding: 0rem;
+  @include media-breakpoint-up(md) {
+    margin: 0;
+    padding: 1.25rem;
+  }
+}
+
+.food-truck-wrap {
+  padding: 0.25rem;
+  background: #000;
+  height: 100%;
+  @include media-breakpoint-up(md) {
+    padding: 0.5rem;
+  }
+}
+
+.small-col {
+  float: left;
+  position: relative;
+  width: 40%;
+  background: transparent;
+  .small {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
+.large-col {
+  float: left;
+  position: relative;
+  width: 60%;
+  background: transparent;
+  .large {
+    width: 100%;
+    padding-bottom: 66.667%;
+  }
+}
+
+.blockquote {
+  border-width: 2px;
 }

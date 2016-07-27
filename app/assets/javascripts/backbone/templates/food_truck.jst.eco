@@ -2,9 +2,59 @@
   <h1><%= @page.get('link_name') %></h1>
 </div>
 <div class="card-block">
-  <p>Nullam sapien arcu, lacinia ut venenatis aliquam, aliquam eget neque. Sed tristique turpis orci, ut volutpat ligula fermentum sit amet. Sed at tristique arcu. Donec at ex ut nibh rhoncus rutrum. Praesent dictum id mauris et elementum. Cras lacinia placerat pellentesque. Cras et sagittis libero. Nunc fringilla ligula ut nunc lacinia, ut faucibus diam congue. Sed tempus ultricies mattis. Suspendisse pulvinar, nulla eu dignissim dictum, ex massa egestas elit, sed iaculis ex leo vel orci. Proin pretium tellus in purus finibus interdum. Quisque lobortis augue at bibendum dapibus. Praesent eget massa ut lectus vulputate aliquam. Proin augue justo, fermentum at dignissim molestie, ornare ut ante. In suscipit, est eget condimentum mollis, magna est tincidunt urna, vel tempor sapien sem ac ipsum. Morbi eget odio vel eros dignissim condimentum.</p>
+  <p class="card-text">
+    Book the BANGARANG Mobile Kitchen for your next event.
+    We will custom build an organic, responsibly sourced hyper-seasonal menu for you. Whether you are hosting an intimate party for friends and family at your home or you have a hundred hard working employees you want to treat to lunch we will work out a service that caters specifically to you.
+  </p>
 
-<p>Phasellus porta lorem a felis fermentum, sit amet vulputate eros cursus. Sed id dui egestas, porttitor nisi vel, iaculis purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam tincidunt, libero id consectetur molestie, urna ex gravida urna, eget tincidunt orci purus a massa. Suspendisse leo nisi, condimentum ac gravida pharetra, ultrices non ante. Vivamus augue quam, imperdiet in lorem et, dapibus laoreet nisl. Aliquam quis diam justo. Mauris bibendum felis id ligula aliquam imperdiet. Curabitur eget metus non mi ullamcorper dignissim. Donec massa massa, bibendum id pharetra quis, posuere id odio.</p>
+  <p class="card-text">
+    With the mobile kitchen you don’t have to worry about all of the logistics of a typical catered event. You simply give us a time and place and we roll up ready to BANGARANG!
+  </p>
 
-<p>Sed ac ipsum posuere, consectetur massa vel, feugiat sapien. Aliquam semper erat a metus tempor, non rhoncus est fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc porta enim eget mi pretium dapibus. In viverra, dui a vestibulum mollis, tellus erat condimentum odio, vitae tincidunt nulla lectus ultrices tellus. Sed dignissim tellus mi, nec porttitor felis placerat ac. Aenean quam enim, imperdiet quis luctus at, finibus sit amet tortor. Ut eu purus at metus consequat tincidunt. Nullam imperdiet sollicitudin ligula, id dignissim orci maximus non. Aliquam erat volutpat. Praesent nec accumsan odio, vitae accumsan diam.</p>
+  <p class="card-text">
+    (Minimum order amounts apply)
+  </p>
+
+</div>
+
+<div class="card-block clearfix food-truck-images">
+  <div class="food-truck-wrap clearfix">
+
+    <div class="small-col">
+      <div class="small">
+        <img src="images/food-truck-1.jpg" class="img-block" alt="" />
+      </div>
+    </div>
+
+    <div class="large-col">
+      <div class="large">
+        <img src="images/food-truck-2.jpg" class="img-block" alt="" />
+      </div>
+    </div>
+
+    <div class="large-col">
+      <div class="large">
+        <img src="images/food-truck-5.jpg" class="img-block" alt="" />
+      </div>
+    </div>
+
+    <div class="small-col">
+      <div class="small">
+        <img src="images/food-truck-4.jpg" class="img-block" alt="" />
+      </div>
+    </div>
+
+    <div class="small-col">
+      <div class="small">
+        <img src="images/food-truck-3.jpg" class="img-block" alt="" />
+      </div>
+    </div>
+
+    <div class="large-col">
+      <div class="large">
+        <img src="images/food-truck-6.jpg" class="img-block" alt="" />
+      </div>
+    </div>
+
+  </div>
 </div>

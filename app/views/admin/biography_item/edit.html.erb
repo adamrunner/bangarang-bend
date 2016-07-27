@@ -1,48 +1,48 @@
 <% breadcrumb :biography_item, @biography_item, "edit" %>
 <div class="card-bs-row">
 
-<div class="card-span-lg-6">
-  <div class="card-content-wrap">
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
 
-    <div class="card-col title">
-      <h3 class="title-text">edit biography</h3>
-    </div>
+      <div class="card-col title">
+        <h3 class="title-text">edit biography</h3>
+      </div>
 
-    <div class="form-block">
-      <%= form_for @biography_item, url: {action: "update"} do |f| %>
-        <div class="form-group">
-          <%= f.label :name, "name", class: "font-weight-bold" %>:
-          <%= f.text_field :name, class: "form-control" %>
-        </div>
+      <div class="form-block">
+        <%= form_for @biography_item, url: {action: "update"} do |f| %>
+          <div class="form-group">
+            <%= f.label :name, "name", class: "font-weight-bold" %>:
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :description, "description", class: "font-weight-bold" %>:
-          <%= f.text_area :description, rows: 6, class: "form-control" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :description, "description", class: "font-weight-bold" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
+          </div>
 
-        <% if @biography_item.image? %>
-          <figure class="form-group">
-            <%= image_tag(@biography_item.image.biography_thumb.url, class:"figure-img") %>
-            <%= link_to "delete image", admin_delete_biography_img_path(@biography_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@biography_item[:image]}?"},  class: "btn btn-danger pull-xs-right" %>
-            <figcaption class="figure-caption"><%= @biography_item[:image] %></figcaption>
-          </figure>
+          <% if @biography_item.image? %>
+            <figure class="form-group">
+              <%= image_tag(@biography_item.image.biography_thumb.url, class:"figure-img") %>
+              <%= link_to "delete image", admin_delete_biography_img_path(@biography_item), method: "delete", data: {confirm: "Are you sure you want to delete #{@biography_item[:image]}?"},  class: "btn btn-danger pull-xs-right" %>
+              <figcaption class="figure-caption"><%= @biography_item[:image] %></figcaption>
+            </figure>
 
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :image, "change image", class: "font-weight-bold" %>:
+            <%= f.file_field :image, class: "form-control-file" %>
+            <%= f.hidden_field :image_cache %>
+          </div>
+
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "back", admin_page_path(@biography_item.page, tab: "biography"), class: "btn btn-secondary" %>
+          </div>
         <% end %>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :image, "change image", class: "font-weight-bold" %>:
-          <%= f.file_field :image, class: "form-control-file" %>
-          <%= f.hidden_field :image_cache %>
-        </div>
-
-        <div class="form-group controls">
-          <%= f.submit "save", class: "btn btn-success" %>
-          <%= link_to "back", admin_page_path(@biography_item.page, tab: "biography"), class: "btn btn-secondary" %>
-        </div>
-      <% end %>
     </div>
-
   </div>
-</div>
 
 </div>

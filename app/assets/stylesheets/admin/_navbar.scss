@@ -1,11 +1,12 @@
 .navbar {
   background: $gray-dark;
   border-bottom: solid 1px #555;
-
   .navbar-brand {
     @extend .nav-link;
     @extend .nav-item;
     padding: 0.425rem 0;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
   }
   .nav-link {
     text-transform: uppercase;
@@ -13,15 +14,28 @@
     flex-flow: row nowrap;
     align-items: center;
     color: #ccc;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
     &:hover {
       color: $color-three;
     }
     i {
-      font-size: 1.35rem;
-      margin-right: 0.35rem;
+      margin-right: 0.25rem;
       margin-bottom: 0.1rem;
     }
   }
+}
+
+.admin-link {
+  @extend .nav-item;
+  @extend .nav-link;
+  font-size: 90%;
+  letter-spacing: 1px;
+  &:nth-of-type(2) {
+    margin-left: auto !important;
+  }
+}
+
+.nav.navbar-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }

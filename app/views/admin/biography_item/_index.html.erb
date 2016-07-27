@@ -1,38 +1,37 @@
+<div class="heading-block">
+  <h1><%= title %></h1>
+</div>
+<div class="card-bs-row">
 
-  <div class="heading-block">
-    <h1><%= biography[:name] %></h1>
-  </div>
-  <div class="card-bs-row">
+  <% biography_items.each do |biography_item| %>
 
-    <% biography[:biography_items].each do |biography_item| %>
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
 
-    <div class="card-span-lg-6">
-      <div class="card-content-wrap">
-
-          <div class="card-col title">
-            <h4 class="title-text"><%= biography_item[:name] %></h4>
-          </div>
-
-          <div class="card-row">
-            <div class="col-to-row-md">
-
-              <div class="inner-row m-r-1">
-                <p class="biography-text"><%= biography_item[:description] %></p>
-              </div>
-
-              <div class="card-img-col">
-                <%= image_tag(biography_item.image.biography_thumb.url, class:"biography-img") if biography_item.image? %>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-row controls">
-            <%= link_to "edit", edit_admin_biography_item_path(biography_item), class: "page-card-link edit" %>
-          </div>
-
+        <div class="card-col title">
+          <h4 class="title-text"><%= biography_item[:name] %></h4>
         </div>
-      </div>
 
-    <% end %>
-  </div>
+        <div class="card-row">
+          <div class="col-to-row-md">
+
+            <div class="inner-row m-r-1">
+              <p class="biography-text"><%= biography_item[:description] %></p>
+            </div>
+
+            <div class="card-img-col">
+              <%= image_tag(biography_item.image.biography_thumb.url, class:"biography-img") if biography_item.image? %>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card-row controls">
+          <%= link_to "edit", edit_admin_biography_item_path(biography_item), class: "page-card-link edit" %>
+        </div>
+
+      </div>
+    </div>
+
+  <% end %>
+</div>

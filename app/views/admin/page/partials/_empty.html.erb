@@ -1,0 +1,8 @@
+<div class="heading-block">
+  <h1><%= page.link_name %></h1>
+</div>
+
+<div class="jumbotron text-capitalize">
+  <h2>No <%= content_type %> Found</h2>
+  <%= link_to "add new #{content_type.singularize}", link, class: 'add-link' %>
+</div>

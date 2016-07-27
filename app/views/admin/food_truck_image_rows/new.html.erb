@@ -1,0 +1,83 @@
+<div class="card-bs-row">
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">new food truck image row</h3>
+      </div>
+
+      <div class="form-block ft-container">
+        <%= form_for :food_truck_image_row, url: admin_page_food_truck_image_rows_path do |f| %>
+
+          <%# wrapping %>
+          <div class="card-col col-wrap-sm p-a-0">
+            <div class="card-col small-input-col p-a-0">
+              <h5>Small Image</h5>
+            </div>
+
+
+            <div class="card-col small-input-col p-a-0">
+              <%= f.label :small_image, "small image", for: "ft-img-small", class: "file" do %>
+                <%= f.file_field :small_image, id: "ft-img-small", class: "form-control-file" %>
+                <span id="ft-file-sm" class="file-custom content-hide">Choose File...</span>
+              <% end %>
+            </div>
+
+            <div class="card-col small-img-col b-a-1 p-a-0">
+              <div class="small-img"></div>
+              <img id="ft-prev-small" src="#" class="small-img-thumb hidden"></img>
+              <div class="icon-backdrop">
+                <i class="btl bt-3x bt-photo"></i>
+              </div>
+            </div>
+
+            <div class="card-col small-input-col p-a-0">
+              <small class="text-primary">Image will be scaled to 418x418</small>
+            </div>
+          </div>
+          <%# /wrapping %>
+
+          <%# wrapping %>
+          <div class="card-col col-wrap-lg p-a-0">
+            <div class="card-col large-input-col p-a-0">
+              <h5>Large Image</h5>
+            </div>
+
+            <div class="card-col large-input-col p-a-0">
+              <%= f.label :large_image, "large image", for: "ft-img-large", class: "file" do %>
+                <%= f.file_field :large_image, id: "ft-img-large", class: "form-control-file" %>
+                <span id="ft-file-lg" class="file-custom content-hide">Choose File...</span>
+              <% end %>
+            </div>
+
+            <div class="card-col large-img-col b-a-1 p-a-0">
+              <div class="large-img"></div>
+              <img id="ft-prev-large" src="#" class="large-img-thumb hidden"></img>
+              <div class="icon-backdrop">
+                <i class="btl bt-3x bt-photo"></i>
+              </div>
+            </div>
+
+            <div class="card-col large-input-col p-a-0">
+              <small class="text-primary">Image will be scaled to 626x418</small>
+            </div>
+          </div>
+          <%# /wrapping %>
+
+          <div class="form-group controls p-t-1">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "back", :back, class: "btn btn-secondary" %>
+          </div>
+
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    var imagePreview = new FoodTruck();
+  });
+</script>

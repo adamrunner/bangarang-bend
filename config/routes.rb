@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :event_item, only: [:new, :create]
       resources :event_produce_item, only: [:new, :create]
       resources :landing, only: [:new, :create]
+      resources :food_truck_image_rows, only: [:new, :create]
     end
 
     resources :biography_item, only: [:edit, :update, :destroy]
@@ -61,6 +62,9 @@ Rails.application.routes.draw do
     end
 
     resources :menu_item, only: [:edit, :update, :destroy]
+
+    resources :food_truck_address, only: [:edit, :update, :destroy]
+    resources :food_truck_image_rows, only: [:edit, :update, :destroy]
 
   end
 

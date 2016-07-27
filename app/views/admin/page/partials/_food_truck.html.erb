@@ -1,0 +1,24 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link <%= @tab == "food_truck_image_rows" ? "active" : "" %>" data-toggle="tab" href="#foodtruck-images-tab" role="tab">Images</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= @tab == "food_truck_address" ? "active" : "" %>" data-toggle="tab" href="#foodtruck-address-tab" role="tab">Address</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+  <div class="tab-pane <%= @tab == "food_truck_image_rows" ? "active" : "" %>" id="foodtruck-images-tab" role="tabpanel">
+    <% if @page_contents[:food_truck_image_rows].empty? %>
+      <%= render partial: "admin/page/partials/empty", locals: { page: @page, content_type: "food truck image rows", link: new_admin_page_food_truck_image_row_path(@page) } %>
+    <% else %>
+      <%= render partial: "admin/food_truck_image_rows/index", locals: { food_truck_image_rows: @page_contents[:food_truck_image_rows] } %>
+    <% end %>
+  </div>
+
+  <div class="tab-pane <%= @tab == "food_truck_address" ? "active" : "" %>" id="foodtruck-address-tab" role="tabpanel">
+    <%= render partial: "admin/food_truck_address/index", locals: { food_truck_address: @page_contents[:food_truck_address] } %>
+  </div>
+
+</div>

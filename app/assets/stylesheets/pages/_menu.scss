@@ -27,10 +27,6 @@
   .card-block {
     @extend .bg-transparent;
   }
-  .list-group-fluid, .list-group-item {
-    @extend .border-inverse;
-    background-color: #fafafa;
-  }
 }
 
 .menu-inner-block {

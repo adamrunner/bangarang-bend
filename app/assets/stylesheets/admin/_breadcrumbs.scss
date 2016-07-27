@@ -1,0 +1,57 @@
+.breadcrumb {
+  font-family: $font-family-secondary;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  li {
+    height: 2rem;
+    padding-top: 0.15rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    &.active {
+      color: $color-three;
+    }
+    a {
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+    &.active:nth-child(1) {
+      &::before {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        content: "\F0CC";
+        font-family: Black Tie;
+        font-size: 1.4rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.15rem;
+      }
+    }
+    &:nth-child(1) {
+      a {
+        &::before {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          content: "\F0CC";
+          font-family: Black Tie;
+          font-size: 1.4rem;
+          margin-right: 0.5rem;
+          margin-bottom: 0.15rem;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb-block {
+  @extend .b-a-1;
+  background: #fff;
+}

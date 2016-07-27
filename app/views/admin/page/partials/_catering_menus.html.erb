@@ -5,7 +5,7 @@
 
 <div class="card-bs-row">
 
-  <% @page_contents.each do |catering_menu| %>
+  <% @page_contents[:catering_menus].each do |catering_menu| %>
     <%= render partial: "admin/catering_menu/partials/show", locals: {catering_menu: catering_menu} %>
   <% end %>
 

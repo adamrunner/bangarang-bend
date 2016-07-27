@@ -19,18 +19,17 @@
 
           <div class="page-card-block">
             <div class="inner-page-card-block">
-               <!-- <h6 class="inner-card-title">Edit Page</h6> -->
 
-               <%= link_to "name", edit_admin_page_path(page), class: "page-card-link name" %>
+              <%= link_to "name", edit_admin_page_path(page), class: "page-card-link name" %>
 
-              <% if page.respond_to?("#{page.content_type}") %>
-                <%= link_to "content", admin_page_path(page), class: "page-card-link content" %>
-              <% else %>
-                <a class="page-card-link disabled">content</a>
-              <% end %>
+              <%= link_to "content", admin_page_path(page), class: "page-card-link content" %>
 
               <% if page.landings.empty? != true %>
                 <%= link_to "Landing", admin_page_path(page, tab: "landing"), class: "page-card-link landing" %>
+              <% end %>
+
+              <% if page.food_truck_address != nil %>
+                <%= link_to "Address", admin_page_path(page, tab: 'food_truck_address'), class: "page-card-link address" %>
               <% end %>
 
             </div>
