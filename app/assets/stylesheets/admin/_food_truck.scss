@@ -6,6 +6,7 @@
   }
 }
 .small-img-col {
+  @extend .b-a-1;
   position: relative;
   width: calc(40% - 0.5rem);
   @include media-breakpoint-up(md) {
@@ -56,6 +57,7 @@
 }
 
 .large-img-col {
+  @extend .b-a-1;
   position: relative;
   width: calc(60% - 0.5rem);
   @include media-breakpoint-up(md) {
@@ -149,4 +151,22 @@
   align-items: center;
   z-index: 10;
   color: lighten($gray, 50%);
+}
+
+.active-address {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $brand-success;
+  float: right;
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
+}
+
+.disabled-address {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ccc;
+  float: right;
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
 }

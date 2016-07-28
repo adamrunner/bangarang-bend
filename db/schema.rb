@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722233257) do
+ActiveRecord::Schema.define(version: 20160727210222) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -99,9 +99,10 @@ ActiveRecord::Schema.define(version: 20160722233257) do
     t.integer  "page_id",     limit: 4
     t.string   "description", limit: 255
     t.string   "link_url",    limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.text     "options",     limit: 65535
+    t.boolean  "active",                    default: false
   end
 
   add_index "food_truck_addresses", ["page_id"], name: "index_food_truck_addresses_on_page_id", using: :btree

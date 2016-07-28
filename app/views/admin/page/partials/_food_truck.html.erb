@@ -5,6 +5,9 @@
   <li class="nav-item">
     <a class="nav-link <%= @tab == "food_truck_address" ? "active" : "" %>" data-toggle="tab" href="#foodtruck-address-tab" role="tab">Address</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link <%= @tab == "page_description" ? "active" : "" %>" data-toggle="tab" href="#page-description-tab" role="tab">Description</a>
+  </li>
 </ul>
 
 <div class="tab-content">
@@ -18,7 +21,11 @@
   </div>
 
   <div class="tab-pane <%= @tab == "food_truck_address" ? "active" : "" %>" id="foodtruck-address-tab" role="tabpanel">
-    <%= render partial: "admin/food_truck_address/index", locals: { food_truck_address: @page_contents[:food_truck_address] } %>
+    <%= render partial: "admin/food_truck_addresses/index", locals: { food_truck_addresses: @page_contents[:food_truck_addresses] } %>
+  </div>
+
+  <div class="tab-pane <%= @tab == "page_description" ? "active" : "" %>" id="page-description-tab" role="tabpanel">
+    <%= render partial: "admin/page/edit", locals: { page: @page } %>
   </div>
 
 </div>

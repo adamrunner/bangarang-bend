@@ -13,7 +13,7 @@ class FoodTruckLargeImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "#{Rails.root}/public/images/uploads/food_truck"
+    "#{Rails.root}/public/images/uploads/ft_address_#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -42,7 +42,7 @@ class FoodTruckLargeImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-    process :resize_to_fit => [450, 300]
+    process :resize_to_fill => [450, 300]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

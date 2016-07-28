@@ -1,25 +1,28 @@
-<% breadcrumb :page, @page, nil, 'edit' %>
+<div class="heading-block">
+  <h1><%= page.name.titleize %></h1>
+</div>
+
 <div class="card-bs-row">
 
   <div class="card-span-md-6">
     <div class="card-content-wrap">
 
       <div class="card-col title">
-        <h3 class="title-text">edit <%= @page.link_name %> page</h3>
+        <h3 class="title-text">edit <%= page.link_name %> page</h3>
       </div>
 
       <div class="form-block">
-        <%= form_for @page, url: {action: "update"} do |f| %>
+        <%= form_for page, url: {action: "update"} do |f| %>
           <div class="form-group">
             <p class="card-text text-primary"><strong class="note">Note</strong>: Please see important information section for details.<p/>
-            <%= f.label :link_name, "Name", class: "font-weight-bold" %>:
+            <%= f.label :link_name, "Name" %>
             <%= f.text_field :link_name, class: "form-control" %>
           </div>
 
-          <% if @page.show_copy_text %>
+          <% if page.show_copy_text %>
             <div class="form-group">
-              <%= f.label :copy_text, "Description", class: "font-weight-bold" %>:
-              <%= f.text_area :copy_text, rows: 6, value: @page.format_edit_text, class: "form-control" %>
+              <%= f.label :copy_text, "Description" %>
+              <%= f.text_area :copy_text, rows: 6, value: page.format_edit_text, class: "form-control" %>
             </div>
           <% end %>
 

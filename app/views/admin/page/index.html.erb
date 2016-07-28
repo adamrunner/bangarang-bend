@@ -20,7 +20,7 @@
           <div class="page-card-block">
             <div class="inner-page-card-block">
 
-              <%= link_to "name", edit_admin_page_path(page), class: "page-card-link name" %>
+              <%= link_to "name / desc", edit_admin_page_path(page), class: "page-card-link name" %>
 
               <%= link_to "content", admin_page_path(page), class: "page-card-link content" %>
 
@@ -28,7 +28,7 @@
                 <%= link_to "Landing", admin_page_path(page, tab: "landing"), class: "page-card-link landing" %>
               <% end %>
 
-              <% if page.food_truck_address != nil %>
+              <% if !page.food_truck_addresses.empty? %>
                 <%= link_to "Address", admin_page_path(page, tab: 'food_truck_address'), class: "page-card-link address" %>
               <% end %>
 

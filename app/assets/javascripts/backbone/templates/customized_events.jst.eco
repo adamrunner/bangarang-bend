@@ -3,8 +3,8 @@
 </div>
 
 <div class="card-block">
-  <div class="blockquote">
-    <p id="events-text"></p>
+  <div class="blockquote-copy-text">
+    <p id="copy-text" class="card-text"></p>
   </div>
 </div>
 

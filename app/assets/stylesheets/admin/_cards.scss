@@ -51,6 +51,7 @@
 }
 
 .card-content-wrap {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
@@ -97,11 +98,12 @@
   &:last-of-type {
     margin-bottom: 0rem;
   }
+  &.title {
+    justify-content: flex-start;
+    align-items: center;
+  }
   h6 {
     width: 100%;
-  }
-  &.half {
-    width: 50%;
   }
 }
 
@@ -163,6 +165,7 @@
       &.controls {
         margin-top: auto;
         margin-bottom: 0;
+        padding-top: 1rem;
       }
     }
     label {
@@ -193,8 +196,10 @@
 }
 
 .controls {
+  border-top: dashed 1px transparentize($color-three, 0.8);
   flex-grow: 0;
   margin-top: auto;
+  width: 100%;
 }
 
 strong.note {

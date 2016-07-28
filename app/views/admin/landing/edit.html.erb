@@ -37,7 +37,7 @@
 
         <div class="form-group controls">
           <%= f.submit "save", class: "btn btn-success" %>
-          <%= link_to "back", admin_page_path(@landing.page, tab: "landing"), class: "btn btn-secondary" %>
+          <%= link_to "cancel", admin_page_path(@landing.page, tab: "landings"), class: "btn btn-secondary" %>
           <%= link_to "delete", admin_landing_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "btn btn-danger pull-md-right" %>
         </div>
       <% end %>

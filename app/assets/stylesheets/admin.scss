@@ -72,7 +72,7 @@ label {
 .link-example-list {
   font-size: 110%;
   li {
-    border-bottom: 1px solid transparentize($color-three, 0.9);
+    border-bottom: 1px dashed transparentize($color-three, 0.8);
     padding-top: 0.5rem;
     padding-bottom: 0.25rem;
     @include media-breakpoint-up(md) {
@@ -268,4 +268,8 @@ label {
 
 .address {
   @include link-icon("\F0CA");
+}
+
+.check-circle {
+  @include link-icon("\F013");
 }

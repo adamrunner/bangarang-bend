@@ -8,8 +8,8 @@ class BangarangBend.Views.FoodTruck extends Backbone.View
 
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: "food_truck")
-    @render()
 
   render: ->
-    @$el.html(@template(page: @page))
+    @$el.html(@template(page: @page, foodTruckImageRows: @collection))
+    @$("#copy-text").html(@page.get("copy_text"))
     @

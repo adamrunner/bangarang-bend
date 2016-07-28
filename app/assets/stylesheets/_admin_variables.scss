@@ -45,7 +45,7 @@ $brand-danger              : darken($brand-secondary, 10%) !default;
 // #NOTE custom variables
 
 $font-secondary: 'Oswald', sans-serif !default;
-$font-primary:   'Roboto', sans-serif !default;
+$font-primary:   'Roboto Condensed', sans-serif !default;
 
 $dark-transparent: transparentize(#222, 0.50) !default;
 
@@ -483,7 +483,7 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 // Jumbotron
 
 $jumbotron-padding:              2rem !default;
-$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-bg:                   #fff !default;
 
 
 // Form states and alerts

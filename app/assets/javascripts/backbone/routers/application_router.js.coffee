@@ -36,7 +36,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     @swapPage(menu)
 
   foodTruckPage: ->
-    foodTruck = new BangarangBend.Views.FoodTruck()
+    foodTruck = new BangarangBend.Views.FoodTruck(collection: BangarangBend.foodTruckImageRows)
     @swapPage(foodTruck)
 
   swapPage: (view) ->

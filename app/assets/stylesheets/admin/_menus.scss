@@ -176,17 +176,22 @@ $menu-item-primary-bg-color: #f1f1f1;
   display: flex;
   flex-flow: row wrap;
   width: 100%;
-  height: 100%;
+  height: 2rem;
+  // flex: 1 1;
   &:nth-of-type(2) {
+    flex: 1 0;
+    // height: 100%;
     padding-bottom: 2rem;
   }
   span, strong {
     letter-spacing: 2px;
-    padding: 0.5rem 0;
+    // padding: 0.5rem 0;
     border-bottom: solid 1px transparentize($color-three, 0.8);
     display: flex;
     flex-flow: row nowrap;
     width: 25%;
+    height: auto;
+    align-items: center;
     &.actions {
       color: $gray;
       align-items: center;
@@ -225,7 +230,7 @@ $menu-item-primary-bg-color: #f1f1f1;
     letter-spacing: 1px;
     padding: 0.25rem;
     margin-left: 1rem;
-    border-bottom: solid 1px transparentize($color-three, 0.8);
+    border-bottom: dashed 1px transparentize($color-three, 0.8);
     text-transform: capitalize;
     @include media-breakpoint-up(xl) {
       width: 60%;

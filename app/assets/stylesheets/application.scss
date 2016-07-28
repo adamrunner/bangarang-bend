@@ -25,6 +25,14 @@ html {
     font-size: $font-size-lg;
   }
 }
+
+@-moz-document url-prefix() {
+  html {
+    background: #262c33 url("/images/background/background_main.jpg") repeat center center;
+    background-size: auto;
+  }
+}
+
 body {
   font-weight: 300;
   font-family: $font-primary;
@@ -278,4 +286,10 @@ em {
 
 .blockquote {
   border-width: 2px;
+}
+
+.blockquote-copy-text {
+  @extend .blockquote;
+  margin-left: 0.5rem;
+  border-color: darken(#877674, 30%);
 }

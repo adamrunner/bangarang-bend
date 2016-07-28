@@ -64,4 +64,11 @@ json.data do
     json.name philosophy_item.name
     json.description philosophy_item.description
   end
+
+  json.food_truck_image_rows @food_truck_image_rows do |food_truck_image_row|
+    json.id food_truck_image_row.id
+    json.small_image food_truck_image_row.small_image.small_image.url
+    json.large_image food_truck_image_row.large_image.large_image.url
+  end
+
 end

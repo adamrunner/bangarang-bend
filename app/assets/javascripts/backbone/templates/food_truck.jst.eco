@@ -1,60 +1,47 @@
 <div class="card-block">
   <h1><%= @page.get('link_name') %></h1>
 </div>
+
 <div class="card-block">
-  <p class="card-text">
-    Book the BANGARANG Mobile Kitchen for your next event.
-    We will custom build an organic, responsibly sourced hyper-seasonal menu for you. Whether you are hosting an intimate party for friends and family at your home or you have a hundred hard working employees you want to treat to lunch we will work out a service that caters specifically to you.
-  </p>
-
-  <p class="card-text">
-    With the mobile kitchen you don’t have to worry about all of the logistics of a typical catered event. You simply give us a time and place and we roll up ready to BANGARANG!
-  </p>
-
-  <p class="card-text">
-    (Minimum order amounts apply)
-  </p>
-
+  <div class="blockquote-copy-text">
+    <p id="copy-text" class="card-text"></p>
+  </div>
 </div>
 
 <div class="card-block clearfix food-truck-images">
   <div class="food-truck-wrap clearfix">
 
-    <div class="small-col">
-      <div class="small">
-        <img src="images/food-truck-1.jpg" class="img-block" alt="" />
-      </div>
-    </div>
+    <% @foodTruckImageRows.forEach (imageRow, index) ->: %>
 
-    <div class="large-col">
-      <div class="large">
-        <img src="images/food-truck-2.jpg" class="img-block" alt="" />
-      </div>
-    </div>
+      <% if imageRow.isEven(index) == true :%>
+        <div class="small-col">
+          <div class="small">
+            <img src="<%= imageRow.get('small_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
 
-    <div class="large-col">
-      <div class="large">
-        <img src="images/food-truck-5.jpg" class="img-block" alt="" />
-      </div>
-    </div>
+        <div class="large-col">
+          <div class="large">
+            <img src="<%= imageRow.get('large_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
+      <% end %>
 
-    <div class="small-col">
-      <div class="small">
-        <img src="images/food-truck-4.jpg" class="img-block" alt="" />
-      </div>
-    </div>
+      <% if imageRow.isEven(index) == false :%>
+        <div class="large-col">
+          <div class="large">
+            <img src="<%= imageRow.get('large_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
 
-    <div class="small-col">
-      <div class="small">
-        <img src="images/food-truck-3.jpg" class="img-block" alt="" />
-      </div>
-    </div>
+        <div class="small-col">
+          <div class="small">
+            <img src="<%= imageRow.get('small_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
+      <% end %>
 
-    <div class="large-col">
-      <div class="large">
-        <img src="images/food-truck-6.jpg" class="img-block" alt="" />
-      </div>
-    </div>
+    <% end %>
 
   </div>
 </div>

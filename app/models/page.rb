@@ -9,7 +9,7 @@ class Page < ActiveRecord::Base
   has_many :service_items
   has_many :landings
   has_many :food_truck_image_rows
-  has_one  :food_truck_address
+  has_many :food_truck_addresses
   before_save :link_name_lowercase,
               :format_text
 

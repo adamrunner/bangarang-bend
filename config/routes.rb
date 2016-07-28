@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :event_item, only: [:new, :create]
       resources :event_produce_item, only: [:new, :create]
       resources :landing, only: [:new, :create]
+      resources :food_truck_addresses, only: [:new, :create]
       resources :food_truck_image_rows, only: [:new, :create]
     end
 
@@ -63,7 +64,8 @@ Rails.application.routes.draw do
 
     resources :menu_item, only: [:edit, :update, :destroy]
 
-    resources :food_truck_address, only: [:edit, :update, :destroy]
+    resources :food_truck_addresses, only: [:edit, :update, :destroy]
+    post '/food_truck_address/:id/set_active', to: 'food_truck_addresses#set_active', as: 'food_truck_address_set_active'
     resources :food_truck_image_rows, only: [:edit, :update, :destroy]
 
   end
