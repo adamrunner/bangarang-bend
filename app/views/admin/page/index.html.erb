@@ -25,7 +25,7 @@
               <%= link_to "content", admin_page_path(page), class: "page-card-link content" %>
 
               <% if page.landings.empty? != true %>
-                <%= link_to "Landing", admin_page_path(page, tab: "landing"), class: "page-card-link landing" %>
+                <%= link_to "Landing", admin_page_path(page, tab: "landings"), class: "page-card-link landing" %>
               <% end %>
 
               <% if !page.food_truck_addresses.empty? %>
