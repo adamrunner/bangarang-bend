@@ -255,7 +255,7 @@ em {
 
 .food-truck-wrap {
   padding: 0.25rem;
-  background: #000;
+  background: transparent;
   height: 100%;
   @include media-breakpoint-up(md) {
     padding: 0.5rem;
