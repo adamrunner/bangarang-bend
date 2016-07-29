@@ -1,4 +1,4 @@
-class AddActiveToFtAddress < ActiveRecord::Migration
+class AddActiveToFoodTruckAddresses < ActiveRecord::Migration
   def change
     add_column :food_truck_addresses, :active, :boolean, default: false
   end

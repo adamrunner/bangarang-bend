@@ -15,7 +15,7 @@ class SetPageContents < ActiveRecord::Migration
   philosophy.content << 'philosophy_items'
 
   food_truck = Page.find_by(name: 'food_truck')
-  food_truck.content << 'food_truck_image_rows' << 'food_truck_address'
+  food_truck.content << 'food_truck_image_rows' << 'food_truck_addresses'
 
   pages = [home, services, catering_menus, events, philosophy, food_truck]
 
