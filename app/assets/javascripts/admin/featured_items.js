@@ -1,98 +1,118 @@
-// TODO: clean this code up
-var featuredItemsSort = function() {
-  var el           = document.getElementById('featured-items');
-  var $el          = $(el);
-  var $handles     = $el.find('h4');
-  var featuredHead = $('#featured-head');
-  var sortOn       = featuredHead.children('.sort-on');
-  var sortOff      = featuredHead.children('.sort-off');
-  var childs       = $(el).children();
-  var $cardRow     = $(childs).find('.card-row');
+function FeaturedItemSorter(options) {
+  this.initialize();
+}
 
-  window.order = {}
-  window.order.items = childs
+FeaturedItemSorter.prototype = {
+  constructor: FeaturedItemSorter,
 
-  window.sortable = Sortable.create(el, {
-    disabled: true
-  });
 
-  $.Velocity.RegisterEffect('transitionHeight', {
-    defaultDuration: 200,
-    calls: [
-        [ { height: '6.5rem' }, 1 ]
-    ],
-    reset: { height: '100%', minHeight: '6.5rem' }
-  });
+  initialize: function() {
+    this.el       = document.getElementById('featured-items');
+    this.sortable = Sortable.create( this.el, { disabled: true });
+    this.$el      = $(this.el);
+    this.$handles = this.$el.find('h4');
+    this.$head    = $('#featured-head');
+    this.$sortOn  = this.$head.children('.sort-on');
+    this.$sortOff = this.$head.children('.sort-off');
+    this.$childs  = this.$el.children();
+    this.$cardRow = this.$childs.find('.card-row');
+    this.setListeners();
+    this.registerAnimation();
+  },
 
-  // toggle sorting when button clicked
-  $('#toggle-sort').click(function (event) {
-    // get sorting state, disabled == true || false
-    var state = sortable.option("disabled");
 
-  if (state == true) {
+  setListeners: function() {
+    $('#toggle-sort').click(this.toggleSort.bind(this));
+    $('#save-sort').click(this.saveSort.bind(this));
+    $('#cancel-sort').click(this.cancelSort.bind(this));
+  },
 
-      sortOff.velocity('transition.slideRightBigOut', {duration: 200, stagger: 100, backwards: true});
-      sortOn.velocity('transition.slideLeftBigIn', {duration: 300, delay: 500, stagger: 25, display: "flex"});
 
-      // enable sorting
-      window.sortable.option("disabled", false);
-      $handles.addClass('enabled');
-      $(childs).velocity('transitionHeight', {duration: 300, delay: 250}, "easeInOutQuart");
-      $cardRow.velocity('transition.slideDownOut', {duration: 300});
+
+  registerAnimation: function() {
+    $.Velocity.RegisterEffect('transitionHeight', {
+      defaultDuration: 300,
+      calls: [
+          [ { height: '6.5rem' }, 1 ]
+      ],
+      reset: { height: '100%', minHeight: '6.5rem' }
+    });
+  },
+
+
+  enableSorting: function() {
+    this.animateSorts(this.$sortOff, this.$sortOn);
+    this.sortable.option("disabled", false);
+    this.$handles.addClass('enabled');
+    this.$childs.velocity('transitionHeight', { delay: 250 }, "easeInOutQuart");
+    this.$cardRow.velocity('transition.slideDownOut', { duration: 300 });
+  },
+
+
+  disableSorting: function() {
+    this.animateSorts(this.$sortOn, this.$sortOff);
+    this.sortable.option("disabled", true);
+    this.$handles.removeClass('enabled');
+    this.$childs.velocity({ height: '100%' });
+    this.$cardRow.velocity('transition.fadeIn');
+  },
+
+
+  toggleSort: function() {
+    var state = this.sortable.option("disabled");
+
+    if (state == true) {
+      this.enableSorting();
     }
-  });
+  },
 
-  $('#save-sort').click(function(event){
-    // get sorting state, disabled == true || false
-    var state = sortable.option("disabled");
-    // var childs = $el.children();
 
-    sortOn.velocity('transition.slideRightBigOut', {duration: 200, stagger: 100, backwards: true});
-    sortOff.velocity('transition.slideLeftBigIn', {duration: 300, delay: 500, stagger: 25, display: "flex"});
+  saveSort: function() {
+    var state = this.sortable.option("disabled");
 
     if (state === false) {
-      var order = sortable.toArray();
+      var order = this.sortable.toArray();
       data = {}
       data.item_order = {}
-      // covert new sort order into obj
-      order.forEach(function(id, index) {
+
+      order.forEach(function (id, index) {
         data.item_order[id] = index
       });
-      // send new sort order via post request
-      submitUpdate = $.post('/admin/featured_items/update_order.json', data);
 
-      submitUpdate.fail(function(jqXHR, textStatus, errorThrown) {
-        var data = jqXHR.responseJSON;
-        Bangarang.trigger( 'flashMessage', data );
-      });
-
-      submitUpdate.done(function(data, textStatus, jqXHR) {
-        var data = data;
-        Bangarang.trigger( 'flashMessage', data );
-      });
-
-      // turn sorting off
-      window.sortable.option("disabled", true);
-      $handles.removeClass('enabled');
-      $(childs).velocity({height: '100%'});
-      $cardRow.velocity('transition.fadeIn');
+      this.submitUpdate(data);
+      this.disableSorting();
     }
-  });
+  },
 
-  $('#cancel-sort').click(function(event) {
-    var state = sortable.option("disabled");
-    var childs = $(window.order.items);
 
-    sortOn.velocity('transition.slideRightBigOut', {duration: 200, stagger: 100, backwards: true});
-    sortOff.velocity('transition.slideLeftBigIn', {duration: 300, delay: 500, stagger: 25, display: "flex"});
+  submitUpdate: function (data) {
+    update = $.post('/admin/featured_items/update_order.json', data);
+
+    update.fail( function (jqXHR, textStatus, errorThrown) {
+      var data = jqXHR.responseJSON;
+      Bangarang.trigger( 'flashMessage', data );
+    });
+
+    update.done(function (data, textStatus, jqXHR) {
+      var data = data;
+      Bangarang.trigger( 'flashMessage', data );
+    });
+  },
+
+
+  cancelSort: function() {
+    var state = this.sortable.option("disabled");
 
     if (state === false) {
-      window.sortable.option("disabled", true);
-      $handles.removeClass('enabled');
-      $el.html(childs)
-      $(childs).velocity({height: '100%'});
-      $cardRow.velocity('transition.fadeIn');
-      }
-  });
+      this.$el.html(this.$childs);
+      this.disableSorting();
+    }
+  },
+
+
+  animateSorts: function(sortOut, sortIn) {
+    $(sortOut).velocity('transition.slideRightBigOut', { duration: 200, stagger: 100, backwards: true });
+    $(sortIn).velocity('transition.slideLeftBigIn', { duration: 300, delay: 500, stagger: 25, display: "flex" });
+  },
 
 }

@@ -1,5 +1,3 @@
-var Bangarang = Bangarang || {};
-
 Bangarang = {
 
   events: {},
@@ -28,15 +26,26 @@ Bangarang = {
   }
 }
 
-var FlashMessage = function () {
+function FlashMessage() {
   this.$el = $('#flash-messages');
   this.template = JST["admin/templates/flash_message"];
   this.sequence = [
     { e: this.$el, p: 'transition.bounceRightIn', o: { duration: 500, delay: 300 } },
     { e: this.$el, p: 'transition.expandOut', o: { duration: 300, delay: 5000 } }
-  ];
+  ],
+  this.setListeners();
+}
 
-  FlashMessage.prototype.render = function(data) {
+FlashMessage.prototype = {
+  constructor: FlashMessage,
+
+  render: function(data) {
     this.$el.html( this.template(data) ).hide().velocity.RunSequence( this.sequence );
+  },
+
+  setListeners: function() {
+    Bangarang.listenTo( 'flashMessage', function(data) {
+      FlashMessage.prototype.render.call(Bangarang.flashMessage, data);
+    });
   }
 }

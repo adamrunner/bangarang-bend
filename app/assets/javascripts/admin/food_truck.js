@@ -1,15 +1,19 @@
 function FoodTruck() {
-  this.$inputSmall   = $("#ft-img-small");
-  this.$previewSmall = $("#ft-prev-small");
-  this.$fileSmall    = $("#ft-file-sm");
-  this.$inputLarge   = $("#ft-img-large");
-  this.$previewLarge = $("#ft-prev-large");
-  this.$fileLarge    = $("#ft-file-lg");
-  this.listeners();
+  this.initialize();
 }
 
 FoodTruck.prototype = {
   constructor: FoodTruck,
+
+  initialize: function() {
+    this.$inputSmall   = $("#ft-img-small")[0];
+    this.$previewSmall = $("#ft-prev-small");
+    this.$fileSmall    = $("#ft-file-sm");
+    this.$inputLarge   = $("#ft-img-large")[0];
+    this.$previewLarge = $("#ft-prev-large");
+    this.$fileLarge    = $("#ft-file-lg");
+    this.listeners();
+  },
 
   readURL: function(input, preview, file) {
     if (input.files && input.files[0]) {
@@ -24,24 +28,22 @@ FoodTruck.prototype = {
     }
   },
 
-  updatePreview: function(input, preview, file) {
-    $(preview).removeClass('hidden');
-    this.readURL(input, preview, file);
+  updatePreview: function(type) {
+    switch (arguments[0]) {
+      case "small":
+        this.$previewSmall.removeClass('hidden');
+        this.readURL(this.$inputSmall, this.$previewSmall, this.$fileSmall);
+        break;
+      case "large":
+        this.$previewLarge.removeClass('hidden');
+        this.readURL(this.$inputLarge, this.$previewLarge, this.$fileLarge);
+        break;
+    }
   },
 
   listeners: function() {
-    var prevSmall = this.$previewSmall,
-        fileSmall = this.$fileSmall,
-        prevLarge = this.$previewLarge,
-        fileLarge = this.$fileLarge;
-
-    $(this.$inputSmall).change(function() {
-      FoodTruck.prototype.updatePreview( this, prevSmall, fileSmall )
-    });
-
-    $(this.$inputLarge).change(function() {
-      FoodTruck.prototype.updatePreview( this, prevLarge, fileLarge )
-    });
+    $(this.$inputSmall).change(this.updatePreview.bind( this, "small" ));
+    $(this.$inputLarge).change(this.updatePreview.bind( this, "large" ));
   }
 
 }

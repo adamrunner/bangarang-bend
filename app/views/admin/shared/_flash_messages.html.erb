@@ -1,8 +1,5 @@
 <script type="text/javascript">
-  Bangarang.flashMsg = new FlashMessage();
-  Bangarang.listenTo( 'flashMessage', function(data) {
-    Bangarang.flashMsg.render(data);
-  });
+  Bangarang.flashMessage = new FlashMessage();
 
   data = {
   <% if notice %>
@@ -13,5 +10,6 @@
     alert: "<%= alert %>"
   <% end %>
   }
+
   Bangarang.trigger( 'flashMessage', data );
 </script>
