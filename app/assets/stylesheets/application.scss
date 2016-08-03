@@ -13,8 +13,8 @@
 html {
   position: relative;
   overflow-x: hidden;
-  background: #262c33 url("/images/background/background_main.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: #262c33 url("/images/background/background_main.jpg") repeat center center fixed;
+  background-size: 100%;
   @include media-breakpoint-up(xs) {
     font-size: $font-size-xs;
   }
@@ -22,6 +22,8 @@ html {
     font-size: $font-size-sm;
   }
   @include media-breakpoint-up(lg) {
+    background-size: cover;
+    background-repeat: no-repeat;
     font-size: $font-size-lg;
   }
 }
