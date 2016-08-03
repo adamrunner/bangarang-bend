@@ -9,12 +9,8 @@
   min-height: 18rem;
   background-position: center;
   background-size: cover;
-  height: 25rem;
-  @include media-breakpoint-up(md) {
-    height: 35rem;
-  }
+  height: 26rem;
   @include media-breakpoint-up(lg) {
-    height: 30rem;
     padding: 2rem;
   }
   h1 {
