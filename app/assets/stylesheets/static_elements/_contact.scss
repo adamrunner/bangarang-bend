@@ -1,3 +1,16 @@
+#contact {
+  margin: 0;
+  @include media-breakpoint-up(md) {
+    margin-left: auto;
+  }
+  .name {
+    color: $color-one;
+  }
+  small {
+    color: $color-three;
+  }
+}
+
 .contact-block {
   @extend .inner-block;
   @extend .bg-transparent;
@@ -9,4 +22,84 @@
   margin-bottom: 0rem;
   background-color: #111;
   border-top: solid 1px #090909;
+}
+
+#social-wrap {
+  position: relative;
+}
+
+.contact-things {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-left: auto;
+  @include media-breakpoint-up(md) {
+    justify-content: flex-start;
+  }
+  .contact-thing {
+    padding: 1rem;
+    @include media-breakpoint-up(md) {
+      padding: 0 1rem;
+    }
+  }
+  h5 {
+    color: $color-two;
+    display: inline-block;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin: 0;
+  }
+  a {
+    color: $color-four;
+    display: block;
+    @include media-breakpoint-up(md) {
+      line-height: 1.1;
+    }
+    &:hover {
+      color: darken($color-four, 5%);
+    }
+  }
+}
+
+#social-links {
+  padding-bottom: 2rem;
+  @include media-breakpoint-up(md) {
+    padding: 0;
+  }
+  .social {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1rem 0;
+    @include media-breakpoint-up(md) {
+      justify-content: flex-start;
+    }
+  }
+  .social-link {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    &:hover {
+      i {
+        background-color: darken($color-four, 2%);
+      }
+    }
+    @include media-breakpoint-up(md) {
+      padding: 0;
+    }
+  }
+  i {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #1f1f1f;
+    background-color: $color-four;
+    margin-right: 1rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 1px;
+  }
 }

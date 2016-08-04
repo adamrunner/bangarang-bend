@@ -18,7 +18,6 @@ window.BangarangBend =
     @router             = new BangarangBend.Routers.ApplicationRouter()
     @mobileNav          = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
     @navbar             = new BangarangBend.Views.Navbar(el: '#navbar')
-    # @contact            = new BangarangBend.Views.Contact(el: '#contact')
     @serviceItems       = new BangarangBend.Collections.ServiceItems(options.data.service_items)
     @eventItems         = new BangarangBend.Collections.EventItems(options.data.event_items)
     @philosophyItems    = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)

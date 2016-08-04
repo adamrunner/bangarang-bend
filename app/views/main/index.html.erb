@@ -3,65 +3,12 @@
 <div id="main-block">
   <div id="mobile-nav"></div>
 
-  <div class="block">
-    <div id="landing" style="background-image: url(<%= @landing ? @landing.image.landing.url : '' %>)">
-      <h1><%= @landing ? @landing.heading.html_safe : 'catering & event services' %></h1>
-    </div>
-  </div>
-
-  <div class="block map-block">
-    <a class="map-link" href="<%= @food_truck_address.link_url %>" target="_blank">
-      <i class="btl bt-map-marker"></i>
-      <span class="map-link-text">Get Directions</span>
-    </a>
-
-    <div class="map-desc"><%= @food_truck_address.description %></div>
-  </div>
+  <%= render partial: 'main/partials/landing', locals: { landing: @landing } %>
+  <%= render partial: 'main/partials/address_link', locals: { address: @food_truck_address } %>
 
   <div id="content"></div>
 
 </div>
 
-
-<div id="social-wrap" class="container m-b-1 bg-footer">
-
-  <div id="footer">
-
-    <div class="logo-container">
-      <img src="images/logo/bangarang_catering_logo_white.svg"/>
-    </div>
-
-    <div class="logo-description">
-      <div class="logo-desc-inner-wrap">
-        <h4>[ <strong>bang-</strong><em>uh</em><strong>-</strong>rang ]</h4>
-        <h6>n. <small>Jamaican slang defined as an uproar, disorder, or disturbance</small></h6>
-        <h6>v. <small>An exclamation meant to signify approval or amazement</small></h6>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div id="contact-information" class="container-fluid bg-footer">
-  <div id="social-links" class="bg-footer">
-    <div class="container social">
-      <a class="social-link" href="https://www.facebook.com/bangarangbend/" target="_blank"><i class="fab bt-2x fab-facebook-alt"></i></a>
-      <a class="social-link" href="https://www.instagram.com/chefdavebodi/" target="_blank"><i class="fab bt-2x fab-instagram"></i></a>
-
-    <div id="contact" class="contact-things">
-      <div class="contact-thing">
-        <h5 class="name">Dave Bodi <small>Executive Chef</small> </h5>
-        <a href="tel:+15039302722">503-930-2722</a>
-        <a href="mailto:dave@bangarangbend.com">dave@bangarangbend.com</a>
-      </div>
-
-      <div class="contact-thing">
-        <h5 class="name">Amy Bodi <small>Event Services</small> </h5>
-        <a href="tel:+15419688003">541-968-8003</a>
-        <a href="mailto:amy@bangarangbend.com">amy@bangarangbend.com</a>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</div>
+<%= render partial: 'main/partials/footer' %>
+<%= render partial: 'main/partials/contact' %>
