@@ -9,7 +9,7 @@
   hr {
     width: 100%;
     margin: 0.5rem auto;
-    border-bottom: dotted 1px #333;
+    border-bottom: solid 1px #222;
   }
 }
 
@@ -21,7 +21,7 @@
 %featured-item {
   @extend .card;
   position: relative;
-  border-color: #000;
+  border-color: $card-border-color;
   background-color: transparent;
   &:hover {
     .roll-over-link {
@@ -54,12 +54,11 @@
 }
 
 .featured-block {
-  background-color: transparentize(#1a1a1a, 0.15);
-  color: #c5cbc6;
+  background-color: $card-bg-color;
 }
 
 .featured-img {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $card-border-color;
 }
 .card-columns {
   @include media-breakpoint-up(sm) {

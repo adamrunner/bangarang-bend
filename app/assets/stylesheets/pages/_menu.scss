@@ -20,7 +20,7 @@
   }
   h5 {
     font-family: $font-secondary;
-    color: transparentize(#1a1a1a, 0.15);
+    color: $card-bg-color;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -44,7 +44,7 @@
     }
   }
   em {
-    color: transparentize(#1a1a1a, 0.15);
+    color: $color-four;
     font-family: $font-secondary;
     letter-spacing: 2px;
     display: inline-block;
@@ -66,15 +66,15 @@
 
 .menu-footer {
   @extend .bg-transparent;
-  font-family: $font-secondary;
-  text-transform: uppercase;
+  font-family: $font-family-serif;
+  font-weight: 300;
   ul {
     padding: 0;
     margin: 0;
     li {
-      color: $color-one;
+      color: $color-three;
       padding: 1rem 0;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       @include media-breakpoint-up(md) {
         padding: 0.5rem 0;
       }
@@ -84,8 +84,8 @@
 // catering_menu index styling
 .catering-menu-btn {
   display: block;
-  background-color: transparentize(#1a1a1a, 0.15);
-  border: 1px solid #000;
+  background-color: $card-bg-color;
+  border: 1px solid $card-border-color;
   transition: all 0.15s ease-out;
   h3 {
     color: $brand-secondary;
@@ -94,7 +94,7 @@
     text-transform: uppercase;
   }
   p {
-    color: $color-two;
+    @extend .card-text;
   }
   i {
     margin-left: 1rem;
@@ -104,9 +104,16 @@
     transition: all 0.15s ease-out;
   }
   &:hover {
-    background-color: darken(transparentize(#222, 0.50), 20%);
     i {
       transform: translateX(100%);
     }
+  }
+}
+
+.menu-lgi {
+  border-top-style: dashed;
+  border-top-color: $color-four;
+  &:nth-child(1) {
+    border-top-style: solid;
   }
 }

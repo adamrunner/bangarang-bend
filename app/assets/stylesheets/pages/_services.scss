@@ -1,5 +1,7 @@
 #services-block {
-  @include content-card;
+  background-color: #111;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
   h3 {
     font-family: $font-secondary;
     letter-spacing: 2px;
@@ -13,7 +15,6 @@
   .blockquote {
     margin: 0;
     padding-right: 0;
-    border-color: darken(#877674, 30%);
   }
   p {
     font-weight: 300;
@@ -30,8 +31,8 @@
 }
 .services-card {
   flex-grow: 1;
-  background-color: transparentize(#1a1a1a, 0.15);
-  border-color: #000;
+  background-color: transparent;
+  border: none;
 }
 .services-block {
   background-color: transparent;

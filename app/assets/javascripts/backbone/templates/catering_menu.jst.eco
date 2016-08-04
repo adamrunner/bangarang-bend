@@ -9,7 +9,7 @@
 
 <div class="list-group-fluid">
 <% @catering_menu.get('menu_sections').forEach (menu_section) ->: %>
-  <div class="list-group-item">
+  <div class="list-group-item menu-lgi">
     <h3><%= menu_section.name %></h3>
 
     <div class="row">
@@ -18,9 +18,9 @@
       <div class="col-xs-6 menu-col">
         <div class="card-block menu-inner-block">
           <h5><%= menu_item.name %></h5>
-          <div class="blockquote">
+          <div class="blockquote menu-bq">
             <p><%= menu_item.choices %></p>
-            <em class="light-font"><%= menu_item.price %></em>
+            <em>[ <%= menu_item.price %> ]</em>
           </div>
         </div>
       </div>

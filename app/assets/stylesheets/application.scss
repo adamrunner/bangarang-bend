@@ -13,7 +13,7 @@
 html {
   position: relative;
   overflow-x: hidden;
-  background: #262c33 url("/images/background/background_main.jpg") repeat center center fixed;
+  background: $html-bg-color url("/images/background/background_main.jpg") repeat center center fixed;
   background-size: 100%;
   @include media-breakpoint-up(xs) {
     font-size: $font-size-xs;
@@ -30,8 +30,8 @@ html {
 
 @-moz-document url-prefix() {
   html {
-    background: #262c33 url("/images/background/background_main.jpg") repeat center center;
-    background-size: auto;
+    background: $html-bg-color url("/images/background/background_main.jpg") repeat center center;
+    background-size: 100%;
   }
 }
 
@@ -58,7 +58,7 @@ h1, h2 {
   margin: 0;
 }
 h1 {
-  color: #877674;
+  color: $color-three;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: $font-secondary;
@@ -85,7 +85,7 @@ em {
   border: 0;
 }
 .card-title-small {
-  color: #877674;
+  color: $color-three;
   margin: 0;
   font-family: $font-secondary;
   text-transform: uppercase;
@@ -115,7 +115,7 @@ em {
 .map-block {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   overflow-x: hidden;
   @include media-breakpoint-up(md) {
@@ -128,13 +128,15 @@ em {
   }
 }
 .map-link {
-  background-color: $color-four;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  color: transparentize(#111, 0.15);
+  color: $map-link-color;
   height: 2.5rem;
   margin-bottom: 1.25rem;
+  min-width: 12.31rem;
+  flex: 1;
+  max-width: 12.5rem;
   &:hover {
     background-color: darken($color-four, 2%);
     color: #1a1a1a;
@@ -148,13 +150,16 @@ em {
     margin-right: 1rem;
   }
   i {
+    background-color: $color-four;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     height: 2.5rem;
     width: 2.5rem;
-    border: solid 1px transparentize(#111, 0.05);
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    border: solid 1px $map-link-color;
     font-size: 1.25rem;
     @include media-breakpoint-up(md) {
       margin: 0;
@@ -163,20 +168,25 @@ em {
       font-size: 1.5rem;
       width: 3rem;
       height: 3rem;
+      min-width: 3rem;
+      min-height: 3rem;
     }
   }
 }
 .map-link-text {
+  background-color: $color-four;
+  width: 100%;
   letter-spacing: 1px;
   font-weight: 300;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
+  align-items: center;
   height: 2.5rem;
   box-sizing: border-box;
-  border: solid 1px transparentize(#111, 0.05);
+  border: solid 1px $map-link-color;
   border-left: none;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   text-transform: uppercase;
   font-family: $font-secondary;
   font-size: 1rem;
@@ -187,34 +197,34 @@ em {
 }
 .map-desc {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: space-around;
+  height: 100%;
+  min-height: 2.5rem;
   font-family: $font-secondary;
   color: $color-three;
   font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
-  height: 3.5rem;
-  border-right: solid 1px $color-one;
+  border-right: solid 1px $blockquote-border-color;
   padding: 0.5rem 1rem;
-  border-left: solid 1px $color-one;
-  flex-grow: 2;
+  border-left: solid 1px $blockquote-border-color;
+  flex: 1;
   @include media-breakpoint-up(md) {
-    height: 2.25rem;
     padding: 0;
   }
   @include media-breakpoint-up(lg) {
-    height: 2.75rem;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
     font-size: 1.15rem;
+    min-height: 3rem;
   }
 }
 
 .card-text {
   font-weight: 300;
-  color: $color-two;
+  color: $color-one;
 }
 
 .food-truck-img {
@@ -287,11 +297,15 @@ em {
 }
 
 .blockquote {
-  border-width: 2px;
+  border-width: 1px;
+  &.menu-bq {
+    border-color: $menu-blockquote-border-color;
+  }
 }
 
 .blockquote-copy-text {
   @extend .blockquote;
+  border-width: 1px;
   margin-left: 0.5rem;
-  border-color: darken(#877674, 30%);
+  border-color: $blockquote-border-color;
 }

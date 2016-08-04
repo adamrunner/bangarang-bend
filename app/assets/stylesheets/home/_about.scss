@@ -20,8 +20,13 @@
   height: 12rem;
   margin: 1rem auto;
   border-radius: 50%;
-  background-color: #000;
+  background-color: $headshot-img-bg-color;
   background-position: center;
   background-size: cover;
-  border: 2px solid #000;
+  border: 2px solid $headshot-img-bg-color;
+}
+
+.section-block {
+  margin-bottom: 1rem;
+  background-color: #111;
 }
