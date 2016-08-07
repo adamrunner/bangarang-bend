@@ -2,6 +2,8 @@ class FeaturedItem < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :page
 
+  default_scope { order(:position) }
+
   def link_url=(value)
     return if value.blank?
     value = "http://" << value unless value =~ /http/i || value =~ /\A\//
@@ -18,5 +20,5 @@ class FeaturedItem < ActiveRecord::Base
   def full_link_url
     link = link_url
   end
-  
+
 end
