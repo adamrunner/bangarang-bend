@@ -2,8 +2,9 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
 
-  version :featured_thumb, if: :is_featured?
-  version :biography_thumb, if: :is_biography?
+  version :featured_image, if: :is_featured?
+  version :biography_image, if: :is_biography?
+  version :landing, if: :is_landing?
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -35,12 +36,26 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  version :featured_image do
+    process :resize_to_fit => [400, 400]
+    version :featured_thumb
+  end
+
   version :featured_thumb do
-    process :resize_to_fit => [300, 300]
+    process :resize_and_pad => [300, 300, '#fff']
+  end
+
+  version :biography_image do
+    process :resize_to_fit => [400, 400]
+    version :biography_thumb
   end
 
   version :biography_thumb do
-    process :resize_to_fit => [100, 100]
+    process :resize_to_fill => [200, 200]
+  end
+
+  version :landing do
+    process :resize_to_fill => [1100, 400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -57,7 +72,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   private
 
   def is_featured? picture
-    model.class.name == "FeaturedItem" || "Landing"
+    model.class.name == "FeaturedItem"
+  end
+
+  def is_landing? picture
+    model.class.name == "Landing"
   end
 
   def is_biography? picture

@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  serialize :content, Array
   has_many :biography_items
   has_many :event_items
   has_many :event_produce_items
@@ -7,41 +8,26 @@ class Page < ActiveRecord::Base
   has_many :philosophy_items
   has_many :service_items
   has_many :landings
+  has_many :food_truck_image_rows
+  has_many :food_truck_addresses
   before_save :link_name_lowercase,
               :format_text
 
-  def content_type
-    if self.name === "catering_menus" || self.name === "events"
-      return self.name
-    else
-      return self.name.singularize << "_items"
-    end
-  end
-
-  def events
-    events = {
-      months: {name: "months", event_items: self.event_items},
-      produce: {name: "produce", event_produce_items: self.event_produce_items.order(name: :asc)}
-    }
-  end
-
-  def home_items
-    home_items = {
-      featured: {name: "featured", featured_items: self.featured_items},
-      biography: {name: "biography", biography_items: self.biography_items}
-    }
-  end
-
-  def tab
-    if self.name === "home"
-      return "featured"
-    elsif self.name === "events"
-      return "months"
-    end
+  def default_tab
+    self.content.first
   end
 
   def page_content
-    self.send(self.content_type)
+    page_content = {}
+    self.content.each do |item|
+      items = self.send(item)
+      if items.respond_to?('first') && items.first.respond_to?('position')
+        page_content[item.to_sym] = items.order(position: :asc)
+      else
+        page_content[item.to_sym] = items
+      end
+    end
+    page_content
   end
 
   def format_edit_text

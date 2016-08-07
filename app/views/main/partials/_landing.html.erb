@@ -1,0 +1,8 @@
+<div class="block landing-block">
+
+  <div id="landing">
+    <h2><%= landing ? landing.heading.html_safe : 'catering & event services' %></h2>
+    <img id="landing-img" src="<%= @landing ? @landing.image.landing.url : '' %>" alt="" />
+  </div>
+  
+</div>

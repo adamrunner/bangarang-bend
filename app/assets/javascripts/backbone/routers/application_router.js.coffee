@@ -7,6 +7,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     @route "#{pages.at(2).link()}/:name", 'menuPage'
     @route pages.at(3).link(), 'customizedEventsPage'
     @route pages.at(4).link(), 'philosophyPage'
+    @route pages.at(5).link(), 'foodTruckPage'
 
   # routes: ->
 
@@ -34,6 +35,10 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     menu = new BangarangBend.Views.CateringMenu(model: BangarangBend.menus.findWhere(name: name.replace(/_/g, ' ')))
     @swapPage(menu)
 
+  foodTruckPage: ->
+    foodTruck = new BangarangBend.Views.FoodTruck(collection: BangarangBend.foodTruckImageRows)
+    @swapPage(foodTruck)
+
   swapPage: (view) ->
     if @currentView
       if @currentView.subViews
@@ -41,11 +46,11 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
             view.remove()
           @currentView.remove()
           @currentView = view
-          BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 400))
+          BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 500))
       else
         @currentView.remove()
         @currentView = view
-        BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 400))
+        BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 500))
     else
       @currentView = view
-      BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 400))
+      BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 500))

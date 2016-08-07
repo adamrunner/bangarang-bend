@@ -1,0 +1,28 @@
+<div class="card-span-lg-6">
+  <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h4 class="title-text">Menu Sections Overview</h4>
+      </div>
+
+      <div class="card-col">
+        <div class="section-details">
+          <strong>Name</strong>
+          <strong>Items</strong>
+          <strong class="actions">Actions</strong>
+        </div>
+        <div class="section-details">
+          <% catering_menu.menu_sections.each do |section| %>
+            <span><%= section.name.titleize %></span>
+            <span><%= section.menu_items.length %></span>
+            <span class="actions">
+              <%= link_to "edit", edit_admin_menu_section_path(section), class: "menu-link edit" %>
+              <%= link_to "delete", admin_menu_section_path(section), method: "delete", data: {confirm: "Are you sure you want to delete '#{caps_first(section.name)}' and all menu items associated with it?"}, class: "menu-link delete" %>
+              <%= link_to "item", new_admin_menu_section_menu_item_path(section), class: "menu-link add" %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+  </div>
+</div>

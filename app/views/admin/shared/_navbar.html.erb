@@ -1,11 +1,11 @@
-<nav class="navbar navbar-dark bg-inverse navbar-full navbar-fixed-top">
+<nav class="navbar navbar-full navbar-fixed-top">
 
-  <%= link_to "Bangarang Admin", admin_root_path, class: "navbar-brand" %>
 
   <div class="nav navbar-nav">
+    <%= link_to "Bangarang Admin", admin_root_path, class: "navbar-brand" %>
     <% if admin_signed_in? %>
-      <%= link_to(destroy_admin_session_path, method: :delete, class: "nav-item nav-link pull-xs-right") do %>
-        <i class="fa fa-sign-out"></i> Sign Out
+      <%= link_to(destroy_admin_session_path, method: :delete, class: "admin-link") do %>
+        <i class="btl bt-sign-out"></i>Sign Out
       <% end %>
     <% end %>
   </div>

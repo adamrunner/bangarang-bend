@@ -1,0 +1,59 @@
+<div class="heading-block">
+  <h1>Food Truck</h1>
+  <%= link_to "add image row", new_admin_page_food_truck_image_row_path(@page), class: "add-link" %>
+</div>
+<div class="card-bs-row">
+
+  <% food_truck_image_rows.each_with_index do |food_truck_image_row, index| %>
+
+    <div class="card-span-lg-6">
+      <div class="card-content-wrap">
+
+        <div class="card-col title">
+          <h3 class="title-text">Image Row <%= index + 1 %></h3>
+        </div>
+
+        <div class="ft-container">
+          <div class="ft-wrap">
+
+            <%# wrapping %>
+            <div class="card-col col-wrap-sm p-a-0">
+              <div class="card-col small-input-col p-a-0">
+                <h5>Small Image</h5>
+              </div>
+
+              <div class="card-col small-img-col m-b-1 p-a-0">
+                <div class="small-img"></div>
+                <%= image_tag food_truck_image_row.small_image.thumb.url, class: "small-img-thumb" %>
+              </div>
+
+            </div>
+            <%# /wrapping %>
+
+            <%# wrapping %>
+            <div class="card-col col-wrap-lg p-a-0">
+              <div class="card-col large-input-col p-a-0">
+                <h5>Large Image</h5>
+              </div>
+
+              <div class="card-col large-img-col m-b-1 p-a-0">
+                <div class="large-img"></div>
+                <%= image_tag food_truck_image_row.large_image.thumb.url, class: "large-img-thumb" %>
+              </div>
+
+            </div>
+            <%# /wrapping %>
+
+            <div class="card-row controls">
+              <%= link_to "edit", edit_admin_food_truck_image_row_path(food_truck_image_row), class: "page-card-link edit" %>
+              <%= link_to "delete", admin_food_truck_image_row_path(food_truck_image_row), method: "delete", data: {confirm: "Are you sure you want to delete Image Row #{index + 1}?"}, class: "page-card-link delete" %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

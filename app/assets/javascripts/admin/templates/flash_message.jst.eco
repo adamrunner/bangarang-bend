@@ -1,0 +1,27 @@
+<div class="flash_messages">
+
+
+  <% if @notice :%>
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="btl bt-times"></i>
+      </button>
+
+      <div class="flash-msg-block"><i class="btl bt-check-circle bt-3x"></i></div>
+      <div class="flash-msg-block msg"><%= @notice %></div>
+    </div>
+  <% end %>
+
+  <% if @alert :%>
+    <div class="alert alert-danger alert-dismissible">
+
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="btl bt-times"></i>
+      </button>
+
+      <div class="flash-msg-block"><i class="btl bt-exclamation-triangle bt-3x"></i></div>
+      <div class="flash-msg-block msg"><%= @alert %></div>
+    </div>
+  <% end %>
+
+</div>

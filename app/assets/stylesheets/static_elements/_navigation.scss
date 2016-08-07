@@ -4,7 +4,7 @@
   @extend .navbar-full;
   @extend .navbar-fixed-top;
   height: $navbar-height;
-  background-color: #fff;
+  background-color: #f1f1f1;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
   @include media-breakpoint-down(md) {
@@ -17,31 +17,50 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
     @include media-breakpoint-down(md) {
       max-width: 100%;
-      padding: 0;
     }
   }
+  button {
+    background: transparent;
+  }
   .navbar-btn {
-    @include font($font-secondary, bold, $brand-secondary, $transform: uppercase !important);
-    font-size: 0.8rem;
-    border-color: #333;
-    background-color: #333;
-    color: #fff;
-    &:hover, &:focus {
-      background-color: $brand-secondary;
-      border-color: lighten($brand-secondary, 10%);
-      color: #fff;
+    color: darken(#CEC7C6, 30%);
+    text-transform: uppercase;
+    font-weight: 300;
+    border-top: none;
+    border-bottom: none;
+    border-right: solid 1px #ccc;
+    &:nth-child(1) {
+      border-left: solid 1px #ccc;
     }
+    &:hover, &:focus {
+      color: $brand-secondary;
+    }
+  }
+  .btn-group {
+    .navbar-btn {
+      &:nth-child(1) {
+        border-left: none;
+      }
+    }
+  }
+  .dropdown-menu {
+    top: calc(100% + 16px);
+    background-color: #fafafa;
+    border: none;
+    border-top: solid 1px #ccc;
   }
   .dropdown-item {
     font-size: 0.8rem;
+    padding-top: 0.25rem;
+    text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: $dropdown-link-font-weight;
   }
 }
 #nav-btn {
-  @extend .fa;
-  @extend .fa-bars;
   font-size: 2em;
   color: #333;
   height: $navbar-height;
@@ -69,21 +88,6 @@
   }
 }
 
-// footer styling
-#footer {
-  width: 100%;
-  height: 20rem;
-  background-color: transparent;
-  @include short-flex(row wrap, center, center);
-  img {
-    width: 100%;
-    max-width: 20em;
-    @include media-breakpoint-up(lg) {
-      max-width: 25em;
-    }
-  }
-}
-
 // mobile navigation styling
 #mobile-nav {
   @extend .card-block;
@@ -106,16 +110,17 @@
     margin-top: $navbar-height;
   }
   .list-group-item {
-    @include font($font-secondary, bold, #fff);
+    font-family: $font-secondary;
+    color: $color-two;
+    letter-spacing: 2px;
     padding: 1rem;
     text-transform: uppercase;
-    background-color: transparentize(#222, 0.10);
+    background-color: $card-bg-color;
     border: 1px solid #000;
     margin: 0.5rem 0rem;
     &.active, &:hover {
       color: $brand-secondary;
       border-color: $brand-secondary;
-      background-color: transparentize(#111, 0.10);
     }
   }
 }

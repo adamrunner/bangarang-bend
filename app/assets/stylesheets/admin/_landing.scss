@@ -1,0 +1,53 @@
+#landing {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+  margin: 0 auto;
+  min-height: 18rem;
+  height: 50vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  @include media-breakpoint-up(lg) {
+    padding: 2rem;
+  }
+  h1 {
+    color: $color-three;
+    display: inline;
+    align-self: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: $font-secondary;
+    letter-spacing: 1px;
+    padding: 2rem;
+    background: transparentize(#1a1a1a, 0.10);
+    font-size: 2.3rem;
+    @include media-breakpoint-up(md) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+      align-self: flex-start;
+    }
+  }
+  img {
+    @extend .img-fluid;
+    border: solid 1px #000;
+  }
+}
+
+.landing-col {
+  @include make-col();
+  @include make-col-span(12);
+  @media (min-width: 90rem) {
+    @include make-col-span(8);
+  }
+}
+
+.landing-center {
+  justify-content: center;
+  align-items: center;
+}

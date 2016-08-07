@@ -12,5 +12,10 @@
 //= require bootstrap/tab
 // require bootstrap/tooltip
 // require bootstrap/popover
+//= require_tree ./admin/templates
 //= require velocity.min
 //= require velocity.ui.min
+//= require Sortable.min
+//= require admin/bangarang_admin
+//= require admin/featured_items
+//= require admin/food_truck

@@ -3,25 +3,62 @@
   background-color: transparent;
   h4 {
     text-transform: capitalize;
+    color: $brand-secondary;
+    letter-spacing: 1px;
+  }
+  hr {
+    width: 100%;
+    margin: 0.5rem auto;
+    border-bottom: solid 1px #222;
   }
 }
+
 .card-featured {
   background-color: transparent;
   border-color: transparent;
 }
 
-.featured-item {
-  border-color: #000;
+%featured-item {
+  @extend .card;
+  position: relative;
+  border-color: $card-border-color;
   background-color: transparent;
+  &:hover {
+    .roll-over-link {
+      opacity: 1;
+    }
+  }
+}
+.roll-over-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  opacity: 0;
+  height: 2rem;
+  width: 2rem;
+  color: $brand-secondary;
+  background-color: transparentize(#1a1a1a, 0.05);
+  transition: all 0.2s ease-out;
+}
+.featured-icon {
+  font-size: 1rem;
+  margin-left: 0.15rem;
+}
+
+.featured-item-text {
+  text-transform: none;
 }
 
 .featured-block {
-  background-color: transparentize(#222, 0.50);
-  color: #eee;
+  background-color: $card-bg-color;
 }
 
 .featured-img {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $card-border-color;
 }
 .card-columns {
   @include media-breakpoint-up(sm) {
@@ -34,4 +71,16 @@
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
   }
+}
+
+.featured-item-text {
+  color: $color-one;
+}
+
+.featured-item-card {
+  @extend %featured-item;
+}
+
+.featured-item-card-no-link {
+  @extend %featured-item;
 }

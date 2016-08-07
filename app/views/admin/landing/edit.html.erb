@@ -1,10 +1,14 @@
 <% breadcrumb :landing, @landing, "edit" %>
+<div class="card-bs-row">
 
-<div class="col-xs-12 col-md-6">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title text-capitalize">edit landing</h3>
+<div class="card-span-lg-6">
+  <div class="card-content-wrap">
 
+    <div class="card-col title">
+      <h3 class="title-text">edit landing</h3>
+    </div>
+
+    <div class="form-block">
       <%= form_for @landing, url: {action: "update"} do |f| %>
         <div class="form-group">
           <%= f.label :first_line, "Heading Line 1", class: "font-weight-bold" %>:
@@ -19,12 +23,10 @@
         <% if @landing.image? %>
           <figure class="form-group">
             <%= image_tag(@landing.image.featured_thumb.url, class:"figure-img") %>
+            <%= link_to "delete image", admin_delete_landing_img_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete #{@landing[:image]}?"},  class: "btn btn-danger pull-xs-right" %>
             <figcaption class="figure-caption"><%= @landing[:image] %></figcaption>
           </figure>
 
-          <div class="form-group">
-            <%= link_to "delete image", admin_delete_landing_img_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete #{@landing[:image]}?"},  class: "btn btn-danger" %>
-          </div>
         <% end %>
 
         <div class="form-group">
@@ -33,18 +35,24 @@
           <%= f.hidden_field :image_cache %>
         </div>
 
-        <%= f.submit "save", class: "btn btn-success" %>
-        <%= link_to "back", admin_page_path(@landing.page, tab: "landing"), class: "btn btn-secondary" %>
-        <%= link_to "delete", admin_landing_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "btn btn-danger pull-md-right" %>
+        <div class="form-group controls">
+          <%= f.submit "save", class: "btn btn-success" %>
+          <%= link_to "cancel", admin_page_path(@landing.page, tab: "landings"), class: "btn btn-secondary" %>
+          <%= link_to "delete", admin_landing_path(@landing), method: "delete", data: {confirm: "Are you sure you want to delete landing?"}, class: "btn btn-danger pull-md-right" %>
+        </div>
       <% end %>
 
     </div>
   </div>
 </div>
 
-<div class="col-xs-12 col-md-6">
-  <div class="card card-block">
-    <h3>CATERING & <small class="m-l-2 font-italic text-muted"><-- line one</small> <br>
-    EVENT SERVICES <small class="m-l-2 font-italic text-muted"><-- line two</small> </h3>
+<div class="card-span-lg-6">
+  <div class="card-content-wrap">
+    <div class="card-col landing-center">
+      <h3>CATERING & <small class="m-l-2 font-italic text-muted"><-- line one</small> <br>
+      EVENT SERVICES <small class="m-l-2 font-italic text-muted"><-- line two</small> </h3>
+    </div>
   </div>
+</div>
+
 </div>

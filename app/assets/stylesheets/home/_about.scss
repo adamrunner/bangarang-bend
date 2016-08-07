@@ -8,6 +8,10 @@
   @include short-flex(column nowrap, center, center);
   h3 {
     margin-bottom: 2rem;
+    color: $brand-secondary;
+  }
+  p {
+    color: $color-one;
   }
 }
 .headshot {
@@ -16,8 +20,13 @@
   height: 12rem;
   margin: 1rem auto;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: $headshot-img-bg-color;
   background-position: center;
   background-size: cover;
-  border: 2px solid transparentize(#fff, 0.05);
+  border: 2px solid $headshot-img-bg-color;
+}
+
+.section-block {
+  margin-bottom: 1rem;
+  background-color: #111;
 }

@@ -1,55 +1,77 @@
 #showcase {
   width: 100%;
-  background: #000;
-  h4 {
-    @include font($color:#fff);
-    @include small-caps(capitalize);
-    width: 100%;
-    background-color: $transparent-brand-primary;
-    padding: 0.75rem;
-    margin: 0;
-    opacity: 1;
-    @include media-breakpoint-up(lg) {
-      font-size: 1.6rem;
-    }
-  }
-  .showcase-link-name {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-  }
+  background: transparent;
 }
 .showcase-inner {
+  @include make-row($gutter:  1.25rem);
+  margin-top: (1.25rem / -2);
+  margin-bottom: (1.25rem / -2);
+}
+.img-wrap {
   position: relative;
-  @include short-flex(row wrap);
+  overflow: hidden;
   width: 100%;
-  min-height: 20rem;
-  padding: ($showcase-border-size / 2);
-  background-color: inherit;
-  @include media-breakpoint-up(md) {
-    @include short-flex(row nowrap);
-    height: 30vh;
-  }
+}
+.img-inner-wrap {
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 100%;
 }
 .showcase-item {
-  @include short-flex(row wrap, center, center);
-  @include background(center, cover);
-  flex-grow: 1;
-  opacity: .9;
-  width: 50%;
-  min-height: 11.25rem;
+  @include make-col($gutter:  1.25rem);
+  @include make-col-span(6);
+  margin-top: (1.25rem / 2);
+  margin-bottom: (1.25rem / 2);
   @include media-breakpoint-up(md) {
-    border-right: solid 1px #000;
+    @include make-col-span(4);
   }
-  &:hover {
-    opacity: 1;
+  &:nth-child(3n) {
+    border-right: none;
+  }
+  .showcase-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .btl {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4em;
+    z-index: 100;
+    color: $showcase-link-color-active;
+    opacity: 0;
   }
   @include media-breakpoint-up(sm) {
     min-height: 2rem;
-    height: 8rem;
   }
-  @include media-breakpoint-up(md) {
-    width: 20%;
-    height: auto;
+}
+.showcase-link-name {
+  position: absolute;
+  font-weight: 300;
+  bottom: 0;
+  right: 0;
+  line-height: 1.1;
+  color: $color-one;
+  text-transform: uppercase;
+  background-color: $showcase-link-bg;
+  padding: 0.75rem;
+  height: 3.5rem;
+  margin: 0;
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    font-size: 1rem;
   }
+}
+
+.name-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-right: 1rem;
+  border-right: solid 1px $brand-secondary;
+  height: 100%;
 }

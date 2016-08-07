@@ -1,39 +1,31 @@
 #landing {
   position: relative;
-  @include short-flex(column nowrap, center, center);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 60vh;
-  max-height: 25rem;
+  display: flex;
+  flex-flow: column nowrap;
   overflow: hidden;
-  margin: 0 auto;
-  border: solid 1px #000;
-  @include media-breakpoint-up(md) {
-    height: 40vh;
-    max-height: none;
-    align-items: flex-start;
-  }
-  h1 {
+  flex: 1;
+  h2 {
+    color: $color-three;
     text-transform: uppercase;
-    width: auto;
-    padding: 1rem;
-    background: transparentize(#000, 0.30);
-    @include media-breakpoint-down(sm) {
-      font-size: 2rem;
+    font-weight: 300;
+    font-family: $font-secondary;
+    letter-spacing: 1px;
+    padding: 2rem;
+    font-size: 2.3rem;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0,0,0,0.65);
+    @include media-breakpoint-up(md) {
+      align-self: center;
+      font-size: 3rem;
     }
   }
   img {
-    position: absolute;
-    bottom:0;
-    right: 0;
-    width: 10rem;
-    padding: 1rem;
-    @include media-breakpoint-up(md) {
-      width: 12rem;
-    }
-    @include media-breakpoint-up(lg) {
-      width: 15rem;
-    }
+    @extend .img-fluid;
   }
+}
+
+.landing-block {
+  overflow-x: hidden;
 }

@@ -12,5 +12,5 @@ class BangarangBend.Views.CustomizedEvents extends Backbone.View
 
   render: ->
     @$el.html(@template(page: @page, event_items: @collection))
-    @$("#events-text").html(@page.get("copy_text"))
+    @$("#copy-text").html(@page.get("copy_text"))
     @

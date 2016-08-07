@@ -1,0 +1,47 @@
+<div class="card-block">
+  <h1><%= @page.get('link_name') %></h1>
+</div>
+
+<div class="card-block">
+  <div class="blockquote-copy-text">
+    <p id="copy-text" class="card-text"></p>
+  </div>
+</div>
+
+<div class="card-block clearfix food-truck-images">
+  <div class="food-truck-wrap clearfix">
+
+    <% @foodTruckImageRows.forEach (imageRow, index) ->: %>
+
+      <% if imageRow.isEven(index) == true :%>
+        <div class="small-col">
+          <div class="small">
+            <img src="<%= imageRow.get('small_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
+
+        <div class="large-col">
+          <div class="large">
+            <img src="<%= imageRow.get('large_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
+      <% end %>
+
+      <% if imageRow.isEven(index) == false :%>
+        <div class="large-col">
+          <div class="large">
+            <img src="<%= imageRow.get('large_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
+
+        <div class="small-col">
+          <div class="small">
+            <img src="<%= imageRow.get('small_image') %>" class="img-block" alt="" />
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
+
+  </div>
+</div>

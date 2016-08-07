@@ -1,23 +1,23 @@
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link <%= @tab == "featured" ? "active" : "" %>" data-toggle="tab" href="#featured-tab" role="tab">Featured</a>
+    <a class="nav-link <%= @tab == "featured_items" ? "active" : "" %>" data-toggle="tab" href="#featured-tab" role="tab">Featured</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link <%= @tab == "biography" ? "active" : "" %>" data-toggle="tab" href="#biography-tab" role="tab">Biography</a>
+    <a class="nav-link <%= @tab == "biography_items" ? "active" : "" %>" data-toggle="tab" href="#biography-tab" role="tab">Biography</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link <%= @tab == "landing" ? "active" : "" %>" data-toggle="tab" href="#home-landing-tab" role="tab">Landing</a>
+    <a class="nav-link <%= @tab == "landings" ? "active" : "" %>" data-toggle="tab" href="#home-landing-tab" role="tab">Landing</a>
   </li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane <%= @tab == "featured" ? "active" : "" %>" id="featured-tab" role="tabpanel">
-    <%= render partial: "admin/featured_item/index", locals: {featured: @page_contents[:featured]} %>
+  <div class="tab-pane <%= @tab == "featured_items" ? "active" : "" %>" id="featured-tab" role="tabpanel">
+    <%= render partial: "admin/featured_item/index", locals: {featured_items: @page_contents[:featured_items], title: 'featured items'} %>
   </div>
-  <div class="tab-pane <%= @tab == "biography" ? "active" : "" %>" id="biography-tab" role="tabpanel">
-    <%= render partial: "admin/biography_item/index", locals: {biography: @page_contents[:biography]} %>
+  <div class="tab-pane <%= @tab == "biography_items" ? "active" : "" %>" id="biography-tab" role="tabpanel">
+    <%= render partial: "admin/biography_item/index", locals: {biography_items: @page_contents[:biography_items], title: 'biographies'} %>
   </div>
-  <div class="tab-pane <%= @tab == "landing" ? "active" : "" %>" id="home-landing-tab" role="tabpanel">
-    <%= render partial: "admin/landing/index", locals: {landing: @page.landings.first, page: @page} %>
+  <div class="tab-pane <%= @tab == "landings" ? "active" : "" %>" id="home-landing-tab" role="tabpanel">
+    <%= render partial: "admin/landing/index", locals: {landing: @page_contents[:landings].first, page: @page} %>
   </div>
 </div>

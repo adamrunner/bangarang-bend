@@ -1,0 +1,80 @@
+#footer {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+  }
+  .logo-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    order: 2;
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+    @include media-breakpoint-up(md) {
+      order: 1;
+      width: 50%;
+      padding: 4rem 2rem;
+    }
+    @include media-breakpoint-up(lg) {
+
+      padding: 4rem 0
+    }
+    img {
+      width: 100%;
+      @include media-breakpoint-up(lg) {
+        max-width:  19.5rem;
+        width: 100%;
+      }
+    }
+  }
+  .logo-description {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    font-family: $font-family-serif;
+    text-align: center;
+    order: 1;
+    padding-left: 1rem;
+    @include media-breakpoint-up(md) {
+      padding: 0;
+      order: 2;
+      width: 50%;
+      text-align: inherit;
+    }
+  }
+}
+
+
+.logo-desc-inner-wrap {
+  width: 100%;
+  padding: 4rem 1rem;
+  @include media-breakpoint-up(lg) {
+    padding: 4rem 2rem 4rem 0;
+  }
+  h4  {
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: $color-two;
+  }
+  h6 {
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: $color-two;
+  }
+  small {
+    font-weight: 300;
+  }
+}
+
+.bg-footer {
+  background-color: #111;
+  border-top: solid 1px #060606;
+}

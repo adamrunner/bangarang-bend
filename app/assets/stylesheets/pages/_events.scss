@@ -1,20 +1,45 @@
-.produce-item {
-  width: 10rem;
-  color: #fff;
-  display: inline-block;
-  margin: 0.25rem;
-  padding: 0.5rem;
-  flex-grow: 2;
-  background-color: transparentize(#333, 0.50);
-  text-transform: capitalize;
-  text-align: center;
-  border: solid 1px #000;
-  @include media-breakpoint-down(sm) {
-    width: 25%;
+#customized-events-block {
+  padding-bottom: 4rem;
+  h2 {
+    font-family: $font-secondary;
+    color: $brand-secondary;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .event-header {
+    color: $color-three;
   }
 }
-.produce-block {
+
+#events-text {
+  color: $color-two;
+  margin-bottom: 0;
+}
+
+.produce-item {
+  width: 100%;
+  color: $color-two;
+  display: inline-block;
+  padding: 0.5rem 0;
+  background-color: $card-bg-color;
+  text-transform: capitalize;
+  text-align: center;
+  border: solid 1px $card-border-color;
+}
+.inner-wrap {
   display: flex;
+  margin: 0 auto;
   flex-flow: row wrap;
-  justify-content: space-around;
+}
+
+.produce-item-row {
+  @include make-row($gutter:  0);
+}
+
+.produce-item-col {
+  @include make-col($gutter:  0);
+  @include make-col-span(6);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(3);
+  }
 }

@@ -1,0 +1,41 @@
+.navbar {
+  background: $gray-dark;
+  border-bottom: solid 1px #555;
+  .navbar-brand {
+    @extend .nav-link;
+    @extend .nav-item;
+    padding: 0.425rem 0;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: #ccc;
+    &:hover {
+      color: $color-three;
+    }
+    i {
+      margin-right: 0.25rem;
+      margin-bottom: 0.1rem;
+    }
+  }
+}
+
+.admin-link {
+  @extend .nav-item;
+  @extend .nav-link;
+  font-size: 90%;
+  letter-spacing: 1px;
+  &:nth-of-type(2) {
+    margin-left: auto !important;
+  }
+}
+
+.nav.navbar-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}

@@ -31,8 +31,8 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary             : #445768 !default;
-$transparent-brand-primary : transparentize(#000, 0.15%) !default;
-$brand-secondary           : #C34C3B !default;
+$transparent-brand-primary : #111 !default;
+$brand-secondary           : darken(#C34C3B, 5%) !default;
 $light                     : #eee !default;
 $brand-success             : #5cb85c !default;
 $brand-info                : #5bc0de !default;
@@ -40,20 +40,27 @@ $brand-warning             : #f0ad4e !default;
 $brand-danger              : #d9534f !default;
 
 // #NOTE custom variables
-$font-secondary: 'Open Sans', sans-serif !default;
+$color-one  : #aaa;
+$color-two  : #c8cbc5;
+$color-three: #877674;
+$color-four : lighten(#3d4e54, 5%);
+
+$html-bg-color: #222;
+
+$font-secondary: 'Oswald', sans-serif !default;
 $font-primary:   'Roboto', sans-serif !default;
 
 $light-font-color : #fff;
 $dark-font-color  : #333;
 
+$map-link-color: transparentize(#111, 0.15);
+
+$headshot-img-bg-color: #0f0f0f;
+
 $dark-transparent: transparentize(#222, 0.50) !default;
 
 $navbar-height: 4.25rem;
 $nav-brand-logo-height: 2rem;
-
-$showcase-bg-color: #fff;
-$showcase-border-color: $showcase-bg-color;
-$showcase-border-size: 1px;
 
 $featured-bg-color: transparentize($transparent-brand-primary, 0.15);
 $featured-title-color: #fff;
@@ -66,6 +73,21 @@ $about-bg-color: transparentize($transparent-brand-primary, 0.15);
 $contact-bg-color: #eee;
 
 $footer-bg-color: $contact-bg-color;
+
+$card-bg-color: #191919;
+$card-border-color: #000;
+
+$showcase-link-bg: transparentize(#1a1a1a, 0.07);
+$showcase-link-color-active: $brand-secondary;
+
+$social-link-border-color: transparentize(#111, 0.15);
+$social-link-color: transparentize(#111, 0.15);
+
+$blockquote-border-color: darken(#877674, 25%);
+$menu-blockquote-border-color: #ddd;
+
+$brand-description-color: #CEC7C6;
+
 //
 
 
@@ -155,7 +177,7 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 576px,
   md: 720px,
-  lg: 940px,
+  lg: 984px,
   xl: 1140px
 ) !default;
 
@@ -173,7 +195,7 @@ $grid-gutter-width:          1.25rem !default; // 30px
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:     'Roboto', sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:          'Roboto Slab',Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
@@ -206,7 +228,7 @@ $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       $font-primary;
-$headings-font-weight:       inherit !default;
+$headings-font-weight:       300 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 
@@ -218,7 +240,7 @@ $text-muted:                  $gray-light !default;
 $abbr-border-color:           $gray-light !default;
 
 $blockquote-small-color:      $gray-light !default;
-$blockquote-font-size:        ($font-size-base * 1.25) !default;
+$blockquote-font-size:        1rem !default;
 $blockquote-border-color:     $gray-lighter !default;
 
 $hr-border-color:             rgba(0,0,0,.1) !default;
@@ -269,9 +291,9 @@ $table-border-color:            $gray-lighter !default;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-padding-x:                  1rem !default;
+$btn-padding-x:                  0.75rem !default;
 $btn-padding-y:                  .375rem !default;
-$btn-font-weight:                normal !default;
+$btn-font-weight:                300 !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -365,9 +387,10 @@ $dropdown-border-color:          rgba(0,0,0,.15) !default;
 $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
 
-$dropdown-link-color:            $gray-dark !default;
-$dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
-$dropdown-link-hover-bg:         #f5f5f5 !default;
+$dropdown-link-color:            #877674 !default;
+$dropdown-link-hover-color:      $brand-secondary !default;
+$dropdown-link-hover-bg:         #f1f1f1 !default;
+$dropdown-link-font-weight:      300 !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
 $dropdown-link-active-bg:        $component-active-bg !default;

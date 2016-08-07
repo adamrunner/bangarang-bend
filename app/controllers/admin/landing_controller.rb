@@ -4,10 +4,10 @@ class Admin::LandingController < Admin::BaseController
 
   def create
     landing = @page.landings.new()
-    landing.heading = "#{landing_params[:first_line]} <br> #{landing_params[:second_line]}"
+    landing.heading = "<span>#{landing_params[:first_line]}</span> <br> <span>#{landing_params[:second_line]}</span>"
     landing.image = landing_params[:image]
     if landing.save
-      redirect_to admin_page_path(landing.page, tab: "landing"), notice: "Landing Created Successfully"
+      redirect_to admin_page_path(landing.page, tab: "landings"), notice: "Landing Created Successfully"
     end
   end
 
@@ -21,7 +21,7 @@ class Admin::LandingController < Admin::BaseController
     @landing.heading = "#{landing_params[:first_line]} <br> #{landing_params[:second_line]}"
     @landing.image = landing_params[:image]
     if @landing.save
-      redirect_to admin_page_path(@landing.page, tab: "landing"), notice: "Landing Updated Successfully"
+      redirect_to admin_page_path(@landing.page, tab: "landings"), notice: "Landing Updated Successfully"
     end
   end
 
@@ -34,7 +34,7 @@ class Admin::LandingController < Admin::BaseController
 
   def destroy
     if @landing.destroy
-      redirect_to admin_page_path(@landing.page, tab: "landing"), alert: "Landing Deleted Successfully"
+      redirect_to admin_page_path(@landing.page, tab: "landings"), alert: "Landing Deleted Successfully"
     end
   end
 

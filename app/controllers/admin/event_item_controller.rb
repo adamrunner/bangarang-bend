@@ -5,7 +5,7 @@ class Admin::EventItemController < Admin::BaseController
   def create
     event_item = @page.event_items.create(event_item_params)
     if event_item.save
-      redirect_to admin_page_path(event_item.page, tab: "months"), notice: "Month Successfully Created"
+      redirect_to admin_page_path(event_item.page, tab: "event_items"), notice: "Month Successfully Created"
     end
   end
 
@@ -22,7 +22,7 @@ class Admin::EventItemController < Admin::BaseController
 
   def destroy
     if @event_item.destroy
-      redirect_to admin_page_path(@event_item.page, tab: "months"), alert: "Month Deleted Successfully"
+      redirect_to admin_page_path(@event_item.page, tab: "event_items"), alert: "Month Deleted Successfully"
     end
   end
 

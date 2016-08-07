@@ -1,0 +1,43 @@
+<div class="card-bs-row">
+
+  <div class="card-span-md-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">edit food truck address link</h3>
+      </div>
+
+      <div class="form-block">
+        <%= form_for @food_truck_address, url: {action: "update"} do |f| %>
+
+          <div class="form-group">
+            <%= f.label :description, "description" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :link_url, "google maps link" %>:
+            <%= f.text_field :link_url, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox">
+              <%= f.label :active do %>
+                <%= f.check_box :active, class: "form-control" %>
+                Set Link To Active?
+              <% end %>
+            </div>
+          </div>
+
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "cancel", :back, class: "btn btn-secondary" %>
+            <%= link_to "delete", admin_service_item_path(@food_truck_address), method: "delete", data: {confirm: "Are you sure you want to delete food truck address ?"}, class: "btn btn-danger pull-md-right" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: 'Black Tie';
+  src: font-url('light/BlackTie-Light-webfont.eot');
+  src: font-url('light/BlackTie-Light-webfont.eot') format('embedded-opentype'),
+    font-url('light/BlackTie-Light-webfont.woff2') format('woff2'),
+    font-url('light/BlackTie-Light-webfont.woff') format('woff'),
+    font-url('light/BlackTie-Light-webfont.ttf') format('truetype'),
+    font-url('light/BlackTie-Light-webfont.svg') format('svg');
+//  src: url('#{$bt-font-path}/light/BlackTie-Light.otf') format('opentype'); // used when developing fonts
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Font Awesome Brands';
+  src: font-url('brands/FontAwesomeBrands-Regular-webfont.eot');
+  src: font-url('brands/FontAwesomeBrands-Regular-webfont.eot') format('embedded-opentype'),
+    font-url('brands/FontAwesomeBrands-Regular-webfont.woff2') format('woff2'),
+    font-url('brands/FontAwesomeBrands-Regular-webfont.woff') format('woff'),
+    font-url('brands/FontAwesomeBrands-Regular-webfont.ttf') format('truetype'),
+    font-url('brands/FontAwesomeBrands-Regular-webfont.svg') format('svg');
+//  src: url('#{$bt-font-path}/brands/FontAwesomeBrands-Regular.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}

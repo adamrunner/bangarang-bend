@@ -7,7 +7,7 @@ class Admin::PageController < Admin::BaseController
 
   def show
     @page_contents = @page.page_content
-    @tab = params[:tab] || @page.tab
+    @tab = params[:tab] || @page.default_tab
   end
 
   def update

@@ -4,7 +4,7 @@
   <title>BangarangBend Admin</title>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300|Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto+Condensed:300,400|Roboto+Slab:300,400" rel="stylesheet">
   <%= stylesheet_link_tag    'admin', media: 'all' %>
   <%= javascript_include_tag 'admin' %>
   <%= csrf_meta_tags %>
@@ -13,25 +13,25 @@
 
 <%= render "admin/shared/navbar" %>
 
-<div class="card card-block">
-  <%= link_to "Main Site", root_path, class: "btn btn-primary" %>
-</div>
+  <div class="admin-container">
+    <div class="row">
 
-<div class="admin-container">
-  <div class="row">
-    <%= render "admin/shared/breadcrumbs" %>
+      <% if admin_signed_in? %>
+        <div class="col-xs-12 col-xl-10 col-xl-offset-1">
+          <%= render "admin/shared/breadcrumbs" %>
+        </div>
+      <% end %>
+
+      <div id="flash-messages">
+        <%= render "admin/shared/flash_messages" %>
+      </div>
+
+      <div class="col-xs-12 col-xl-10 col-xl-offset-1">
+        <%= yield %>
+      </div>
+
+    </div>
   </div>
-  
-  <div class="row">
-    <%= render "admin/shared/flash_messages" %>
-  </div>
-
-  <div class="row">
-    <%= yield %>
-  </div>
-
-</div>
-
 
 </body>
 </html>

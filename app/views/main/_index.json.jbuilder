@@ -12,14 +12,15 @@ json.data do
     json.id featured_item.id
     json.name featured_item.name
     json.description featured_item.description
-    json.image_url featured_item.image.url
+    json.image_url featured_item.image.featured_image.url
+    json.link_url featured_item.link_url
   end
 
   json.biography_items @biography_items do |biography_item|
     json.id biography_item.id
     json.name biography_item.name
     json.description biography_item.description
-    json.image_url biography_item.image.url
+    json.image_url biography_item.image.biography_image.url
   end
 
   json.menus @menus do |menu|
@@ -63,4 +64,11 @@ json.data do
     json.name philosophy_item.name
     json.description philosophy_item.description
   end
+
+  json.food_truck_image_rows @food_truck_image_rows do |food_truck_image_row|
+    json.id food_truck_image_row.id
+    json.small_image food_truck_image_row.small_image.small_image.url
+    json.large_image food_truck_image_row.large_image.large_image.url
+  end
+
 end

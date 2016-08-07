@@ -5,7 +5,7 @@
 <% @menus.forEach (menu) =>: %>
   <a class="catering-menu-btn" href="/<%= @page.get('link_name') %>/<%= menu.link() %>">
     <div class="card-block catering-menus-block">
-      <h2><%= menu.get('name') %> <i class="fa fa-angle-double-right fa-1x"></i></h2>
+      <h3><%= menu.get('name') %> <i class="btl bt-angles-right"></i></h2>
       <p><%= menu.get('description') %></p>
     </div>
   </a>
