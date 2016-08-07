@@ -8,7 +8,7 @@ FeaturedItemSorter.prototype = {
 
   initialize: function() {
     this.el       = document.getElementById('featured-items');
-    this.sortable = Sortable.create( this.el, { disabled: true });
+    this.sortable = Sortable.create( this.el, { disabled: true, handle: '.handle', draggable: '.card-span-lg-6', forceFallback: true});
     this.$el      = $(this.el);
     this.$handles = this.$el.find('h4');
     this.$head    = $('#featured-head');
@@ -17,7 +17,6 @@ FeaturedItemSorter.prototype = {
     this.$childs  = this.$el.children();
     this.$cardRow = this.$childs.find('.card-row');
     this.setListeners();
-    this.registerAnimation();
   },
 
 
@@ -28,24 +27,12 @@ FeaturedItemSorter.prototype = {
   },
 
 
-
-  registerAnimation: function() {
-    $.Velocity.RegisterEffect('transitionHeight', {
-      defaultDuration: 300,
-      calls: [
-          [ { height: '6.5rem' }, 1 ]
-      ],
-      reset: { height: '100%', minHeight: '6.5rem' }
-    });
-  },
-
-
   enableSorting: function() {
     this.animateSorts(this.$sortOff, this.$sortOn);
     this.sortable.option("disabled", false);
     this.$handles.addClass('enabled');
-    this.$childs.velocity('transitionHeight', { delay: 250 }, "easeInOutQuart");
-    this.$cardRow.velocity('transition.slideDownOut', { duration: 300 });
+    this.$cardRow.velocity('transition.fadeOut');
+    this.$childs.velocity({ height: '110px' });
   },
 
 
