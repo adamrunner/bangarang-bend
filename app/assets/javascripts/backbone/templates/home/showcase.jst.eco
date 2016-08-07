@@ -3,7 +3,7 @@
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/services.jpg" alt="bangarang-services" class="showcase-img" />
+        <img src="/images/showcase/services.jpg" alt='<%= @pages.showcaseLink("services").join(" ") %>' class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
@@ -22,7 +22,7 @@
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/sm_truck.jpg" alt="bangarang-food-truck" class="showcase-img" />
+        <img src="/images/showcase/sm_truck.jpg" alt='food truck' class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
@@ -40,7 +40,7 @@
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/our-menu.jpg" alt="bangarang-menu" class="showcase-img" />
+        <img src="/images/showcase/our-menu.jpg" alt='<%= @pages.showcaseLink("catering_menus").join(" ") %>' class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
@@ -59,7 +59,7 @@
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/events.jpg" alt="bangarang-events" class="showcase-img" />
+        <img src="/images/showcase/the_farms_showcase.jpg" alt="<%= @pages.showcaseLink("events").join(" ") %>" class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
@@ -78,7 +78,7 @@
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/philosophy.jpg" alt="bangarang-events" class="showcase-img" />
+        <img src="/images/showcase/philosophy.jpg" alt='<%= @pages.showcaseLink("philosophy").join(" ") %>' class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
@@ -97,7 +97,7 @@
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/contact.jpg" alt="bangarang-events" class="showcase-img" />
+        <img src="/images/showcase/contact.jpg" alt="contact us" class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
