@@ -34,7 +34,9 @@ html {
     background-size: 100%;
   }
 }
-
+.img-rounded {
+  border-radius: $border-radius;
+}
 body {
   font-weight: 300;
   font-family: $font-primary;
@@ -63,6 +65,27 @@ h1 {
   text-transform: uppercase;
   font-family: $font-secondary;
 }
+
+h2 {
+  font-family: $font-secondary;
+  color: $brand-secondary;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  &.padded {
+    padding:1.25rem;
+  }
+}
+
+h3 {
+  font-family: $font-secondary;
+  color: $color-one;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  &.padded {
+    padding:1.25em;
+  }
+}
+
 ul {
   list-style: none;
 }

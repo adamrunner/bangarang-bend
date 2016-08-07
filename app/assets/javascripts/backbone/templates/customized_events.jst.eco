@@ -8,23 +8,31 @@
   </div>
 </div>
 
-<div class="card-block">
-  <h2 class="event-header">Local Produce</h2>
+<h2 class="padded">Featured Farms</h2>
+<div class="media">
+  <div class="media-left media-middle">
+    <a href="javascript:void();" onclick="alert('This could be a link to the farm website!')">
+      <img class="media-object img-rounded" src="images/beef-farm-placeholder-resized.jpg">
+    </a>
+  </div>
+  <div class="media-body">
+    <a href="javascript:void();" onclick="alert('This could be a link to the farm website!')"><h3 class="media-heading">Carlton Beef Farms</h3></a>
+    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  </div>
 </div>
 
-<% @event_items.forEach (event_item) ->: %>
-  <div class="card-block">
-    <h2><%= event_item.get('name') %></h2>
+<div class="media">
+
+  <div class="media-body">
+    <a href="javascript:void();" onclick="alert('This could be a link to the farm website!')"><h3 class="media-heading">Mary's Free Range Chicken</h3></a>
+    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
   </div>
-  <div class="card-block produce-block inner-block">
-    <div class="col-12-xs">
-      <div class="produce-item-row">
-        <% event_item.get('produce_items').forEach (produce_item) ->: %>
-          <div class="produce-item-col">
-            <span class="produce-item"><%= produce_item.name %></span>
-          </div>
-        <% end %>
-      </div>
-    </div>
+
+  <div class="media-right media-middle">
+    <a href="javascript:void();" onclick="alert('This could be a link to the farm website!')">
+      <img class="media-object img-rounded" src="images/free_range_chickens_placeholder_resized.jpg">
+    </a>
   </div>
-<% end %>
+</div>
