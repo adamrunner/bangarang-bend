@@ -8,6 +8,7 @@ class BangarangBend.Views.CateringMenus extends Backbone.View
 
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: 'catering_menus')
+    Backbone.trigger('domchange:title', @page.titleName())
     @render()
 
   render: ->

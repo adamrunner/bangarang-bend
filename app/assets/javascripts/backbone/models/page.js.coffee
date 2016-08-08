@@ -8,6 +8,9 @@ class BangarangBend.Models.Page extends Backbone.Model
     else
       return linkName.replace(/ /g, '_')
 
+  titleName: ->
+    return "BangarangBend - #{@get('link_name').titleize()}"
+
   splitName: ->
     return @get('link_name').split(' ')
 

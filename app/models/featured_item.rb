@@ -17,8 +17,4 @@ class FeaturedItem < ActiveRecord::Base
     write_attribute(:link_url, link)
   end
 
-  def full_link_url
-    link = link_url
-  end
-
 end
