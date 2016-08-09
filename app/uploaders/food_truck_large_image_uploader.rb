@@ -1,7 +1,8 @@
 # encoding: utf-8
 
 class FoodTruckLargeImageUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::ImageOptimizer
+  process :optimize
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
