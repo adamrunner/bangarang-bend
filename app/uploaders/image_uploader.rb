@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::ImageOptimizer
+  process :optimize
+  
   version :featured_image, if: :is_featured?
   version :biography_image, if: :is_biography?
   version :landing, if: :is_landing?
