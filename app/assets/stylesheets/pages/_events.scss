@@ -1,3 +1,19 @@
+.media {
+  h3 {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $color-one;
+  }
+  color: $color-one;
+  font-weight:300;
+  padding: 1.25rem;
+  .media-left {
+    padding-right: 1.25rem;
+  }
+  .media-right {
+    padding-left: 1.25rem;
+  }
+}
 #customized-events-block {
   padding-bottom: 4rem;
   h2 {
