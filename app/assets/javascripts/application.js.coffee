@@ -13,6 +13,7 @@
 #= require jquery
 #= require jquery_ujs
 
+#= require titleize
 #= require bootstrap/util
 #= require bootstrap/alert
 #= require bootstrap/button
