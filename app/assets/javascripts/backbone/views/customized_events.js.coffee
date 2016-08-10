@@ -8,6 +8,7 @@ class BangarangBend.Views.CustomizedEvents extends Backbone.View
 
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: "events")
+    Backbone.trigger('domchange:title', @page.titleName())
     @render()
 
   render: ->
