@@ -46,11 +46,11 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
             view.remove()
           @currentView.remove()
           @currentView = view
-          BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 500))
+          BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 300))
       else
         @currentView.remove()
         @currentView = view
-        BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 500))
+        BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 300))
     else
       @currentView = view
-      BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 500))
+      BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 300))

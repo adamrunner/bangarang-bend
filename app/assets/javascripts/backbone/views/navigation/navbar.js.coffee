@@ -50,7 +50,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
       if e.which > 0 or e.type == 'mousedown' or e.type == 'mousewheel' or e.type == 'touchstart'
         @body.velocity('stop').unbind 'scroll mousedown DOMMouseScroll mousewheel keyup touchstart'
 
-    @body.velocity 'scroll', {duration: 700, delay: 300}
+    @body.velocity 'scroll', {duration: 1000, delay: 500}
 
   closeDropdown: (event) ->
     @scrollTop()
