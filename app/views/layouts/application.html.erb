@@ -36,6 +36,7 @@
 <%= yield %>
 
 <%= javascript_include_tag 'application' %>
+
 <script>
 $(document).ready(function(){
   BangarangBend.initialize(<%= (render partial: "main/index.json").html_safe %>);
