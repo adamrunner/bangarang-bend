@@ -43,14 +43,14 @@ class BangarangBend.Views.Navbar extends Backbone.View
       return true
 
   scrollContent: ->
-    $('#content').velocity('scroll', {offset: "-70px", duration: 700})
+    $('#content').velocity('scroll', {offset: "70px", duration: 700})
 
   scrollTop: ->
     @body.bind 'scroll mousedown DOMMouseScroll mousewheel keyup touchstart', (e) =>
       if e.which > 0 or e.type == 'mousedown' or e.type == 'mousewheel' or e.type == 'touchstart'
         @body.velocity('stop').unbind 'scroll mousedown DOMMouseScroll mousewheel keyup touchstart'
 
-    @body.velocity 'scroll', {duration: 1000, delay: 500}
+    @body.velocity 'scroll', {offset: "-70px", duration: 700, delay: 500}
 
   closeDropdown: (event) ->
     @scrollTop()
