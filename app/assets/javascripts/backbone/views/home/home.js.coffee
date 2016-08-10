@@ -10,6 +10,7 @@ class BangarangBend.Views.Home extends Backbone.View
     'click #contact-btn'      : 'scrollToSection'
 
   initialize: ->
+    Backbone.trigger('domchange:title', 'BangarangBend')
     @createSubViews()
     @subViews = [@featured, @showcase, @about]
 
