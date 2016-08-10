@@ -12,6 +12,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
   initialize: ->
     @pages = BangarangBend.pages
     @menus = BangarangBend.menus
+    @body = $('body')
     @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
     @render()
@@ -26,7 +27,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
       $('#nav-btn').removeClass('bt-times')
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
         if options.scroll == true
-          @scrollContent()
+          @scrollTop()
         window.BangarangBend.menuToggled = false
     else
       $('#nav-btn').addClass('bt-times')
@@ -35,6 +36,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
       window.BangarangBend.menuToggled = true
 
   mobileNavCheck: ->
+    @scrollTop()
     if BangarangBend.menuToggled == true
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = false
@@ -43,5 +45,13 @@ class BangarangBend.Views.Navbar extends Backbone.View
   scrollContent: ->
     $('#content').velocity('scroll', {offset: "-70px", duration: 700})
 
+  scrollTop: ->
+    @body.bind 'scroll mousedown DOMMouseScroll mousewheel keyup touchstart', (e) =>
+      if e.which > 0 or e.type == 'mousedown' or e.type == 'mousewheel' or e.type == 'touchstart'
+        @body.velocity('stop').unbind 'scroll mousedown DOMMouseScroll mousewheel keyup touchstart'
+
+    @body.velocity 'scroll', {duration: 700, delay: 300}
+
   closeDropdown: (event) ->
+    @scrollTop()
     @$('#nav-dropdown').removeClass('open')
