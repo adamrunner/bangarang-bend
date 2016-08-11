@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::ImageOptimizer
+  process :optimize
+  
   version :featured_image, if: :is_featured?
   version :biography_image, if: :is_biography?
   version :landing, if: :is_landing?
@@ -46,7 +48,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :biography_image do
-    process :resize_to_fit => [400, 400]
+    process :resize_to_fill => [200, 200]
     version :biography_thumb
   end
 
