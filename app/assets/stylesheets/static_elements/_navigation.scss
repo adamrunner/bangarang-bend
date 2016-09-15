@@ -124,3 +124,7 @@
     }
   }
 }
+
+.dropdown-btn {
+  @extend .navbar-btn;
+}

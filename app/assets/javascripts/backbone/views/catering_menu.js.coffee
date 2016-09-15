@@ -6,6 +6,7 @@ class BangarangBend.Views.CateringMenu extends Backbone.View
   id: 'catering-menu-block'
 
   initialize: ->
+    Backbone.trigger('domchange:title', "BangarangBend - #{@model.get('name').titleize()}")
     @render()
 
   render: ->

@@ -8,6 +8,7 @@ class BangarangBend.Views.FoodTruck extends Backbone.View
 
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: "food_truck")
+    Backbone.trigger('domchange:title', @page.titleName())
 
   render: ->
     @$el.html(@template(page: @page, foodTruckImageRows: @collection))

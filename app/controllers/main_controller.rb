@@ -6,7 +6,7 @@ class MainController < ApplicationController
     @landing               = @page.landings.first
     @food_truck_address    = FoodTruckAddress.find_by(active: true)
     @food_truck_image_rows = FoodTruckImageRow.all
-    @featured_items        = FeaturedItem.all
+    @featured_items        = FeaturedItem.order(:position)
     @biography_items       = BiographyItem.all
     @menus                 = CateringMenu.all
     @service_items         = ServiceItem.all

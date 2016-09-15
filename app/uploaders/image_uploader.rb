@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::ImageOptimizer
 
   version :featured_image, if: :is_featured?
   version :biography_image, if: :is_biography?
@@ -38,6 +39,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :featured_image do
     process :resize_to_fit => [400, 400]
+    process :optimize
     version :featured_thumb
   end
 
@@ -46,7 +48,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :biography_image do
-    process :resize_to_fit => [400, 400]
+    process :resize_to_fill => [200, 200]
+    process :optimize
     version :biography_thumb
   end
 
@@ -56,6 +59,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :landing do
     process :resize_to_fill => [1100, 400]
+    process :optimize
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -13,7 +13,7 @@
     <div class="card-content-wrap">
 
         <div class="card-col title">
-          <h4 class="title-text"><%= featured_item[:name] %></h4>
+          <h4 class="title-text handle"><%= featured_item[:name] %> </h4>
         </div>
 
         <div class="card-row">
@@ -23,7 +23,7 @@
               <h5>Description</h5>
               <p class="card-text"><%= featured_item[:description] %></p>
               <h5 class="m-t-2">Links To</h5>
-              <p class="card-text"><%= featured_item.link_url != nil ? featured_item.full_link_url : 'No Link' %></p>
+              <p class="card-text"><%= featured_item.link_url != nil ? featured_item.link_url : 'No Link' %></p>
             </div>
 
             <div class="card-img-col">

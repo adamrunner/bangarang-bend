@@ -22,7 +22,12 @@ window.BangarangBend =
     @eventItems         = new BangarangBend.Collections.EventItems(options.data.event_items)
     @philosophyItems    = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)
     @foodTruckImageRows = new BangarangBend.Collections.FoodTruckImageRows(options.data.food_truck_image_rows)
+    _.extend(@, Backbone.Events);
     @registerAnimations()
+    @appListeners()
+
+  appListeners: ->
+    @listenTo Backbone, 'domchange:title', @onDomChangeTitle
 
   registerAnimations: ->
     $.Velocity.RegisterEffect('overlayShow', {
@@ -39,3 +44,6 @@ window.BangarangBend =
         [ { color: '#CEC7C6' }, 0.5 ]
     ]
     })
+
+  onDomChangeTitle: (title) ->
+    $(document).attr('title', title)
