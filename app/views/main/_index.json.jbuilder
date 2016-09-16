@@ -6,6 +6,10 @@ json.data do
     if page.show_copy_text
       json.copy_text page.copy_text
     end
+    if page.name === 'catering_menus'
+      json.nested_links true
+      json.singularized page.name.singularize
+    end
   end
 
   json.featured_items @featured_items do |featured_item|
@@ -48,15 +52,12 @@ json.data do
     json.description service_item.description
   end
 
-  json.event_items @event_items do |event_item|
-    json.id event_item.id
-    json.name event_item.name
-    json.description event_item.description
-
-    json.produce_items event_item.event_produce_items do |produce_item|
-      json.id produce_item.id
-      json.name produce_item.name
-    end
+  json.farms @farms do |farm|
+    json.id farm.id
+    json.name farm.name
+    json.description farm.description
+    json.url farm.url
+    json.image_url farm.farm_image.url
   end
 
   json.philosophy_items @philosophy_items do |philosophy_item|

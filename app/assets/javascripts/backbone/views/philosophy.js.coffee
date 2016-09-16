@@ -8,7 +8,6 @@ class BangarangBend.Views.Philosophy extends Backbone.View
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: "philosophy")
     Backbone.trigger('domchange:title', @page.titleName())
-    @render()
 
   render: ->
     @$el.html(@template(page: @page, philosophy_items: @collection))

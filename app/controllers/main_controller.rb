@@ -11,5 +11,6 @@ class MainController < ApplicationController
     @menus                 = CateringMenu.all
     @service_items         = ServiceItem.all
     @philosophy_items      = PhilosophyItem.all
+    @farms                 = Farm.all
   end
 end

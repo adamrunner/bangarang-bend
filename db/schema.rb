@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727210222) do
+ActiveRecord::Schema.define(version: 20160916165645) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -53,33 +53,17 @@ ActiveRecord::Schema.define(version: 20160727210222) do
 
   add_index "catering_menus", ["page_id"], name: "index_catering_menus_on_page_id", using: :btree
 
-  create_table "event_items", force: :cascade do |t|
+  create_table "farms", force: :cascade do |t|
     t.integer  "page_id",     limit: 4
     t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
     t.text     "description", limit: 65535
+    t.string   "farm_image",  limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
-  add_index "event_items", ["page_id"], name: "index_event_items_on_page_id", using: :btree
-
-  create_table "event_items_produce_items", id: false, force: :cascade do |t|
-    t.integer "event_item_id",         limit: 4
-    t.integer "event_produce_item_id", limit: 4
-  end
-
-  add_index "event_items_produce_items", ["event_item_id"], name: "index_event_items_produce_items_on_event_item_id", using: :btree
-  add_index "event_items_produce_items", ["event_produce_item_id"], name: "index_event_items_produce_items_on_event_produce_item_id", using: :btree
-
-  create_table "event_produce_items", force: :cascade do |t|
-    t.integer  "page_id",     limit: 4
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  add_index "event_produce_items", ["page_id"], name: "index_event_produce_items_on_page_id", using: :btree
+  add_index "farms", ["page_id"], name: "index_farms_on_page_id", using: :btree
 
   create_table "featured_items", force: :cascade do |t|
     t.integer  "page_id",     limit: 4
