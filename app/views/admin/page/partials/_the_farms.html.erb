@@ -1,1 +1,5 @@
-<%= render partial: "admin/farms/index", locals: {farms: @page_contents[:farms]} %>
+<% if @page_contents[:farms].empty? %>
+  <%= render partial: "admin/page/partials/empty", locals: { page: @page, content_type: "farms", link: new_admin_page_farm_path(@page) } %>
+<% else %>
+  <%= render partial: "admin/farms/index", locals: {farms: @page_contents[:farms]} %>
+<% end %>
