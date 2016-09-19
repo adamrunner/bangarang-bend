@@ -8,7 +8,6 @@ class BangarangBend.Views.Services extends Backbone.View
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: "services")
     Backbone.trigger('domchange:title', @page.titleName())
-    @render()
 
   render: ->
     @$el.html(@template(page: @page, service_items: @collection))

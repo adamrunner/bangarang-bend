@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:index]
   resources :service_items, only: [:index]
-  resources :event_items, only: [:index]
+  resources :farms, only: [:index]
   resources :philosophy_items, only: [:index]
   resources :catering_menus, only: [:index, :show]
 
@@ -31,8 +31,7 @@ Rails.application.routes.draw do
       resources :featured_item, only: [:new, :create]
       resources :service_item, only: [:new, :create]
       resources :philosophy_item, only: [:new, :create]
-      resources :event_item, only: [:new, :create]
-      resources :event_produce_item, only: [:new, :create]
+      resources :farms, only: [:new, :create]
       resources :landing, only: [:new, :create]
       resources :food_truck_addresses, only: [:new, :create]
       resources :food_truck_image_rows, only: [:new, :create]
@@ -42,6 +41,7 @@ Rails.application.routes.draw do
     resources :featured_item, only: [:edit, :update, :destroy]
 
     delete '/featured_item/:id/delete_img', to: 'featured_item#destroy_img', as: 'delete_featured_img'
+    delete '/farm/:id/delete_img', to: 'farms#destroy_img', as: 'delete_farm_img'
     post '/featured_items/update_order', to: 'featured_item#update_order', as: 'update_order'
     delete '/biography_item/:id/delete_img', to: 'biography_item#destroy_img', as: 'delete_biography_img'
 
@@ -51,8 +51,7 @@ Rails.application.routes.draw do
 
     resources :service_item, only: [:edit, :update, :destroy]
     resources :philosophy_item, only: [:edit, :update, :destroy]
-    resources :event_item, only: [:edit, :update, :destroy]
-    resources :event_produce_item, only: [:edit, :update, :destroy]
+    resources :farms, only: [:edit, :update, :destroy]
 
     resources :catering_menu, only: [:show, :edit, :update, :destroy] do
       resources :menu_section, only: [:new, :create]

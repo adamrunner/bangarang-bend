@@ -19,9 +19,9 @@ window.BangarangBend =
     @mobileNav          = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
     @navbar             = new BangarangBend.Views.Navbar(el: '#navbar')
     @serviceItems       = new BangarangBend.Collections.ServiceItems(options.data.service_items)
-    @eventItems         = new BangarangBend.Collections.EventItems(options.data.event_items)
     @philosophyItems    = new BangarangBend.Collections.PhilosophyItems(options.data.philosophy_items)
     @foodTruckImageRows = new BangarangBend.Collections.FoodTruckImageRows(options.data.food_truck_image_rows)
+    @farms              = new BangarangBend.Collections.Farms(options.data.farms)
     _.extend(@, Backbone.Events);
     @registerAnimations()
     @appListeners()

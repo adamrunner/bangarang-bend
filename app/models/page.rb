@@ -1,8 +1,6 @@
 class Page < ActiveRecord::Base
   serialize :content, Array
   has_many :biography_items
-  has_many :event_items
-  has_many :event_produce_items
   has_many :catering_menus
   has_many :featured_items
   has_many :philosophy_items
@@ -10,6 +8,7 @@ class Page < ActiveRecord::Base
   has_many :landings
   has_many :food_truck_image_rows
   has_many :food_truck_addresses
+  has_many :farms
   before_save :link_name_lowercase,
               :format_text
 

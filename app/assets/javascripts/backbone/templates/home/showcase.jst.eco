@@ -54,17 +54,17 @@
     </div>
   </a>
 
-  <a class="showcase-item" href="/<%= @pages.linkName('events') %>" >
+  <a class="showcase-item" href="/<%= @pages.linkName('the_farms') %>" >
     <div class="img-wrap">
       <i class="btl bt-circle-arrow-right"></i>
 
       <div class="img-inner-wrap">
-        <img src="/images/showcase/the_farms_showcase.jpg" alt="<%= @pages.showcaseLink("events").join(" ") %>" class="showcase-img" />
+        <img src="/images/showcase/the_farms_showcase.jpg" alt="<%= @pages.showcaseLink('the_farms').join(" ") %>" class="showcase-img" />
       </div>
 
       <div class="showcase-link-name">
         <span class="name-wrap">
-          <% @pages.showcaseLink("events").forEach (word) ->: %>
+          <% @pages.showcaseLink("the_farms").forEach (word) ->: %>
             <span><%= word %></span>
           <% end %>
         </span>
