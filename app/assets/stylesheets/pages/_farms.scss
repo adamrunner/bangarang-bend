@@ -4,10 +4,15 @@
     flex-flow: row;
   }
   h3 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     padding: 1rem 0;
     margin-bottom: 1rem;
-    border-bottom: 1px solid $color-one;
-    @include media-breakpoint-up(md) {
+    border-bottom: 1px solid $media-header-border-color;
+    color: $color-three;
+    @include media-breakpoint-up(lg) {
+      flex-flow: row wrap;
       padding-top: 0;
     }
   }
@@ -36,48 +41,33 @@
     }
   }
 }
-#customized-events-block {
-  padding-bottom: 4rem;
-  h2 {
-    font-family: $font-secondary;
-    color: $brand-secondary;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+.farm-link {
+  color: $brand-secondary;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  @include media-breakpoint-up(lg) {
+    padding-top: 0;
+    padding-left: 0rem;
+    margin-left: auto;
+    align-self: flex-end;
   }
-  .event-header {
-    color: $color-three;
-  }
 }
 
-#events-text {
-  color: $color-two;
-  margin-bottom: 0;
-}
-
-.produce-item {
-  width: 100%;
-  color: $color-two;
-  display: inline-block;
-  padding: 0.5rem 0;
-  background-color: $card-bg-color;
-  text-transform: capitalize;
-  text-align: center;
-  border: solid 1px $card-border-color;
-}
-.inner-wrap {
-  display: flex;
-  margin: 0 auto;
-  flex-flow: row wrap;
-}
-
-.produce-item-row {
-  @include make-row($gutter:  0);
-}
-
-.produce-item-col {
-  @include make-col($gutter:  0);
-  @include make-col-span(6);
+.farm-img {
   @include media-breakpoint-up(md) {
-    @include make-col-span(3);
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: none;
+    margin-bottom: 0;
+  }
+}
+
+.farm-desc {
+  @include media-breakpoint-up(md) {
+    font-size: 0.9em;
   }
 }
