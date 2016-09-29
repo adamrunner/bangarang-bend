@@ -12,16 +12,19 @@
 
 <% @farms.forEach (farm, index) -> :%>
 
-<div class="media">
-  <div class="<%= if farm.isEven(index) then 'media-left' else 'media-right' %> media-top">
-    <a href="<%= farm.get('url') %>" target="_blank">
-      <img class="media-object img-fluid img-rounded" src="<%= farm.get('image_url') %>">
-    </a>
+  <div class="media">
+    <div class="<%= if farm.isEven(index) then 'media-left' else 'media-right' %> media-bottom">
+      <img class="media-object farm-img img-fluid img-rounded" src="<%= farm.get('image_url') %>">
+    </div>
+
+    <div class="media-body">
+      <h3 class="media-heading"><%= farm.get('name') %>
+        <a class="farm-link" href="<%= farm.get('url') %>" target="_blank">
+          visit their website <i class="btl bt-angles-right"></i>
+        </a>
+      </h3>
+      <p class="farm-desc"><%= farm.get('description') %></p>
+    </div>
   </div>
-  <div class="media-body">
-    <a href="<%= farm.get('url') %>" target="_blank"><h3 class="media-heading"><%= farm.get('name') %></h3></a>
-    <p><%= farm.get('description') %></p>
-  </div>
-</div>
 
 <% end %>
