@@ -10,12 +10,14 @@ class BangarangBend.Views.Navbar extends Backbone.View
     'click .navbar-btn'     : 'closeDropdown'
 
   initialize: ->
-    @pages = BangarangBend.pages
-    @menus = BangarangBend.menus
-    @body = $('body')
+    @pages       = BangarangBend.pages
+    @menus       = BangarangBend.menus
+    @body        = $('body')
     @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
+    @listenTo Backbone, 'viewChanged', @scrollTop
     @render()
+    @navBtn = $('#nav-btn')
 
   render: ->
     @$el.html(@template(menus: @menus, pages: @pages))
@@ -23,20 +25,17 @@ class BangarangBend.Views.Navbar extends Backbone.View
 
   mobileNav: (options) ->
     if BangarangBend.menuToggled == true
-      $('#nav-btn').addClass('bt-bars')
-      $('#nav-btn').removeClass('bt-times')
+      @navBtn.addClass('bt-bars')
+      @navBtn.removeClass('bt-times')
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart", complete: =>
-        if options.scroll == true
-          @scrollTop()
         window.BangarangBend.menuToggled = false
     else
-      $('#nav-btn').addClass('bt-times')
-      $('#nav-btn').removeClass('bt-bars')
+      @navBtn.addClass('bt-times')
+      @navBtn.removeClass('bt-bars')
       @navCollapse.velocity {translateX: ["0%", "-100%"]}, duration: 500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = true
 
   mobileNavCheck: ->
-    @scrollTop()
     if BangarangBend.menuToggled == true
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = false
@@ -47,9 +46,8 @@ class BangarangBend.Views.Navbar extends Backbone.View
       if e.which > 0 or e.type == 'mousedown' or e.type == 'mousewheel' or e.type == 'touchstart'
         @body.velocity('stop').unbind 'scroll mousedown mousewheel touchstart'
 
-    @body.velocity 'scroll', { duration: 1000, offset: "-100px", delay: 500, easing: 'easeOutQuad' }, complete: =>
+    @body.velocity 'scroll', { duration: 1000, offset: "-100px", easing: 'easeOutQuad' }, complete: =>
       @body.velocity('stop').unbind 'scroll mousedown mousewheel touchstart'
 
   closeDropdown: (event) ->
-    @scrollTop()
     @$('#nav-dropdown').removeClass('open')
