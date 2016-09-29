@@ -19,6 +19,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
 
   # ====================== #
 
+  # ===== route methods ===== #
   home: ->
     home = new BangarangBend.Views.Home()
     @swapPage(home)
@@ -46,19 +47,38 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
   food_truck: ->
     foodTruck = new BangarangBend.Views.FoodTruck(collection: BangarangBend.foodTruckImageRows)
     @swapPage(foodTruck)
+  # ====================== #
 
+  # ===== view changing ===== #
   swapPage: (view) ->
     if @currentView
-      if @currentView.subViews
-          @currentView.subViews.forEach (view) ->
-            view.remove()
-          @currentView.remove()
-          @currentView = view
-          BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 300))
-      else
-        @currentView.remove()
-        @currentView = view
-        BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 300))
+      @animateViews(@currentView, view)
     else
       @currentView = view
-      BangarangBend.content.html(view.render().$el.velocity("fadeIn", duration: 300))
+      @animateViewIn()
+
+  # ====================== #
+
+  # ===== animation handling ===== #
+  removeSubViews: (parentView) ->
+    parentView.subViews.forEach (subView) ->
+      subView.remove()
+    return parentView
+
+  animateViews: (oldView, newView) ->
+    # === animate out === #
+    oldView.$el.velocity('transition.slideRightOut', duration: 400, complete: =>
+      if oldView.subViews
+        @removeSubViews(oldView).remove()
+      else
+        oldView.remove()
+      # === animate in === #
+      @currentView = newView
+      @animateViewIn({trigger: true})
+    )
+
+  animateViewIn: (options) ->
+    BangarangBend.content.html(@currentView.render().$el.velocity('transition.slideLeftIn', duration: 400, complete: =>
+      if options && options.trigger == true
+        Backbone.trigger('viewChanged')
+    ))
