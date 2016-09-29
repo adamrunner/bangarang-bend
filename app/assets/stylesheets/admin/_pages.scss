@@ -37,6 +37,9 @@
   &:nth-child(1) {
     padding-left: 0rem;
   }
+  &:last-child {
+    border-right: none;
+  }
   &.disabled {
     color: #aaa;
     cursor: not-allowed;
