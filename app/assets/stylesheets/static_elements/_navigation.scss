@@ -4,7 +4,8 @@
   @extend .navbar-full;
   @extend .navbar-fixed-top;
   height: $navbar-height;
-  background-color: #f1f1f1;
+  background-color: #111;
+  // background-color: #f1f1f1;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
   @include media-breakpoint-down(md) {
@@ -31,9 +32,9 @@
     font-weight: 300;
     border-top: none;
     border-bottom: none;
-    border-right: solid 1px #ccc;
+    border-right: solid 1px #222;
     &:nth-child(1) {
-      border-left: solid 1px #ccc;
+      border-left: solid 1px #222;
     }
     &:hover, &:focus {
       color: $brand-secondary;
