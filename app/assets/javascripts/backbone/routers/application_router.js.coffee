@@ -67,7 +67,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
 
   animateViews: (oldView, newView) ->
     # === animate out === #
-    oldView.$el.velocity('transition.slideRightOut', duration: 400, complete: =>
+    oldView.$el.velocity('transition.fadeOut', duration: 300, complete: =>
       if oldView.subViews
         @removeSubViews(oldView).remove()
       else
@@ -78,7 +78,7 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
     )
 
   animateViewIn: (options) ->
-    BangarangBend.content.html(@currentView.render().$el.velocity('transition.slideLeftIn', duration: 400, complete: =>
+    BangarangBend.content.html(@currentView.render().$el.velocity('transition.fadeIn', duration: 300, complete: =>
       if options && options.trigger == true
         Backbone.trigger('viewChanged')
     ))

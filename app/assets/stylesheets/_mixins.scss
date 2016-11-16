@@ -8,7 +8,6 @@
 @mixin content-card {
   @extend .card;
   @extend .card-block;
-  @extend .shadow;
   @extend .hidden;
 }
 
@@ -24,4 +23,8 @@
     font-family: Black Tie;
     margin-right: 0.25rem;
   }
+}
+
+@mixin bg-gradient($color-one, $position-one, $color-two, $position-two) {
+  background-image: radial-gradient(ellipse at center, $color-one $position-one, $color-two $position-two);
 }

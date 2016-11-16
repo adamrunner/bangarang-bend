@@ -1,5 +1,11 @@
 class BangarangBend.Models.Page extends Backbone.Model
 
+  isEven: (value) ->
+    if value%2 == 0
+      return true
+    else
+      return false
+
   link: () ->
     linkName = @get('link_name')
     name = @get('name')

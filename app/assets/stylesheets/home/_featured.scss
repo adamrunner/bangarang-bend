@@ -1,86 +1,25 @@
 #featured {
-  width: 100%;
-  background-color: transparent;
-  h4 {
-    text-transform: capitalize;
-    color: $brand-secondary;
+  background: transparent;
+  outline: dashed 2px transparentize($color-three, 0.7);
+  outline-offset: -2rem;
+  .inner {
+    padding: 0 5rem 5rem 5rem;
+  }
+  .h {
+    position: relative;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 10px;
+  }
+  .featured-heading {
+    letter-spacing: 2px;
+    color: lighten($brand-secondary, 10%);
+  }
+  p {
+    color: transparentize(#fff, 0.25);
     letter-spacing: 1px;
+    padding-left: 1rem;
+    font-size: 1.25em;
   }
-  hr {
-    width: 100%;
-    margin: 0.5rem auto;
-    border-bottom: solid 1px #222;
-  }
-}
-
-.card-featured {
-  background-color: transparent;
-  border-color: transparent;
-}
-
-%featured-item {
-  @extend .card;
-  position: relative;
-  border-color: $card-border-color;
-  background-color: transparent;
-  &:hover {
-    .roll-over-link {
-      opacity: 1;
-    }
-  }
-}
-.roll-over-link {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  opacity: 0;
-  height: 2rem;
-  width: 2rem;
-  color: $brand-secondary;
-  background-color: transparentize(#1a1a1a, 0.05);
-  transition: all 0.2s ease-out;
-}
-.featured-icon {
-  font-size: 1rem;
-  margin-left: 0.15rem;
-}
-
-.featured-item-text {
-  text-transform: none;
-}
-
-.featured-block {
-  background-color: $card-bg-color;
-}
-
-.featured-img {
-  border-bottom: 1px solid $card-border-color;
-}
-.card-columns {
-  @include media-breakpoint-up(sm) {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
-  }
-  @include media-breakpoint-up(md) {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-  }
-}
-
-.featured-item-text {
-  color: $color-one;
-}
-
-.featured-item-card {
-  @extend %featured-item;
-}
-
-.featured-item-card-no-link {
-  @extend %featured-item;
 }

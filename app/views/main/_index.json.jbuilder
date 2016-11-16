@@ -6,10 +6,27 @@ json.data do
     if page.show_copy_text
       json.copy_text page.copy_text
     end
+    #NOTE this is the only page that has nested_links so I to just manually set it
     if page.name === 'catering_menus'
       json.nested_links true
       json.singularized page.name.singularize
     end
+  end
+
+  json.landing do
+    json.image_url @landing.image.landing.url
+  end
+
+  json.address do
+    json.link_url @food_truck_address.link_url
+    json.description @food_truck_address.description
+  end
+
+  json.instagram_images @instagram_images do |instagram_image|
+    json.id instagram_image.id
+    json.thumbnail instagram_image.thumbnail
+    json.low_resolution instagram_image.low_resolution
+    json.standard_resolution instagram_image.standard_resolution
   end
 
   json.featured_items @featured_items do |featured_item|

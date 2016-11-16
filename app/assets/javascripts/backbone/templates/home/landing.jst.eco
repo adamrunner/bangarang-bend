@@ -1,0 +1,1 @@
+<img id="landing-img" src="<%= @landing.get('image_url') %>" alt="bangarang-landing" />

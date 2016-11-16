@@ -5,7 +5,6 @@
   @extend .navbar-fixed-top;
   height: $navbar-height;
   background-color: #111;
-  // background-color: #f1f1f1;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
   @include media-breakpoint-down(md) {
@@ -27,9 +26,11 @@
     background: transparent;
   }
   .navbar-btn {
-    color: darken(#CEC7C6, 30%);
+    font-family: $font-family-serif;
+    font-size: 1em;
+    font-weight: 400;
     text-transform: uppercase;
-    font-weight: 300;
+    color: darken(#CEC7C6, 30%);
     border-top: none;
     border-bottom: none;
     border-right: solid 1px #222;
@@ -54,7 +55,8 @@
     border-top: solid 1px #ccc;
   }
   .dropdown-item {
-    font-size: 0.8rem;
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
     padding-top: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 2px;

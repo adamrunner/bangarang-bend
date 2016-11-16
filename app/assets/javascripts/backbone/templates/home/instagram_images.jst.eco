@@ -1,0 +1,6 @@
+<% @instagram_images.forEach (image) -> :%>
+  <div class="img-wrap">
+    <div class="pad-block"></div>
+    <img src="<%= image.get('low_resolution') %>" />
+  </div>
+<% end %>

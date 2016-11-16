@@ -1,8 +1,10 @@
-<div class="block landing-block">
+<div class="landing-block">
 
   <div id="landing">
-    <h2><%= landing ? landing.heading.html_safe : 'catering & event services' %></h2>
+    <%= render "svg/landing_stamp" %>
+
     <img id="landing-img" src="<%= @landing ? @landing.image.landing.url : '' %>" alt="" />
+    <div class="landing-overlay"></div>
   </div>
-  
+
 </div>

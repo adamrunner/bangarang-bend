@@ -1,0 +1,28 @@
+<div id="ig-auth">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1>Linking Your Instagram Account</h1>
+      <p><i class="fab fab-instagram bt-5x"></i></p>
+      <hr>
+      <p class="lead">Give us a minute while we talk with the Instagram servers and set everything up.</p>
+      <hr>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1 id="auth-status">Loading</h1>
+      <p id="activity-indicator"><i class="btl bt-spinner-clock bt-spin bt-3x"></i></p>
+      <progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
+    </div>
+  </div>
+</div>
+
+
+<%= form_for :instagram_auth, url: admin_instagram_auth_index_path, html: { method: :post, id: "ig-auth-form", class: "hidden"}  do |f| %>
+  <%= f.text_field :code, class: "form-control" %>
+<% end %>
+
+
+<script type="text/javascript">
+  $(function() {
+    Bangarang.IGAuth.submitCode();
+  });
+</script>

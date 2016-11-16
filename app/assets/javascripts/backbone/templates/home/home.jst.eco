@@ -1,11 +1,11 @@
-<div class="card-block section-block">
-  <div id="showcase"></div>
-</div>
+<div id="landing"></div>
 
-<div class="card-block section-block">
-  <div id="featured"></div>
-</div>
+<div id="address"></div>
 
-<div class="card-block section-block">
-  <div id="about"></div>
-</div>
+<div id="showcase"></div>
+
+<div id="featured"></div>
+
+<div id="instagram-images"></div>
+
+<div id="about"></div>

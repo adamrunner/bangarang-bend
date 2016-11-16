@@ -1,7 +1,6 @@
 BangarangBend.Views.Navbar ||= {}
 
 class BangarangBend.Views.Navbar extends Backbone.View
-  template: JST["backbone/templates/navigation/navbar"]
 
   events:
     'click #nav-btn'        : 'mobileNav'
@@ -16,12 +15,7 @@ class BangarangBend.Views.Navbar extends Backbone.View
     @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
     @listenTo Backbone, 'viewChanged', @scrollTop
-    @render()
     @navBtn = $('#nav-btn')
-
-  render: ->
-    @$el.html(@template(menus: @menus, pages: @pages))
-    @
 
   mobileNav: (options) ->
     if BangarangBend.menuToggled == true

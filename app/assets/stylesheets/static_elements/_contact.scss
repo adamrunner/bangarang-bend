@@ -1,79 +1,62 @@
+#contact-information {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2rem;
+  background-color: #131313;
+  border-top: solid 1px #060606;
+}
+
 #contact {
-  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   @include media-breakpoint-up(md) {
-    margin-left: auto;
+    align-items: flex-start;
+    width: 50%;
+    padding: 0 1rem;
   }
-  .name {
-    color: $color-one;
+  @include media-breakpoint-up(lg) {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+  }
+  .h {
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: $font-family-sans-serif;
   }
   small {
     color: $color-three;
   }
-}
-
-.contact-block {
-  @extend .inner-block;
-  @extend .bg-transparent;
-  @include short-flex(row wrap, center);
-}
-
-.contact-wrap {
-  @extend .card-block;
-  margin-bottom: 0rem;
-  background-color: #111;
-  border-top: solid 1px #090909;
-}
-
-#social-wrap {
-  position: relative;
-}
-
-.contact-things {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin-left: auto;
-  @include media-breakpoint-up(md) {
-    justify-content: flex-start;
-  }
-  .contact-thing {
-    padding: 1rem;
-    @include media-breakpoint-up(md) {
-      padding: 0 1rem;
-    }
-  }
-  h5 {
-    color: $color-two;
-    display: inline-block;
-    letter-spacing: 1px;
-    line-height: 1.1;
-    margin: 0;
-  }
   a {
-    color: $color-four;
     display: block;
-    @include media-breakpoint-up(md) {
-      line-height: 1.1;
-    }
-    &:hover {
-      color: darken($color-four, 5%);
+    padding: 0.25rem 0;
+    font-size: 1.15em;
+    letter-spacing: 1px;
+    color: $color-four;
+  }
+}
+
+.contact-item {
+  &:first-child {
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      margin-right: 2rem;
     }
   }
 }
 
 #social-links {
-  padding-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   @include media-breakpoint-up(md) {
-    padding: 0;
-  }
-  .social {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    padding: 1rem 0;
-    @include media-breakpoint-up(md) {
-      justify-content: flex-start;
-    }
+    width: 50%;
   }
   .social-link {
     display: flex;

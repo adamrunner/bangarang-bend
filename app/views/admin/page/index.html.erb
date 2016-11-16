@@ -41,4 +41,25 @@
 
   <% end %>
 
+  <div class="card-responsive">
+    <div class="card-wrap">
+      <div class="inner-card-wrap">
+
+        <div class="card-block">
+          <div class="flex-wrap">
+
+            <h4 class="page-card-title">Instagram Authorization</h4>
+            <p class="lead">STATUS: <%= IG_authorized(@auth_status) %> </p>
+            <p>In order to request images from your account, Instagram requires you to authorize the application to allow it access</p>
+            <a href="https://api.instagram.com/oauth/authorize/?client_id=38c5b7d5d66d454e8d386b0a581074ba&redirect_uri=http://localhost:3000/admin/instagram_auth/new&response_type=code" type="button" class="btn btn-primary auth-btn">
+              authorize
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>

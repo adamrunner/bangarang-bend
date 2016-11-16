@@ -3,6 +3,7 @@ class Admin::PageController < Admin::BaseController
 
   def index
     @pages = Page.all
+    @auth_status = InstagramAuth.first.authorized
   end
 
   def show

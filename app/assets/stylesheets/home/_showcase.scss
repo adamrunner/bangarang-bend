@@ -1,77 +1,137 @@
-#showcase {
+$showcase-link-padding-xl: 3rem;
+$showcase-link-padding-md: 2rem;
+$showcase-link-padding-sm: 0;
+
+$showcase-link-margin-lg: 1rem;
+$showcase-link-margin-sm: 0rem;
+
+%left-right {
   width: 100%;
-  background: transparent;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
-.showcase-inner {
-  @include make-row($gutter:  1.25rem);
-  margin-top: (1.25rem / -2);
-  margin-bottom: (1.25rem / -2);
-}
-.img-wrap {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.img-inner-wrap {
-  box-sizing: border-box;
-  position: relative;
-  padding-bottom: 100%;
-}
-.showcase-item {
-  @include make-col($gutter:  1.25rem);
-  @include make-col-span(6);
-  margin-top: (1.25rem / 2);
-  margin-bottom: (1.25rem / 2);
-  @include media-breakpoint-up(md) {
-    @include make-col-span(4);
-  }
-  &:nth-child(3n) {
-    border-right: none;
-  }
-  .showcase-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .btl {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 4em;
-    z-index: 100;
-    color: $showcase-link-color-active;
-    opacity: 0;
-  }
-  @include media-breakpoint-up(sm) {
-    min-height: 2rem;
-  }
-}
-.showcase-link-name {
-  position: absolute;
-  font-weight: 300;
-  bottom: 0;
-  right: 0;
-  line-height: 1.1;
-  color: $color-one;
-  text-transform: uppercase;
-  background-color: $showcase-link-bg;
-  padding: 0.75rem;
-  height: 3.5rem;
-  margin: 0;
-  width: 100%;
-  @include media-breakpoint-up(lg) {
-    font-size: 1rem;
+
+%showcase-arrow {
+  flex: 1;
+  max-width: 18.75rem;
+  @media (max-width: 320px) {
+    display: none;
   }
 }
 
-.name-wrap {
+#showcase {
+  background-color: transparent;
+  padding-bottom: 5rem;
+  outline: dashed 2px transparentize($color-three, 0.7);
+  outline-offset: -2rem;
+}
+
+.showcase-inner {
   display: flex;
   flex-flow: column nowrap;
-  padding-right: 1rem;
-  border-right: solid 1px $brand-secondary;
-  height: 100%;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem 0 2rem;
+  overflow-x: hidden;
+  @include media-breakpoint-up(md) {
+    padding: 5rem 4rem 0 4rem;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 5rem 7rem 0 7rem;
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 5rem 10rem 0 10rem;
+  }
+  a {
+    &:hover {
+      .svg-arrow {
+        fill: lighten($brand-secondary, 10%);
+      }
+      .h {
+        color: lighten($brand-secondary, 9%);
+      }
+    }
+  }
+  .h {
+    position: relative;
+    flex: 1;
+    color: #fff;
+    padding: 0 1rem;
+    letter-spacing: 3px;
+    transition: all 0.2s ease-in-out;
+    @include media-breakpoint-up(md) {
+      text-align: center;
+      max-width: 13rem;
+    }
+  }
+  .left {
+    @extend %left-right;
+    justify-content: flex-start;
+    padding-right: $showcase-link-padding-sm;
+    @include media-breakpoint-up(md) {
+      padding-right: $showcase-link-padding-md;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-right: $showcase-link-padding-xl;
+    }
+    .h {
+      text-align: left;
+      margin: 0 0 0 $showcase-link-margin-sm;
+      @include media-breakpoint-up(md) {
+        margin: 0 auto 0 $showcase-link-margin-sm;
+      }
+      @include media-breakpoint-up(lg) {
+        margin: 0 auto 0 $showcase-link-margin-lg;
+      }
+    }
+    .arrow {
+      @extend %showcase-arrow;
+    }
+  }
+  .right {
+    @extend %left-right;
+    justify-content: flex-end;
+    padding-left: $showcase-link-padding-sm;
+    @include media-breakpoint-up(md) {
+      padding-left: $showcase-link-padding-md;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-right: $showcase-link-padding-xl;
+    }
+    .h {
+      text-align: right;
+      margin: 0 $showcase-link-margin-sm 0 0;
+      order: 2;
+      @include media-breakpoint-up(md) {
+        margin: 0 $showcase-link-margin-sm 0 auto;
+      }
+      @include media-breakpoint-up(lg) {
+        margin: 0 $showcase-link-margin-lg 0 auto;
+      }
+    }
+    .showcase-img {
+      order: 3;
+    }
+    .arrow {
+      @extend %showcase-arrow;
+      order: 1;
+    }
+  }
+}
+
+.showcase-img {
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  @include media-breakpoint-up(md) {
+    width: 9.375rem;
+    height: 9.375rem;
+  }
+}
+
+.svg-arrow {
+  transition: all 0.2s ease-in-out;
+  fill: transparentize($color-three, 0.5);
 }

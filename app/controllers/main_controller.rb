@@ -4,6 +4,7 @@ class MainController < ApplicationController
     @pages                 = Page.all
     @page                  = @pages.find_by(name: "home")
     @landing               = @page.landings.first
+    @instagram_images      = InstagramAuth.first.instagram_images
     @food_truck_address    = FoodTruckAddress.find_by(active: true)
     @food_truck_image_rows = FoodTruckImageRow.all
     @featured_items        = FeaturedItem.order(:position)

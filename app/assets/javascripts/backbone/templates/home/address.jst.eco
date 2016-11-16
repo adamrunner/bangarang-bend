@@ -1,0 +1,12 @@
+<div class="left">
+  <a id="direction-link" href="<%= @address.get('link_url') %>" target="_blank">
+    <i class="btl bt-map-marker bt-3x"></i>
+    <h1 class="h">Come Visit Us</h1>
+    <hr>
+    <h2 class="h">Click for Directions</h2>
+  </a>
+</div>
+
+<div class="right">
+  <p class="desc"><%= @address.get('description') %></p>
+</div>

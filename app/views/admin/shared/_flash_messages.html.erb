@@ -1,15 +1,5 @@
 <script type="text/javascript">
   Bangarang.flashMessage = new FlashMessage();
-
-  data = {
-  <% if notice %>
-    notice: "<%= notice %>"
-  <% end %>
-
-  <% if alert %>
-    alert: "<%= alert %>"
-  <% end %>
-  }
-
-  Bangarang.trigger( 'flashMessage', data );
 </script>
+
+<%= flash_helper %>

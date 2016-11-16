@@ -1,111 +1,16 @@
-  <a class="showcase-item" href="/<%= @pages.linkName('services') %>" >
-    <div class="img-wrap">
-      <i class="btl bt-circle-arrow-right"></i>
+<% @pages.forEach (page, index) -> :%>
+  <% if page.get('name') != 'home' :%>
 
-      <div class="img-inner-wrap">
-        <img src="/images/showcase/services.jpg" alt='<%= @pages.showcaseLink("services").join(" ") %>' class="showcase-img" />
-      </div>
+    <a class="<%= if page.isEven(index) then 'right' else 'left' %>" href="/<%= page.link() %>">
+      <img class="showcase-img" src="/images/showcase/stamps/<%= page.get('name') %>.png" />
+      <h1 class="h"><%= page.get('link_name') %></h1>
 
-      <div class="showcase-link-name">
-        <span class="name-wrap">
-          <% @pages.showcaseLink("services").forEach (word) ->: %>
-            <span><%= word %></span>
-          <% end %>
-        </span>
-      </div>
+      <% if page.isEven(index) :%>
+        <%- BangarangBend.svg.arrowRight('svg-arrow') %>
+      <% else :%>
+        <%- BangarangBend.svg.arrowLeft('svg-arrow') %>
+      <% end %>
+    </a>
 
-    </div>
-  </a>
-
-  <a class="showcase-item" href="/food_truck">
-    <div class="img-wrap">
-      <i class="btl bt-circle-arrow-right"></i>
-
-      <div class="img-inner-wrap">
-        <img src="/images/showcase/sm_truck.jpg" alt='food truck' class="showcase-img" />
-      </div>
-
-      <div class="showcase-link-name">
-        <span class="name-wrap">
-          <span>food</span>
-          <span>truck</span>
-        </span>
-      </div>
-
-    </div>
-  </a>
-
-  <a class="showcase-item" href="/<%= @pages.linkName('catering_menus') %>" >
-    <div class="img-wrap">
-      <i class="btl bt-circle-arrow-right"></i>
-
-      <div class="img-inner-wrap">
-        <img src="/images/showcase/our-menu.jpg" alt='<%= @pages.showcaseLink("catering_menus").join(" ") %>' class="showcase-img" />
-      </div>
-
-      <div class="showcase-link-name">
-        <span class="name-wrap">
-          <% @pages.showcaseLink("catering_menus").forEach (word) ->: %>
-            <span><%= word %></span>
-          <% end %>
-        </span>
-      </div>
-
-    </div>
-  </a>
-
-  <a class="showcase-item" href="/<%= @pages.linkName('the_farms') %>" >
-    <div class="img-wrap">
-      <i class="btl bt-circle-arrow-right"></i>
-
-      <div class="img-inner-wrap">
-        <img src="/images/showcase/the_farms_showcase.jpg" alt="<%= @pages.showcaseLink('the_farms').join(" ") %>" class="showcase-img" />
-      </div>
-
-      <div class="showcase-link-name">
-        <span class="name-wrap">
-          <% @pages.showcaseLink("the_farms").forEach (word) ->: %>
-            <span><%= word %></span>
-          <% end %>
-        </span>
-      </div>
-
-    </div>
-  </a>
-
-  <a class="showcase-item" href="/<%= @pages.linkName('philosophy') %>" >
-    <div class="img-wrap">
-      <i class="btl bt-circle-arrow-right"></i>
-
-      <div class="img-inner-wrap">
-        <img src="/images/showcase/philosophy.jpg" alt='<%= @pages.showcaseLink("philosophy").join(" ") %>' class="showcase-img" />
-      </div>
-
-      <div class="showcase-link-name">
-        <span class="name-wrap">
-          <% @pages.showcaseLink("philosophy").forEach (word) ->: %>
-            <span><%= word %></span>
-          <% end %>
-        </span>
-      </div>
-
-    </div>
-  </a>
-
-  <a id="contact-btn" href="contact" class="showcase-item" >
-    <div class="img-wrap">
-      <i class="btl bt-circle-arrow-right"></i>
-
-      <div class="img-inner-wrap">
-        <img src="/images/showcase/contact.jpg" alt="contact us" class="showcase-img" />
-      </div>
-
-      <div class="showcase-link-name">
-        <span class="name-wrap">
-          <span>contact</span>
-          <span>us</span>
-        </span>
-      </div>
-
-    </div>
-  </a>
+  <% end %>
+<% end %>

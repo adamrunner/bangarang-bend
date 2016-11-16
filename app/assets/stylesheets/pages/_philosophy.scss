@@ -1,5 +1,6 @@
 #philosophy-block {
   @include content-card;
+  background: transparent;
   h2 {
     color: $brand-secondary;
     letter-spacing: 2px;

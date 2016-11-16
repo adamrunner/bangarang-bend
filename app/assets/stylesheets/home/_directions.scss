@@ -1,0 +1,54 @@
+%column-center {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#address {
+  // display: flex;
+  // flex-flow: row nowrap;
+  // padding: 1rem;
+  // background: #fff;
+  // #NOTE have an annoying useless wrapping div here because of Backbone. Should fix it sometime
+  .inner  {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 1rem;
+    background: #fff;
+  }
+  .left {
+    @extend %column-center;
+    width: 50%;
+    height: 20rem;
+    border-right: solid 1px $color-three;
+  }
+  .right {
+    padding: 0 2rem;
+    @extend %column-center;
+    width: 50%;
+    .desc {
+      @extend .lead;
+      color: $color-three;
+      // font-family: $header-font;
+      text-align: center;
+    }
+  }
+  hr {
+    width: 90%;
+    border-color: $color-three;
+    margin: 0 auto;
+  }
+}
+
+#direction-link {
+  color: $color-three;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .h {
+    text-align: center;
+    color: $color-three;
+    margin: 1rem 0;
+  }
+}

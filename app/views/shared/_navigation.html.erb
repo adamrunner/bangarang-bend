@@ -1,0 +1,29 @@
+<div class="navbar-inner">
+  <i id="nav-btn" class="btl bt-bars nav-button"></i>
+
+  <a id="nav-brand" href="/">
+    <%= render 'svg/bangarang_navbar_logo' %>
+  </a>
+
+  <div class="nav navbar-nav pull-xs-right">
+    <% @pages.each do |page|%>
+
+      <% if page.name == 'catering_menus' %>
+        <div id="nav-dropdown" class="btn-group">
+          <button type="button" class="btn dropdown-btn dropdown-toggle" data-toggle="dropdown">
+            <%= page.link_name %>
+          </button>
+          <div class="dropdown-menu">
+            <% @menus.each do |menu| %>
+              <a class="dropdown-item" href="/<%= page.link_name %>/<%= menu.name.parameterize('_') %>"><%= menu.name.titleize %></a>
+            <% end %>
+          </div>
+        </div>
+
+        <% else %>
+          <a class="btn navbar-btn" href="/<%= page_link(page) %>"><%= page.link_name %></a>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>

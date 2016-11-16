@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916165645) do
+ActiveRecord::Schema.define(version: 20161101202314) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -52,6 +52,22 @@ ActiveRecord::Schema.define(version: 20160916165645) do
   end
 
   add_index "catering_menus", ["page_id"], name: "index_catering_menus_on_page_id", using: :btree
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   limit: 4,     default: 0, null: false
+    t.integer  "attempts",   limit: 4,     default: 0, null: false
+    t.text     "handler",    limit: 65535,             null: false
+    t.text     "last_error", limit: 65535
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by",  limit: 255
+    t.string   "queue",      limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "farms", force: :cascade do |t|
     t.integer  "page_id",     limit: 4
@@ -111,6 +127,24 @@ ActiveRecord::Schema.define(version: 20160916165645) do
   end
 
   add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
+
+  create_table "instagram_auths", force: :cascade do |t|
+    t.boolean  "authorized"
+    t.string   "access_token", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "instagram_images", force: :cascade do |t|
+    t.integer  "instagram_auth_id",   limit: 4
+    t.string   "thumbnail",           limit: 255
+    t.string   "low_resolution",      limit: 255
+    t.string   "standard_resolution", limit: 255
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "instagram_images", ["instagram_auth_id"], name: "index_instagram_images_on_instagram_auth_id", using: :btree
 
   create_table "landings", force: :cascade do |t|
     t.integer  "page_id",    limit: 4
