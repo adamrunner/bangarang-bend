@@ -1,10 +1,23 @@
-<div class="card-block">
+<section class="page-head">
+  <%- @page.get('svg') %>
   <h1><%= @page.get('link_name') %></h1>
+</section>
+
+<div class="page-img-main-wrap">
+  <img class="page-img-main" src="/images/showcase/lg/<%= @page.get('name') %>.jpg" alt="">
 </div>
 
-<% @philosophy_items.forEach (philosophy_item) ->: %>
-  <div class="card-block">
-    <h2><%= philosophy_item.get('name') %></h2>
-    <p><%= philosophy_item.get('description') %></p>
-  </div>
-<% end %>
+<section class="page-body">
+  <% @philosophy_items.forEach (philosophy_item) ->: %>
+    <div class="philosophy-body-block">
+      <h2><%= philosophy_item.get('name') %></h2>
+      <p><%= philosophy_item.get('description') %></p>
+    </div>
+  <% end %>
+</section>
+
+<section class="page-foot">
+  <h5 class="page-foot-h">seasonally inspired</h5>
+  <h5 class="page-foot-h">chef driven</h5>
+  <h5 class="page-foot-h">regional cuisine</h5>
+</section>

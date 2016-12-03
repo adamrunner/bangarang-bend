@@ -33,7 +33,6 @@
 #= require backbone_rails_sync
 #= require backbone_datalink
 #= require backbone/bangarang_bend
-#= require instafeed
 
 $(document).on "click", "a[href^='/']", (event) ->
   href = $(event.currentTarget).attr('href')

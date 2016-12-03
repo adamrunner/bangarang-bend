@@ -4,22 +4,11 @@
   flex-flow: column nowrap;
   overflow: hidden;
   flex: 1;
-  .landing-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-  }
   #landing-stamp {
     z-index: 15;
   }
   img {
-    width: 125%;
-    @include media-breakpoint-up(md) {
-      width: 100%;
-    }
+    width: 100%;
   }
 }
 

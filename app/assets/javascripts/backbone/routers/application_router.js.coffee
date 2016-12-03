@@ -67,18 +67,18 @@ class BangarangBend.Routers.ApplicationRouter extends Backbone.Router
 
   animateViews: (oldView, newView) ->
     # === animate out === #
-    oldView.$el.velocity('transition.fadeOut', duration: 300, complete: =>
+    oldView.$el.velocity('transition.slideRightOut', {duration: 300, complete: =>
       if oldView.subViews
         @removeSubViews(oldView).remove()
       else
         oldView.remove()
       # === animate in === #
+      window.scrollTo(0,0)
       @currentView = newView
-      @animateViewIn({trigger: true})
-    )
+      @animateViewIn()
+    })
 
-  animateViewIn: (options) ->
-    BangarangBend.content.html(@currentView.render().$el.velocity('transition.fadeIn', duration: 300, complete: =>
-      if options && options.trigger == true
-        Backbone.trigger('viewChanged')
-    ))
+  animateViewIn: ->
+    BangarangBend.content.html(@currentView.render().$el.velocity('transition.slideLeftIn', {duration: 300, complete: =>
+      Backbone.trigger('viewChanged')
+    }))

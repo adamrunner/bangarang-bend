@@ -17,4 +17,9 @@ class FeaturedItem < ActiveRecord::Base
     write_attribute(:link_url, link)
   end
 
+  def pretty_print_created_at
+    t = created_at
+    formatted = t.strftime("%B #{t.day.ordinalize}, %Y") 
+  end
+
 end

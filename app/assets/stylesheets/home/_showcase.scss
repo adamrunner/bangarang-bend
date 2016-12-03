@@ -1,3 +1,14 @@
+// services colors //
+$showcase-default: #eee;
+$showcase-primary: transparentize($brand-primary, 0.65);
+$showcase-secondary: transparentize($brand-secondary, 0.3);
+
+$showcase-color-three: transparentize($color-three, 0.75);
+
+$showcase-active: #fff;
+
+$showcase-border-color: #ddd;
+
 $showcase-link-padding-xl: 3rem;
 $showcase-link-padding-md: 2rem;
 $showcase-link-padding-sm: 0;
@@ -5,133 +16,168 @@ $showcase-link-padding-sm: 0;
 $showcase-link-margin-lg: 1rem;
 $showcase-link-margin-sm: 0rem;
 
-%left-right {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-
-%showcase-arrow {
-  flex: 1;
-  max-width: 18.75rem;
-  @media (max-width: 320px) {
-    display: none;
-  }
-}
-
 #showcase {
   background-color: transparent;
-  padding-bottom: 5rem;
-  outline: dashed 2px transparentize($color-three, 0.7);
-  outline-offset: -2rem;
+  padding: 2rem 0;
+  background-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    transparentize(#222, 0.4) 45%,
+    transparentize(#222, 0.39) 75%,
+    transparentize(#222, 0.38) 100%);
 }
 
 .showcase-inner {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
   width: 100%;
   margin: 0 auto;
-  padding: 5rem 2rem 0 2rem;
-  overflow-x: hidden;
+  padding: 0 2rem;
   @include media-breakpoint-up(md) {
-    padding: 5rem 4rem 0 4rem;
-  }
-  @include media-breakpoint-up(lg) {
-    padding: 5rem 7rem 0 7rem;
-  }
-  @include media-breakpoint-up(xl) {
-    padding: 5rem 10rem 0 10rem;
+    width: 80%;
+    padding: 3rem 3rem 0 3rem;
   }
   a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     &:hover {
-      .svg-arrow {
-        fill: lighten($brand-secondary, 10%);
+      &.left {
+        .h {
+          color: $color-three;
+          border-color: #444;
+          &:after {
+            transform: scale(1);
+          }
+        }
+      }
+      &.right {
+        .h {
+          color: $color-three;
+          border-color: #444;
+          &:after {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    &.right {
+      justify-content: flex-end;
+      .showcase-desc {
+        order: 1;
+      }
+      .showcase-logo {
+        order: 2;
       }
       .h {
-        color: lighten($brand-secondary, 9%);
+        padding-right: 1rem;
+        margin-left: auto;
+        text-align: right;
+        @include media-breakpoint-down(sm) {
+          padding-right: 0.5rem;
+        }
+        &:after {
+          float: left;
+          font-family: "Black Tie";
+          content: "\F0AA";
+          color: $color-three;
+          transform: scale(0);
+          transition: all 0.2s ease-out;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
+      }
+    }
+    &.left {
+      justify-content: flex-start;
+      .showcase-desc {
+        order: 2;
+      }
+      .showcase-logo {
+        order: 1;
+      }
+      .h {
+        padding-left: 1rem;
+        margin-right: auto;
+        text-align: left;
+        @include media-breakpoint-down(sm) {
+          padding-left: 0.5rem;
+        }
+        &:after {
+          float: right;
+          font-family: "Black Tie";
+          content: "\F0AB ";
+          transform: scale(0);
+          transition: all 0.2s ease-out;
+          color: $color-three;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
       }
     }
   }
   .h {
-    position: relative;
-    flex: 1;
-    color: #fff;
-    padding: 0 1rem;
-    letter-spacing: 3px;
-    transition: all 0.2s ease-in-out;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 90%;
+    text-align: center;
+    transform: skewy(-2.5deg);
+    border-bottom: solid 0.15rem $showcase-border-color;
+    color: $showcase-default;
+    transition: all 0.2s ease-out;
+    font-size: 1.5rem;
+    overflow: hidden;
+    margin: 0;
+    outline: solid 1px transparent;
     @include media-breakpoint-up(md) {
-      text-align: center;
-      max-width: 13rem;
+      font-size: 2rem;
     }
-  }
-  .left {
-    @extend %left-right;
-    justify-content: flex-start;
-    padding-right: $showcase-link-padding-sm;
-    @include media-breakpoint-up(md) {
-      padding-right: $showcase-link-padding-md;
-    }
-    @include media-breakpoint-up(xl) {
-      padding-right: $showcase-link-padding-xl;
-    }
-    .h {
-      text-align: left;
-      margin: 0 0 0 $showcase-link-margin-sm;
-      @include media-breakpoint-up(md) {
-        margin: 0 auto 0 $showcase-link-margin-sm;
-      }
-      @include media-breakpoint-up(lg) {
-        margin: 0 auto 0 $showcase-link-margin-lg;
-      }
-    }
-    .arrow {
-      @extend %showcase-arrow;
-    }
-  }
-  .right {
-    @extend %left-right;
-    justify-content: flex-end;
-    padding-left: $showcase-link-padding-sm;
-    @include media-breakpoint-up(md) {
-      padding-left: $showcase-link-padding-md;
-    }
-    @include media-breakpoint-up(xl) {
-      padding-right: $showcase-link-padding-xl;
-    }
-    .h {
-      text-align: right;
-      margin: 0 $showcase-link-margin-sm 0 0;
-      order: 2;
-      @include media-breakpoint-up(md) {
-        margin: 0 $showcase-link-margin-sm 0 auto;
-      }
-      @include media-breakpoint-up(lg) {
-        margin: 0 $showcase-link-margin-lg 0 auto;
-      }
-    }
-    .showcase-img {
-      order: 3;
-    }
-    .arrow {
-      @extend %showcase-arrow;
-      order: 1;
+    @include media-breakpoint-up(lg) {
+      font-size: 2.5rem;
     }
   }
 }
 
-.showcase-img {
-  border-radius: 50%;
-  width: 7rem;
+.showcase-logo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin-top: 2rem;
+}
+
+.showcase-desc {
   height: 7rem;
+  width: 40%;
+  overflow: hidden;
+  position: relative;
+  transform: skewy(-2.5deg);
   @include media-breakpoint-up(md) {
-    width: 9.375rem;
-    height: 9.375rem;
+    height: 10rem;
+    width: 40%;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: solid 0.2rem $showcase-border-color;
+    outline: solid 1px transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: all 0.2s ease-out;
+    -webkit-backface-visiblity: hidden;
+    backface-visibility: hidden;
   }
 }
 
-.svg-arrow {
-  transition: all 0.2s ease-in-out;
-  fill: transparentize($color-three, 0.5);
+$list: 1 services, 2 catering_menus, 3 philosophy, 4 food_truck, 5 the_farms;
+
+@each $number, $url in $list {
+  .showcase-inner a:nth-of-type(#{$number}) .showcase-desc:after {
+      background-image: url("/images/showcase/#{$url}-1.jpg");
+  }
 }

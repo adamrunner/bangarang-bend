@@ -4,7 +4,7 @@
   @extend .navbar-full;
   @extend .navbar-fixed-top;
   height: $navbar-height;
-  background-color: #111;
+  background-color: #222;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0 auto;
   @include media-breakpoint-down(md) {
@@ -26,8 +26,8 @@
     background: transparent;
   }
   .navbar-btn {
-    font-family: $font-family-serif;
-    font-size: 1em;
+    font-family: $font-family-sans-serif;
+    font-size: 0.9em;
     font-weight: 400;
     text-transform: uppercase;
     color: darken(#CEC7C6, 30%);

@@ -1,25 +1,63 @@
+// services colors //
+$featured-default: #eee;
+$featured-p-color: #fff;
+$featured-primary: transparentize($brand-primary, 0.65);
+$featured-color-three: transparentize($color-three, 0.85);
+
+$featured-active: #fff;
+
+$featured-border-color: transparentize(#fff, 0.7);
+
+$featured-secondary: $brand-secondary;
+
 #featured {
   background: transparent;
-  outline: dashed 2px transparentize($color-three, 0.7);
-  outline-offset: -2rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparentize(#111, 0.4) 45%,
+    transparentize(#111, 0.39) 75%,
+    transparentize(#111, 0.38) 100%);
   .inner {
-    padding: 0 5rem 5rem 5rem;
+    padding: 2rem 5rem 5rem 5rem;
+    background: $featured-color-three;
+    position: relative;
+    margin-top: 6rem;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -4rem;
+      right: 0;
+      width: 100%;
+      height: 4rem;
+      background-image: linear-gradient(
+        -3deg,
+        $featured-color-three 0%,
+        $featured-color-three 50%,
+        transparent 51%,
+        transparent 100% );
+    }
   }
   .h {
+    font-weight: 400;
     position: relative;
-    margin-bottom: 2rem;
-    color: #fff;
+    color: $featured-default;
     text-align: center;
-    letter-spacing: 10px;
   }
   .featured-heading {
-    letter-spacing: 2px;
-    color: lighten($brand-secondary, 10%);
+    margin-bottom: 0;
+    color: $featured-secondary;
+    text-transform: capitalize;
   }
   p {
-    color: transparentize(#fff, 0.25);
+    color: $featured-p-color;
     letter-spacing: 1px;
     padding-left: 1rem;
-    font-size: 1.25em;
+  }
+  .featured-date {
+    display: block;
+    color: transparentize(#fff, 0.25);
+    margin-bottom: 0.5rem;
   }
 }

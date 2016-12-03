@@ -2,14 +2,12 @@
   <% if page.get('name') != 'home' :%>
 
     <a class="<%= if page.isEven(index) then 'right' else 'left' %>" href="/<%= page.link() %>">
-      <img class="showcase-img" src="/images/showcase/stamps/<%= page.get('name') %>.png" />
-      <h1 class="h"><%= page.get('link_name') %></h1>
 
-      <% if page.isEven(index) :%>
-        <%- BangarangBend.svg.arrowRight('svg-arrow') %>
-      <% else :%>
-        <%- BangarangBend.svg.arrowLeft('svg-arrow') %>
-      <% end %>
+      <div class="showcase-logo">
+        <h1 class="h"><%= page.get('link_name') %></h1>
+      </div>
+
+      <div class="showcase-desc"></div>
     </a>
 
   <% end %>

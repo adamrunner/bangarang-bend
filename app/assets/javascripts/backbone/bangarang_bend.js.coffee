@@ -3,7 +3,6 @@
 #= require_tree ./models
 #= require_tree ./views
 #= require_tree ./routers
-#= require_tree ./svg
 
 window.BangarangBend =
   Models: {}
@@ -19,6 +18,7 @@ window.BangarangBend =
     @biographyItems     = new BangarangBend.Collections.BiographyItems(options.data.biography_items)
     @menus              = new BangarangBend.Collections.CateringMenus(options.data.menus)
     @content            = $('#content')
+    @footer             = $('#footer')
     @router             = new BangarangBend.Routers.ApplicationRouter()
     @mobileNav          = new BangarangBend.Views.MobileNav(el: '#mobile-nav')
     @navbar             = new BangarangBend.Views.Navbar(el: '#navbar')

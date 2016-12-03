@@ -5,10 +5,9 @@
   <% @featured_items.forEach (featured_item) ->: %>
 
     <div class="featured-media">
-      <div class="">
-        <h2 class="featured-heading"><%= featured_item.get('name') %></h2>
-        <p class=""><%= featured_item.get('description') %></p>
-      </div>
+      <h3 class="featured-heading"><%= featured_item.get('name') %></h3>
+      <span class="featured-date"><%= featured_item.get('created_at') %></span>
+      <p><%= featured_item.get('description') %></p>
     </div>
 
   <% end %>

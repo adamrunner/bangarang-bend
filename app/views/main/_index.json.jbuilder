@@ -6,6 +6,8 @@ json.data do
     if page.show_copy_text
       json.copy_text page.copy_text
     end
+    next if page.name === "home"
+    json.partial! "svg/#{page.name}"
     #NOTE this is the only page that has nested_links so I to just manually set it
     if page.name === 'catering_menus'
       json.nested_links true
@@ -35,6 +37,7 @@ json.data do
     json.description featured_item.description
     json.image_url featured_item.image.featured_image.url
     json.link_url featured_item.link_url
+    json.created_at featured_item.pretty_print_created_at
   end
 
   json.biography_items @biography_items do |biography_item|

@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><style>.cls-1{fill:#fff;}</style></defs><title>philosophy_circle</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M100,0A100,100,0,1,0,200,100,100,100,0,0,0,100,0Zm21.57,140.12-17.21-2.06L105.52,150h-11l1.16-11.94-17.21,2.06,1.42-4.5H68.68l6.8-11.94H74.07L81,108.54H79.08L90,79h-.9L100,50l10.91,29H110l10.91,29.53H119l6.93,15.14h-1.41l6.8,11.94H120.15Z"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#333333;}
+</style>
+<title>philosophy_circle</title>
+<g id="Layer_2">
+	<g id="Layer_1-2">
+		<path class="st0" d="M100,0C44.8,0,0,44.8,0,100s44.8,100,100,100s100-44.8,100-100S155.2,0,100,0z M121.6,140.1l-17.2-2.1
+			l1.2,11.9h-11l1.2-11.9l-17.2,2.1l1.4-4.5H68.7l6.8-11.9h-1.4l6.9-15.1h-1.9L90,79h-0.9L100,50l10.9,29H110l10.9,29.5H119
+			l6.9,15.1h-1.4l6.8,11.9h-11.2L121.6,140.1z"/>
+	</g>
+</g>
+</svg>

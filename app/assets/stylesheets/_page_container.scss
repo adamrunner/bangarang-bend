@@ -1,0 +1,138 @@
+$page-color-default: #444;
+$page-color-primary: #eee;
+$page-body-bg: transparentize($color-three, 0.85);
+
+
+.page-head {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: $page-color-primary;
+  color: $page-color-default;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  padding: 3rem 0 2rem 0;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -4rem;
+    right: 0;
+    width: 100%;
+    height: 4rem;
+    background-image: linear-gradient(
+      -2.5deg,
+      transparent 0%,
+      transparent 50%,
+      $page-color-primary 51%,
+      $page-color-primary 100% );
+    z-index: -1;
+  }
+  svg {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem auto;
+    @include media-breakpoint-up(md) {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+}
+
+.page-logo {
+  fill: #333;
+}
+
+.page-body {
+  position: relative;
+  background-color: $page-body-bg;
+  padding: 2rem 0;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4rem;
+    right: 0;
+    width: 100%;
+    height: 4rem;
+    background-image: linear-gradient(
+      -2.5deg,
+      $page-body-bg 0%,
+      $page-body-bg 50%,
+      transparent 51%,
+      transparent 100% );
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -4rem;
+    right: 0;
+    width: 100%;
+    height: 4rem;
+    background-image: linear-gradient(
+    -2.5deg,
+    transparent 0%,
+    transparent 50%,
+    $page-body-bg 51%,
+    $page-body-bg 100% );
+  }
+}
+
+.page-copy-text {
+  padding: 1rem;
+  @include media-breakpoint-up(md) {
+    padding: 5rem;
+  }
+}
+
+.page-copty-text-h {
+  color: $brand-secondary;
+}
+
+.page-img-main-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  height: 20rem;
+  transform: skewY(-2.5deg);
+  margin-bottom: 3rem;
+  -webkit-backface-visiblity: hidden;
+  backface-visibility: hidden;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  outline: solid 1px transparent;
+  background: transparent;
+}
+
+.page-img-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visiblity: hidden;
+  backface-visibility: hidden;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  outline: solid 1px transparent;
+  @include media-breakpoint-up(md) {
+    top: -50%;
+  }
+}
+
+.page-foot {
+  margin-top: 10rem;
+}
+
+.page-foot-h {
+  padding: 0.5rem 1rem;
+  letter-spacing: 5px;
+  font-style: italic;
+  color: #eee;
+}

@@ -9,12 +9,12 @@ class BangarangBend.Views.Navbar extends Backbone.View
     'click .navbar-btn'     : 'closeDropdown'
 
   initialize: ->
+    @position    = null
     @pages       = BangarangBend.pages
     @menus       = BangarangBend.menus
     @body        = $('body')
     @navCollapse = $('#mobile-nav')
     @listenTo Backbone, 'navClose', @mobileNav
-    @listenTo Backbone, 'viewChanged', @scrollTop
     @navBtn = $('#nav-btn')
 
   mobileNav: (options) ->
@@ -34,14 +34,6 @@ class BangarangBend.Views.Navbar extends Backbone.View
       @navCollapse.velocity {translateX: ["-100%", "0%"]}, duration:500, easing:"easeInOutQuart"
       window.BangarangBend.menuToggled = false
       return true
-
-  scrollTop: ->
-    @body.bind 'scroll mousedown mousewheel touchstart', (e) =>
-      if e.which > 0 or e.type == 'mousedown' or e.type == 'mousewheel' or e.type == 'touchstart'
-        @body.velocity('stop').unbind 'scroll mousedown mousewheel touchstart'
-
-    @body.velocity 'scroll', { duration: 1000, offset: "-100px", easing: 'easeOutQuad' }, complete: =>
-      @body.velocity('stop').unbind 'scroll mousedown mousewheel touchstart'
 
   closeDropdown: (event) ->
     @$('#nav-dropdown').removeClass('open')
