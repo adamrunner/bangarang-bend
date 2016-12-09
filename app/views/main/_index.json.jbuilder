@@ -23,12 +23,14 @@ json.data do
     json.link_url @food_truck_address.link_url
     json.description @food_truck_address.description
   end
-
-  json.instagram_images @instagram_images do |instagram_image|
-    json.id instagram_image.id
-    json.thumbnail instagram_image.thumbnail
-    json.low_resolution instagram_image.low_resolution
-    json.standard_resolution instagram_image.standard_resolution
+  
+  if @instagram_images
+    json.instagram_images @instagram_images do |instagram_image|
+      json.id instagram_image.id
+      json.thumbnail instagram_image.thumbnail
+      json.low_resolution instagram_image.low_resolution
+      json.standard_resolution instagram_image.standard_resolution
+    end
   end
 
   json.featured_items @featured_items do |featured_item|

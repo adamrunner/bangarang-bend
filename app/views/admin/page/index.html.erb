@@ -49,11 +49,23 @@
           <div class="flex-wrap">
 
             <h4 class="page-card-title">Instagram Authorization</h4>
-            <p class="lead">STATUS: <%= IG_authorized(@auth_status) %> </p>
-            <p>In order to request images from your account, Instagram requires you to authorize the application to allow it access</p>
-            <a href="https://api.instagram.com/oauth/authorize/?client_id=38c5b7d5d66d454e8d386b0a581074ba&redirect_uri=http://localhost:3000/admin/instagram_auth/new&response_type=code" type="button" class="btn btn-primary auth-btn">
-              authorize
-            </a>
+
+            <% if @instagram_auth %>
+              <%= IG_authorized(@instagram_auth) %>
+
+              <% if @instagram_auth.authorized === true %>
+                <%= link_to "Turn Off Authorization", admin_instagram_auth_path(@instagram_auth), method: "delete", class: "btn btn-primary auth-btn" %>
+              <% end %>
+
+            <% else %>
+              <p class="text-info">Set up your Instagram account here.</p>
+              <p class="page-ig-info">In order to request images from your account, Instagram requires you to authorize the application to grant it permission</p>
+              <a href="https://api.instagram.com/oauth/authorize/?client_id=38c5b7d5d66d454e8d386b0a581074ba&redirect_uri=<%= @redirect_url %>/admin/instagram_auth/new&response_type=code" type="button" class="btn btn-primary auth-btn">
+                authorize account
+              </a>
+
+            <% end %>
+
 
           </div>
         </div>

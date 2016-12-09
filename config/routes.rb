@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'page#index'
 
-    resources :instagram_auth, only: [:new, :create]
+    resources :instagram_auth, only: [:new, :create, :destroy]
 
     get '/auth_status', to: 'instagram_auth#auth_status', as: 'auth_status'
 

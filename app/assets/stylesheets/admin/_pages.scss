@@ -34,9 +34,6 @@
   padding: 0 0.5rem;
   border-right: solid 1px transparentize($color-three, 0.5);
   float: left;
-  &:nth-child(1) {
-    padding-left: 0rem;
-  }
   &:last-child {
     border-right: none;
   }
@@ -101,4 +98,28 @@
   width: 100%;
   padding: 1rem;
   flex-grow: 1;
+}
+
+.page-ig-status {
+  color: $gray-dark;
+  font-variant: small-caps;
+  padding-left: 0.5rem;
+  border-bottom: solid 1px $gray-lighter;
+  &:nth-of-type(1) {
+    padding-top: 1rem;
+  }
+  em {
+    font-variant: normal;
+    padding-left: 0.5rem;
+    font-weight: 400;
+  }
+}
+
+.page-ig-info {
+  background: $gray-lightest;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-weight: 400;
+  color: $brand-info;
+  font-style: italic;
 }

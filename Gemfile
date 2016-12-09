@@ -27,6 +27,8 @@ gem 'font-awesome-sass', github: 'adamrunner/font-awesome-sass'
 # Gretel to handle Breadcrumbs
 gem "gretel"
 gem 'delayed_job_active_record'
+gem 'delayed_job_recurring'
+gem "daemons"
 gem 'curb'
 # Transactional email support
 gem 'mailgun_rails'
