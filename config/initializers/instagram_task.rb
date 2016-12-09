@@ -9,4 +9,6 @@ class InstagramTask
   end
 end
 
-InstagramTask.schedule!
+if ActiveRecord::Base.connection.table_exists? 'delayed_jobs'
+  InstagramTask.schedule!
+end
