@@ -44,6 +44,7 @@ gem 'rack-ssl-enforcer'
 # gem 'handlebars_assets'
 
 # Use Capistrano for deployment
+gem 'capistrano3-delayed-job', '~> 1.0'
 gem 'capistrano', '~> 3.5.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
