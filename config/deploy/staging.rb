@@ -1,5 +1,3 @@
-require "delayed/recipes"
-
 set :stage, :staging
 set :branch, 'staging'
 server 'bangarangbend.com', user: 'deploy', roles: %w{web app db}

@@ -1,5 +1,3 @@
-require "delayed/recipes"
-
 set :rails_env, "production" #added for delayed job
 set :stage, :production
 set :branch, 'master'
