@@ -48,9 +48,7 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web) do
-      within release_path do
-        execute "RAILS_ENV=#{fetch(:rails_env)} #{fetch(:rbenv_prefix)} bundle exec rails runner -e #{fetch(:rails_env)} \"Rails.cache.clear\"", raise_on_non_zero_exit: false
-      end
+      execute "cd #{release_path} && RAILS_ENV=#{fetch(:rails_env)} #{fetch(:rbenv_prefix)} bundle exec rails runner -e #{fetch(:rails_env)} \"Rails.cache.clear\"", raise_on_non_zero_exit: false
     end
   end
 
