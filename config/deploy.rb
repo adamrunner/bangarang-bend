@@ -47,10 +47,9 @@ namespace :deploy do
   after :publishing, :restart
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
+    on roles(:web) do
       within release_path do
-        execute "cd #{release_path} && RAILS_ENV=#{fetch(:rails_env)} bundle exec rails runner -e #{fetch(:rails_env)} \"Rails.cache.clear\"", raise_on_non_zero_exit: false
+        execute "#{fetch(:rbenv_prefix)} RAILS_ENV=#{fetch(:rails_env)} bundle exec rails runner -e #{fetch(:rails_env)} \"Rails.cache.clear\"", raise_on_non_zero_exit: false
       end
     end
   end
