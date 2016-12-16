@@ -18,7 +18,9 @@
 
             <div class="inner-block m-r-1">
               <h5>Description</h5>
-              <p class="card-text"><%= farm[:description] %></p>
+              <% farm[:description].each_line do |description| %>
+                <p class="card-text"><%= description %></p>
+              <% end %>
               <h5 class="m-t-2">Links To</h5>
               <p class="card-text"><%= farm.url != nil ? farm.url : 'No Link' %></p>
             </div>
