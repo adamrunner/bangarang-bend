@@ -24,7 +24,9 @@
 
         <div class="media-body">
           <h4 class="media-heading"><%= farm.get('name') %></h4>
-          <p class="farm-desc"><%= farm.get('description') %></p>
+          <% farm.get('description').forEach (description_paragraph) -> :%>
+            <p class="farm-desc"><%= description_paragraph %></p>
+          <% end %>
           <a class="farm-link" href="<%= farm.get('url') %>" target="_blank">visit their website</a>
         </div>
       </div>

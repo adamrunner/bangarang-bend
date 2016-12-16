@@ -23,7 +23,7 @@ json.data do
     json.link_url @food_truck_address.link_url
     json.description @food_truck_address.description
   end
-  
+
   if @instagram_images
     json.instagram_images @instagram_images do |instagram_image|
       json.id instagram_image.id
@@ -77,7 +77,7 @@ json.data do
   json.farms @farms do |farm|
     json.id farm.id
     json.name farm.name
-    json.description farm.description
+    json.description farm.description.each_line.to_a
     json.url farm.url
     json.image_url farm.farm_image.url
   end

@@ -39,7 +39,8 @@
 
 <script>
 $(document).ready(function(){
-  BangarangBend.initialize(<%= (render partial: "main/index.json").html_safe %>);
+  var data = <%= (render partial: "main/index.json").html_safe %>;
+  BangarangBend.initialize(data);
   Backbone.history.start({pushState: true})
 })
 </script>
