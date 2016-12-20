@@ -121,7 +121,7 @@ $showcase-link-margin-sm: 0rem;
     text-transform: uppercase;
     width: 90%;
     text-align: center;
-    transform: skewy(-2.5deg);
+    transform: translate3d(0,0,0) skewY(-2.5deg);
     border-bottom: solid 0.15rem $showcase-border-color;
     color: $showcase-default;
     transition: all 0.2s ease-out;
@@ -152,25 +152,24 @@ $showcase-link-margin-sm: 0rem;
   width: 40%;
   overflow: hidden;
   position: relative;
-  transform: skewy(-2.5deg);
+  transform: translate3d(0,0,0) skewY(-2.5deg);
+  border: solid 0.2rem $showcase-border-color;
+  outline: solid 1px transparent;
   @include media-breakpoint-up(md) {
     height: 10rem;
     width: 40%;
   }
   &:after {
+    background: $showcase-border-color;
     position: absolute;
     content: "";
     display: block;
     width: 100%;
     height: 100%;
-    border: solid 0.2rem $showcase-border-color;
-    outline: solid 1px transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     transition: all 0.2s ease-out;
-    -webkit-backface-visiblity: hidden;
-    backface-visibility: hidden;
   }
 }
 

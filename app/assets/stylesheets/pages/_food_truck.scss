@@ -1,13 +1,4 @@
 #food-truck-block {
-  padding: 2rem;
-  background-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 50%,
-    transparentize(#222, 0.75) 50%,
-    transparentize(#222, 0.1) 100%);
-  background-position: bottom;
-  background-repeat: no-repeat;
 }
 
 .food-truck-wrap {
@@ -23,8 +14,11 @@
     outline-offset: -5rem;
   }
   img {
-    border: solid 2px #222;
     padding: 0;
+    border: solid 1px #222;
+    @include media-breakpoint-up(md) {
+      border-width: 1px;
+    }
   }
 }
 

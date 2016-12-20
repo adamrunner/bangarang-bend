@@ -4,6 +4,7 @@ class BangarangBend.Views.FoodTruck extends Backbone.View
   template: JST["backbone/templates/food_truck"]
 
   id: 'food-truck-block'
+  className: 'inner-content'
 
   initialize: ->
     @page = BangarangBend.pages.findWhere(name: "food_truck")

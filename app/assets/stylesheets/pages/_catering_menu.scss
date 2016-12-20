@@ -1,28 +1,32 @@
+$menu-bg-color: transparentize(#777, 0.85);
+
 // catering_menu styling
 #catering-menu-block {
-  @include content-card;
+  background-color: transparentize($gray-dark, 0.8);
+  h1 {
+    text-transform: capitalize;
+  }
   h3 {
-    font-family: $font-secondary;
+    font-style: italic;
+    font-family: $font-family-serif;
     color: $brand-secondary;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 0.5rem 0 0 0;
+    padding: 0.5rem;
+    background: $menu-bg-color;
     @include media-breakpoint-down(sm) {
       margin-bottom: 1rem;
     }
   }
   h4 {
-    font-variant: small-caps;
-    text-transform: lowercase;
-    letter-spacing: 1px;
-    font-weight: 300;
-    color: $color-two;
+    color: transparentize($brand-warning, 0.2);
+    font-style: italic;
   }
   h5 {
-    font-family: $font-secondary;
-    color: $card-bg-color;
+    font-family: $font-family-serif;
+    color: $color-three;
     text-transform: uppercase;
-    letter-spacing: 2px;
   }
   .card-block {
     @extend .bg-transparent;
@@ -37,18 +41,19 @@
   p {
     font-weight: 300;
     margin: 0;
-    color: $color-three;
+    color: #eee;
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
     }
   }
   em {
-    color: $color-four;
-    font-family: $font-secondary;
+    color: $brand-secondary;
+    font-family: $font-family-serif;
     letter-spacing: 2px;
     display: inline-block;
     text-transform: capitalize;
     font-variant: normal;
+    background: $menu-bg-color;
     @include media-breakpoint-down(sm) {
       font-size: 0.75rem;
     }
@@ -57,6 +62,7 @@
     padding-right: 0;
     font-size: 1rem;
     border-width: 1px;
+    border-color: #444;
   }
 }
 .menu-col {
@@ -65,9 +71,9 @@
 }
 
 .menu-footer {
-  @extend .bg-transparent;
-  font-family: $font-family-serif;
+  font-family: $font-family-sans-serif;
   font-weight: 300;
+  font-style: italic;
   ul {
     padding: 0;
     margin: 0;
@@ -81,39 +87,9 @@
     }
   }
 }
-// catering_menu index styling
-.catering-menu-btn {
-  display: block;
-  background-color: $card-bg-color;
-  border: 1px solid $card-border-color;
-  transition: all 0.15s ease-out;
-  h3 {
-    color: $brand-secondary;
-    letter-spacing: 2px;
-    font-family: $font-secondary;
-    text-transform: uppercase;
-  }
-  p {
-    @extend .card-text;
-  }
-  i {
-    margin-left: 1rem;
-    font-size: 0.9em;
-    line-height: 0.5;
-    height: 100%;
-    transition: all 0.15s ease-out;
-  }
-  &:hover {
-    i {
-      transform: translateX(100%);
-    }
-  }
-}
 
 .menu-lgi {
-  border-top-style: dashed;
-  border-top-color: $color-four;
-  &:nth-child(1) {
-    border-top-style: solid;
-  }
+  background: transparent;
+  border: none;
+  margin: 0;
 }
