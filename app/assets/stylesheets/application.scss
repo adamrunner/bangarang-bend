@@ -22,7 +22,7 @@ html {
     font-size: $font-size-sm;
   }
   @include media-breakpoint-up(md) {
-    background: url("/images/background/background_main-2.jpg") repeat;
+    background: url("/images/background/bg-main.jpg") repeat;
     background-size: 100%;
   }
   @include media-breakpoint-up(xl) {

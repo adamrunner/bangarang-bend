@@ -177,6 +177,6 @@ $list: 1 services, 2 catering_menus, 3 philosophy, 4 food_truck, 5 the_farms;
 
 @each $number, $url in $list {
   .showcase-inner a:nth-of-type(#{$number}) .showcase-desc:after {
-      background-image: url("/images/showcase/#{$url}-1.jpg");
+      background-image: url("/images/showcase/#{$url}.jpg");
   }
 }
