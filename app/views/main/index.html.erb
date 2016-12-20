@@ -3,7 +3,10 @@
 </nav>
 
 <div id="main-block">
-  <div id="mobile-nav"></div>
+  
+  <div id="mobile-nav">
+    <%= render partial: 'shared/mobile_navigation', locals: {pages: @pages, menus: @menus} %>
+  </div>
 
   <div id="content"></div>
 
