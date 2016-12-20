@@ -13,6 +13,8 @@
     <p id="copy-text"></p>
   </div>
 
+  <hr class="farms-hr">
+
   <div class="farms-wrap">
 
   <% @farms.forEach (farm, index) -> :%>

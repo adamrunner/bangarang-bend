@@ -1,18 +1,7 @@
 #farms-block {
-  background: transparent;
-  padding: 2rem;
-  background-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 50%,
-    transparentize(#222, 0.75) 50%,
-    transparentize(#222, 0.1) 100%);
-  background-position: bottom;
-  background-repeat: no-repeat;
 }
 .media {
   flex-flow: column;
-  border: solid 1px #333;
   @include media-breakpoint-up(md) {
     flex-flow: row;
   }
@@ -20,10 +9,13 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     margin-bottom: 0.5rem;
     text-transform: capitalize;
     color: $brand-secondary;
+    @include media-breakpoint-up(md) {
+      padding: 0.5rem 0;
+    }
     @include media-breakpoint-up(lg) {
       flex-flow: row wrap;
       padding-top: 0;
@@ -35,7 +27,7 @@
   .media-left {
     padding: 0;
     @include media-breakpoint-up(md) {
-      border-right: solid 1px #444;
+      border-right: dashed 1px #444;
       order: 1;
       padding-right: 1.25rem;
     }
@@ -43,7 +35,7 @@
   .media-right {
     padding: 0;
     @include media-breakpoint-up(md) {
-      border-left: solid 1px #444;
+      border-left: dashed 1px #444;
       order: 3;
       padding-left: 1.25rem;
     }
@@ -93,6 +85,7 @@
 }
 
 .farm-img {
+  border-radius: 0.225rem;
   @include media-breakpoint-up(md) {
     max-width: 250px;
     margin-bottom: 1rem;
@@ -117,11 +110,22 @@
 }
 
 .farms-copy-text {
-  border-bottom: 2px dashed #444;
-  margin-bottom: 2rem;
+  padding-bottom: 0;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 1rem;
+  }
 }
 
 .farms-copy-text-h {
   color: $color-three;
   text-align: center;
+}
+
+.farms-hr {
+  margin: 6rem auto;
+  border-top: solid 1px #444;
+  width: 50%;
+  @include media-breakpoint-up(md) {
+    width: 60%;
+  }
 }

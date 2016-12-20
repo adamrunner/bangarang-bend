@@ -9,16 +9,6 @@ $philosophy-border-color: $philosophy-color-three;
 $philosophy-border-width: 0.25rem;
 
 #philosophy-block {
-  background: transparent;
-  padding: 2rem;
-  background-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 50%,
-    transparentize(#222, 0.75) 50%,
-    transparentize(#222, 0.1) 100%);
-  background-position: bottom;
-  background-repeat: no-repeat;
   h2 {
     color: $brand-secondary;
     letter-spacing: 1px;
