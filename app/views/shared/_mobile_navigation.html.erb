@@ -1,0 +1,22 @@
+<div class="list-group-fluid">
+
+  <% @pages.each do |page|%>
+    <% if page.name === 'catering_menus' %>
+
+      <a class="mobile-nav-link list-group-item" data-toggle="collapse" href="#menuCollapse"><%= page.link_name %> <i class="btl bt-caret-down"></i> </a>
+      <div class="collapse" id="menuCollapse">
+        <div class="card-block">
+          <% @menus.each do |menu| %>
+            <a class="mobile-nav-link nav-close list-group-item" href="/<%= page.link_name %>/<%= menu.name.parameterize('_') %>"><%= menu.name.titleize %></a>
+          <% end %>
+        </div>
+      </div>
+
+    <% else %>
+
+      <a class="mobile-nav-link nav-close list-group-item" href="/<%= page_link(page) %>"><%= page.link_name %></a>
+
+    <% end %>
+  <% end %>
+
+</div>

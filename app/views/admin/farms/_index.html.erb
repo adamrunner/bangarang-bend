@@ -1,0 +1,45 @@
+<div id="featured-head" class="heading-block">
+  <h1><%= @page.link_name.titleize %></h1>
+  <%= link_to "add farm", new_admin_page_farm_path(params[:id]), class: "sort-off add-link" %>
+</div>
+
+<div id="farms" class="card-bs-row">
+  <% farms.each do |farm| %>
+
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+        <div class="card-col title">
+          <h4 class="title-text handle"><%= farm[:name] %> </h4>
+        </div>
+
+        <div class="card-row">
+          <div class="col-to-row-md">
+
+            <div class="inner-block m-r-1">
+              <h5>Description</h5>
+              <% farm[:description].each_line do |description| %>
+                <p class="card-text"><%= description %></p>
+              <% end %>
+              <h5 class="m-t-2">Links To</h5>
+              <p class="card-text"><%= farm.url != nil ? farm.url : 'No Link' %></p>
+            </div>
+
+            <div class="card-img-col">
+              <%= image_tag(farm.farm_image.url, class:"featured-img") if farm.farm_image? %>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card-row controls">
+            <%= link_to "edit", edit_admin_farm_path(farm), class: "page-card-link edit" %>
+            <%= link_to "delete", admin_farm_path(farm), method: "delete", data: {confirm: "Are you sure you want to delete  '#{farm.name.titleize}'?"}, class: "page-card-link delete" %>
+        </div>
+
+    </div>
+  </div>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,154 @@
+#address {
+  // #NOTE have an annoying useless wrapping div here because of Backbone. Should fix it sometime
+  .inner  {
+    display: flex;
+    flex-flow: column nowrap;
+    @include media-breakpoint-up(md) {
+      flex-flow: row nowrap;
+    }
+  }
+  .left {
+    display: block;
+    position: relative;
+    width: 100%;
+    background: #efefef;
+    @include media-breakpoint-up(md) {
+      padding-left: 1rem;
+      width: 50%;
+    }
+  }
+  .right {
+    display: flex;
+    padding: 4rem;
+    width: 100%;
+    margin: 0 auto;
+    background: transparentize(#222, 0.3);
+    @include media-breakpoint-up(md) {
+      background: #eee;
+      padding: 1.5rem 1rem 1.5rem 0;
+      width: 50%;
+    }
+    .desc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      color: #eee;
+      border-bottom: solid 1px transparentize(#fff, 0.85);
+      height: inherit;
+      width: 100%;
+      padding: 1rem;
+      flex: 1;
+      @include media-breakpoint-up(md) {
+        color: #333;
+        border-top: solid 1px transparentize(#333, 0.85);
+        border-bottom: solid 1px transparentize(#333, 0.85);
+        padding: 0 1rem 0 0;
+      }
+    }
+  }
+}
+
+#direction-link {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0;
+  position: relative;
+  @include media-breakpoint-up(md) {
+    padding: 1.5rem 0;
+  }
+  &:hover {
+    .h {
+      &.click-here {
+        color: transparentize(#333, 0.25);
+      }
+    }
+  }
+  .h {
+    color: transparentize($brand-secondary, 0.35);
+    font-weight: 700;
+    background: #eee;
+    text-align: center;
+    font-size: 1.25rem;
+    width: 100%;
+    border-top: solid 1px transparentize(#333, 0.85);
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    z-index: 1;
+    margin: 0;
+    @include media-breakpoint-up(md) {
+      padding-top: 1rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 1.75rem;
+    }
+    &.click-here {
+      transition: all 0.2s ease-out;
+      font-size: 1rem;
+      padding-bottom: 0.5rem;
+      padding-top: 0;
+      border-top: none;
+      font-style: italic;
+      color: transparentize(#333, 0.5);
+      border-bottom: solid 1px transparentize(#333, 0.85);
+      @include media-breakpoint-up(md) {
+        padding-bottom: 1rem;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  .circle {
+    display: block;
+    width: 40%;
+    padding-bottom: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+      width: 70%;
+      padding-bottom: 70%;
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translateY(-50%) translateX(-50%);
+      padding-bottom: 100%;
+      background: #efefef;
+      border-radius: 50%;
+      z-index: -1;
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 85%;
+      padding-bottom: 85%;
+      transform: translateY(-50%) translateX(-50%);
+      background: transparent;
+      border: dashed 1px transparentize(#333, 0.6);
+      border-radius: 50%;
+      z-index: -1;
+      @include media-breakpoint-up(md) {
+        border-width: 2px;
+        width: 80%;
+        padding-bottom: 80%;
+      }
+    }
+  }
+}

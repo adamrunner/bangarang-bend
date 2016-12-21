@@ -3,6 +3,10 @@ class Admin::PageController < Admin::BaseController
 
   def index
     @pages = Page.all
+    @instagram_auth = InstagramAuth.last
+    @redirect_url = 'http://localhost:3000' if Rails.env.development?
+    @redirect_url = 'https://bangarangbend.com' if Rails.env.production?
+    @redirect_url = 'https://staging.bangarangbend.com' if Rails.env.staging?
   end
 
   def show

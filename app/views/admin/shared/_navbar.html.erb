@@ -4,6 +4,9 @@
   <div class="nav navbar-nav">
     <%= link_to "Bangarang Admin", admin_root_path, class: "navbar-brand" %>
     <% if admin_signed_in? %>
+      <%= link_to(root_path, class: "admin-link", target:"_blank") do %>
+        <i class="btl bt-external-link"></i>View Public Site
+      <% end %>
       <%= link_to(destroy_admin_session_path, method: :delete, class: "admin-link") do %>
         <i class="btl bt-sign-out"></i>Sign Out
       <% end %>

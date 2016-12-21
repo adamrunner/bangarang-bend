@@ -3,7 +3,7 @@ BangarangBend.Views.About ||= {}
 class BangarangBend.Views.About extends Backbone.View
   template: JST["backbone/templates/home/about"]
 
-  className: 'card card-featured m-a-0'
+  className: 'card about-card m-a-0'
 
   initialize: ->
     @collection = BangarangBend.biographyItems

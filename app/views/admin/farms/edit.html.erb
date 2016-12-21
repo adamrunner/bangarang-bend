@@ -1,0 +1,81 @@
+<div class="card-bs-row">
+
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">edit farm</h3>
+      </div>
+
+      <div class="form-block">
+        <%= form_for @farm, url: {action: "update"} do |f| %>
+          <div class="form-group">
+            <%= f.label :name, "Name", class: "font-weight-bold" %>:
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :description, "Description", class: "font-weight-bold" %>:
+            <%= f.text_area :description, rows: 6, class: "form-control" %>
+            <span class="hint">Paragraphs here will be translated to paragraphs on the user facing view</span>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :link_url, "Link URL", class: "font-weight-bold" %>:
+            <%= f.text_field :url, class: "form-control", value: @farm.url %>
+          </div>
+
+          <% if @farm.farm_image? %>
+            <figure class="form-group">
+              <%= image_tag(@farm.farm_image.url, class:"figure-img") %>
+              <%= link_to "delete image", admin_delete_farm_img_path(@farm), method: "delete", data: {confirm: "Are you sure you want to delete #{@farm[:farm_image]}?"},  class: "btn btn-danger pull-xs-right" %>
+              <figcaption class="figure-caption"><%= @farm[:farm_image] %></figcaption>
+            </figure>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :image, @farm.farm_image? ? "Replace Image" : "Add Image", class: "font-weight-bold" %>:
+            <%= f.file_field :farm_image, class: "form-control-file" %>
+            <%= f.hidden_field :farm_image_cache %>
+          </div>
+
+          <div class="form-group controls">
+            <%= f.submit "save", class: "btn btn-success" %>
+            <%= link_to "cancel", admin_page_path(@farm.page), class: "btn btn-secondary" %>
+            <%= link_to "delete", admin_farm_path(@farm), method: "delete", data: {confirm: "Are you sure you want to delete  '#{@farm.name.titleize}'?"}, class: "btn btn-danger pull-xs-right" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card-span-lg-6">
+    <div class="card-content-wrap">
+
+      <div class="card-col title">
+        <h3 class="title-text">tips for adding links</h3>
+      </div>
+
+      <div class="card-col card-text">
+        <p>Add a link to the farm's website to the featured farm's website!</p>
+        <p>Check out the examples below for valid link formats</p>
+      </div>
+
+      <div class="card-col no-grow">
+        <h4 class="sub-title-text">Examples for Other Websites</h4>
+      </div>
+
+      <div class="card-col card-text text-primary">
+        <ul class="bt-ul link-example-list">
+          <li><i class="bt-li btl bt-angles-right"></i>http://www.google.com</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.google.com</li>
+          <li><i class="bt-li btl bt-angles-right"></i>www.instagram.com/chefdavebodi</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

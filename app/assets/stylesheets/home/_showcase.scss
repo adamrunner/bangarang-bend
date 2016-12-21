@@ -1,77 +1,182 @@
+// services colors //
+$showcase-default: #eee;
+$showcase-primary: transparentize($brand-primary, 0.65);
+$showcase-secondary: transparentize($brand-secondary, 0.3);
+
+$showcase-color-three: transparentize($color-three, 0.75);
+
+$showcase-active: #fff;
+
+$showcase-border-color: #ddd;
+
+$showcase-link-padding-xl: 3rem;
+$showcase-link-padding-md: 2rem;
+$showcase-link-padding-sm: 0;
+
+$showcase-link-margin-lg: 1rem;
+$showcase-link-margin-sm: 0rem;
+
 #showcase {
-  width: 100%;
-  background: transparent;
+  background-color: transparent;
+  padding: 2rem 0;
+  background-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    transparentize(#222, 0.4) 45%,
+    transparentize(#222, 0.39) 75%,
+    transparentize(#222, 0.38) 100%);
 }
+
 .showcase-inner {
-  @include make-row($gutter:  1.25rem);
-  margin-top: (1.25rem / -2);
-  margin-bottom: (1.25rem / -2);
-}
-.img-wrap {
-  position: relative;
-  overflow: hidden;
   width: 100%;
-}
-.img-inner-wrap {
-  box-sizing: border-box;
-  position: relative;
-  padding-bottom: 100%;
-}
-.showcase-item {
-  @include make-col($gutter:  1.25rem);
-  @include make-col-span(6);
-  margin-top: (1.25rem / 2);
-  margin-bottom: (1.25rem / 2);
+  margin: 0 auto;
+  padding: 0 2rem;
   @include media-breakpoint-up(md) {
-    @include make-col-span(4);
+    width: 80%;
+    padding: 3rem 3rem 0 3rem;
   }
-  &:nth-child(3n) {
-    border-right: none;
+  a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    &:hover {
+      &.left {
+        .h {
+          color: $color-three;
+          border-color: #444;
+          &:after {
+            transform: scale(1);
+          }
+        }
+      }
+      &.right {
+        .h {
+          color: $color-three;
+          border-color: #444;
+          &:after {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    &.right {
+      justify-content: flex-end;
+      .showcase-desc {
+        order: 1;
+      }
+      .showcase-logo {
+        order: 2;
+      }
+      .h {
+        padding-right: 1rem;
+        margin-left: auto;
+        text-align: right;
+        @include media-breakpoint-down(sm) {
+          padding-right: 0.5rem;
+        }
+        &:after {
+          float: left;
+          font-family: "Black Tie";
+          content: "\F0AA";
+          color: $color-three;
+          transform: scale(0);
+          transition: all 0.2s ease-out;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
+      }
+    }
+    &.left {
+      justify-content: flex-start;
+      .showcase-desc {
+        order: 2;
+      }
+      .showcase-logo {
+        order: 1;
+      }
+      .h {
+        padding-left: 1rem;
+        margin-right: auto;
+        text-align: left;
+        @include media-breakpoint-down(sm) {
+          padding-left: 0.5rem;
+        }
+        &:after {
+          float: right;
+          font-family: "Black Tie";
+          content: "\F0AB ";
+          transform: scale(0);
+          transition: all 0.2s ease-out;
+          color: $color-three;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
+      }
+    }
   }
-  .showcase-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .btl {
-    width: 100%;
+  .h {
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 90%;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 4em;
-    z-index: 100;
-    color: $showcase-link-color-active;
-    opacity: 0;
-  }
-  @include media-breakpoint-up(sm) {
-    min-height: 2rem;
-  }
-}
-.showcase-link-name {
-  position: absolute;
-  font-weight: 300;
-  bottom: 0;
-  right: 0;
-  line-height: 1.1;
-  color: $color-one;
-  text-transform: uppercase;
-  background-color: $showcase-link-bg;
-  padding: 0.75rem;
-  height: 3.5rem;
-  margin: 0;
-  width: 100%;
-  @include media-breakpoint-up(lg) {
-    font-size: 1rem;
+    transform: translate3d(0,0,0) skewY(-2.5deg);
+    border-bottom: solid 0.15rem $showcase-border-color;
+    color: $showcase-default;
+    transition: all 0.2s ease-out;
+    font-size: 1.5rem;
+    overflow: hidden;
+    margin: 0;
+    outline: solid 1px transparent;
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 2.5rem;
+    }
   }
 }
 
-.name-wrap {
+.showcase-logo {
   display: flex;
   flex-flow: column nowrap;
-  padding-right: 1rem;
-  border-right: solid 1px $brand-secondary;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin-top: 2rem;
+}
+
+.showcase-desc {
+  height: 7rem;
+  width: 40%;
+  overflow: hidden;
+  position: relative;
+  transform: translate3d(0,0,0) skewY(-2.5deg);
+  border: solid 0.2rem $showcase-border-color;
+  outline: solid 1px transparent;
+  @include media-breakpoint-up(md) {
+    height: 10rem;
+    width: 40%;
+  }
+  &:after {
+    background: $showcase-border-color;
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: all 0.2s ease-out;
+  }
+}
+
+$list: 1 services, 2 catering_menus, 3 philosophy, 4 food_truck, 5 the_farms;
+
+@each $number, $url in $list {
+  .showcase-inner a:nth-of-type(#{$number}) .showcase-desc:after {
+      background-image: url("/images/showcase/#{$url}.jpg");
+  }
 }

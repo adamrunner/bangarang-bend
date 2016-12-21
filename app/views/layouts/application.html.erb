@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>BangarangBend</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300|Roboto+Slab:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arvo:400,400i|Roboto:300" rel="stylesheet">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- ****** faviconit.com favicons ****** -->
@@ -39,7 +39,8 @@
 
 <script>
 $(document).ready(function(){
-  BangarangBend.initialize(<%= (render partial: "main/index.json").html_safe %>);
+  var data = <%= (render partial: "main/index.json").html_safe %>;
+  BangarangBend.initialize(data);
   Backbone.history.start({pushState: true})
 })
 </script>

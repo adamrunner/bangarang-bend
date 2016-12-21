@@ -1,41 +1,91 @@
+// services colors //
+$services-default: #eee;
+$services-primary: transparentize($brand-primary, 0.5);
+$services-secondary: $brand-secondary;
+$services-color-three: transparentize($color-three, 0.65);
+$services-banner-color: transparentize(#111, 0.15);
+
+$services-border-color: $services-color-three;
+$services-border-width: 1px;
+
 #services-block {
-  background-color: #111;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  h3 {
-    font-family: $font-secondary;
-    letter-spacing: 2px;
-    color: $brand-secondary;
-    text-transform: uppercase;
-    @extend .m-a-0;
-    @include media-breakpoint-down(sm) {
-      font-size: 1.5rem;
-    }
-  }
-  .blockquote {
+  position: relative;
+  h2 {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-transform: capitalize;
+    color: $services-secondary;
     margin: 0;
-    padding-right: 0;
   }
   p {
-    font-weight: 300;
-    color: $color-one;
+    width: 75%;
+    color: $services-default;
     margin: 0;
+    font-size: 1.15em;
+    letter-spacing: 0;
+    padding-left: 1rem;
     @include media-breakpoint-down(sm) {
-      font-size: 0.75rem;
+      font-size: 1.1rem;
     }
   }
+  .inner-block {
+    padding: 0 5rem;
+  }
 }
+
+.services-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 0 2rem 2rem 2rem;
+}
+
 .services-column {
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
+  margin: 1rem 0;
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 50%;
+  }
+  small {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    margin: 2rem;
+    &:before {
+      content: "";
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(45deg);
+      background-color: $services-primary;
+      outline: solid 1px transparentize(#111, 0.65);
+      outline-offset: -0.5rem;
+    }
+    &:after {
+      content: attr(data-num);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      color: transparentize(#fff, 0.5);
+      font-weight: 400;
+      font-size: 0.85em;
+      font-family: $font-family-sans-serif;
+    }
+  }
 }
-.services-card {
-  flex-grow: 1;
-  background-color: transparent;
-  border: none;
-}
-.services-block {
-  background-color: transparent;
-  padding-top: 0;
-  padding-left: 1.5rem;
+
+.inner-hr {
+  border-top: solid $services-border-width $services-color-three;
+  width: 50%;
 }

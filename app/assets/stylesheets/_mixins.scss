@@ -5,11 +5,107 @@
   align-items: $align-items;
 }
 
+@mixin banner($font-size, $font-size-modifier, $padding-x, $padding-y, $pseudo-top, $font-color, $bg-color) {
+  $font-size-xs: $font-size - $font-size-modifier * 3.25;
+  $font-size-sm: $font-size - $font-size-modifier * 3;
+  $font-size-md: $font-size - $font-size-modifier * 2;
+  $font-size-lg: $font-size;
+  $border-size-xs: ($font-size-xs + $padding-x * 2) / 2;
+  $border-size-sm: ($font-size-sm + $padding-x * 2) / 2;
+  $border-size-md: ($font-size-md + $padding-x * 2) / 2;
+  $border-size-lg: ($font-size-lg + $padding-x * 2) / 2;
+  position: relative;
+  padding: $padding-x $padding-y;
+  background: $bg-color;
+  color: $font-color;
+  font-size: $font-size-xs;
+  text-align: center;
+  line-height: 1;
+  transform: skewY(-3deg);
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-md;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-lg;
+  }
+  &:before {
+    display: block;
+    position: absolute;
+    top: $pseudo-top * 0.5;
+    left: -$border-size-xs * 2 - 0.0625rem;
+    height: 0;
+    width: 0;
+    content: "";
+    border-top: $border-size-xs solid $bg-color;
+    border-bottom: $border-size-xs solid $bg-color;
+    border-right: $border-size-xs solid $bg-color;
+    border-left: $border-size-xs solid transparent;
+    @include media-breakpoint-up(sm) {
+      top: $pseudo-top;
+      left: -$border-size-sm * 2 - 0.125rem;
+      border-top: $border-size-sm solid $bg-color;
+      border-bottom: $border-size-sm solid $bg-color;
+      border-right: $border-size-sm solid $bg-color;
+      border-left: $border-size-sm solid transparent;
+    }
+    @include media-breakpoint-up(md) {
+      left: -$border-size-md * 2 - 0.125rem;
+      border-top: $border-size-md solid $bg-color;
+      border-bottom: $border-size-md solid $bg-color;
+      border-right: $border-size-md solid $bg-color;
+      border-left: $border-size-md solid transparent;
+    }
+    @include media-breakpoint-up(lg) {
+      left: -$border-size-lg * 2 - 0.125rem;
+      border-top: $border-size-lg solid $bg-color;
+      border-bottom: $border-size-lg solid $bg-color;
+      border-right: $border-size-lg solid $bg-color;
+      border-left: $border-size-lg solid transparent;
+    }
+  }
+  &:after {
+    display: block;
+    position: absolute;
+    top: $pseudo-top * 0.5;
+    right: -$border-size-xs * 2 - 0.0625rem;
+    height: 0;
+    width: 0;
+    content: "";
+    border-top: $border-size-xs solid $bg-color;
+    border-bottom: $border-size-xs solid $bg-color;
+    border-right: $border-size-xs solid transparent;
+    border-left: $border-size-xs solid $bg-color;
+    @include media-breakpoint-up(sm) {
+      top: $pseudo-top;
+      right: -$border-size-sm * 2 - 0.125rem;
+      border-top: $border-size-sm solid $bg-color;
+      border-bottom: $border-size-sm solid $bg-color;
+      border-right: $border-size-sm solid transparent;
+      border-left: $border-size-sm solid $bg-color;
+    }
+    @include media-breakpoint-up(md) {
+      right: -$border-size-md * 2 - 0.125rem;
+      border-top: $border-size-md solid $bg-color;
+      border-bottom: $border-size-md solid $bg-color;
+      border-right: $border-size-md solid transparent;
+      border-left: $border-size-md solid $bg-color;
+    }
+    @include media-breakpoint-up(lg) {
+      right: -$border-size-lg * 2 - 0.125rem;
+      border-top: $border-size-lg solid $bg-color;
+      border-bottom: $border-size-lg solid $bg-color;
+      border-right: $border-size-lg solid transparent;
+      border-left: $border-size-lg solid $bg-color;
+    }
+  }
+}
+
 @mixin content-card {
   @extend .card;
   @extend .card-block;
-  @extend .shadow;
-  @extend .hidden;
 }
 
 @mixin link-icon ($icon, $font-size:0.9rem) {

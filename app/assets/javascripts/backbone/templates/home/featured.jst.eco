@@ -1,32 +1,15 @@
-    <div class="card-block">
-      <h3 class="card-title-small">featured</h3>
+<h1 class="h">News</h1>
+
+<div class="featured-wrap">
+
+  <% @featured_items.forEach (featured_item) ->: %>
+
+    <div class="featured-media">
+      <h3 class="featured-heading"><%= featured_item.get('name') %></h3>
+      <span class="featured-date"><%= featured_item.get('created_at') %></span>
+      <p><%= featured_item.get('description') %></p>
     </div>
 
-    <div class="card-block inner-block">
+  <% end %>
 
-      <div class="card-columns p-t-1">
-        <% @featured_items.forEach (featured_item) ->: %>
-
-          <a <%= featured_item.linkTag() %> >
-            <% if featured_item.get('link_url') :%>
-              <div class="roll-over-link">
-                <i class="btl bt-angles-right featured-icon"></i>
-              </div>
-            <% end %>
-
-            <% if featured_item.get('image_url'): %>
-              <img class="card-img-top img-fluid featured-img" src="<%= featured_item.get('image_url') %>"></img>
-            <% end %>
-
-            <div class="card-block featured-block">
-              <h4 class="card-title"><%= featured_item.get('name') %></h4>
-              <hr>
-              <p class="card-text featured-item-text">
-                <%= featured_item.get('description') %>
-              </p>
-            </div>
-          </a>
-
-        <% end %>
-      </div>
-  </div>
+</div>

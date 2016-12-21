@@ -1,10 +1,12 @@
-<nav id="navbar"></nav>
+<nav id="navbar">
+  <%= render partial: 'shared/navigation', locals: {pages: @pages, menus: @menus} %>
+</nav>
 
 <div id="main-block">
-  <div id="mobile-nav"></div>
-
-  <%= render partial: 'main/partials/landing', locals: { landing: @landing } %>
-  <%= render partial: 'main/partials/address_link', locals: { address: @food_truck_address } %>
+  
+  <div id="mobile-nav">
+    <%= render partial: 'shared/mobile_navigation', locals: {pages: @pages, menus: @menus} %>
+  </div>
 
   <div id="content"></div>
 

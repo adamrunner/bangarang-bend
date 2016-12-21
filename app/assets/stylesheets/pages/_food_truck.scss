@@ -1,0 +1,45 @@
+#food-truck-block {
+}
+
+.food-truck-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  position: relative;
+  padding: 1rem;
+  outline: solid 1px #222;
+  outline-offset: -1rem;
+  @include media-breakpoint-up(md) {
+    padding: 5rem;
+    outline-offset: -5rem;
+  }
+  img {
+    padding: 0;
+    border: solid 1px #222;
+    @include media-breakpoint-up(md) {
+      border-width: 1px;
+    }
+  }
+}
+
+.small-col {
+  float: left;
+  position: relative;
+  width: 40%;
+  background: transparent;
+  .small {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
+.large-col {
+  float: left;
+  position: relative;
+  width: 60%;
+  background: transparent;
+  .large {
+    width: 100%;
+    padding-bottom: 66.667%;
+  }
+}

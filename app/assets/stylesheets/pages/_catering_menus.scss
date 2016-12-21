@@ -1,0 +1,81 @@
+#catering-menus-block {
+  .p {
+    color: #eee;
+    width: 90%;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      text-align: left;
+      height: 8rem;
+    }
+  }
+  .h {
+    text-transform: capitalize;
+  }
+}
+
+.menus-wrap {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding: 1rem;
+  @include media-breakpoint-up(md) {
+    flex-flow: row wrap;
+    padding: 5rem 2rem;
+  }
+}
+
+.menu-link {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3rem 1rem;
+  transition: all 0.2s ease-out;
+  &:nth-of-type(1) {
+    border-bottom: solid 1px #444;
+  }
+  &:nth-of-type(2) {
+    border-top: solid 1px #444;
+  }
+  @include media-breakpoint-up(md) {
+    margin: 0;
+    width: 50%;
+    &:nth-of-type(1) {
+      border-bottom: 0;
+      border-right: solid 1px #444;
+    }
+    &:nth-of-type(2) {
+      border-top: 0;
+      border-left: solid 1px #444;
+    }
+  }
+  &:hover {
+    .s {
+      color: darken($color-three, 5%);
+      &:after {
+        transform: scale(1);
+      }
+    }
+  }
+  .s {
+    position: relative;
+    color: $color-three;
+    font-family: $font-family-serif;
+    font-size: 1.25rem;
+    transition: all 0.2s ease-out;
+    font-style: italic;
+    &:after {
+      float: right;
+      font-family: "Black Tie";
+      content: "\F0AB";
+      padding-left: 1rem;
+      transform: scale(0);
+      transition: all 0.2s ease-out;
+      @include media-breakpoint-down(sm) {
+        transform: scale(1);
+      }
+    }
+  }
+}

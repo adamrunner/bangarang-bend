@@ -1,24 +1,33 @@
-<div class="card-block page-title">
+<section class="page-head">
+  <%- @page.get('svg') %>
   <h1><%= @page.get('link_name') %></h1>
+</section>
+
+<div class="page-img-main-wrap">
+  <img class="page-img-main" src="/images/showcase/lg/<%= @page.get('name') %>.jpg" alt="">
 </div>
 
-<div class="card-block inner-block">
-  <div class="row">
+<section class="page-body">
+  <div class="services-row">
+  <% @service_items.forEach (service_item, index) ->: %>
 
-  <% @service_items.forEach (service_item) ->: %>
-    <div class="col-xs-6 services-column">
-      <div class="card services-card">
-        <div class="card-block">
-          <h3><%= service_item.get('name') %></h3>
-        </div>
-        <div class="card-block services-block">
-          <div class="blockquote">
-            <p><%= service_item.get('description') %></p>
-          </div>
-        </div>
-      </div>
+    <div class="services-column">
+      <h2>
+        <small data-num="<%= index + 1 %>"></small>
+        <%= service_item.get('name') %>
+      </h2>
+
+      <hr class="inner-hr">
+
+      <p><%= service_item.get('description') %></p>
     </div>
-  <% end %>
 
+  <% end %>
   </div>
-</div>
+</section>
+
+<section class="page-foot">
+  <h5 class="page-foot-h">seasonally inspired</h5>
+  <h5 class="page-foot-h">chef driven</h5>
+  <h5 class="page-foot-h">regional cuisine</h5>
+</section>

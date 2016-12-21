@@ -1,14 +1,38 @@
+// philosophy variables //
+$philosophy-default: #eee;
+$philosophy-primary: transparentize($brand-primary, 0.25);
+$philosophy-secondary: $brand-secondary;
+$philosophy-color-three: transparentize($color-three, 0.75);
+$philosophy-banner-color: transparentize(#111, 0.15);
+
+$philosophy-border-color: $philosophy-color-three;
+$philosophy-border-width: 0.25rem;
+
 #philosophy-block {
-  @include content-card;
   h2 {
     color: $brand-secondary;
-    letter-spacing: 2px;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-family: $font-secondary;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-family: $font-family-serif;
+    font-size: 1.75rem;
+    margin: 0 auto;
   }
   p {
     margin: 1rem auto;
-    color: $color-one;
+    padding-left: 1rem;
+    color: #eee;
+  }
+}
+
+.philosophy-body-block {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  @include media-breakpoint-up(md) {
+    width: 80%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 65%;
   }
 }

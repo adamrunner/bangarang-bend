@@ -1,10 +1,15 @@
-<div class="block map-block">
+<div id="directions">
 
-  <a class="map-link" href="<%= @food_truck_address.link_url %>" target="_blank">
-    <i class="btl bt-map-marker"></i>
-    <span class="map-link-text">Get Directions</span>
-  </a>
+  <div class="left">
+    <a id="direction-link" href="<%= @food_truck_address.link_url %>" target="_blank">
+      <i class="btl bt-map-marker bt-3x"></i>
+      <h1 class="h">Come Visit Us</h1>
+      <hr>
+      <h2 class="h">Click for Directions</h2>
+    </a>
+  </div>
 
-  <div class="map-desc"><%= address.description %></div>
-  
+  <div class="right">
+    <p class="desc"><%= address.description %></p>
+  </div>
 </div>

@@ -47,13 +47,10 @@ $color-four : lighten(#3d4e54, 5%);
 
 $html-bg-color: #222;
 
-$font-secondary: 'Oswald', sans-serif !default;
-$font-primary:   'Roboto', sans-serif !default;
-
 $light-font-color : #fff;
 $dark-font-color  : #333;
 
-$map-link-color: transparentize(#111, 0.15);
+$map-link-color: transparentize(#fff, 0.35);
 
 $headshot-img-bg-color: #0f0f0f;
 
@@ -61,12 +58,6 @@ $dark-transparent: transparentize(#222, 0.50) !default;
 
 $navbar-height: 4.25rem;
 $nav-brand-logo-height: 2rem;
-
-$featured-bg-color: transparentize($transparent-brand-primary, 0.15);
-$featured-title-color: #fff;
-$featured-text-color: #333;
-$featured-item-border-color: #000;
-$featured-item-border-style: 3px solid #fff;
 
 $about-bg-color: transparentize($transparent-brand-primary, 0.15);
 
@@ -87,6 +78,8 @@ $blockquote-border-color: darken(#877674, 25%);
 $menu-blockquote-border-color: #ddd;
 
 $brand-description-color: #CEC7C6;
+
+$media-header-border-color: $blockquote-border-color;
 
 //
 
@@ -147,7 +140,7 @@ $body-color:                 #fff !default;
 
 $link-color:                 lighten($brand-secondary, 5%) !default;
 $link-decoration:            none !default;
-$link-hover-color:           darken($brand-secondary, 10%) !default;
+$link-hover-color:           darken($brand-secondary, 5%) !default;
 $link-hover-decoration:      none !default;
 
 
@@ -177,8 +170,8 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 576px,
   md: 720px,
-  lg: 984px,
-  xl: 1140px
+  lg: 960px,
+  xl: 1080px
 ) !default;
 
 
@@ -194,8 +187,10 @@ $grid-gutter-width:          1.25rem !default; // 30px
 //
 // Font, line-height, and color for body text, headings, and more.
 
+$header-font:                'Arvo';
+$font-secondary:             'Roboto';
 $font-family-sans-serif:     'Roboto', sans-serif !default;
-$font-family-serif:          'Roboto Slab',Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:          'Arvo',Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
@@ -219,16 +214,16 @@ $display2-size:               5.5rem !default;
 $display3-size:               4.5rem !default;
 $display4-size:               3.5rem !default;
 
-$display1-weight:             300 !default;
-$display2-weight:             300 !default;
-$display3-weight:             300 !default;
-$display4-weight:             300 !default;
+$display1-weight:             400 !default;
+$display2-weight:             400 !default;
+$display3-weight:             400 !default;
+$display4-weight:             400 !default;
 
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       $font-primary;
-$headings-font-weight:       300 !default;
+$headings-font-family:       $font-family-serif;
+$headings-font-weight:       400 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 
@@ -530,12 +525,12 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 // Cards
 $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
-$card-border-width:        1px !default;
+$card-border-width:        0px !default;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        #ddd !default;
+$card-border-color:        transparent !default;
 $card-border-radius-inner: $card-border-radius !default;
 $card-cap-bg:              #f5f5f5 !default;
-$card-bg:                  #fff !default;
+$card-bg:                  transparent !default;
 
 $card-link-hover-color:    #fff !default;
 

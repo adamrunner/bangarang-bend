@@ -19,3 +19,4 @@
 //= require admin/bangarang_admin
 //= require admin/featured_items
 //= require admin/food_truck
+//= require admin/instagram_auth

@@ -1,15 +1,19 @@
-<div class="card-block">
+<section class="page-head">
+  <%- @page.get('svg') %>
   <h1><%= @page.get('link_name') %></h1>
+</section>
+
+<div class="page-img-main-wrap">
+  <img class="page-img-main" src="/images/showcase/lg/<%= @page.get('name') %>.jpg" alt="">
 </div>
 
-<div class="card-block">
-  <div class="blockquote-copy-text">
-    <p id="copy-text" class="card-text"></p>
+<section class="page-body">
+  <div class="page-copy-text">
+    <h2 class="page-copty-text-h">Book the BANGARANG Mobile Kitchen</h2>
+    <p id="copy-text"></p>
   </div>
-</div>
 
-<div class="card-block clearfix food-truck-images">
-  <div class="food-truck-wrap clearfix">
+  <div class="food-truck-wrap">
 
     <% @foodTruckImageRows.forEach (imageRow, index) ->: %>
 
@@ -44,4 +48,10 @@
     <% end %>
 
   </div>
-</div>
+</section>
+
+<section class="page-foot">
+  <h5 class="page-foot-h">seasonally inspired</h5>
+  <h5 class="page-foot-h">chef driven</h5>
+  <h5 class="page-foot-h">regional cuisine</h5>
+</section>

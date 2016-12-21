@@ -26,10 +26,14 @@ gem 'rmagick'
 gem 'font-awesome-sass', github: 'adamrunner/font-awesome-sass'
 # Gretel to handle Breadcrumbs
 gem "gretel"
+gem 'delayed_job_active_record'
+gem 'delayed_job_recurring'
+gem "daemons"
+gem 'curb'
 # Transactional email support
 gem 'mailgun_rails'
 # Markdown Parsing
-gem 'kramdown'
+# gem 'kramdown'
 #S3 Asset storage for images
 gem 'fog'
 gem 'fog-aws'
@@ -37,10 +41,11 @@ gem 'carrierwave'
 gem 'carrierwave-imageoptimizer'
 gem 'pry-rails'
 gem 'rack-ssl-enforcer'
-gem 'handlebars_assets'
+# gem 'handlebars_assets'
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 3.5.0'
+gem 'capistrano3-delayed-job', '~> 1.0'
+gem 'capistrano', '~> 3.6.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-passenger'

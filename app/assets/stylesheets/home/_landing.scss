@@ -4,31 +4,26 @@
   flex-flow: column nowrap;
   overflow: hidden;
   flex: 1;
-  h2 {
-    color: $color-three;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: $font-secondary;
-    letter-spacing: 1px;
-    padding: 2rem;
-    font-size: 2.3rem;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    background-color: rgba(0,0,0,0.65);
-    @include media-breakpoint-down(sm) {
-      height:100%;
-    }
-    @include media-breakpoint-up(md) {
-      align-self: center;
-      font-size: 3rem;
-    }
+  #landing-stamp {
+    z-index: 15;
   }
   img {
-    @extend .img-fluid;
+    width: 100%;
   }
 }
 
 .landing-block {
   overflow-x: hidden;
+}
+
+#landing-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 5;
+  width: 60%;
+  @include media-breakpoint-up(md) {
+    width: 40%;
+  }
 }

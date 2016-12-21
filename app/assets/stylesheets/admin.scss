@@ -5,17 +5,16 @@
 @import 'mixins';
 @import 'admin/pages';
 @import 'admin/menus';
-@import 'admin/produce';
 @import 'admin/landing';
 @import 'admin/featured_items';
 @import 'admin/biography_items';
 @import 'admin/navbar';
 @import 'admin/flash_message';
-@import 'admin/event_items';
 @import 'admin/service_items';
 @import 'admin/food_truck';
 @import 'admin/cards';
 @import 'admin/breadcrumbs';
+@import 'admin/instagram_auth';
 
 html {
   position: relative;
@@ -33,7 +32,6 @@ html {
 body {
   position: relative;
   margin-top: 3.375rem;
-  background: #ddd;
   color: lighten($gray, 5%);
   font-weight: 300;
 }

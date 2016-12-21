@@ -1,17 +1,26 @@
 #about {
   background-color: transparent;
-  color: $light-font-color;
-  letter-spacing: 2px;
+  color: #444;
   border-radius: 1px;
+  .h {
+    margin-bottom: 2rem;
+    color: #444;
+    text-align: center;
+    letter-spacing: 0;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
 }
 .about-content {
   @include short-flex(column nowrap, center, center);
   h3 {
+    font-weight: 400;
     margin-bottom: 2rem;
-    color: $brand-secondary;
+    color: #444;
   }
   p {
-    color: $color-one;
+    color: #444;
+    padding: 0 1.5rem;
   }
 }
 .headshot {
@@ -23,10 +32,35 @@
   background-color: $headshot-img-bg-color;
   background-position: center;
   background-size: cover;
-  border: 2px solid $headshot-img-bg-color;
+  background: transparent;
 }
 
 .section-block {
   margin-bottom: 1rem;
   background-color: #111;
+}
+
+.about-card {
+  border: none;
+  background: #eee;
+}
+
+.about-row {
+  @include make-row($gutter: 0);
+  flex-flow: row wrap;
+  @include media-breakpoint-up(md) {
+    flex-flow: row nowrap;
+  }
+}
+
+.about-pg {
+  width: 100%;
+}
+
+.about-col {
+  @include make-col($gutter: 0);
+  @include make-col-span(12);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(6);
+  }
 }
