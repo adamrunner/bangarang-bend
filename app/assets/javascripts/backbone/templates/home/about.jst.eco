@@ -3,14 +3,14 @@
 </div>
 
 <div class="card-block">
-  <div class="row">
+  <div class="row about-row">
 
     <% @biography_items.forEach (biography_item) ->: %>
-      <div class="col-xs-12 col-md-6">
+      <div class="about-col">
         <img src="<%= biography_item.get('image_url') %>" class="headshot"></img>
         <div class="about-content">
           <h3><%= biography_item.get('name') %></h3>
-          <p class="p-x-1"><%= biography_item.get('description') %></p>
+          <p class="about-pg"><%= biography_item.get('description') %></p>
         </div>
       </div>
     <% end %>

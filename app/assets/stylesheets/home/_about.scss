@@ -20,6 +20,7 @@
   }
   p {
     color: #444;
+    padding: 0 1.5rem;
   }
 }
 .headshot {
@@ -42,4 +43,24 @@
 .about-card {
   border: none;
   background: #eee;
+}
+
+.about-row {
+  @include make-row($gutter: 0);
+  flex-flow: row wrap;
+  @include media-breakpoint-up(md) {
+    flex-flow: row nowrap;
+  }
+}
+
+.about-pg {
+  width: 100%;
+}
+
+.about-col {
+  @include make-col($gutter: 0);
+  @include make-col-span(12);
+  @include media-breakpoint-up(md) {
+    @include make-col-span(6);
+  }
 }
