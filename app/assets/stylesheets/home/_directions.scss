@@ -18,6 +18,7 @@
     }
   }
   .right {
+    display: flex;
     padding: 4rem;
     width: 100%;
     margin: 0 auto;
@@ -35,9 +36,10 @@
       margin: 0;
       color: #eee;
       border-bottom: solid 1px transparentize(#fff, 0.85);
-      height: 100%;
+      height: inherit;
       width: 100%;
       padding: 1rem;
+      flex: 1;
       @include media-breakpoint-up(md) {
         color: #333;
         border-top: solid 1px transparentize(#333, 0.85);
