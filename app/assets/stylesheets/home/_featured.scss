@@ -84,4 +84,7 @@ $featured-secondary: $brand-secondary;
     color: #fff;
     background: darken($color-four, 3%);
   }
+  &:focus {
+    color: #fff;
+  }
 }

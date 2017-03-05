@@ -21,10 +21,7 @@ class BangarangBend.Models.FeaturedItem extends Backbone.Model
       ''
 
   createClass: ->
-    if @get('link_url')
-      'class=featured-item-card'
-    else
-      'class=featured-item-card-no-link'
+    'class=btn-default'
 
   linkTag: ->
     "#{@createLink()} #{@createClass()} #{@tab()}"

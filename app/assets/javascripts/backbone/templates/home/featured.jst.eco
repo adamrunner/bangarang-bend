@@ -9,7 +9,7 @@
       <span class="featured-date"><%= featured_item.get('created_at') %></span>
       <p class="featured-desc"><%= featured_item.get('description') %></p>
       <% if featured_item.get('link_url') :%>
-        <a href="<%= featured_item.get('link_url') %>" class="btn-default">view</a>
+        <a <%= featured_item.linkTag() %> >view</a>
       <% end %>
     </div>
 
