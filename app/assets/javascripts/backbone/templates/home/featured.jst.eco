@@ -7,7 +7,10 @@
     <div class="featured-media">
       <h3 class="featured-heading"><%= featured_item.get('name') %></h3>
       <span class="featured-date"><%= featured_item.get('created_at') %></span>
-      <p><%= featured_item.get('description') %></p>
+      <p class="featured-desc"><%= featured_item.get('description') %></p>
+      <% if featured_item.get('link_url') :%>
+        <a <%= featured_item.linkTag() %> >view</a>
+      <% end %>
     </div>
 
   <% end %>
