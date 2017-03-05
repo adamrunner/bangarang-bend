@@ -53,11 +53,35 @@ $featured-secondary: $brand-secondary;
   p {
     color: $featured-p-color;
     letter-spacing: 1px;
-    padding-left: 1rem;
+    // padding-left: 1rem;
+    margin: 0;
   }
   .featured-date {
     display: block;
     color: transparentize(#fff, 0.25);
     margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  a {
+    margin-top: 1rem;
+  }
+}
+
+.featured-media {
+  margin-bottom: 3rem;
+}
+
+.btn-default {
+  color: #fff;
+  background: $color-four;
+  font-family: $font-family-serif;
+  font-style: italic;
+  padding: 0 0.75rem;
+  border: solid 1px $color-four;
+  font-variant: small-caps;
+  display: inline-block;
+  &:hover {
+    color: #fff;
+    background: darken($color-four, 3%);
   }
 }
