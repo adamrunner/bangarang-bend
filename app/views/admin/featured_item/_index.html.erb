@@ -24,6 +24,8 @@
               <p class="card-text"><%= featured_item[:description] %></p>
               <h5 class="m-t-2">Links To</h5>
               <p class="card-text"><%= featured_item.link_url != nil ? featured_item.link_url : 'No Link' %></p>
+              <h5 class="m-t-2">Link Title</h5>
+              <p class="card-text"><%= featured_item.link_title != nil ? featured_item.link_title : 'No Link Title. (Will Default to "View")' %></p>
             </div>
 
             <!-- <div class="card-img-col">
