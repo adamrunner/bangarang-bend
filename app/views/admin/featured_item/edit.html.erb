@@ -25,6 +25,11 @@
             <%= f.text_field :link_url, class: "form-control", value: @featured_item.link_url %>
           </div>
 
+          <div class="form-group">
+            <%= f.label :link_title, "Link Title", class: "font-weight-bold" %>:
+            <%= f.text_field :link_title, class: "form-control" %>
+          </div>
+
           <!-- <% if @featured_item.image? %>
             <figure class="form-group">
               <%= image_tag(@featured_item.image.featured_thumb.url, class:"figure-img") %>
