@@ -39,6 +39,7 @@ json.data do
     json.description featured_item.description
     json.image_url featured_item.image.featured_image.url
     json.link_url featured_item.link_url
+    json.link_title featured_item.link_title
     json.created_at featured_item.pretty_print_created_at
   end
 
