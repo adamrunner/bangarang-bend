@@ -28,6 +28,7 @@ html {
   @include media-breakpoint-up(xl) {
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover;
     font-size: $font-size-lg;
   }
 }
